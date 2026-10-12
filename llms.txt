@@ -79,6 +79,7 @@
 - [選択画面と三つの棚](https://readiness.coaretail.com/insights/uk-cma-choice-screens-three-shelves/): Insights Column（2026-10-07）
 - [情報モニタリングの参照経路](https://readiness.coaretail.com/insights/ai-mode-information-monitoring/): Insights Column（2026-10-08）
 - [ブランド名とAI Overviews](https://readiness.coaretail.com/insights/branded-queries-ai-overviews/): Insights Column（2026-10-09）
+- [予約SaaS選定のReadiness視点](https://readiness.coaretail.com/insights/vendor-selection/): Insights Column（2026-10-12）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断
