@@ -18,6 +18,7 @@ import { upsertPlannedCard, findEarliestScheduledArticle } from './unlock-next-i
 import { buildPublishedCardHtml, dateParts } from './insights-index-cards.mjs';
 import { syncInsightsPublicSurfaces } from './insights-public-sync.mjs';
 import { canonicalHeroPath, integrateCanonicalHero, configFor } from './local-visual-worker.mjs';
+import { markHeroPending } from './insights-package-readiness.mjs';
 
 const SCHEDULE_PATH = PATHS.schedule;
 const INDEX_PATH = PATHS.insightsIndex;
@@ -86,16 +87,32 @@ export function recoverPublishedScheduleEntry(schedule, slug, now = new Date()) 
   return { recovered: true, slug };
 }
 
+export function missingHeroHoldMessage(slug, publishAt) {
+  return `HERO_PENDING_HOLD: ${slug} assets/insights/${slug}/hero.webp is missing. Not publishing web-only. Slot remains scheduled at ${publishAt}.`;
+}
+
 /**
- * @returns {{ updated: boolean, published: string[], skipped: string[], errors: string[] }}
+ * Keep a due article scheduled when its canonical hero is absent.
+ * Does not change publishAt or status.
+ */
+export function applyMissingHeroHold(entry, { now = new Date(), dryRun = false } = {}) {
+  if (!entry || dryRun) return;
+  entry.lastPublishFailure = 'HERO_PENDING';
+  markHeroPending(entry, { now });
+  delete entry.heroReadyAt;
+}
+
+/**
+ * @returns {{ updated: boolean, published: string[], skipped: string[], errors: string[], held: object[] }}
  */
 export function publishDueArticles({
   now = new Date(),
   forceSlug = null,
   dryRun = false,
   allowWeekend = false,
+  heroExists = null,
 } = {}) {
-  const result = { updated: false, published: [], skipped: [], errors: [] };
+  const result = { updated: false, published: [], skipped: [], errors: [], held: [] };
 
   if (!forceSlug && !allowWeekend && !isWeekday(now)) {
     return { ...result, reason: 'weekend' };
@@ -149,6 +166,23 @@ export function publishDueArticles({
     if (!fs.existsSync(srcIndex)) {
       result.errors.push(`missing_scheduled_html:${article.slug}`);
       if (entry && !dryRun) entry.lastPublishFailure = 'missing_scheduled_html';
+      continue;
+    }
+
+    const hasHero = typeof heroExists === 'function'
+      ? heroExists(article.slug)
+      : fs.existsSync(canonicalHeroPath(configFor(ROOT), article.slug));
+    if (!hasHero) {
+      const message = missingHeroHoldMessage(article.slug, article.publishAt);
+      console.error(message);
+      result.errors.push(message);
+      result.held.push({
+        slug: article.slug,
+        reason: 'HERO_PENDING',
+        publishAt: article.publishAt,
+        status: entry?.status || article.status,
+      });
+      applyMissingHeroHold(entry, { now, dryRun });
       continue;
     }
 

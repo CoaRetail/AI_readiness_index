@@ -17,6 +17,8 @@ import {
   isPublishedArticle,
   readQualityGate,
   readOriginMainSha,
+  acceptRecoveredImageForConvert,
+  recoverCodexNativeImage,
   releaseLock,
   runWorker,
   sortNewestFirst,
@@ -224,6 +226,105 @@ test('prepublish queue continues after a per-article generation or integration f
   assert.equal(shouldContinuePrepublishQueue({ finalResult: 'VISUAL_WORKER_REMOTE_DIVERGED' }), false);
   assert.equal(shouldContinuePrepublishQueue({ finalResult: 'VISUAL_WORKER_NETWORK_BLOCKED' }), false);
   assert.equal(shouldContinuePrepublishQueue(null), false);
+});
+
+test('codex_exec_no_image downloads a returned URL into generation-N.png', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-url-'));
+  const url = 'https://example.test/native/generation.png';
+  const recovered = await recoverCodexNativeImage({
+    workspace: dir,
+    attempt: 1,
+    texts: [`Native image: ${url}`],
+    download: async (got, dest) => {
+      assert.equal(got, url);
+      fs.writeFileSync(dest, Buffer.from('png-bytes'));
+    },
+  });
+  assert.equal(recovered.ok, true);
+  assert.equal(recovered.source, 'downloaded_url');
+  assert.equal(fs.readFileSync(path.join(dir, 'generation-1.png'), 'utf8'), 'png-bytes');
+  const source = recoverCodexNativeImage.toString();
+  assert.doesNotMatch(source, /Pillow|GenerateImage|drawtext|cwebp/);
+  fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('codex_exec_no_image copies a mentioned PNG and then the quality gate can see it', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-file-'));
+  const mentioned = path.join(dir, 'native-output.png');
+  fs.writeFileSync(mentioned, 'located-png');
+  const recovered = await recoverCodexNativeImage({
+    workspace: dir,
+    attempt: 2,
+    texts: [`saved ${mentioned}`],
+    download: async () => { throw new Error('download should not run when a file exists'); },
+  });
+  assert.equal(recovered.source, 'located_file');
+  assert.equal(fs.readFileSync(path.join(dir, 'generation-2.png'), 'utf8'), 'located-png');
+  fs.writeFileSync(path.join(dir, 'visual-brief.json'), JSON.stringify({ ARTICLE: 'x' }));
+  fs.writeFileSync(path.join(dir, 'quality.json'), JSON.stringify({
+    TEXT_CORRECT: true,
+    JAPANESE_CORRECT: true,
+    NO_GARBLED_TEXT: true,
+    TYPOGRAPHIC_ONLY: true,
+    ARTICLE_RELEVANT: true,
+    SAFE_AREA_PASS: true,
+    THUMBNAIL_READABLE: true,
+    VISUAL_CANON_PASS: true,
+    width: 1672,
+    height: 941,
+  }));
+  const gate = readQualityGate(dir, 2);
+  assert.equal(gate.imagePath, path.join(dir, 'generation-2.png'));
+  assert.equal(fs.existsSync(gate.imagePath), true);
+  fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('a recovered canonical PNG continues toward convert-webp without quality.json', () => {
+  const accepted = acceptRecoveredImageForConvert(
+    { ok: false, reason: 'missing_generation_artifacts', imagePath: '/tmp/generation-1.png' },
+    '/tmp',
+    { dimensionsOf: () => ({ ok: true, width: 1672, height: 941 }) },
+  );
+  assert.equal(accepted.ok, true);
+  assert.equal(accepted.recoveredWithoutQualityJson, true);
+  const rejected = acceptRecoveredImageForConvert(
+    { ok: false, reason: 'quality_gate_failed', imagePath: '/tmp/generation-1.png' },
+    '/tmp',
+    { dimensionsOf: () => ({ ok: true, width: 1672, height: 941 }) },
+  );
+  assert.equal(rejected.ok, false);
+});
+
+test('a bare Codex image URL with no file extension is downloaded', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-bare-url-'));
+  const url = 'https://example.test/codex/native-image';
+  const recovered = await recoverCodexNativeImage({
+    workspace: dir,
+    attempt: 1,
+    texts: [url],
+    download: async (got, dest) => {
+      assert.equal(got, url);
+      fs.writeFileSync(dest, Buffer.from('png-bytes'));
+    },
+  });
+  assert.equal(recovered.source, 'downloaded_url');
+  fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('codex output with no image URL stays codex_exec_no_image', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-none-'));
+  const recovered = await recoverCodexNativeImage({
+    workspace: dir,
+    attempt: 1,
+    texts: ['Codex finished without an image file.'],
+    download: async () => { throw new Error('no url'); },
+  });
+  assert.deepEqual({ ok: recovered.ok, reason: recovered.reason }, { ok: false, reason: 'codex_exec_no_image' });
+  const body = fs.readFileSync(new URL('../lib/local-visual-worker.mjs', import.meta.url), 'utf8');
+  const processBody = body.slice(body.indexOf('async function processCandidate'));
+  assert.ok(processBody.indexOf('recoverCodexNativeImage') < processBody.indexOf('readQualityGate(workspace, attempt)'));
+  assert.match(processBody, /optimizeToWebp\(quality\.imagePath/);
+  fs.rmSync(dir, { recursive: true, force: true });
 });
 
 test('codex failure tails are recorded for the operator log', () => {

@@ -43,16 +43,42 @@ export function buildInsightsIndexCardsBlock(schedule) {
   return parts.join('\n');
 }
 
+/**
+ * Drop leftover tails from older publishes that closed the empty note too early.
+ * Each run used to leave `</p> hidden>公開中の記事はまだありません。` after the real paragraph.
+ */
+export function removeDuplicateEmptyNoteFragments(html) {
+  const markerAt = html.indexOf('id="insights-empty"');
+  if (markerAt < 0) return html;
+  const firstClose = html.indexOf('</p>', markerAt);
+  if (firstClose < 0) return html;
+  const after = firstClose + '</p>'.length;
+  const gridClose = html.indexOf('</div>', after);
+  if (gridClose < 0) return html;
+  const between = html.slice(after, gridClose);
+  if (!between.includes('公開中の記事はまだありません') && !between.includes('hidden>')) return html;
+  const lineBreak = html.lastIndexOf('\n', gridClose);
+  const prefix = lineBreak >= 0 ? html.slice(lineBreak + 1, gridClose) : '';
+  const indent = /^[ \t]*$/.test(prefix) ? prefix : '  ';
+  return `${html.slice(0, after)}\n${indent}${html.slice(gridClose)}`;
+}
+
 export function replaceInsightsIndexCards(html, cardsBlock, { publishedCount, hasPlanned }) {
-  const re = new RegExp(
-    `(${INDEX_MARKER_START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})[\\s\\S]*?(\\s*${INDEX_MARKER_EMPTY.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`
-  );
-  if (!re.test(html)) throw new Error('insights index card markers not found');
+  const cleaned = removeDuplicateEmptyNoteFragments(html);
+  const start = cleaned.indexOf(INDEX_MARKER_START);
+  const emptyAt = start < 0 ? -1 : cleaned.indexOf(INDEX_MARKER_EMPTY, start);
+  if (start < 0 || emptyAt < 0) throw new Error('insights index card markers not found');
+  const gridClose = cleaned.indexOf('</div>', emptyAt);
+  if (gridClose < 0) throw new Error('insights index card markers not found');
   const emptyHidden = (publishedCount > 0 || hasPlanned) ? ' hidden' : '';
   const emptyBlock = `    <p class="empty-note reveal" id="insights-empty"${emptyHidden}>
       公開中の記事はまだありません。
-    </p>`;
-  return html.replace(re, `${INDEX_MARKER_START}\n${cardsBlock}\n${emptyBlock}`);
+    </p>
+`;
+  const lineBreak = cleaned.lastIndexOf('\n', gridClose);
+  const prefix = lineBreak >= 0 ? cleaned.slice(lineBreak + 1, gridClose) : '';
+  const indent = /^[ \t]*$/.test(prefix) ? prefix : '  ';
+  return `${cleaned.slice(0, start)}${INDEX_MARKER_START}\n${cardsBlock}\n${emptyBlock}${indent}${cleaned.slice(gridClose)}`;
 }
 
 function sitemapEntry(article) {
