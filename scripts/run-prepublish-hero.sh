@@ -1,6 +1,8 @@
 #!/bin/sh
 # Insights heroes: Codex Native (`codex exec`) + convert-webp.mjs only.
 # A missing toolchain exits INSIGHTS_HERO_TOOLCHAIN_MISSING. Do not draw a hero another way.
+# Discovery selects every scheduled article inside the horizon that has no hero.webp.
+# Planned-card HTML and a previous unreserve/reschedule do not exclude it.
 set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)

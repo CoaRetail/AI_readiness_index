@@ -1,5 +1,12 @@
 #!/usr/bin/env node
-import { DEFAULT_ROOT, VISUAL_MODES, runWorker } from './lib/local-visual-worker.mjs';
+import {
+  DEFAULT_ROOT,
+  VISUAL_MODES,
+  configFor,
+  discoverPrepublishCandidates,
+  morningPrepublishShouldGenerate,
+  runWorker,
+} from './lib/local-visual-worker.mjs';
 import {
   PREPUBLISH_ROLES,
   resolvePrepublishRole,
@@ -21,9 +28,15 @@ if (rootArg >= 0 && !root) {
 }
 
 if (role === PREPUBLISH_ROLES.MORNING_PREFLIGHT) {
-  const report = evaluateMorningPreflight({ root });
-  console.log(JSON.stringify({ role, report }, null, 2));
-  if (report.ok) process.exit(0);
+  const now = new Date();
+  const report = evaluateMorningPreflight({ root, now });
+  const discovered = discoverPrepublishCandidates(configFor(root), { now });
+  console.log(JSON.stringify({
+    role,
+    report,
+    horizonMissingHero: discovered.gaps.map((article) => article.slug),
+  }, null, 2));
+  if (!morningPrepublishShouldGenerate({ report, gaps: discovered.gaps })) process.exit(0);
   if (dryRun || simulate) process.exit(0);
   const result = await runWorker({
     root,

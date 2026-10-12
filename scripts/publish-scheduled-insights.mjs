@@ -34,7 +34,13 @@ if (result.reason === 'weekend') {
   process.exit(0);
 }
 
-if (!result.published?.length && !result.skipped?.length && !result.updated) {
+if (result.held?.length) {
+  for (const hold of result.held) {
+    console.error(`HERO_PENDING_HOLD: ${hold.slug} remains scheduled at ${hold.publishAt}`);
+  }
+}
+
+if (!result.published?.length && !result.skipped?.length && !result.updated && !result.held?.length && !result.errors?.length) {
   console.log('No scheduled articles due.', { now: now.toISOString() });
   process.exit(0);
 }

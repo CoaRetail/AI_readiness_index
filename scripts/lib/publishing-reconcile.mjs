@@ -105,6 +105,12 @@ export function buildHealthReportMarkdown({
   if (publishResult?.published?.length) {
     lines.push(`publish: ${publishResult.published.join(', ')}`);
   }
+  if (publishResult?.held?.length) {
+    lines.push('hero hold (HERO_PENDING, slot remains scheduled):');
+    for (const hold of publishResult.held) {
+      lines.push(`- ${hold.slug} at ${hold.publishAt}: assets/insights/${hold.slug}/hero.webp missing; web-only publish withheld`);
+    }
+  }
   if (verifyResult) {
     lines.push(`verify: ${verifyResult.ok ? 'ok' : verifyResult.reason} (${verifyResult.attempts || 0} attempts)`);
   }
@@ -186,6 +192,11 @@ export async function reconcilePublishingPipeline({
     const publishResult = publishDueArticles({ now, forceSlug, dryRun });
     summary.publish = publishResult;
     if (publishResult.updated) summary.updated = true;
+    if (publishResult.held?.length) {
+      for (const hold of publishResult.held) {
+        console.error(`HERO_PENDING_HOLD: ${hold.slug} assets/insights/${hold.slug}/hero.webp is missing. Not publishing web-only. Slot remains scheduled at ${hold.publishAt}.`);
+      }
+    }
     if (publishResult.errors?.length) {
       summary.updated = true;
       for (const err of publishResult.errors) {

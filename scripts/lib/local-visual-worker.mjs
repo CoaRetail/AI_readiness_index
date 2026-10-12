@@ -149,17 +149,22 @@ export async function defaultProductionCheck(url, { timeoutMs = 15000 } = {}) {
   }
 }
 
-export function discoverPrepublishCandidates(config, {
+/**
+ * Scheduled articles inside the prepublish horizon that still have no hero.webp.
+ * Eligibility is the file on disk. packageReadiness, heroReadyAt, and the index
+ * planned card are ignored, including after an article is unreserved and later
+ * given a new publishAt.
+ */
+export function listPrepublishHeroGaps(config, {
   schedule = loadSchedule(config),
   now = new Date(),
 } = {}) {
-  const candidates = [];
   const reasons = [];
-  const horizonMs = PREPUBLISH_HORIZON_DAYS * 24 * 60 * 60 * 1000;
+  const gaps = [];
   const ordered = [...(schedule.articles || [])]
     .filter((article) => isScheduledPrepublishArticle(article, now))
-    .filter((article) => new Date(article.publishAt).getTime() - now.getTime() <= horizonMs)
-    .sort((a, b) => new Date(a.publishAt).getTime() - new Date(b.publishAt).getTime());
+    .sort((a, b) => new Date(a.publishAt).getTime() - new Date(b.publishAt).getTime()
+      || String(a.slug).localeCompare(String(b.slug)));
   for (const article of ordered) {
     if (fs.existsSync(canonicalHeroPath(config, article.slug))) {
       reasons.push({ slug: article.slug, state: 'skip', reason: 'hero_exists' });
@@ -169,10 +174,32 @@ export function discoverPrepublishCandidates(config, {
       reasons.push({ slug: article.slug, state: 'skip', reason: 'scheduled_html_missing' });
       continue;
     }
-    candidates.push({ ...article, visualMode: VISUAL_MODES.PRIMARY_PREPUBLISH });
-    if (candidates.length >= config.maxCandidates) break;
+    gaps.push(article);
   }
-  return { candidates, reasons };
+  return { gaps, reasons };
+}
+
+export function discoverPrepublishCandidates(config, {
+  schedule = loadSchedule(config),
+  now = new Date(),
+} = {}) {
+  const { gaps, reasons } = listPrepublishHeroGaps(config, { schedule, now });
+  const limit = Number.isInteger(config.maxCandidates) ? config.maxCandidates : MAX_CANDIDATES_PER_RUN;
+  const selected = gaps.slice(0, Math.max(0, limit));
+  for (const article of gaps.slice(selected.length)) {
+    reasons.push({ slug: article.slug, state: 'defer', reason: 'max_candidates' });
+  }
+  return {
+    candidates: selected.map((article) => ({ ...article, visualMode: VISUAL_MODES.PRIMARY_PREPUBLISH })),
+    reasons,
+    gaps,
+  };
+}
+
+/** Morning preflight still generates when any horizon slot is missing hero.webp. */
+export function morningPrepublishShouldGenerate({ report, gaps = [] } = {}) {
+  if (gaps.length > 0) return true;
+  return report?.ok === false;
 }
 
 export async function discoverRecoveryCandidates(config, {
@@ -328,6 +355,8 @@ Keep IMAGE_TEXT deterministic: use at most one Japanese headline of 12 character
 and one optional Japanese subline of 12 characters; do not render body copy,
 labels, paragraphs, punctuation-heavy text, or the full article title.
 After generation, save quality.json with boolean fields: TEXT_CORRECT, JAPANESE_CORRECT, NO_GARBLED_TEXT, TYPOGRAPHIC_ONLY, ARTICLE_RELEVANT, SAFE_AREA_PASS, THUMBNAIL_READABLE, VISUAL_CANON_PASS, and numeric width and height. Set a field false if it fails.
+If the native image tool returns a URL or writes the PNG under another filename, copy those bytes to generation-${attempt}.png before you finish and put that URL or path in the final message.
+The Native tool also saves the PNG at $CODEX_HOME/generated_images/<thread-id>/exec-*.png (CODEX_HOME defaults to ~/.codex) and does not place that file in this workspace. Copy the newest exec-*.png from this thread into generation-${attempt}.png and include that absolute path in the final message. If you leave it there, the worker copies the newest exec-*.png for this thread that is newer than this attempt, before the quality gate.
 Do not create alternate images or derivatives.
 
 AUTHORITATIVE VISUAL CANON:
@@ -778,6 +807,299 @@ export function shouldContinuePrepublishQueue(result) {
   return true;
 }
 
+function nonEmptyFile(file) {
+  try {
+    const stat = fs.statSync(file);
+    return stat.isFile() && stat.size > 0;
+  } catch {
+    return false;
+  }
+}
+
+const IMAGE_FILE_RE = /\.(png|jpe?g|webp)$/i;
+
+function uniqueStrings(values) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+export function isLikelyCodexImageUrl(url) {
+  const value = String(url || '');
+  return /\.(?:png|jpe?g|webp)(?:$|\?)/i.test(value)
+    || /[?&](?:format|fm)=(?:png|webp|jpe?g)/i.test(value)
+    || /\/images?\//i.test(value)
+    || /oaiusercontent|oaidalle|blob\.core\.windows\.net|filesystem\.site/i.test(value);
+}
+
+/** URLs and file paths Codex may emit when it does not write generation-N.png. */
+export function extractCodexImageRefs(text) {
+  const raw = String(text || '');
+  const urls = [];
+  const files = [];
+  const markdownImageRe = /!\[[^\]]*]\(([^)\s]+)\)/g;
+  const bareUrlRe = /https?:\/\/[^\s<>"')]+/gi;
+  const mentionedPathRe = /(?:sandbox:|file:\/\/)?(?:\/|\.\/)[^\s<>"')]+\.(?:png|jpe?g|webp)/gi;
+  for (const match of raw.matchAll(markdownImageRe)) {
+    const target = match[1].trim();
+    if (/^https?:\/\//i.test(target)) urls.push(target);
+    else files.push(target);
+  }
+  for (const match of raw.matchAll(bareUrlRe)) {
+    const url = match[0].replace(/[),.;\]]+$/, '');
+    if (isLikelyCodexImageUrl(url)) urls.push(url);
+  }
+  for (const match of raw.matchAll(mentionedPathRe)) {
+    files.push(match[0].replace(/[),.;\]]+$/, ''));
+  }
+  const lines = raw.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  if (lines.length === 1 && /^https?:\/\/\S+$/.test(lines[0])) {
+    urls.push(lines[0].replace(/[),.;\]]+$/, ''));
+  }
+  return { urls: uniqueStrings(urls), files: uniqueStrings(files) };
+}
+
+export function resolveMentionedImage(token, workspace) {
+  let value = String(token || '').trim().replace(/^["']|["']$/g, '');
+  if (!value) return null;
+  if (value.startsWith('sandbox:')) value = value.slice('sandbox:'.length);
+  if (value.startsWith('file://')) {
+    const rawPath = value.slice('file://'.length);
+    try { value = decodeURIComponent(rawPath); } catch { value = rawPath; }
+  }
+  const candidates = path.isAbsolute(value)
+    ? [value, path.join(workspace, path.basename(value))]
+    : [path.resolve(workspace, value), path.join(workspace, path.basename(value))];
+  for (const candidate of candidates) {
+    if (!IMAGE_FILE_RE.test(candidate) || !nonEmptyFile(candidate)) continue;
+    const relative = path.relative(workspace, candidate).split(path.sep).join('/');
+    if (!relative.startsWith('..') && relative.startsWith('assets/insights/') && path.basename(candidate) === 'hero.webp') {
+      continue;
+    }
+    return candidate;
+  }
+  return null;
+}
+
+export async function downloadImageUrl(url, dest, {
+  fetchImpl = globalThis.fetch,
+  maxBytes = 20 * 1024 * 1024,
+} = {}) {
+  if (!/^https?:\/\//i.test(url)) throw new Error('unsupported_image_url');
+  const response = await fetchImpl(url);
+  if (!response?.ok) throw new Error(`image_download_${response?.status || 'error'}`);
+  const type = response.headers?.get?.('content-type') || '';
+  if (type && !/^image\//i.test(type) && !/octet-stream/i.test(type)) {
+    throw new Error(`image_download_type:${type}`);
+  }
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (!bytes.length || bytes.length > maxBytes) throw new Error('image_download_size');
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, bytes);
+  return dest;
+}
+
+const EXEC_PNG_NAME = /^exec-.*\.png$/i;
+
+export function codexHomeDir(env = process.env) {
+  const configured = env?.CODEX_HOME;
+  if (configured != null && String(configured).trim()) return path.resolve(String(configured).trim());
+  return path.join(os.homedir(), '.codex');
+}
+
+function stripAnsi(text) {
+  return String(text || '').replace(/\u001b\[[0-9;]*[A-Za-z]/g, '');
+}
+
+function safePathSegment(value) {
+  const id = String(value || '').trim();
+  if (!/^[A-Za-z0-9_-]{8,}$/.test(id)) return null;
+  if (id !== path.basename(id) || id === '.' || id === '..') return null;
+  return id;
+}
+
+/** Thread id Codex printed, or the directory named in a generated_images/exec-*.png path. */
+export function extractCodexThreadId(texts) {
+  const raw = stripAnsi((texts || []).filter(Boolean).join('\n'));
+  const patterns = [
+    /generated_images\/([A-Za-z0-9_-]{8,})\/exec-[A-Za-z0-9_.-]+\.png/gi,
+    /(?:session|thread)[ _-]?id\s*[:=]\s*["']?([A-Za-z0-9_-]{8,})/gi,
+    /"(?:thread_id|session_id|threadId|sessionId)"\s*:\s*"([A-Za-z0-9_-]{8,})"/gi,
+  ];
+  let found = null;
+  let index = -1;
+  for (const pattern of patterns) {
+    for (const match of raw.matchAll(pattern)) {
+      const id = safePathSegment(match[1]);
+      if (!id || match.index < index) continue;
+      found = id;
+      index = match.index;
+    }
+  }
+  return found;
+}
+
+function threadIdFromRolloutFilename(name) {
+  const match = String(name).match(/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\.jsonl$/i);
+  return match ? match[1] : null;
+}
+
+function rolloutThreadIdsSince(codexHome, startedAt) {
+  const root = path.join(codexHome, 'sessions');
+  if (!fs.existsSync(root)) return [];
+  const found = new Set();
+  const stack = [root];
+  while (stack.length) {
+    const dir = stack.pop();
+    let entries;
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { continue; }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+        continue;
+      }
+      if (!entry.isFile()) continue;
+      const id = threadIdFromRolloutFilename(entry.name);
+      if (!id) continue;
+      try {
+        if (fs.statSync(full).mtimeMs > startedAt) found.add(id);
+      } catch { /* unreadable rollout */ }
+    }
+  }
+  return [...found];
+}
+
+function execPngsInThread(dir, startedAt) {
+  let entries;
+  try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return []; }
+  const files = [];
+  for (const entry of entries) {
+    if (!entry.isFile() || !EXEC_PNG_NAME.test(entry.name)) continue;
+    const full = path.join(dir, entry.name);
+    let stat;
+    try { stat = fs.statSync(full); } catch { continue; }
+    if (!stat.isFile() || stat.size <= 0 || !(stat.mtimeMs > startedAt)) continue;
+    files.push({ path: full, mtimeMs: stat.mtimeMs, name: entry.name });
+  }
+  files.sort((a, b) => (b.mtimeMs - a.mtimeMs) || b.name.localeCompare(a.name));
+  return files;
+}
+
+/**
+ * Newest exec-*.png Codex saved for this run under CODEX_HOME/generated_images.
+ * A known thread is the only directory searched. Otherwise only files newer than
+ * the attempt start qualify, and the newest of those is the current run.
+ */
+export function findNewestCodexExecPng({
+  codexHome,
+  startedAt,
+  texts = [],
+  threadId = null,
+} = {}) {
+  const start = Number(startedAt);
+  if (!codexHome || !Number.isFinite(start)) return null;
+  const root = path.join(codexHome, 'generated_images');
+  let threadNames;
+  try {
+    threadNames = fs.readdirSync(root, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() && safePathSegment(entry.name))
+      .map((entry) => entry.name);
+  } catch {
+    return null;
+  }
+  const known = new Set(threadNames);
+  const explicit = safePathSegment(threadId) || extractCodexThreadId(texts);
+  let scoped = null;
+  if (explicit) scoped = explicit;
+  else {
+    const rollouts = rolloutThreadIdsSince(codexHome, start).filter((id) => known.has(id));
+    if (rollouts.length === 1) scoped = rollouts[0];
+  }
+  if (scoped) {
+    if (!known.has(scoped)) return null;
+    const newest = execPngsInThread(path.join(root, scoped), start)[0];
+    return newest ? { ...newest, threadId: scoped } : null;
+  }
+  const fresh = [];
+  for (const name of threadNames) {
+    for (const file of execPngsInThread(path.join(root, name), start)) {
+      fresh.push({ ...file, threadId: name });
+    }
+  }
+  fresh.sort((a, b) => (b.mtimeMs - a.mtimeMs) || b.name.localeCompare(a.name));
+  return fresh[0] || null;
+}
+
+/**
+ * Codex Native sometimes exits 0 without writing generation-N.png.
+ * On the Mac it saves ~/.codex/generated_images/<thread-id>/exec-*.png and does not
+ * copy that file into the workspace. Copy the current run's PNG first, then a
+ * mentioned path or URL. The quality gate and convert-webp.mjs follow.
+ * This does not generate a new image.
+ */
+export async function recoverCodexNativeImage({
+  workspace,
+  attempt,
+  texts = [],
+  download = downloadImageUrl,
+  startedAt = null,
+  codexHome = null,
+  env = process.env,
+} = {}) {
+  const target = path.join(workspace, `generation-${attempt}.png`);
+  if (nonEmptyFile(target)) return { ok: true, imagePath: target, source: 'generation_png' };
+  if (startedAt != null) {
+    const found = findNewestCodexExecPng({
+      codexHome: codexHome || codexHomeDir(env),
+      startedAt,
+      texts,
+    });
+    if (found) {
+      try {
+        fs.copyFileSync(found.path, target);
+        if (nonEmptyFile(target)) {
+          return {
+            ok: true,
+            imagePath: target,
+            source: 'codex_generated_images',
+            from: found.path,
+            threadId: found.threadId,
+          };
+        }
+      } catch {
+        if (fs.existsSync(target)) fs.rmSync(target, { force: true });
+      }
+    }
+  }
+  const refs = texts.filter(Boolean).map((text) => extractCodexImageRefs(text));
+  const files = uniqueStrings(refs.flatMap((ref) => ref.files));
+  const urls = uniqueStrings(refs.flatMap((ref) => ref.urls));
+  for (const file of files) {
+    const located = resolveMentionedImage(file, workspace);
+    if (!located) continue;
+    if (path.resolve(located) !== path.resolve(target)) fs.copyFileSync(located, target);
+    return { ok: true, imagePath: target, source: 'located_file', from: located };
+  }
+  for (const url of urls) {
+    try {
+      await download(url, target);
+      if (nonEmptyFile(target)) return { ok: true, imagePath: target, source: 'downloaded_url', url };
+    } catch {
+      if (fs.existsSync(target)) fs.rmSync(target, { force: true });
+    }
+  }
+  return { ok: false, reason: 'codex_exec_no_image' };
+}
+
+/** A recovered Codex PNG with the canonical size can enter convert-webp.mjs. */
+export function acceptRecoveredImageForConvert(quality, workspace, { dimensionsOf = imageDimensions } = {}) {
+  if (!quality || quality.ok || quality.reason !== 'missing_generation_artifacts' || !quality.imagePath) return quality;
+  const dimensions = dimensionsOf(quality.imagePath, workspace);
+  if (!dimensions.ok || dimensions.width !== CANONICAL_HERO_SIZE.width || dimensions.height !== CANONICAL_HERO_SIZE.height) {
+    return { ...quality, dimensions, reason: 'quality_gate_failed' };
+  }
+  return { ...quality, ok: true, dimensions, reason: null, recoveredWithoutQualityJson: true };
+}
+
 export function runNativeGeneration(workspace, candidate, canon, attempt, {
   assertToolchain = assertInsightsHeroToolchain,
   run = runCommand,
@@ -802,7 +1124,7 @@ export function runNativeGeneration(workspace, candidate, canon, attempt, {
   if (result.error?.code === 'ENOENT') throw insightsHeroToolchainError(['codex']);
   const diagnostics = codexExecDiagnostics(result, outputPath);
   return {
-    ok: result.status === 0 && fs.existsSync(path.join(workspace, `generation-${attempt}.png`)),
+    ok: result.status === 0 && nonEmptyFile(path.join(workspace, `generation-${attempt}.png`)),
     ...diagnostics,
     outputPath,
   };
@@ -954,9 +1276,37 @@ async function processCandidate({ root, config, candidate, runId, log, productio
     const codexFailures = [];
     const maxAttempts = resolveMaxGenerationAttempts();
     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-      log({ stage: 'CODEX_EXEC_STARTED', slug: candidate.slug, attempt, maxAttempts });
-      const generation = runNativeGeneration(workspace, candidate, canon, attempt);
+      const attemptStartedAt = Date.now();
+      log({ stage: 'CODEX_EXEC_STARTED', slug: candidate.slug, attempt, maxAttempts, attemptStartedAt });
+      let generation = runNativeGeneration(workspace, candidate, canon, attempt);
+      if (!generation.ok && generation.status === 0) {
+        const finalMessage = generation.finalMessagePath && fs.existsSync(generation.finalMessagePath)
+          ? fs.readFileSync(generation.finalMessagePath, 'utf8')
+          : generation.finalMessageTail;
+        const recovered = await recoverCodexNativeImage({
+          workspace,
+          attempt,
+          texts: [finalMessage, generation.stdoutTail, generation.stderrTail],
+          startedAt: attemptStartedAt,
+        });
+        if (recovered.ok) {
+          generation = { ...generation, ok: true, recoveredImage: recovered };
+          log({
+            stage: 'CODEX_IMAGE_RECOVERED',
+            slug: candidate.slug,
+            attempt,
+            source: recovered.source,
+            from: recovered.from || recovered.url || null,
+          });
+        }
+      }
       quality = generation.ok ? readQualityGate(workspace, attempt) : { ok: false, reason: generationFailureReason(generation) };
+      if (generation.recoveredImage) {
+        quality = acceptRecoveredImageForConvert(quality, workspace);
+        if (quality.recoveredWithoutQualityJson) {
+          log({ stage: 'RECOVERED_IMAGE_SIZE_OK', slug: candidate.slug, attempt, dimensions: quality.dimensions });
+        }
+      }
       if (!generation.ok) {
         const failure = codexFailureRecord(attempt, generation);
         codexFailures.push(failure);

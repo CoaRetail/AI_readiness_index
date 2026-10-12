@@ -9,6 +9,8 @@ import {
   discoverPrepublishCandidates,
   discoverRecoveryCandidates,
   integrateScheduledCanonicalHero,
+  listPrepublishHeroGaps,
+  morningPrepublishShouldGenerate,
   validateScheduledIntegration,
 } from '../lib/local-visual-worker.mjs';
 import {
@@ -55,6 +57,58 @@ test('A. scheduled future article without hero becomes prepublish candidate', ()
   assert.equal(result.candidates.length, 1);
   assert.equal(result.candidates[0].visualMode, VISUAL_MODES.PRIMARY_PREPUBLISH);
   fs.rmSync(root, { recursive: true, force: true });
+});
+
+test('rescheduled article without hero.webp is a gap regardless of planned card or package state', () => {
+  const { root, slug } = fixture();
+  const later = 'unreserved-then-rescheduled';
+  const schedulePath = path.join(root, 'insights/_scheduled/schedule.json');
+  const schedule = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
+  schedule.articles.push({
+    slug: later,
+    status: 'scheduled',
+    publishAt: '2026-09-05T10:00:00+09:00',
+    title: '予約を外したあと再設定',
+    packageReadiness: 'PACKAGE_READY',
+    heroReadyAt: '2026-08-01T00:00:00.000Z',
+    previousPublishAt: '2026-08-20T10:00:00+09:00',
+  });
+  fs.writeFileSync(schedulePath, JSON.stringify(schedule));
+  fs.mkdirSync(path.join(root, 'insights/_scheduled', later), { recursive: true });
+  fs.writeFileSync(path.join(root, 'insights/_scheduled', later, 'index.html'), '<article></article>');
+  fs.writeFileSync(path.join(root, 'insights/index.html'), `</p> hidden>公開中の記事はまだありません。
+<article class="insight-card planned" data-scheduled-slug="${slug}"><h3>other</h3></article>`);
+  const config = configFor(root, { maxCandidates: 1 });
+  const now = new Date('2026-09-04T09:00:00+09:00');
+  const gaps = listPrepublishHeroGaps(config, { schedule, now });
+  assert.deepEqual(gaps.gaps.map((article) => article.slug), [slug, later]);
+  const result = discoverPrepublishCandidates(config, { schedule, now });
+  assert.deepEqual(result.candidates.map((article) => article.slug), [slug]);
+  assert.ok(result.reasons.some((reason) => reason.slug === later && reason.reason === 'max_candidates'));
+  assert.equal(morningPrepublishShouldGenerate({
+    report: { ok: true, status: 'NO_TODAY_PUBLICATION' },
+    gaps: gaps.gaps,
+  }), true);
+  fs.rmSync(root, { recursive: true, force: true });
+});
+
+test('hero.webp on disk skips a HERO_PENDING article inside the horizon', () => {
+  const { root, slug } = fixture();
+  fs.writeFileSync(path.join(root, 'assets/insights', slug, 'hero.webp'), 'hero');
+  const schedule = JSON.parse(fs.readFileSync(path.join(root, 'insights/_scheduled/schedule.json'), 'utf8'));
+  schedule.articles[0].packageReadiness = 'HERO_PENDING';
+  const gaps = listPrepublishHeroGaps(configFor(root), {
+    schedule,
+    now: new Date('2026-09-04T09:00:00+09:00'),
+  });
+  assert.deepEqual(gaps.gaps, []);
+  assert.equal(gaps.reasons[0].reason, 'hero_exists');
+  fs.rmSync(root, { recursive: true, force: true });
+});
+
+test('morning preflight does not generate when today and the horizon already have heroes', () => {
+  assert.equal(morningPrepublishShouldGenerate({ report: { ok: true }, gaps: [] }), false);
+  assert.equal(morningPrepublishShouldGenerate({ report: { ok: false }, gaps: [] }), true);
 });
 
 test('B. hero exists → prepublish candidate skipped', () => {
