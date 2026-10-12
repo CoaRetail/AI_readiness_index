@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-09T01:01:37.343Z",
+  "updatedAt": "2026-10-12T11:26:55.436Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "branded-queries-ai-overviews",
+    "slug": "vendor-selection",
     "stage": "buffer_queued",
-    "at": "2026-10-09T01:01:37.343Z"
+    "at": "2026-10-12T11:26:55.436Z"
   }
 }

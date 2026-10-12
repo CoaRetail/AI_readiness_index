@@ -951,7 +951,9 @@
       "publishAttemptedAt": "2026-10-12T01:00:00.000Z",
       "publishAttemptCount": 1,
       "publicationState": "PUBLISHED",
-      "publishedAt": "2026-10-12T01:00:00.000Z"
+      "publishedAt": "2026-10-12T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-12T11:26:52.975Z",
+      "verificationAttemptCount": 1
     },
     {
       "slug": "cloudflare-ai-traffic-search-agent-training",

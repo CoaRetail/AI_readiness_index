@@ -372,13 +372,13 @@
       "linkedinPublishAt": "2026-10-12T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/vendor-selection/",
       "contentFile": "insights/_social/linkedin/posts/vendor-selection.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6accc3fe1d99033b8d1f211f",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-08-04T00:02:50.111Z",
-      "updatedAt": "2026-10-09T12:48:21.030Z"
+      "updatedAt": "2026-10-12T11:26:55.318Z"
     },
     {
       "id": "ARI-LI-023",

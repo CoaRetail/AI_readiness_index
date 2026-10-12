@@ -1250,7 +1250,34 @@
       "publishAt": "2026-10-09T12:00:00+09:00",
       "dueAtUtc": "2026-10-09T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-12T11:26:52.570Z",
+      "slug": "vendor-selection",
+      "channel": "linkedin",
+      "bufferUpdateId": "6accc3fe1d99033b8d1f211f",
+      "publishAt": "2026-10-12T21:00:00+09:00",
+      "dueAtUtc": "2026-10-12T12:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-12T11:26:52.570Z",
+      "slug": "vendor-selection",
+      "channel": "facebook",
+      "bufferUpdateId": "6accc3fe0543a6114d41d780",
+      "publishAt": "2026-10-12T21:00:00+09:00",
+      "dueAtUtc": "2026-10-12T12:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-12T11:26:52.570Z",
+      "slug": "vendor-selection",
+      "channel": "x",
+      "bufferUpdateId": "6accc3fffcd88e54a9443abf",
+      "publishAt": "2026-10-12T21:15:00+09:00",
+      "dueAtUtc": "2026-10-12T12:15:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-09T01:01:37.340Z"
+  "updatedAt": "2026-10-12T11:26:55.288Z"
 }
