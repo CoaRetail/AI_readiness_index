@@ -69,9 +69,7 @@ function buildFacebook(slug, liText) {
       CONTENT_LIMITS.facebook.max
     );
   }
-  if (text.length < CONTENT_LIMITS.facebook.min) {
-    text = `${text}\n\nAgent Readinessの視点で、情報設計を見直すヒントに。`.slice(0, CONTENT_LIMITS.facebook.max);
-  }
+  // Still short: leave it. Validation holds the channel. Do not repeat a sentence.
   return text.trim();
 }
 

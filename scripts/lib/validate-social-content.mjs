@@ -38,6 +38,10 @@ export function formatSocialValidationFailure(validation) {
     .join(' | ');
 }
 
+function blockerCodeForSocialError(error) {
+  return String(error).startsWith('duplicated ') ? 'SOCIAL_COPY_DUPLICATE' : 'SOCIAL_COPY_LENGTH';
+}
+
 /**
  * Blocking prepublish findings for articles that are still `scheduled`.
  * Uses the same trim + `text.length` rule as Buffer handoff (`validateChannelContent`).
@@ -47,8 +51,16 @@ export function socialCopyBlockersForEntry(slug, entry, { root = ROOT } = {}) {
   if (entry?.status !== 'scheduled') return [];
   const validation = validateSocialContentForSlug(slug, { root });
   if (validation.ok) return [];
-  return validation.errors.map(({ channel, errors }) => ({
-    code: 'SOCIAL_COPY_LENGTH',
-    message: `${slug} ${channel}: ${errors.join('; ')}`,
-  }));
+  return validation.errors.flatMap(({ channel, errors }) => {
+    const groups = new Map();
+    for (const error of errors) {
+      const code = blockerCodeForSocialError(error);
+      if (!groups.has(code)) groups.set(code, []);
+      groups.get(code).push(error);
+    }
+    return [...groups.entries()].map(([code, list]) => ({
+      code,
+      message: `${slug} ${channel}: ${list.join('; ')}`,
+    }));
+  });
 }

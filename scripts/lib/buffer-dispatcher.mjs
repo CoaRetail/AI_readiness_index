@@ -19,6 +19,7 @@ import {
 import { resolvePublishAt, addMinutesJst, toBufferDueAt } from './social-schedule.mjs';
 import { normalizePublicationDate } from './buffer-ledger.mjs';
 import { getChannelId, isChannelConfigured } from './buffer-client.mjs';
+import { findDuplicatedSocialUnits, formatDuplicatedSocialUnit } from './social-copy-units.mjs';
 
 function resolveChannelPublishAt(ch, channel, article, now) {
   let publishAt = resolvePublishAt(channel.publishAt, now, 30);
@@ -71,6 +72,9 @@ export function validateChannelContent(channelKey, text, articleUrl) {
   }
   if (channelKey === 'linkedin' && !text.includes('#AgentReadiness')) {
     errors.push('missing #AgentReadiness');
+  }
+  for (const unit of findDuplicatedSocialUnits(text)) {
+    errors.push(formatDuplicatedSocialUnit(unit));
   }
 
   return { ok: errors.length === 0, errors };
@@ -306,12 +310,16 @@ export async function processArticleChannels({
 
     const contentCheck = validateChannelContent(ch, text, article.articleUrl);
     if (!contentCheck.ok) {
+      // Hold the channel off Buffer. Short or duplicated copy is not padded
+      // and is not sent. FAILED stays retryable once the stored file is fixed.
       channel.status = CHANNEL_STATUSES.FAILED;
       channel.lastError = contentCheck.errors.join('; ');
       channel.attempts = (channel.attempts || 0) + 1;
       channel.lastAttemptAt = now.toISOString();
+      channel.updatedAt = now.toISOString();
       anyFailed = true;
-      results.push({ channel: ch, action: 'error', error: channel.lastError });
+      anyUpdated = true;
+      results.push({ channel: ch, action: 'held', error: channel.lastError });
       continue;
     }
 

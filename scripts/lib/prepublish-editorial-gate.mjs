@@ -518,7 +518,7 @@ export function runPrepublishEditorialGate(slug, options = {}) {
       seo: !blockers.some((b) => b.code.startsWith('SEO_')),
       links: !blockers.some((b) => b.code === 'INTERNAL_LINK_INTEGRITY'),
       ga4: !blockers.some((b) => b.code === 'GA4_INTEGRITY'),
-      social: !blockers.some((b) => b.code === 'SOCIAL_COPY_LENGTH'),
+      social: !blockers.some((b) => b.code === 'SOCIAL_COPY_LENGTH' || b.code === 'SOCIAL_COPY_DUPLICATE'),
       intent: !blockers.some((b) => b.code.includes('INTENT') || b.code.includes('PROPER_NOUN')),
     },
   });
