@@ -51,7 +51,7 @@ npm run visual:worker
 
 1 記事あたりの Codex 試行回数は `ARI_VISUAL_MAX_GENERATION_ATTEMPTS`（1 から 6 の整数、それ以外は既定の 3）。`codex exec` が画像を残せなかったときは、標準出力・標準エラーの末尾と `codex-N.final.txt` をワーカーログと終了 JSON の `codexFailures` に残す。
 
-`codex exec` が終了コード 0 なのに `generation-N.png` を書かず、画像 URL か別パスだけを返したときは、その URL を取得するか言及されたファイルを `generation-N.png` に揃える。`quality.json` があるときは従来の `readQualityGate` を通す。無いときは 1672×941 だけを確認して `convert-webp.mjs` に進む。新しい画像は作らない。Codex Native 以外（Pillow、GenerateImage、ffmpeg `drawtext`、単体の `cwebp`）には切り替えない。
+`codex exec` が終了コード 0 なのに `generation-N.png` を書かないときは、品質ゲートの前にワーカーがその PNG を揃える。Mac で確認した保存先は `$CODEX_HOME/generated_images/<thread-id>/exec-*.png`（`CODEX_HOME` の既定は `$HOME/.codex`）で、Codex はそこから作業ディレクトリへコピーしない。ワーカーは実行開始より新しい `exec-*.png` だけを見る。出力か、その実行中に更新されたセッションからスレッドが分かるときはそのディレクトリだけを使い、別スレッドの新しいファイルは取らない。スレッドが分からないときは、開始より新しいものの中で最も新しいファイルを使う。URL やメッセージ内の別パスは、そのコピーが無いときの予備です。`quality.json` があるときは従来の `readQualityGate` を通す。無いときは 1672×941 だけを確認して `convert-webp.mjs` に進む。新しい画像は作らない。Codex Native 以外（Pillow、GenerateImage、ffmpeg `drawtext`、単体の `cwebp`）には切り替えない。この回収は `scripts/lib/local-visual-worker.mjs` にあり、15:05 の launchd はマージ後のそのファイルを改変せずに実行する。
 
 ## 公開前ヒーローと一覧の予定カード
 

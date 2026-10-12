@@ -18,7 +18,9 @@ import {
   readQualityGate,
   readOriginMainSha,
   acceptRecoveredImageForConvert,
+  findNewestCodexExecPng,
   recoverCodexNativeImage,
+  WORKER_INTEGRITY_PATHS,
   releaseLock,
   runWorker,
   sortNewestFirst,
@@ -309,6 +311,109 @@ test('a bare Codex image URL with no file extension is downloaded', async () => 
   });
   assert.equal(recovered.source, 'downloaded_url');
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+function writeExecPng(file, contents, mtimeMs) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, contents);
+  const date = new Date(mtimeMs);
+  fs.utimesSync(file, date, date);
+}
+
+test('exec-*.png from the current Codex thread is copied to generation-N.png before the quality gate', async () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-exec-png-'));
+  const workspace = path.join(root, 'workspace');
+  fs.mkdirSync(workspace);
+  const startedAt = 1_700_000_000_000;
+  const thread = 'thread-current';
+  const other = 'thread-other01';
+  const images = path.join(root, 'generated_images');
+  writeExecPng(path.join(images, thread, 'exec-old.png'), 'old-bytes', startedAt - 10_000);
+  writeExecPng(path.join(images, thread, 'exec-mid.png'), 'mid-bytes', startedAt + 1_000);
+  writeExecPng(path.join(images, thread, 'exec-new.png'), 'new-bytes', startedAt + 10_000);
+  writeExecPng(path.join(images, thread, 'notes.png'), 'not-exec', startedAt + 20_000);
+  writeExecPng(path.join(images, other, 'exec-other.png'), 'other-bytes', startedAt + 30_000);
+  let downloaded = false;
+  const recovered = await recoverCodexNativeImage({
+    workspace,
+    attempt: 1,
+    texts: [`session id: ${thread}\nhttps://example.test/native/generation.png`],
+    startedAt,
+    codexHome: root,
+    download: async () => { downloaded = true; },
+  });
+  assert.equal(recovered.ok, true);
+  assert.equal(recovered.source, 'codex_generated_images');
+  assert.equal(recovered.threadId, thread);
+  assert.equal(recovered.from, path.join(images, thread, 'exec-new.png'));
+  assert.equal(fs.readFileSync(path.join(workspace, 'generation-1.png'), 'utf8'), 'new-bytes');
+  assert.equal(downloaded, false);
+  assert.equal(findNewestCodexExecPng({
+    codexHome: root,
+    startedAt,
+    texts: [`session id: ${thread}`],
+  }).name, 'exec-new.png');
+
+  const olderOnly = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-exec-old-'));
+  const olderWorkspace = path.join(olderOnly, 'workspace');
+  fs.mkdirSync(olderWorkspace);
+  writeExecPng(path.join(olderOnly, 'generated_images', thread, 'exec-old.png'), 'old-bytes', startedAt - 10_000);
+  writeExecPng(path.join(olderOnly, 'generated_images', other, 'exec-other.png'), 'other-bytes', startedAt + 30_000);
+  const missed = await recoverCodexNativeImage({
+    workspace: olderWorkspace,
+    attempt: 3,
+    texts: [`session id: ${thread}`],
+    startedAt,
+    codexHome: olderOnly,
+    download: async () => { throw new Error('no url'); },
+  });
+  assert.deepEqual({ ok: missed.ok, reason: missed.reason }, { ok: false, reason: 'codex_exec_no_image' });
+  assert.equal(fs.existsSync(path.join(olderWorkspace, 'generation-3.png')), false);
+  assert.equal(findNewestCodexExecPng({
+    codexHome: olderOnly,
+    startedAt,
+    texts: [`session id: ${thread}`],
+  }), null);
+
+  const notStolen = await recoverCodexNativeImage({
+    workspace: olderWorkspace,
+    attempt: 1,
+    texts: ['session id: thread-missing'],
+    startedAt,
+    codexHome: root,
+    download: async () => { throw new Error('must not take another thread'); },
+  });
+  assert.equal(notStolen.ok, false);
+
+  const unscoped = findNewestCodexExecPng({ codexHome: root, startedAt, texts: [] });
+  assert.equal(unscoped.threadId, other);
+  assert.equal(unscoped.name, 'exec-other.png');
+
+  const rolloutId = 'aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee';
+  const rolloutHome = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-codex-rollout-'));
+  writeExecPng(path.join(rolloutHome, 'generated_images', rolloutId, 'exec-rollout.png'), 'rollout-bytes', startedAt + 5_000);
+  writeExecPng(path.join(rolloutHome, 'generated_images', other, 'exec-later.png'), 'later-bytes', startedAt + 50_000);
+  const rollout = path.join(rolloutHome, 'sessions', '2026', '10', '12', `rollout-2026-10-12T15-05-01-${rolloutId}.jsonl`);
+  writeExecPng(rollout, '{"type":"session"}\n', startedAt + 1_000);
+  const fromRollout = findNewestCodexExecPng({ codexHome: rolloutHome, startedAt, texts: [] });
+  assert.equal(fromRollout.threadId, rolloutId);
+  assert.equal(fromRollout.name, 'exec-rollout.png');
+
+  const prompt = createBriefPrompt({ articleHtml: 'article', canon: 'canon', slug: 'x', attempt: 2, outputDir: workspace });
+  assert.match(prompt, /generated_images\/<thread-id>\/exec-\*\.png/);
+  assert.match(prompt, /newest exec-\*\.png for this thread that is newer than this attempt/);
+  assert.ok(WORKER_INTEGRITY_PATHS.includes('scripts/lib/local-visual-worker.mjs'));
+  const body = fs.readFileSync(new URL('../lib/local-visual-worker.mjs', import.meta.url), 'utf8');
+  const processBody = body.slice(body.indexOf('async function processCandidate'));
+  const started = processBody.indexOf('const attemptStartedAt = Date.now()');
+  const run = processBody.indexOf('runNativeGeneration(workspace, candidate, canon, attempt)');
+  const recover = processBody.indexOf('startedAt: attemptStartedAt');
+  const gate = processBody.indexOf('readQualityGate(workspace, attempt)');
+  assert.ok(started !== -1 && started < run && run < recover && recover < gate);
+  assert.doesNotMatch(recoverCodexNativeImage.toString(), /Pillow|GenerateImage|drawtext|cwebp/);
+  fs.rmSync(root, { recursive: true, force: true });
+  fs.rmSync(olderOnly, { recursive: true, force: true });
+  fs.rmSync(rolloutHome, { recursive: true, force: true });
 });
 
 test('codex output with no image URL stays codex_exec_no_image', async () => {

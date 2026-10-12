@@ -356,6 +356,7 @@ and one optional Japanese subline of 12 characters; do not render body copy,
 labels, paragraphs, punctuation-heavy text, or the full article title.
 After generation, save quality.json with boolean fields: TEXT_CORRECT, JAPANESE_CORRECT, NO_GARBLED_TEXT, TYPOGRAPHIC_ONLY, ARTICLE_RELEVANT, SAFE_AREA_PASS, THUMBNAIL_READABLE, VISUAL_CANON_PASS, and numeric width and height. Set a field false if it fails.
 If the native image tool returns a URL or writes the PNG under another filename, copy those bytes to generation-${attempt}.png before you finish and put that URL or path in the final message.
+The Native tool also saves the PNG at $CODEX_HOME/generated_images/<thread-id>/exec-*.png (CODEX_HOME defaults to ~/.codex) and does not place that file in this workspace. Copy the newest exec-*.png from this thread into generation-${attempt}.png and include that absolute path in the final message. If you leave it there, the worker copies the newest exec-*.png for this thread that is newer than this attempt, before the quality gate.
 Do not create alternate images or derivatives.
 
 AUTHORITATIVE VISUAL CANON:
@@ -896,19 +897,179 @@ export async function downloadImageUrl(url, dest, {
   return dest;
 }
 
+const EXEC_PNG_NAME = /^exec-.*\.png$/i;
+
+export function codexHomeDir(env = process.env) {
+  const configured = env?.CODEX_HOME;
+  if (configured != null && String(configured).trim()) return path.resolve(String(configured).trim());
+  return path.join(os.homedir(), '.codex');
+}
+
+function stripAnsi(text) {
+  return String(text || '').replace(/\u001b\[[0-9;]*[A-Za-z]/g, '');
+}
+
+function safePathSegment(value) {
+  const id = String(value || '').trim();
+  if (!/^[A-Za-z0-9_-]{8,}$/.test(id)) return null;
+  if (id !== path.basename(id) || id === '.' || id === '..') return null;
+  return id;
+}
+
+/** Thread id Codex printed, or the directory named in a generated_images/exec-*.png path. */
+export function extractCodexThreadId(texts) {
+  const raw = stripAnsi((texts || []).filter(Boolean).join('\n'));
+  const patterns = [
+    /generated_images\/([A-Za-z0-9_-]{8,})\/exec-[A-Za-z0-9_.-]+\.png/gi,
+    /(?:session|thread)[ _-]?id\s*[:=]\s*["']?([A-Za-z0-9_-]{8,})/gi,
+    /"(?:thread_id|session_id|threadId|sessionId)"\s*:\s*"([A-Za-z0-9_-]{8,})"/gi,
+  ];
+  let found = null;
+  let index = -1;
+  for (const pattern of patterns) {
+    for (const match of raw.matchAll(pattern)) {
+      const id = safePathSegment(match[1]);
+      if (!id || match.index < index) continue;
+      found = id;
+      index = match.index;
+    }
+  }
+  return found;
+}
+
+function threadIdFromRolloutFilename(name) {
+  const match = String(name).match(/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\.jsonl$/i);
+  return match ? match[1] : null;
+}
+
+function rolloutThreadIdsSince(codexHome, startedAt) {
+  const root = path.join(codexHome, 'sessions');
+  if (!fs.existsSync(root)) return [];
+  const found = new Set();
+  const stack = [root];
+  while (stack.length) {
+    const dir = stack.pop();
+    let entries;
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { continue; }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+        continue;
+      }
+      if (!entry.isFile()) continue;
+      const id = threadIdFromRolloutFilename(entry.name);
+      if (!id) continue;
+      try {
+        if (fs.statSync(full).mtimeMs > startedAt) found.add(id);
+      } catch { /* unreadable rollout */ }
+    }
+  }
+  return [...found];
+}
+
+function execPngsInThread(dir, startedAt) {
+  let entries;
+  try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return []; }
+  const files = [];
+  for (const entry of entries) {
+    if (!entry.isFile() || !EXEC_PNG_NAME.test(entry.name)) continue;
+    const full = path.join(dir, entry.name);
+    let stat;
+    try { stat = fs.statSync(full); } catch { continue; }
+    if (!stat.isFile() || stat.size <= 0 || !(stat.mtimeMs > startedAt)) continue;
+    files.push({ path: full, mtimeMs: stat.mtimeMs, name: entry.name });
+  }
+  files.sort((a, b) => (b.mtimeMs - a.mtimeMs) || b.name.localeCompare(a.name));
+  return files;
+}
+
 /**
- * Codex Native sometimes exits 0 with only an image URL or a differently named file.
- * Copy or download that image to generation-N.png, then the existing quality gate
- * and convert-webp.mjs path continues. This does not generate a new image.
+ * Newest exec-*.png Codex saved for this run under CODEX_HOME/generated_images.
+ * A known thread is the only directory searched. Otherwise only files newer than
+ * the attempt start qualify, and the newest of those is the current run.
+ */
+export function findNewestCodexExecPng({
+  codexHome,
+  startedAt,
+  texts = [],
+  threadId = null,
+} = {}) {
+  const start = Number(startedAt);
+  if (!codexHome || !Number.isFinite(start)) return null;
+  const root = path.join(codexHome, 'generated_images');
+  let threadNames;
+  try {
+    threadNames = fs.readdirSync(root, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() && safePathSegment(entry.name))
+      .map((entry) => entry.name);
+  } catch {
+    return null;
+  }
+  const known = new Set(threadNames);
+  const explicit = safePathSegment(threadId) || extractCodexThreadId(texts);
+  let scoped = null;
+  if (explicit) scoped = explicit;
+  else {
+    const rollouts = rolloutThreadIdsSince(codexHome, start).filter((id) => known.has(id));
+    if (rollouts.length === 1) scoped = rollouts[0];
+  }
+  if (scoped) {
+    if (!known.has(scoped)) return null;
+    const newest = execPngsInThread(path.join(root, scoped), start)[0];
+    return newest ? { ...newest, threadId: scoped } : null;
+  }
+  const fresh = [];
+  for (const name of threadNames) {
+    for (const file of execPngsInThread(path.join(root, name), start)) {
+      fresh.push({ ...file, threadId: name });
+    }
+  }
+  fresh.sort((a, b) => (b.mtimeMs - a.mtimeMs) || b.name.localeCompare(a.name));
+  return fresh[0] || null;
+}
+
+/**
+ * Codex Native sometimes exits 0 without writing generation-N.png.
+ * On the Mac it saves ~/.codex/generated_images/<thread-id>/exec-*.png and does not
+ * copy that file into the workspace. Copy the current run's PNG first, then a
+ * mentioned path or URL. The quality gate and convert-webp.mjs follow.
+ * This does not generate a new image.
  */
 export async function recoverCodexNativeImage({
   workspace,
   attempt,
   texts = [],
   download = downloadImageUrl,
+  startedAt = null,
+  codexHome = null,
+  env = process.env,
 } = {}) {
   const target = path.join(workspace, `generation-${attempt}.png`);
   if (nonEmptyFile(target)) return { ok: true, imagePath: target, source: 'generation_png' };
+  if (startedAt != null) {
+    const found = findNewestCodexExecPng({
+      codexHome: codexHome || codexHomeDir(env),
+      startedAt,
+      texts,
+    });
+    if (found) {
+      try {
+        fs.copyFileSync(found.path, target);
+        if (nonEmptyFile(target)) {
+          return {
+            ok: true,
+            imagePath: target,
+            source: 'codex_generated_images',
+            from: found.path,
+            threadId: found.threadId,
+          };
+        }
+      } catch {
+        if (fs.existsSync(target)) fs.rmSync(target, { force: true });
+      }
+    }
+  }
   const refs = texts.filter(Boolean).map((text) => extractCodexImageRefs(text));
   const files = uniqueStrings(refs.flatMap((ref) => ref.files));
   const urls = uniqueStrings(refs.flatMap((ref) => ref.urls));
@@ -1115,7 +1276,8 @@ async function processCandidate({ root, config, candidate, runId, log, productio
     const codexFailures = [];
     const maxAttempts = resolveMaxGenerationAttempts();
     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-      log({ stage: 'CODEX_EXEC_STARTED', slug: candidate.slug, attempt, maxAttempts });
+      const attemptStartedAt = Date.now();
+      log({ stage: 'CODEX_EXEC_STARTED', slug: candidate.slug, attempt, maxAttempts, attemptStartedAt });
       let generation = runNativeGeneration(workspace, candidate, canon, attempt);
       if (!generation.ok && generation.status === 0) {
         const finalMessage = generation.finalMessagePath && fs.existsSync(generation.finalMessagePath)
@@ -1125,6 +1287,7 @@ async function processCandidate({ root, config, candidate, runId, log, productio
           workspace,
           attempt,
           texts: [finalMessage, generation.stdoutTail, generation.stderrTail],
+          startedAt: attemptStartedAt,
         });
         if (recovered.ok) {
           generation = { ...generation, ok: true, recoveredImage: recovered };
