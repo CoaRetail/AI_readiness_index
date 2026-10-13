@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T11:26:55.436Z",
+  "updatedAt": "2026-10-13T01:00:36.709Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "vendor-selection",
+    "slug": "bing-edge-ai-mode-naming",
     "stage": "buffer_queued",
-    "at": "2026-10-12T11:26:55.436Z"
+    "at": "2026-10-13T01:00:36.709Z"
   }
 }

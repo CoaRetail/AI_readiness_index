@@ -959,13 +959,13 @@
       "linkedinPublishAt": "2026-10-13T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/bing-edge-ai-mode-naming/",
       "contentFile": "insights/_social/linkedin/posts/bing-edge-ai-mode-naming.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6acd82b33d6121df40379cb1",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-13T01:00:00.208Z",
-      "updatedAt": "2026-10-13T01:00:00.208Z",
+      "updatedAt": "2026-10-13T01:00:36.708Z",
       "series": "v2-stock"
     }
   ]

@@ -1817,7 +1817,9 @@
       "activatedAt": "2026-10-01T12:00:00.000Z",
       "publishAttemptedAt": "2026-10-13T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-13T01:00:00.000Z"
+      "publishedAt": "2026-10-13T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-13T01:00:33.588Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "ai-contribution-pilot-economics",
