@@ -197,3 +197,45 @@ test('T18 scheduled article with short LinkedIn copy is BLOCKED', () => {
   assert.equal(published.blockers.some((b) => b.code === 'SOCIAL_COPY_LENGTH'), false);
   fs.rmSync(root, { recursive: true, force: true });
 });
+
+test('T19 scheduled copy with the vendor-selection repeated sentence is BLOCKED', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ari-prepublish-dup-'));
+  const slug = 'bing-edge-ai-mode-naming';
+  const url = `https://readiness.coaretail.com/insights/${slug}/`;
+  const sentence = '施策を増やしてもAIに選ばれない理由は、情報の連続性の欠如にあることがあります。';
+  const linkedin = [
+    '予約SaaS選定のReadiness視点——経営・マーケティングの論点として、現場で問われているテーマです。',
+    '',
+    'SaaS選定は機能比較にReadiness要件を加える。',
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    '詳細はInsightsで解説しています。',
+    '',
+    url,
+    '',
+    '#AgentReadiness #AISearch #SaaS',
+    '',
+  ].join('\n');
+  fs.mkdirSync(path.join(root, 'insights/_social/linkedin/posts'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'insights/_social/facebook/posts'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'insights/_social/x/posts'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'insights/_social/linkedin/posts', `${slug}.md`), linkedin);
+  fs.writeFileSync(path.join(root, 'insights/_social/facebook/posts', `${slug}.md`), `${'b'.repeat(300)} ${url} #AI\n`);
+  fs.writeFileSync(path.join(root, 'insights/_social/x/posts', `${slug}.md`), `${'c'.repeat(80)} ${url} #AI\n`);
+  const blocked = runPrepublishEditorialGate(slug, {
+    html: readScheduled(slug),
+    scheduleEntry: { ...scheduleEntry(slug), status: 'scheduled' },
+    socialRoot: root,
+  });
+  assert.equal(blocked.status, 'BLOCKED');
+  assert.ok(blocked.blockers.some((b) => b.code === 'SOCIAL_COPY_DUPLICATE' && /duplicated sentence \(4\)/.test(b.message)));
+  assert.equal(blocked.checks.social, false);
+  fs.rmSync(root, { recursive: true, force: true });
+});

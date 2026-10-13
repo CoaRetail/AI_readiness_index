@@ -5,6 +5,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -31,6 +32,7 @@ import { duplicateBufferLedgerKeys, duplicateBufferChannelKeys, assertBufferLedg
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const BUFFER_QUEUE = path.join(ROOT, 'insights/_social/buffer/queue.json');
+const VENDOR_PAD = '施策を増やしてもAIに選ばれない理由は、情報の連続性の欠如にあることがあります。';
 
 function mockArticle(overrides = {}) {
   const url = 'https://readiness.coaretail.com/insights/ai-search-shift/';
@@ -145,6 +147,144 @@ test('pickTodayArticle returns scheduled article for transfer day', () => {
   const queue = { posts: [article] };
   const r = pickTodayArticle(queue, '2026-08-07');
   assert.equal(r.article?.slug, 'transfer-day-test');
+});
+
+test('duplicated vendor-selection sentence holds the channel and is not posted', async () => {
+  const sentence = '施策を増やしてもAIに選ばれない理由は、情報の連続性の欠如にあることがあります。';
+  const url = 'https://readiness.coaretail.com/insights/vendor-selection/';
+  const text = [
+    '予約SaaS選定のReadiness視点——経営・マーケティングの論点として、現場で問われているテーマです。',
+    '',
+    'SaaS選定は機能比較にReadiness要件を加える。',
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    sentence,
+    '',
+    '詳細はInsightsで解説しています。',
+    '',
+    url,
+    '',
+    '#AgentReadiness #AISearch #SaaS',
+  ].join('\n');
+  const contentFile = path.join(os.tmpdir(), `vendor-selection-linkedin-${process.pid}.md`);
+  fs.writeFileSync(contentFile, text);
+  const article = {
+    slug: 'vendor-selection',
+    articleUrl: url,
+    status: 'scheduled',
+    channels: {
+      linkedin: {
+        channelIdEnv: 'BUFFER_CHANNEL_ID_LINKEDIN',
+        contentFile,
+        publishAt: '2026-10-12T11:30:00+09:00',
+        status: CHANNEL_STATUSES.SCHEDULED,
+        bufferUpdateId: null,
+      },
+    },
+  };
+  const created = [];
+  const paths = {
+    queue: path.join(os.tmpdir(), `ari-dup-queue-${process.pid}.json`),
+    publishedLog: path.join(os.tmpdir(), `ari-dup-published-${process.pid}.json`),
+    failedLog: path.join(os.tmpdir(), `ari-dup-failed-${process.pid}.json`),
+  };
+  const first = await processArticleChannels({
+    article,
+    queue: { posts: [article] },
+    now: new Date('2026-10-12T12:00:00+09:00'),
+    dryRun: false,
+    requestedChannels: ['linkedin'],
+    verifyArticleUrl: async () => ({ ok: true, mediaUrl: null }),
+    createBufferPost: async () => {
+      created.push('linkedin');
+      return { postId: 'should-not-post', error: null, rejected: false };
+    },
+    getConfig: () => ({
+      accessToken: 'tok',
+      channelIds: { linkedin: 'li', facebook: 'fb', x: 'x' },
+    }),
+    paths,
+  });
+  assert.equal(created.length, 0);
+  assert.equal(first.results[0].action, 'held');
+  assert.match(first.results[0].error, /duplicated sentence \(4\)/);
+  assert.equal(article.channels.linkedin.status, CHANNEL_STATUSES.FAILED);
+  assert.equal(first.exitCode, 1);
+
+  const second = await processArticleChannels({
+    article,
+    queue: { posts: [article] },
+    now: new Date('2026-10-12T12:10:00+09:00'),
+    dryRun: false,
+    requestedChannels: ['linkedin'],
+    verifyArticleUrl: async () => ({ ok: true, mediaUrl: null }),
+    createBufferPost: async () => {
+      created.push('retry');
+      return { postId: 'should-not-post', error: null, rejected: false };
+    },
+    getConfig: () => ({
+      accessToken: 'tok',
+      channelIds: { linkedin: 'li', facebook: 'fb', x: 'x' },
+    }),
+    paths,
+  });
+  assert.equal(created.length, 0);
+  assert.equal(second.results[0].action, 'held');
+  assert.equal(article.channels.linkedin.bufferUpdateId ?? null, null);
+  fs.rmSync(contentFile, { force: true });
+});
+
+test('short LinkedIn copy is held instead of being padded', async () => {
+  const url = 'https://readiness.coaretail.com/insights/short-copy/';
+  const contentFile = path.join(os.tmpdir(), `short-copy-linkedin-${process.pid}.md`);
+  fs.writeFileSync(contentFile, `短すぎる原稿です。\n\n${url}\n#AgentReadiness #AI`);
+  const article = {
+    slug: 'short-copy',
+    articleUrl: url,
+    status: 'scheduled',
+    channels: {
+      linkedin: {
+        channelIdEnv: 'BUFFER_CHANNEL_ID_LINKEDIN',
+        contentFile,
+        publishAt: '2026-10-13T11:30:00+09:00',
+        status: CHANNEL_STATUSES.SCHEDULED,
+        bufferUpdateId: null,
+      },
+    },
+  };
+  const created = [];
+  const result = await processArticleChannels({
+    article,
+    queue: { posts: [article] },
+    now: new Date('2026-10-13T02:00:00+09:00'),
+    dryRun: false,
+    requestedChannels: ['linkedin'],
+    verifyArticleUrl: async () => ({ ok: true }),
+    createBufferPost: async () => {
+      created.push('linkedin');
+      return { postId: 'should-not-post', error: null, rejected: false };
+    },
+    getConfig: () => ({
+      accessToken: 'tok',
+      channelIds: { linkedin: 'li' },
+    }),
+    paths: {
+      queue: path.join(os.tmpdir(), `ari-short-queue-${process.pid}.json`),
+      publishedLog: path.join(os.tmpdir(), `ari-short-published-${process.pid}.json`),
+      failedLog: path.join(os.tmpdir(), `ari-short-failed-${process.pid}.json`),
+    },
+  });
+  assert.equal(created.length, 0);
+  assert.equal(result.results[0].action, 'held');
+  assert.match(result.results[0].error, /length \d+ outside 450-900/);
+  assert.equal(article.channels.linkedin.status, CHANNEL_STATUSES.FAILED);
+  assert.equal(fs.readFileSync(contentFile, 'utf8').includes(VENDOR_PAD), false);
+  fs.rmSync(contentFile, { force: true });
 });
 
 test('validateChannelContent enforces X length', () => {
