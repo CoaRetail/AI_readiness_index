@@ -1774,7 +1774,7 @@
     {
       "slug": "bing-edge-ai-mode-naming",
       "publishAt": "2026-10-13T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "BingとEdgeはAI Modeと呼ぶ——行き先はCopilot Searchのまま",
       "cardSummary": "BingのタブとEdgeのアドレスバーがAI Modeを試しています。遷移先はCopilot Searchです。公式の案内は、製品名をCopilot Searchのままにしています。",
       "llmsLabel": "表示はAI Mode、文書はCopilot",
@@ -1812,9 +1812,12 @@
       "scheduledPublishAt": "2026-10-13T10:00:00+09:00",
       "slotDate": "2026-10-13",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261013-DAILY-001",
-      "activatedAt": "2026-10-01T12:00:00.000Z"
+      "activatedAt": "2026-10-01T12:00:00.000Z",
+      "publishAttemptedAt": "2026-10-13T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-13T01:00:00.000Z"
     },
     {
       "slug": "ai-contribution-pilot-economics",
