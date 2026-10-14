@@ -2789,6 +2789,54 @@
       "series": "v2-stock"
     },
     {
+      "slug": "ai-contribution-pilot-economics",
+      "articleUrl": "https://readiness.coaretail.com/insights/ai-contribution-pilot-economics/",
+      "status": "scheduled",
+      "articlePublishAt": "2026-10-14T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-14T10:30:00+09:00",
+      "channels": {
+        "linkedin": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
+          "contentFile": "insights/_social/linkedin/posts/ai-contribution-pilot-economics.md",
+          "publishAt": "2026-10-14T11:30:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-14T01:00:00.567Z"
+        },
+        "facebook": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
+          "contentFile": "insights/_social/facebook/posts/ai-contribution-pilot-economics.md",
+          "publishAt": "2026-10-14T11:45:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-14T01:00:00.567Z"
+        },
+        "x": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
+          "contentFile": "insights/_social/x/posts/ai-contribution-pilot-economics.md",
+          "publishAt": "2026-10-14T12:00:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-14T01:00:00.567Z"
+        }
+      },
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-14T01:00:00.566Z",
+      "updatedAt": "2026-10-14T01:00:00.566Z",
+      "series": "v2-stock"
+    },
+    {
       "slug": "ai-agent-marketing-shift",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-agent-marketing-shift/",
       "status": "buffer_queued",

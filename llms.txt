@@ -81,6 +81,7 @@
 - [ブランド名とAI Overviews](https://readiness.coaretail.com/insights/branded-queries-ai-overviews/): Insights Column（2026-10-09）
 - [予約SaaS選定のReadiness視点](https://readiness.coaretail.com/insights/vendor-selection/): Insights Column（2026-10-12）
 - [表示はAI Mode、文書はCopilot](https://readiness.coaretail.com/insights/bing-edge-ai-mode-naming/): Insights Column（2026-10-13）
+- [支払いは広告収入の0.1%程度](https://readiness.coaretail.com/insights/ai-contribution-pilot-economics/): Insights Column（2026-10-14）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

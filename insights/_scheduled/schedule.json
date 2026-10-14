@@ -1824,7 +1824,7 @@
     {
       "slug": "ai-contribution-pilot-economics",
       "publishAt": "2026-10-14T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AI Contribution Pilotは広告収入の0.1%程度——支払いを救済のサイズとして見る",
       "cardSummary": "The Information経由で、約100媒体、広告収入の約0.1%です。幅は数カ月で1,000ドル未満から、年100万ドル超まで。計算式は不透明です。",
       "llmsLabel": "支払いは広告収入の0.1%程度",
@@ -1861,9 +1861,12 @@
       "scheduledPublishAt": "2026-10-14T10:00:00+09:00",
       "slotDate": "2026-10-14",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261014-DAILY-001",
-      "activatedAt": "2026-10-01T12:00:00.000Z"
+      "activatedAt": "2026-10-01T12:00:00.000Z",
+      "publishAttemptedAt": "2026-10-14T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-14T01:00:00.000Z"
     },
     {
       "slug": "aio-citation-cards-and-loading",
