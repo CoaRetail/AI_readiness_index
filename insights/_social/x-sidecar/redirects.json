@@ -777,6 +777,30 @@
       "date": "2026-10-14",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261015c",
+      "destination": "https://readiness.coaretail.com/insights/uk-cma-choice-screens-three-shelves/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261015_0800",
+      "article_slug": "uk-cma-choice-screens-three-shelves",
+      "date": "2026-10-15",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261015d",
+      "destination": "https://readiness.coaretail.com/insights/schema-not-ai-citation-cheat-code/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261015_1500",
+      "article_slug": "schema-not-ai-citation-cheat-code",
+      "date": "2026-10-15",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261015e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261015_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-10-15",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
