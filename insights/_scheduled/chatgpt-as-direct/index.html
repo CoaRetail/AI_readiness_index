@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/ga4.js" async></script>
+  <script src="/assets/analytics.js" defer></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか | Agent Readiness Insights</title>
+<meta name="description" content="ChatGPTのリンクからUTMのutm_source=chatgpt.comとリファラーが消えた、と報じられています。訪問は分析上、直接に入ります。OpenAIの発表はなく、数字は報告です。">
+<link rel="canonical" href="https://readiness.coaretail.com/insights/chatgpt-as-direct/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか">
+<meta property="og:description" content="ChatGPTのリンクからUTMのutm_source=chatgpt.comとリファラーが消えた、と報じられています。訪問は分析上、直接に入ります。OpenAIの発表はなく、数字は報告です。">
+<meta property="og:url" content="https://readiness.coaretail.com/insights/chatgpt-as-direct/">
+<meta property="og:site_name" content="Agent Readiness Research Hub">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://readiness.coaretail.com/assets/insights/chatgpt-as-direct/hero.webp">
+<meta name="twitter:image" content="https://readiness.coaretail.com/assets/insights/chatgpt-as-direct/hero.webp">
+
+<meta name="twitter:title" content="ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか">
+<meta name="twitter:description" content="ChatGPTのリンクからUTMのutm_source=chatgpt.comとリファラーが消えた、と報じられています。訪問は分析上、直接に入ります。OpenAIの発表はなく、数字は報告です。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか",
+  "description": "ChatGPTのリンクからUTMのutm_source=chatgpt.comとリファラーが消えた、と報じられています。訪問は分析上、直接に入ります。OpenAIの発表はなく、数字は報告です。",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "author": {
+    "@type": "Organization",
+    "name": "合同会社コア・リテール"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "合同会社コア・リテール",
+    "url": "https://www.coaretail.com"
+  },
+  "mainEntityOfPage": "https://readiness.coaretail.com/insights/chatgpt-as-direct/",
+  "inLanguage": "ja"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/hub-animations.css">
+<link rel="stylesheet" href="../../assets/insights/hero.css">
+<style>
+:root {
+  --bg: #FFFFFF; --bg-elevated: #FAFAFA; --bg-card: #F4F4F5;
+  --border: rgba(0,0,0,0.08);
+  --text: #09090B; --text-secondary: #52525B; --text-muted: #71717A;
+  --cta: #09090B; --cta-text: #FFFFFF;
+  --radius: 12px; --max: 720px; --max-wide: 1120px; --nav-h: 64px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; }
+.article-container { max-width: var(--max); margin: 0 auto; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--text-muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta { background: var(--cta); color: var(--cta-text) !important; padding: 8px 14px; border-radius: 8px; font-size: 13px !important; font-weight: 500 !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.article-header { padding: calc(var(--nav-h) + 56px) 0 40px; }
+.breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.article-meta time { font-weight: 600; }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; background: var(--bg-card); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.25; margin-bottom: 20px; }
+.lead { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 40px; }
+.article-body h2 { font-size: 1.375rem; font-weight: 600; margin: 48px 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+.article-body p { margin-bottom: 1.25em; color: var(--text-secondary); }
+.article-body ul { margin: 0 0 1.25em 1.25em; color: var(--text-secondary); }
+.article-body li { margin-bottom: 0.5em; }
+.article-body strong { color: var(--text); font-weight: 600; }
+.article-body a { color: var(--text); }
+.article-body blockquote { border-left: 3px solid var(--text); padding: 12px 20px; margin: 24px 0; background: var(--bg-elevated); font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+.article-body blockquote strong { color: var(--text); }
+.article-body .closing-lines { margin-top: 1.5em; line-height: 2; }
+.article-cta { margin: 48px 0; padding: 28px; background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border); }
+.article-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.article-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn { display: inline-flex; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none; background: var(--cta); color: var(--cta-text); margin-right: 8px; margin-bottom: 8px; }
+.btn-navy { background: #0D1B3E; color: #FFFFFF; }
+.btn-navy:hover { background: #162040; color: #FFFFFF; }
+.article-cta .btn-navy,
+.article-cta .btn-navy:hover { color: #FFFFFF; }
+.article-body a.btn-navy,
+.article-body a.btn-navy:hover { color: #FFFFFF; }
+.sitewide-cta { margin: 48px 0 24px; padding: 24px 28px; background: #F4F4F5; border-radius: var(--radius); border: 1px solid var(--border); }
+.sitewide-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.sitewide-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.back-link { display: inline-block; margin: 40px 0 80px; font-size: 14px; color: var(--text-muted); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.related-insights { margin: 48px 0 0; }
+.related-insights h2 { font-size: 1.375rem; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.related-insights ul { margin: 0 0 0 1.25em; color: var(--text-secondary); }
+.related-insights li { margin-bottom: 0.5em; }
+.related-insights a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.research-footer { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+.footer-brand { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.footer-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+.footer-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+.footer-layers { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 24px; }
+.footer-layers a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.footer-copy { font-size: 13px; color: var(--text-muted); padding-top: 20px; border-top: 1px solid var(--border); }
+.footer-copy a { color: var(--text-muted); text-decoration: none; }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: var(--nav-h); left: 0; right: 0; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 20px 24px; gap: 16px; align-items: flex-start;
+  }
+  .nav-toggle { display: block; }
+  .nav { position: relative; }
+}
+</style>
+  <link rel="stylesheet" href="/assets/sitewide-cta.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Agent Readiness <span>Research Hub</span></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/framework/">Framework</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/whitepaper/">Whitepaper</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/insights/" class="active">Insights</a></li>
+      <li><a href="/methodology.html">Methodology</a></li>
+      <li><a href="/report/" class="nav-cta">診断レポート</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <header class="article-header container">
+    <div class="article-container">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="/">Agent Readiness</a><span aria-hidden="true">/</span>
+        <a href="/insights/">Insights</a><span aria-hidden="true">/</span>
+        <span>直接に入る</span>
+      </nav>
+      <p class="article-meta">
+        <time datetime="2026-10-15">2026.10.15</time>
+        <span class="article-tag">Column</span>
+      </p>
+      <h1>ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか</h1>
+      <p class="lead">ChatGPTの訪問が「直接」に入る、と報じられています。UTMのutm_source=chatgpt.comとリファラーがなく、分析は訪問を直接に分類します。OpenAIの発表はなく、数字は報告です。</p>
+    </div>
+  </header>
+  <figure class="insight-hero"><img src="/assets/insights/chatgpt-as-direct/hero.webp" alt="chatgpt-as-direct のInsight Hero" width="1672" height="941" loading="eager"></figure>
+
+  <article class="article-body container" data-article-slug="chatgpt-as-direct" data-article-title="ChatGPTの訪問が「直接」に入る——計測が消えたのか、訪問が減ったのか" data-editorial-intent="EVIDENCE">
+    <div class="article-container">
+      <div class="sitewide-cta" data-cta-profile="chatgpt-as-direct" data-editorial-intent="EVIDENCE">
+        <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_chatgpt-as-direct_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/chatgpt-as-direct/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_chatgpt-as-direct_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/chatgpt-as-direct/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
+      </div>
+<h2>REPORTED｜タグもリファラーもない、という報告</h2>
+      <p>Search Engine Roundtableは2026年10月14日、Barry Schwartz氏の記事で、ChatGPTの結果に付いていたUTMが外れたように見える、と書いています。始まりはGPT-6の公開の週だ、とも書いています。6月にOpenAIがリンクへUTMを付け、10月にそれを外した、という対比は同記事の整理です。意図的だったかは、同記事も分からない、と書いています。OpenAIはこの変更を発表していません。以下は報告であり、OpenAIが確認した仕様ではありません。<a href="https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html">Search Engine Roundtable</a></p>
+      <p>同記事が引くのは、AdobeのCedric Huesler氏のLinkedInです。氏は、GPT-6がリンクを新しいタブで開き、noopener と noreferrer を付ける、と書いています。クエリの utm_source=chatgpt.com は外れる、とも書いています。タグもなくリファラーもないので、分析は訪問を直接に入れる、という説明です。この開き方は、氏が観測した記述です。すべての画面でそうなる、とOpenAIが書いた文ではありません。</p>
+<h2>ADOBE｜約500ページは、1社の比較</h2>
+      <p>Huesler氏が比べたのは、ChatGPT経由が訪問の5%以上だった約500ページです。10月9日から13日を、その前の週と並べています。ChatGPTは1日3.1万件減り、同じページの直接は1日2.6万件増えました。検索は7%減で、そのページ以外の検索と同じ減り方だ、と氏は書いています。ChatGPTを失ったページのうち、直接が増えたのは3分の2です。前の週は、増えるかどうかが半々だった、とも書いています。同じページで検索が増えたのは45%だ、とも書いています。</p>
+      <p>新しい直接の訪問者は、ChatGPT経由の訪問者に振る舞いが近い、と氏は書いています。モバイルで、サイトに初めて来た人に出る同意バナーを見た割合は、36%から44%になりました。ChatGPT経由では55%です。約500ページ、3.1万件、2.6万件、5%、7%、45%、36%、44%、55%は、いずれも氏の比較です。Adobeの公式統計としては扱わず、この媒体の計測でもありません。</p>
+<h2>PULSE｜46%は、別の切り口</h2>
+      <p>LLM PulseのEsteve Castells氏は2026年10月13日、同社が監視するサイトのGA4で、ChatGPTからのセッションが10月9日から11日に約46%減った、と書いています。比べているのは、その前の2週間の同じ曜日です。典型的なサイトではChatGPTからのトラフィックがおおよそ半分になり、監視サイトの8割超で30%を超える減少だった、とも書いています。監視しているサイトの数は、記事にありません。全体のトラフィックは約2%減です。PerplexityとClaudeの参照は、10月9日に落ちてはいません。スペイン、米国、中南米、ポルトガルなどの国や、サイトの規模でも形は同じだ、と書いています。AI参照の分類や、GA4からの取り方は変えていない、とも書いています。<a href="https://llmpulse.ai/blog/chatgpt-referral-traffic-fell/">LLM Pulse</a></p>
+      <p>最初の兆しは10月8日、折れがはっきりしたのは10月9日です。有料プランだけがGPT-6だった10月7日には、同社は効果を見ていません。OpenAIは10月7日、有料のプランへGPT-6を広げ、翌日から無料とGoへ広げる、と告知しています。時期は重なります。重なることは、原因の証明ではありません。OpenAIは、リンクの渡し方を変えた、とは書いていません。</p>
+      <p>同社は、訪問が減ったのか、ラベルが外れて直接に入ったのかは、集計だけでは分からない、と書いています。まだChatGPTと付く訪問について、ラベルの内訳はほとんど変わっていません。直接の合計は、目に見えて増えていません。ChatGPTは直接に比べて小さいので、移った分は埋もれやすい、とも書いています。Huesler氏の比較はページ単位で、同じページの直接が増えています。二つの数字は足せません。標本も期間も違います。</p>
+<h2>CHECK｜多かったページの直接を見る</h2>
+      <p>両方の報告が勧めている確認は、同じです。以前ChatGPTが多かった着地ページで、10月8日から9日にかけて直接が増えたかを見ます。そこで直接が増えていれば、タグが外れた訪問である可能性が高い、とLLM Pulseは書いています。増えていなければ、クリックそのものが減った可能性が残ります。同社は、月曜から水曜まで揃った日が取れるまで結論を急がない、とも書いています。回答の中に名前が出ることと、クリックが着くことは、別の指標です。画面の中で質問が終わる回答が増えた可能性は、同社の仮説です。確定ではなく、OpenAIの発表でもありません。その画面の仕組みは、ここでは書きません。</p>
+      <p>10月5日の記事は、付いた側のタグを分けました。Geminiの utm_source=gemini と、拡張機能が足した st_source です。<a href="/insights/gemini-utm-and-st-source/">AIの参照タグは、全部がGoogleのものではない——GeminiのUTMと拡張のst_source</a>。今回の報告は、ChatGPT側でタグとリファラーが消えた、という観測です。広告の計測の道具が増えた話は、10月30日の記事に残しています。<a href="/insights/chatgpt-ads-measurement-so-far/">ChatGPT広告の計測は、道具が先に増えた——成果の数字は検証済みではない</a></p>
+<h2>LOG｜ボットの増減は、一人の投稿</h2>
+      <p>Roundtableは、Sébastien Billard氏の投稿も引いています。10月9日以降、ChatGPTからの人のトラフィックと ChatGPT-User のロボットが急に減り、OAI-SearchBot は10月7日頃から増えた、という内容です。一人のログです。一般の傾向としては書きません。</p>
+      <p>配布の文書も、まだ揃っていません。10月7日の告知は、翌日から無料とGoへGPT-6 Lunaを広げる、と書いています。ヘルプセンターのGPT-6のページは、2026年10月15日の取得時に「5日前に更新」と表示されていました。暦日はページにありません。そこでは、無料とGoの標準とThinkはGPT-5.6 Lunaだ、と書いています。落ちがどのモデルの配布と重なるかは、この食い違いが残るあいだ確定しません。<a href="https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt">OpenAI Help Center</a></p>
+      <blockquote>
+        <strong>出典：</strong> <a href="https://www.seroundtable.com/utm-parameters-missing-chatgpt-42299.html">Search Engine Roundtable 2026-10-14</a>（Cedric Huesler氏の比較。3.1万件、2.6万件、5%、7%、45%、36%、44%、55%は氏の観測。OpenAIは未発表）／<a href="https://llmpulse.ai/blog/chatgpt-referral-traffic-fell/">LLM Pulse 2026-10-13</a>（約46%。サイト数は非公開。直接の合計は目立って増えていない）／<a href="https://openai.com/index/gpt-6-for-everyone">OpenAI 2026-10-07</a>（配布の時期。リンクの変更は書いていない）
+      </blockquote>
+<h2>次のリソース</h2>
+        <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
+
+      <section class="related-insights">
+        <h2>関連Insights</h2>
+        <ul>
+        <li>
+          <a href="/insights/gemini-utm-and-st-source/">AIの参照タグは、全部がGoogleのものではない——GeminiのUTMと拡張のst_source</a>
+        </li>
+        <li>
+          <a href="/insights/chatgpt-ads-measurement-so-far/">ChatGPT広告の計測は、道具が先に増えた——成果の数字は検証済みではない</a>
+        </li>
+        <li>
+          <a href="/insights/gsc-ai-impressions-how-to-read/">GSCのAIインプレッションをどう読むか——クリックがない指標の使い方</a>
+        </li>
+        </ul>
+      </section>
+<div class="article-cta">
+        <h2>関連リソース</h2>
+        <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
+        <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
+        <a href="/research/" class="btn btn-secondary" data-ga-insight-cta="research">Research Hub</a>
+        <a href="/report/" class="btn btn-secondary" data-ga-insight-cta="report">ARI診断</a>
+      </div>
+
+      <a href="/insights/" class="back-link">← Insights 一覧に戻る</a>
+    </div>
+  </article>
+</main>
+
+
+<footer class="research-footer">
+  <div class="container">
+    <p class="footer-brand">Agent Readiness Research Hub</p>
+    <p class="footer-org">Insights · Coa Retail</p>
+    <p class="footer-meta">Version 1.0 · Last Updated 2026-10-15</p>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">トップ</a>
+      <a href="/framework/">Framework</a>
+      <a href="/research/">Research</a>
+      <a href="/whitepaper/">Whitepaper</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/news/">News</a>
+      <a href="/insights/">Insights</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/dental.html">Benchmarks</a>
+      <a href="/report/">診断レポート</a>
+      <a href="https://www.coaretail.com" target="_blank" rel="noopener">Coa Retail</a>
+    </nav>
+    <nav class="footer-layers" aria-label="Research">
+      <a href="/research/#principles">Principles</a>
+      <a href="/research/#updates">Updates</a>
+      <a href="/research/#citation">Citation Policy</a>
+      <a href="/research/#faq">FAQ</a>
+    </nav>
+    <p class="footer-copy">© 2026 <a href="https://www.coaretail.com/" target="_blank" rel="noopener">合同会社コア・リテール</a></p>
+  </div>
+</footer>
+<script src="/assets/sitewide-cta-tracking.js" defer></script>
+</body>
+</html>
