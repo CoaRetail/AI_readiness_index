@@ -1304,7 +1304,34 @@
       "publishAt": "2026-10-13T12:00:00+09:00",
       "dueAtUtc": "2026-10-13T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-14T01:00:00.000Z",
+      "slug": "ai-contribution-pilot-economics",
+      "channel": "linkedin",
+      "bufferUpdateId": "6aced43333507eb5b0e6e67d",
+      "publishAt": "2026-10-14T11:30:00+09:00",
+      "dueAtUtc": "2026-10-14T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-14T01:00:00.000Z",
+      "slug": "ai-contribution-pilot-economics",
+      "channel": "facebook",
+      "bufferUpdateId": "6aced434848c31c809542296",
+      "publishAt": "2026-10-14T11:45:00+09:00",
+      "dueAtUtc": "2026-10-14T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-14T01:00:00.000Z",
+      "slug": "ai-contribution-pilot-economics",
+      "channel": "x",
+      "bufferUpdateId": "6aced434b610c3011f963e98",
+      "publishAt": "2026-10-14T12:00:00+09:00",
+      "dueAtUtc": "2026-10-14T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-13T01:00:36.706Z"
+  "updatedAt": "2026-10-14T01:00:36.963Z"
 }

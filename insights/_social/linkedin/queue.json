@@ -976,13 +976,13 @@
       "linkedinPublishAt": "2026-10-14T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-contribution-pilot-economics/",
       "contentFile": "insights/_social/linkedin/posts/ai-contribution-pilot-economics.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6aced43333507eb5b0e6e67d",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-14T01:00:00.566Z",
-      "updatedAt": "2026-10-14T01:00:00.566Z",
+      "updatedAt": "2026-10-14T01:00:36.964Z",
       "series": "v2-stock"
     }
   ]

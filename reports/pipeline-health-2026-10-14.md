@@ -9,13 +9,17 @@ slug: ai-contribution-pilot-economics
 ## WEB
 scheduled: 10:00
 published: true
-productionVerified: false
+productionVerified: true
 
 ## BUFFER
-linkedin: scheduled
-facebook: scheduled
-x: scheduled
+linkedin: queued
+facebook: queued
+x: queued
 
 ## PIPELINE
-status: RECOVERING
-publish: ai-contribution-pilot-economics
+status: COMPLETE
+verify: ok (2 attempts)
+buffer actions:
+- linkedin: queued
+- facebook: queued
+- x: queued
