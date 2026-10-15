@@ -1873,7 +1873,7 @@
     {
       "slug": "aio-citation-cards-and-loading",
       "publishAt": "2026-10-15T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AI Overviewの引用は下へ動き、Show moreはLoadingになる",
       "cardSummary": "デスクトップの引用カードが下に出るテストと、Show moreがLoading...になるテストは別です。どちらもクリックが変わった、とは書きません。",
       "llmsLabel": "引用の位置とLoading",
@@ -1911,9 +1911,12 @@
       "scheduledPublishAt": "2026-10-15T10:00:00+09:00",
       "slotDate": "2026-10-15",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261015-DAILY-001",
-      "activatedAt": "2026-10-01T12:00:00.000Z"
+      "activatedAt": "2026-10-01T12:00:00.000Z",
+      "publishAttemptedAt": "2026-10-15T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-15T01:00:00.000Z"
     },
     {
       "slug": "gemini-utm-and-st-source",

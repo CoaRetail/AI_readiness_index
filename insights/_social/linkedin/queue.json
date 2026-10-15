@@ -984,6 +984,23 @@
       "createdAt": "2026-10-14T01:00:00.566Z",
       "updatedAt": "2026-10-14T01:00:36.964Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-aio-citation-cards-and-loading-2026-10-15",
+      "slug": "aio-citation-cards-and-loading",
+      "articlePublishAt": "2026-10-15T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-15T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-15T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/aio-citation-cards-and-loading/",
+      "contentFile": "insights/_social/linkedin/posts/aio-citation-cards-and-loading.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-15T01:00:00.204Z",
+      "updatedAt": "2026-10-15T01:00:00.204Z",
+      "series": "v2-stock"
     }
   ]
 }
