@@ -993,13 +993,13 @@
       "linkedinPublishAt": "2026-10-15T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/aio-citation-cards-and-loading/",
       "contentFile": "insights/_social/linkedin/posts/aio-citation-cards-and-loading.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6ad025b244227f52a8c16af2",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-15T01:00:00.204Z",
-      "updatedAt": "2026-10-15T01:00:00.204Z",
+      "updatedAt": "2026-10-15T01:00:36.583Z",
       "series": "v2-stock"
     }
   ]

@@ -1331,7 +1331,34 @@
       "publishAt": "2026-10-14T12:00:00+09:00",
       "dueAtUtc": "2026-10-14T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-15T01:00:00.000Z",
+      "slug": "aio-citation-cards-and-loading",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad025b244227f52a8c16af2",
+      "publishAt": "2026-10-15T11:30:00+09:00",
+      "dueAtUtc": "2026-10-15T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-15T01:00:00.000Z",
+      "slug": "aio-citation-cards-and-loading",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad025b3ba6d896f9b5244db",
+      "publishAt": "2026-10-15T11:45:00+09:00",
+      "dueAtUtc": "2026-10-15T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-15T01:00:00.000Z",
+      "slug": "aio-citation-cards-and-loading",
+      "channel": "x",
+      "bufferUpdateId": "6ad025b4909a59a4d34f0224",
+      "publishAt": "2026-10-15T12:00:00+09:00",
+      "dueAtUtc": "2026-10-15T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-14T01:00:36.963Z"
+  "updatedAt": "2026-10-15T01:00:36.581Z"
 }

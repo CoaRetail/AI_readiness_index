@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T01:00:36.965Z",
+  "updatedAt": "2026-10-15T01:00:36.585Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "ai-contribution-pilot-economics",
+    "slug": "aio-citation-cards-and-loading",
     "stage": "buffer_queued",
-    "at": "2026-10-14T01:00:36.965Z"
+    "at": "2026-10-15T01:00:36.585Z"
   }
 }
