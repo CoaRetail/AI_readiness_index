@@ -825,6 +825,30 @@
       "date": "2026-10-16",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261017c",
+      "destination": "https://readiness.coaretail.com/insights/gemini-3-8-ai-mode-visibility/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261017_0800",
+      "article_slug": "gemini-3-8-ai-mode-visibility",
+      "date": "2026-10-17",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261017d",
+      "destination": "https://readiness.coaretail.com/insights/schema-not-ai-citation-cheat-code/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261017_1500",
+      "article_slug": "schema-not-ai-citation-cheat-code",
+      "date": "2026-10-17",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261017e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261017_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-10-17",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
