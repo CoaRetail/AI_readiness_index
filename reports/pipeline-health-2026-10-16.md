@@ -1,25 +1,17 @@
 # Pipeline Health — 2026-10-16
 
-> Reconciliation run: 2026-10-16T01:00:00.000Z
+> Reconciliation run: 2026-10-16T05:35:04.568Z
 
 ## TODAY
 
-slug: september-2026-spam-update
+slug: (none)
 
 ## WEB
-scheduled: 10:00
-published: true
-productionVerified: true
+published: n/a
+productionVerified: n/a
 
 ## BUFFER
-linkedin: queued
-facebook: queued
-x: queued
+(no buffer entry)
 
 ## PIPELINE
-status: COMPLETE
-verify: ok (2 attempts)
-buffer actions:
-- linkedin: queued
-- facebook: queued
-- x: queued
+status: IDLE
