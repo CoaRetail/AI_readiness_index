@@ -1535,7 +1535,7 @@
     {
       "slug": "september-2026-spam-update",
       "publishAt": "2026-10-16T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "2026年9月のスパムアップデート——生成AI回答の操作はポリシーの対象",
       "cardSummary": "9月24日開始、全世界・全言語、展開は最大2週間。生成AI回答の操作は現行ポリシーの対象です。9月23–24日の変動は未確認として扱います。",
       "llmsLabel": "9月のスパム更新",
@@ -1571,9 +1571,12 @@
       "scheduledPublishAt": "2026-10-16T10:00:00+09:00",
       "slotDate": "2026-10-16",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261016-DAILY-001",
-      "activatedAt": "2026-09-25T00:38:13.228Z"
+      "activatedAt": "2026-09-25T00:38:13.228Z",
+      "publishAttemptedAt": "2026-10-16T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-16T01:00:00.000Z"
     },
     {
       "slug": "merchant-center-native-checkout-holiday",
