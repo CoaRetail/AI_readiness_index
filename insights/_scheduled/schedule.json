@@ -1992,7 +1992,7 @@
       "freshnessReviewedAt": "2026-10-05T23:30:00.000Z",
       "eirId": "EIR-20261019-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://blog.cloudflare.com/pay-per-use/",
@@ -2011,13 +2011,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-05T23:30:00.000Z",
       "scheduledPublishAt": "2026-10-19T10:00:00+09:00",
       "slotDate": "2026-10-19",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261019-DAILY-001",
-      "activatedAt": "2026-10-05T23:30:00.000Z"
+      "activatedAt": "2026-10-05T23:30:00.000Z",
+      "heroReadyAt": "2026-10-16T06:06:58.355Z"
     },
     {
       "slug": "ai-content-manual-factcheck",
