@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T01:00:36.585Z",
+  "updatedAt": "2026-10-16T01:00:38.150Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "aio-citation-cards-and-loading",
+    "slug": "september-2026-spam-update",
     "stage": "buffer_queued",
-    "at": "2026-10-15T01:00:36.585Z"
+    "at": "2026-10-16T01:00:38.150Z"
   }
 }

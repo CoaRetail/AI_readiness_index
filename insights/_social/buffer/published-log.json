@@ -1358,7 +1358,34 @@
       "publishAt": "2026-10-15T12:00:00+09:00",
       "dueAtUtc": "2026-10-15T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-16T01:00:00.000Z",
+      "slug": "september-2026-spam-update",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad17734fb64fffcf1aaff0e",
+      "publishAt": "2026-10-16T11:30:00+09:00",
+      "dueAtUtc": "2026-10-16T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-16T01:00:00.000Z",
+      "slug": "september-2026-spam-update",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad17735fb64fffcf1aaff71",
+      "publishAt": "2026-10-16T11:45:00+09:00",
+      "dueAtUtc": "2026-10-16T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-16T01:00:00.000Z",
+      "slug": "september-2026-spam-update",
+      "channel": "x",
+      "bufferUpdateId": "6ad177364ed7d375a43be292",
+      "publishAt": "2026-10-16T12:00:00+09:00",
+      "dueAtUtc": "2026-10-16T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-15T01:00:36.581Z"
+  "updatedAt": "2026-10-16T01:00:38.147Z"
 }

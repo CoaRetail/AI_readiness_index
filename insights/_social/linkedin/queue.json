@@ -1010,13 +1010,13 @@
       "linkedinPublishAt": "2026-10-16T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/september-2026-spam-update/",
       "contentFile": "insights/_social/linkedin/posts/september-2026-spam-update.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6ad17734fb64fffcf1aaff0e",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-16T01:00:01.505Z",
-      "updatedAt": "2026-10-16T01:00:01.505Z",
+      "updatedAt": "2026-10-16T01:00:38.148Z",
       "series": "v2-stock"
     }
   ]
