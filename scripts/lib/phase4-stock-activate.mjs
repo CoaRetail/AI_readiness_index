@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { PATHS, ROOT } from './insights-v2-paths.mjs';
 import { EDITORIAL_STATUSES } from './editorial-status.mjs';
-import { isoAtJst, isWeekday } from './business-days.mjs';
+import { isoAtJst, isOpenPublishDay } from './business-days.mjs';
 import {
   publicationIdFor,
   PUBLICATION_STATES,
@@ -154,7 +154,7 @@ export function validateActivationPlan(schedule, activations = AUTHORIZED_ACTIVA
   const errors = [];
   const ids = new Set();
   for (const act of activations) {
-    if (!isWeekday(new Date(`${act.slotDate}T01:00:00Z`))) {
+    if (!isOpenPublishDay(act.slotDate)) {
       errors.push(`${act.slug}:not_business_day:${act.slotDate}`);
     }
     const forbidden = forbiddenSlotReason(act.slotDate);

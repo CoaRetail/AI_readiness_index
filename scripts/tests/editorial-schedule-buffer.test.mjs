@@ -44,6 +44,13 @@ test('C/D business-day and month-boundary cascades skip weekends', () => {
   assert.equal(weekend.after.articles.find((e) => e.slug === 'article-1').slotDate, '2026-09-07');
   const month = planEmergencyInsertion(fixture('2026-10-30'), { slug: 'month-urgent', targetDate: '2026-10-30' });
   assert.equal(month.after.articles.find((e) => e.slug === 'article-1').slotDate, '2026-11-02');
+  assert.equal(month.after.articles.some((entry) => entry.slotDate === '2026-11-03'), false);
+});
+
+test('Culture Day is not a business day for emergency insertion', () => {
+  const plan = planEmergencyInsertion(fixture('2026-11-02'), { slug: 'holiday-urgent', targetDate: '2026-11-03' });
+  assert.equal(plan.safe, false);
+  assert.equal(plan.reason, 'TARGET_DATE_NOT_BUSINESS_DAY');
 });
 
 test('E multiple insertions remain deterministic and lose no articles', () => {

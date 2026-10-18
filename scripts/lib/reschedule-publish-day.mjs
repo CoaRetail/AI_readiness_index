@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import { PATHS } from './insights-v2-paths.mjs';
 import { EDITORIAL_STATUSES } from './editorial-status.mjs';
-import { articleTimesForPublishDay } from './business-days.mjs';
+import { articleTimesForPublishDay, isOpenPublishDay } from './business-days.mjs';
 import { buildChannelEntries } from './unlock-next-insight.mjs';
 import { isSameBufferLedgerEntry, normalizePublicationDate } from './buffer-ledger.mjs';
 import { upsertPlannedCard } from './unlock-next-insight.mjs';
@@ -19,6 +19,9 @@ export function rescheduleArticlePublishDay({
   dryRun = false,
 } = {}) {
   if (!slug || !publishYmd) throw new Error('slug and publishYmd are required');
+  if (!isOpenPublishDay(publishYmd)) {
+    throw new Error(`publish day is closed: ${publishYmd}`);
+  }
   const schedule = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
   const article = schedule.articles.find((entry) => entry.slug === slug);
   if (!article) throw new Error(`schedule entry not found: ${slug}`);
