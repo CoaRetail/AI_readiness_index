@@ -881,6 +881,30 @@
       "date": "2026-10-18",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261019c",
+      "destination": "https://readiness.coaretail.com/insights/shopify-ai-vs-organic-structured-catalog/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261019_0800",
+      "article_slug": "shopify-ai-vs-organic-structured-catalog",
+      "date": "2026-10-19",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261019d",
+      "destination": "https://readiness.coaretail.com/insights/weighted-ai-visibility-stack/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261019_1500",
+      "article_slug": "weighted-ai-visibility-stack",
+      "date": "2026-10-19",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261019e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261019_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-10-19",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
