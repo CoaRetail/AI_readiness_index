@@ -4,6 +4,8 @@ OpenAIは、画像生成のあいだに出すビジュアル広告を、米国�
 
 WeightWatchersの15.3%、Doseの67%、Portland Leatherの93%は、パートナーの報告です。OpenAIが検証した成果としては書きません。10月7日の「三つの棚」は、この媒体の編集上の枠のままです。
 
+参照リンクの utm_source=chatgpt.com が外れた件は、別の話です。AdobeのCedric Huesler氏は、既知のバグで、10月15日の太平洋時間2時頃から修正された、と書いています。確認は又聞きで、OpenAIの公表は本稿では見つかっていません。
+
 https://readiness.coaretail.com/insights/chatgpt-ads-measurement-so-far/
 #AgentReadiness #ChatGPT
 出典は本文の一次情報に置いています。推測の数字は足していません。

@@ -1,7 +1,7 @@
-ChatGPTのリンクから utm_source=chatgpt.com とリファラーが消えた、とSearch Engine Roundtableが2026年10月14日に伝えています。分析上の訪問は直接に入ります。OpenAIはこの変更を発表していません。
+ChatGPTの utm_source=chatgpt.com が外れたのは既知のバグだった、とAdobeのCedric Huesler氏が2026年10月15日に書いています。確認は又聞きで、OpenAIの公表は本稿では見つかっていません。修正は10月15日の太平洋時間2時頃からで、同日9時のタグ付きクリックは1週間前の同じ時刻のおよそ95%から100%でした。
 
-AdobeのCedric Huesler氏が比べた約500ページでは、10月9日から13日にChatGPTが1日3.1万件減り、同じページの直接が1日2.6万件増えました。LLM Pulseの集計では、10月9日から11日のChatGPTセッションが約46%減です。サイト数は非公開で、二つの数字は足せません。確認は、ChatGPTが多かったページの直接です。
+リファラーは今も大半で欠けます。10月8日から15日は注記し、ChatGPTはUTMで数えます。Profoundでは、10月16日6時30分UTCに引用のある回答のおよそ99%が再びタグ付きでした。
 
 https://readiness.coaretail.com/insights/chatgpt-as-direct/
 #AgentReadiness #ChatGPT
-出典は本文に置いています。OpenAIが確認した仕様としては書いていません。
+数字の母数は本文に置いています。

@@ -1,4 +1,4 @@
-ChatGPTのリンクは、タグもリファラーもなく直接に入る、という報告です。OpenAIは未発表です。ページ比較と46%減は、別の集計です。
+ChatGPTのタグ外れは既知のバグだった、とAdobeのCedric Huesler氏が書いています。確認は又聞きです。10月8日から15日は注記し、数えるのはUTMです。
 
 https://readiness.coaretail.com/insights/chatgpt-as-direct/
 #AgentReadiness #ChatGPT
