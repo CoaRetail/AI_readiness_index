@@ -2131,7 +2131,7 @@
       "freshnessReviewedAt": "2026-10-05T23:30:00.000Z",
       "eirId": "EIR-20261022-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.searchenginejournal.com/googles-mueller-says-ai-crawlers-access-sitemaps-rss-in-his-logs/592012/",
@@ -2151,13 +2151,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-05T23:30:00.000Z",
       "scheduledPublishAt": "2026-10-22T10:00:00+09:00",
       "slotDate": "2026-10-22",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261022-DAILY-001",
-      "activatedAt": "2026-10-05T23:30:00.000Z"
+      "activatedAt": "2026-10-05T23:30:00.000Z",
+      "heroReadyAt": "2026-10-19T06:07:14.631Z"
     },
     {
       "slug": "barcelona-ai-features-on-seo",
