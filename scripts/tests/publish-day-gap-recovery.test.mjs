@@ -5,7 +5,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { listWeekdayGaps, recoverPublishDayGap, recoverAllPublishDayGaps, findGapScanWindow, isHeldPublishDate } from '../lib/publish-day-gap-recovery.mjs';
+import { rescheduleArticlePublishDay } from '../lib/reschedule-publish-day.mjs';
 import { EDITORIAL_STATUSES } from '../lib/editorial-status.mjs';
+import {
+  businessDaysFrom,
+  isJapanesePublicHoliday,
+  isOpenPublishDay,
+  japanesePublicHolidays,
+  nextPublishDayAfterUnlock,
+} from '../lib/business-days.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SCHEDULE_PATH = path.join(ROOT, 'insights/_scheduled/schedule.json');
@@ -233,4 +241,152 @@ test('schedule.json holds 2026-10-05 and moves only the spam update to 2026-10-1
   assert.equal(result.reason, 'held_not_cancelled');
   assert.notEqual(result.toYmd, '2026-10-05');
   assert.equal(bySlug['merchant-center-native-checkout-holiday'].publishAt, '2026-10-06T10:00:00+09:00');
+});
+
+test('Japanese public holidays for 2026 include Culture Day and skip weekends', () => {
+  assert.deepEqual(japanesePublicHolidays(2026), [
+    '2026-01-01',
+    '2026-01-12',
+    '2026-02-11',
+    '2026-02-23',
+    '2026-03-20',
+    '2026-04-29',
+    '2026-05-03',
+    '2026-05-04',
+    '2026-05-05',
+    '2026-05-06',
+    '2026-07-20',
+    '2026-08-11',
+    '2026-09-21',
+    '2026-09-22',
+    '2026-09-23',
+    '2026-10-12',
+    '2026-11-03',
+    '2026-11-23',
+  ]);
+  assert.equal(isJapanesePublicHoliday('2026-11-03'), true);
+  assert.equal(isJapanesePublicHoliday('2026-05-06'), true);
+  assert.equal(isJapanesePublicHoliday('2025-02-24'), true);
+  assert.equal(isOpenPublishDay('2026-11-03'), false);
+  assert.equal(isOpenPublishDay('2026-11-07'), false);
+  assert.equal(isOpenPublishDay('2026-11-08'), false);
+  assert.equal(isOpenPublishDay('2026-11-02'), true);
+  assert.equal(isOpenPublishDay('2026-11-09'), true);
+  assert.equal(nextPublishDayAfterUnlock('2026-11-02'), '2026-11-04');
+  assert.equal(nextPublishDayAfterUnlock('2026-09-18'), '2026-09-24');
+  assert.deepEqual(businessDaysFrom('2026-11-02', 5), [
+    '2026-11-02',
+    '2026-11-04',
+    '2026-11-05',
+    '2026-11-06',
+    '2026-11-09',
+  ]);
+  const gaps = listWeekdayGaps({ articles: [] }, { startYmd: '2026-11-02', endYmd: '2026-11-09' });
+  assert.deepEqual(gaps, ['2026-11-02', '2026-11-04', '2026-11-05', '2026-11-06', '2026-11-09']);
+});
+
+function reservedPublication(slug, ymd) {
+  return {
+    slug,
+    status: EDITORIAL_STATUSES.SCHEDULED,
+    publishAt: `${ymd}T10:00:00+09:00`,
+    scheduledPublishAt: `${ymd}T10:00:00+09:00`,
+    slotDate: ymd,
+    publicationId: `PUB-${ymd.replaceAll('-', '')}-DAILY-001`,
+    publicationState: 'SCHEDULED',
+    title: slug,
+    cardSummary: 'summary',
+    series: 'v2-stock',
+  };
+}
+
+test('rescheduleArticlePublishDay refuses a weekend and Culture Day', () => {
+  assert.throws(
+    () => rescheduleArticlePublishDay({ slug: 'chatgpt-primary-cites', publishYmd: '2026-11-03', dryRun: true }),
+    /publish day is closed: 2026-11-03/,
+  );
+  assert.throws(
+    () => rescheduleArticlePublishDay({ slug: 'chatgpt-seller-rank', publishYmd: '2026-11-07', dryRun: true }),
+    /publish day is closed: 2026-11-07/,
+  );
+});
+
+test('recoverPublishDayGap does not re-date an already reserved future slot', () => {
+  const schedule = {
+    articles: [reservedPublication('reserved-next', '2026-10-21')],
+  };
+  const now = new Date('2026-10-16T10:00:00+09:00');
+  const before = JSON.stringify(schedule);
+  const result = recoverPublishDayGap({ schedule, now, dryRun: true });
+  assert.equal(result.recovered, false);
+  assert.equal(result.reason, 'reserved_future_slot');
+  assert.equal(result.slug, 'reserved-next');
+  assert.notEqual(result.toYmd, '2026-10-19');
+  assert.equal(JSON.stringify(schedule), before);
+});
+
+test('2026-10-16 reconcile keeps the Culture Day reservations on their reserved days', () => {
+  const reserved = {
+    'chatgpt-as-direct': '2026-11-02',
+    'chatgpt-primary-cites': '2026-11-04',
+    'bing-topics-portfolio': '2026-11-05',
+    'gpt6-intelligent-ui': '2026-11-06',
+    'chatgpt-seller-rank': '2026-11-09',
+  };
+  const schedule = JSON.parse(fs.readFileSync(SCHEDULE_PATH, 'utf8'));
+  const bySlug = Object.fromEntries(schedule.articles.map((article) => [article.slug, article]));
+  for (const [slug, ymd] of Object.entries(reserved)) {
+    assert.equal(bySlug[slug].publishAt, `${ymd}T10:00:00+09:00`);
+    assert.equal(bySlug[slug].scheduledPublishAt, `${ymd}T10:00:00+09:00`);
+    assert.equal(bySlug[slug].slotDate, ymd);
+    assert.equal(bySlug[slug].publicationId, `PUB-${ymd.replaceAll('-', '')}-DAILY-001`);
+    assert.equal(bySlug[slug].status, EDITORIAL_STATUSES.SCHEDULED);
+  }
+
+  const onCultureDay = schedule.articles.filter((article) => {
+    const dates = [article.slotDate, article.publishAt, article.scheduledPublishAt]
+      .filter(Boolean)
+      .map((value) => String(value).slice(0, 10));
+    return article.status === EDITORIAL_STATUSES.SCHEDULED && dates.includes('2026-11-03');
+  });
+  assert.deepEqual(onCultureDay.map((article) => article.slug), []);
+
+  const now = new Date('2026-10-16T05:35:04.568Z');
+  const window = findGapScanWindow(schedule, now);
+  const gaps = listWeekdayGaps(schedule, window);
+  assert.equal(gaps.includes('2026-11-03'), false);
+  assert.equal(gaps.includes('2026-11-07'), false);
+  assert.equal(gaps.includes('2026-11-08'), false);
+  const result = recoverPublishDayGap({ schedule, now, dryRun: true });
+  assert.equal(result.recovered, false);
+  assert.notEqual(result.toYmd, '2026-11-03');
+  for (const [slug, ymd] of Object.entries(reserved)) {
+    assert.equal(bySlug[slug].slotDate, ymd);
+    assert.equal(bySlug[slug].publishAt, `${ymd}T10:00:00+09:00`);
+  }
+});
+
+test('reserved November articles are not compacted onto Culture Day', () => {
+  const dates = {
+    'chatgpt-as-direct': '2026-11-02',
+    'chatgpt-primary-cites': '2026-11-04',
+    'bing-topics-portfolio': '2026-11-05',
+    'gpt6-intelligent-ui': '2026-11-06',
+    'chatgpt-seller-rank': '2026-11-09',
+  };
+  const schedule = {
+    articles: Object.entries(dates).map(([slug, ymd]) => reservedPublication(slug, ymd)),
+  };
+  const now = new Date('2026-10-16T05:35:04.568Z');
+  const before = JSON.stringify(schedule);
+  const gaps = listWeekdayGaps(schedule, findGapScanWindow(schedule, now));
+  assert.equal(gaps.includes('2026-11-03'), false);
+  const result = recoverPublishDayGap({ schedule, now, dryRun: true });
+  assert.equal(result.recovered, false);
+  assert.equal(result.reason, 'reserved_future_slot');
+  assert.equal(JSON.stringify(schedule), before);
+  assert.deepEqual(
+    schedule.articles.map((article) => [article.slug, article.slotDate]),
+    Object.entries(dates),
+  );
 });

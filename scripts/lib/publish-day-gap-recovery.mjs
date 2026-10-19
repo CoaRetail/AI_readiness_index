@@ -3,7 +3,7 @@
  */
 import fs from 'node:fs';
 import { PATHS } from './insights-v2-paths.mjs';
-import { toJstDateString, isWeekday, isClosedPublishDate, nextPublishDayAfterUnlock } from './business-days.mjs';
+import { toJstDateString, isClosedPublishDate, isOpenPublishDay, nextPublishDayAfterUnlock } from './business-days.mjs';
 import {
   findEarliestScheduledArticle,
   findPublishedOnDate,
@@ -23,6 +23,17 @@ import { rescheduleArticlePublishDay } from './reschedule-publish-day.mjs';
 function heldPublishEntries(schedule) {
   const held = schedule?.policy?.heldPublishDates;
   return Array.isArray(held) ? held : [];
+}
+
+/**
+ * A future slot that already has an explicit reservation.
+ * Gap recovery must not move it onto an earlier open day.
+ */
+export function isReservedFuturePublication(article, now = new Date()) {
+  if (!article || article.status !== EDITORIAL_STATUSES.SCHEDULED) return false;
+  const slot = String(article.slotDate || article.scheduledPublishAt || '').slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(slot)) return false;
+  return slot > toJstDateString(now);
 }
 
 /** A weekday left empty because an article was held, not cancelled. */
@@ -45,11 +56,7 @@ export function listWeekdayGaps(schedule, { startYmd, endYmd } = {}) {
   const gaps = [];
   let ymd = startYmd;
   while (ymd <= endYmd) {
-    if (
-      isWeekday(new Date(`${ymd}T12:00:00+09:00`)) &&
-      !isClosedPublishDate(ymd) &&
-      !isHeldPublishDate(schedule, ymd)
-    ) {
+    if (isOpenPublishDay(ymd) && !isHeldPublishDate(schedule, ymd)) {
       const scheduled = findScheduledOnDate(schedule, ymd);
       const published = findPublishedOnDate(schedule, ymd);
       if (!scheduled && !published) gaps.push(ymd);
@@ -94,7 +101,7 @@ export function recoverPublishDayGap({
   }
 
   const gapYmd = gaps[0];
-  if (isClosedPublishDate(gapYmd)) {
+  if (!isOpenPublishDay(gapYmd) || isClosedPublishDate(gapYmd)) {
     return { recovered: false, reason: 'closed_publish_day', gaps, startYmd, endYmd, gapYmd };
   }
   if (isHeldPublishDate(schedule, gapYmd)) {
@@ -115,6 +122,18 @@ export function recoverPublishDayGap({
     .sort((a, b) => new Date(a.publishAt).getTime() - new Date(b.publishAt).getTime())[0];
   if (!candidate?.publishAt) {
     return { recovered: false, reason: 'no_scheduled_candidate', gaps, startYmd, endYmd, gapYmd };
+  }
+  if (isReservedFuturePublication(candidate, now)) {
+    return {
+      recovered: false,
+      reason: 'reserved_future_slot',
+      slug: candidate.slug,
+      gaps,
+      startYmd,
+      endYmd,
+      gapYmd,
+      earliestYmd: candidate.publishAt.slice(0, 10),
+    };
   }
 
   const fromYmd = candidate.publishAt.slice(0, 10);

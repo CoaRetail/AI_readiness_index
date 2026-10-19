@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { businessDaysFrom, isoAtJst, isWeekday } from './business-days.mjs';
+import { businessDaysFrom, isoAtJst, isOpenPublishDay } from './business-days.mjs';
 import { EDITORIAL_STATUSES } from './editorial-status.mjs';
 import { isSameBufferLedgerEntry } from './buffer-ledger.mjs';
 import { normalizeEditorialIntent } from './editorial-intent.mjs';
@@ -99,7 +99,7 @@ function validatePlan(schedule, proposed, { slug, targetDate, slotType }) {
   if (!slug || !/^[-a-z0-9]+$/.test(slug)) errors.push('INVALID_SLUG');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(targetDate || '')) errors.push('INVALID_TARGET_DATE');
   if (slotType !== SLOT_TYPES.DAILY_PRIMARY) errors.push('UNSUPPORTED_SLOT_TYPE');
-  if (targetDate && isWeekday(new Date(`${targetDate}T01:00:00Z`)) === false) errors.push('TARGET_DATE_NOT_BUSINESS_DAY');
+  if (targetDate && !isOpenPublishDay(targetDate)) errors.push('TARGET_DATE_NOT_BUSINESS_DAY');
 
   const target = schedule.articles.find((entry) => slotDateOf(entry) === targetDate && isPrimaryCandidate(entry));
   if (target && isPublished(target)) errors.push('TARGET_SLOT_ALREADY_PUBLISHED');
