@@ -1385,7 +1385,34 @@
       "publishAt": "2026-10-16T12:00:00+09:00",
       "dueAtUtc": "2026-10-16T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-19T01:00:00.000Z",
+      "slug": "cloudflare-pay-per-use",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad56bb3769b457934e7acdf",
+      "publishAt": "2026-10-19T11:30:00+09:00",
+      "dueAtUtc": "2026-10-19T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-19T01:00:00.000Z",
+      "slug": "cloudflare-pay-per-use",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad56bb4769b457934e7ad2e",
+      "publishAt": "2026-10-19T11:45:00+09:00",
+      "dueAtUtc": "2026-10-19T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-19T01:00:00.000Z",
+      "slug": "cloudflare-pay-per-use",
+      "channel": "x",
+      "bufferUpdateId": "6ad56bb58206df0c0fa9017f",
+      "publishAt": "2026-10-19T12:00:00+09:00",
+      "dueAtUtc": "2026-10-19T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-16T01:00:38.147Z"
+  "updatedAt": "2026-10-19T01:00:38.028Z"
 }

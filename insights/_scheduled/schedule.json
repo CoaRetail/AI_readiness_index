@@ -2020,7 +2020,9 @@
       "heroReadyAt": "2026-10-16T06:06:58.355Z",
       "publishAttemptedAt": "2026-10-19T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-19T01:00:00.000Z"
+      "publishedAt": "2026-10-19T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-19T01:00:33.402Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "ai-content-manual-factcheck",

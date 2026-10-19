@@ -2935,7 +2935,7 @@
     {
       "slug": "cloudflare-pay-per-use",
       "articleUrl": "https://readiness.coaretail.com/insights/cloudflare-pay-per-use/",
-      "status": "scheduled",
+      "status": "buffer_queued",
       "articlePublishAt": "2026-10-19T10:00:00+09:00",
       "bufferTransferAt": "2026-10-19T10:30:00+09:00",
       "channels": {
@@ -2943,41 +2943,41 @@
           "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
           "contentFile": "insights/_social/linkedin/posts/cloudflare-pay-per-use.md",
           "publishAt": "2026-10-19T11:30:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6ad56bb3769b457934e7acdf",
+          "attempts": 1,
+          "lastAttemptAt": "2026-10-19T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-10-19T01:00:00.194Z"
+          "updatedAt": "2026-10-19T01:00:00.000Z"
         },
         "facebook": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
           "contentFile": "insights/_social/facebook/posts/cloudflare-pay-per-use.md",
           "publishAt": "2026-10-19T11:45:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6ad56bb4769b457934e7ad2e",
+          "attempts": 1,
+          "lastAttemptAt": "2026-10-19T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-10-19T01:00:00.194Z"
+          "updatedAt": "2026-10-19T01:00:00.000Z"
         },
         "x": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
           "contentFile": "insights/_social/x/posts/cloudflare-pay-per-use.md",
           "publishAt": "2026-10-19T12:00:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6ad56bb58206df0c0fa9017f",
+          "attempts": 1,
+          "lastAttemptAt": "2026-10-19T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-10-19T01:00:00.194Z"
+          "updatedAt": "2026-10-19T01:00:00.000Z"
         }
       },
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-19T01:00:00.193Z",
-      "updatedAt": "2026-10-19T01:00:00.193Z",
+      "updatedAt": "2026-10-19T01:00:00.000Z",
       "series": "v2-stock"
     },
     {
