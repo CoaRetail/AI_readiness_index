@@ -1978,7 +1978,7 @@
     {
       "slug": "cloudflare-pay-per-use",
       "publishAt": "2026-10-19T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "Cloudflare Pay Per Useは利用への申し出——広告収入の0.1%とは別の型",
       "cardSummary": "買い手が利用の定義と価格を出し、媒体が受けるかを選びます。利用は自己申告で、精算は月次です。広告収入の約0.1%とは別の型です。",
       "llmsLabel": "利用への申し出",
@@ -2014,10 +2014,13 @@
       "scheduledPublishAt": "2026-10-19T10:00:00+09:00",
       "slotDate": "2026-10-19",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261019-DAILY-001",
       "activatedAt": "2026-10-05T23:30:00.000Z",
-      "heroReadyAt": "2026-10-16T06:06:58.355Z"
+      "heroReadyAt": "2026-10-16T06:06:58.355Z",
+      "publishAttemptedAt": "2026-10-19T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-19T01:00:00.000Z"
     },
     {
       "slug": "ai-content-manual-factcheck",

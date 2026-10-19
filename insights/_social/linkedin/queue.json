@@ -1018,6 +1018,23 @@
       "createdAt": "2026-10-16T01:00:01.505Z",
       "updatedAt": "2026-10-16T01:00:38.148Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-cloudflare-pay-per-use-2026-10-19",
+      "slug": "cloudflare-pay-per-use",
+      "articlePublishAt": "2026-10-19T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-19T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-19T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/cloudflare-pay-per-use/",
+      "contentFile": "insights/_social/linkedin/posts/cloudflare-pay-per-use.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-19T01:00:00.193Z",
+      "updatedAt": "2026-10-19T01:00:00.193Z",
+      "series": "v2-stock"
     }
   ]
 }

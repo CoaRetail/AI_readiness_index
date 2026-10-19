@@ -84,6 +84,7 @@
 - [支払いは広告収入の0.1%程度](https://readiness.coaretail.com/insights/ai-contribution-pilot-economics/): Insights Column（2026-10-14）
 - [引用の位置とLoading](https://readiness.coaretail.com/insights/aio-citation-cards-and-loading/): Insights Column（2026-10-15）
 - [9月のスパム更新](https://readiness.coaretail.com/insights/september-2026-spam-update/): Insights Column（2026-10-16）
+- [利用への申し出](https://readiness.coaretail.com/insights/cloudflare-pay-per-use/): Insights Column（2026-10-19）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

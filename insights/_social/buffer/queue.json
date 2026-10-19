@@ -2933,6 +2933,54 @@
       "series": "v2-stock"
     },
     {
+      "slug": "cloudflare-pay-per-use",
+      "articleUrl": "https://readiness.coaretail.com/insights/cloudflare-pay-per-use/",
+      "status": "scheduled",
+      "articlePublishAt": "2026-10-19T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-19T10:30:00+09:00",
+      "channels": {
+        "linkedin": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
+          "contentFile": "insights/_social/linkedin/posts/cloudflare-pay-per-use.md",
+          "publishAt": "2026-10-19T11:30:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-19T01:00:00.194Z"
+        },
+        "facebook": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
+          "contentFile": "insights/_social/facebook/posts/cloudflare-pay-per-use.md",
+          "publishAt": "2026-10-19T11:45:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-19T01:00:00.194Z"
+        },
+        "x": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
+          "contentFile": "insights/_social/x/posts/cloudflare-pay-per-use.md",
+          "publishAt": "2026-10-19T12:00:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-19T01:00:00.194Z"
+        }
+      },
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-19T01:00:00.193Z",
+      "updatedAt": "2026-10-19T01:00:00.193Z",
+      "series": "v2-stock"
+    },
+    {
       "slug": "ai-agent-marketing-shift",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-agent-marketing-shift/",
       "status": "buffer_queued",
