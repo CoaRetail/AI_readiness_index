@@ -2181,7 +2181,7 @@
       "freshnessReviewedAt": "2026-10-05T23:30:00.000Z",
       "eirId": "EIR-20261023-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://weareroast.com/news/google-search-central-live-deep-dive-barcelona-day-3-recap/",
@@ -2201,13 +2201,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-05T23:30:00.000Z",
       "scheduledPublishAt": "2026-10-23T10:00:00+09:00",
       "slotDate": "2026-10-23",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261023-DAILY-001",
-      "activatedAt": "2026-10-05T23:30:00.000Z"
+      "activatedAt": "2026-10-05T23:30:00.000Z",
+      "heroReadyAt": "2026-10-20T06:08:20.518Z"
     },
     {
       "slug": "preferred-source-counts-and-ai-include",
