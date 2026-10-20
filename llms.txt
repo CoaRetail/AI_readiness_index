@@ -12,6 +12,16 @@
 - [Sample Report](https://readiness.coaretail.com/sample/): レポート構成見本（架空データ明示）
 - [Cases](https://readiness.coaretail.com/cases/): 公開事例
 - [News](https://readiness.coaretail.com/news/): プレスリリース・発表記録
+- [Framework](https://readiness.coaretail.com/framework/): DRA三層・100点の評価フレーム
+- [ARI診断レポート](https://readiness.coaretail.com/report/): 公式サイトURLから23項目で診断。¥29,800（税別）。約3分、PDFダウンロード
+- [Agent Readiness Hub](https://readiness.coaretail.com/agent-readiness/): 企業・公共・技術向けの導入
+- [Enterprise](https://readiness.coaretail.com/agent-readiness/enterprise/): 企業向け
+- [Public](https://readiness.coaretail.com/agent-readiness/public/): 公共向け
+- [Tech](https://readiness.coaretail.com/agent-readiness/tech/): 技術向け
+- [Guide: AI検索対策の依頼先](https://readiness.coaretail.com/guides/ai-search-services/): 購入前ガイド（依頼先・料金・範囲）
+- [Guide: ChatGPTに出ないとき](https://readiness.coaretail.com/guides/chatgpt-visibility-check/): 購入前ガイド（確認手順）
+- [Guide: 内製か外注か](https://readiness.coaretail.com/guides/inhouse-vs-outsource/): 購入前ガイド
+- [Case: Bar SECRET](https://readiness.coaretail.com/cases/bar-secret/): 公開事例（恵比寿）
 - [Insights](https://readiness.coaretail.com/insights/): 考察・解説コラム
 # INSIGHTS_LLMS_START
 - [robots / sitemap / llms.txtの違い](https://readiness.coaretail.com/insights/files/): Insights Column（2026-07-13）

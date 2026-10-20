@@ -6,6 +6,12 @@
  * Does not create assets/insights/<slug>/hero.webp. Heroes use Codex Native and
  * convert-webp.mjs (docs/insights-hero-generation.md). If that toolchain is
  * missing, leave packageReadiness HERO_PENDING and skip image generation.
+ *
+ * H2s in the markdown must be real user questions, and the first block under
+ * each H2 must be the answer paragraph (lists come after). Pass
+ * --strict-question-headings to refuse a draft that breaks that. Structural
+ * headings added by this template (関連Insights / 関連リソース) are exempt.
+ * Already published articles are not rewritten to match.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,6 +28,7 @@ import {
   RELATED_INSIGHTS_CSS,
 } from './lib/insights-related-links.mjs';
 import { renderInsightCtaHtml } from './lib/funnel/sitewide-cta.mjs';
+import { validateQuestionShapedHeadings } from './lib/question-headings.mjs';
 
 function arg(name, fallback = null) {
   const i = process.argv.indexOf(name);
@@ -38,6 +45,7 @@ const crumb = arg('--crumb', '');
 const titleOverride = arg('--title', '');
 const ctaExtra = arg('--cta-extra', ''); // href|label
 const editorialIntent = arg('--editorial-intent', '');
+const strictQuestionHeadings = process.argv.includes('--strict-question-headings');
 
 if (!mdPath || !slug || !date || !outDir) {
   console.error('Required: --md --slug --date --out');
@@ -45,6 +53,16 @@ if (!mdPath || !slug || !date || !outDir) {
 }
 
 const md = fs.readFileSync(mdPath, 'utf8');
+const headingCheck = validateQuestionShapedHeadings(md, { format: 'markdown' });
+if (!headingCheck.ok) {
+  for (const issue of headingCheck.issues) {
+    console.warn(`question-heading: ${issue.code} ${issue.title}`);
+  }
+  if (strictQuestionHeadings) {
+    console.error('H2s must be user questions with an answer-first opening paragraph.');
+    process.exit(1);
+  }
+}
 const lines = md.split(/\r?\n/);
 
 function escapeHtmlLocal(s) {

@@ -17,6 +17,7 @@ import {
 import { upsertPlannedCard, findEarliestScheduledArticle } from './unlock-next-insight.mjs';
 import { buildPublishedCardHtml, dateParts } from './insights-index-cards.mjs';
 import { syncInsightsPublicSurfaces } from './insights-public-sync.mjs';
+import { insightLastmodFromArticle } from './sitemap-lastmod.mjs';
 import { canonicalHeroPath, integrateCanonicalHero, configFor } from './local-visual-worker.mjs';
 import { markHeroPending } from './insights-package-readiness.mjs';
 
@@ -30,7 +31,7 @@ function cardHtml(article) {
 }
 
 function sitemapEntry(article) {
-  const { ymd } = dateParts(article.publishAt);
+  const ymd = insightLastmodFromArticle(article) || dateParts(article.publishAt).ymd;
   return `  <url>
     <loc>https://readiness.coaretail.com/insights/${article.slug}/</loc>
     <lastmod>${ymd}</lastmod>
@@ -248,7 +249,8 @@ export function publishDueArticles({
 
   if (result.updated && !dryRun) {
     fs.writeFileSync(SCHEDULE_PATH, JSON.stringify(schedule, null, 2) + '\n', 'utf8');
-    syncInsightsPublicSurfaces({ updateFooter: true });
+    const synced = syncInsightsPublicSurfaces({ updateFooter: true });
+    result.freshnessSlugs = synced.freshnessSlugs || [];
   }
 
   return result;

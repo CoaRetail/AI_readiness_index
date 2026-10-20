@@ -1,0 +1,16 @@
+---
+description: Insights の H2 は利用者の質問にし、直下の段落で先に答える
+globs: insights/**,scripts/generate-insight-article.mjs,scripts/lib/editorial-intelligence/**,scripts/lib/question-headings.mjs
+alwaysApply: false
+---
+
+# Insights の質問形 H2
+
+新しい Insight の本文 H2 は、利用者が検索しそうな質問にする。見出しの直後は、その質問への答えの段落にする。箇条書きや補足はその後に置く。
+
+- 質問は `？` で終える。
+- 答えの段落は、その記事がすでに持っている事実の範囲で書く。数字や出典を新たに作らない。
+- テンプレートが足す「関連Insights」「関連リソース」「次のリソース」は対象外。
+- 公開済み記事の本文は、この規則のために一括で書き換えない。
+- `insights/_scheduled/schedule.json` の予約日は変えない。`editorial_hold`（ABIS を含む）は自動公開しない。
+- 検証は `validateQuestionShapedHeadings`。生成時は `generate-insight-article.mjs --strict-question-headings`。既存の事前公開ゲート（LinkedIn の文字数、重複文、HERO_PENDING_HOLD、祝日）は、この規則で失敗させない。

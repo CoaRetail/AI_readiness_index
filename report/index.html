@@ -37,6 +37,77 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.coaretail.com/#organization",
+    "name": "合同会社コア・リテール",
+    "alternateName": ["Coa Retail", "CoaRetail G.K."],
+    "url": "https://www.coaretail.com"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://readiness.coaretail.com/report/#webpage",
+    "url": "https://readiness.coaretail.com/report/",
+    "name": "ARI診断レポート｜AIに推薦されない理由を可視化（¥29,800）",
+    "dateModified": "2026-10-20",
+    "inLanguage": "ja",
+    "publisher": { "@id": "https://www.coaretail.com/#organization" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://readiness.coaretail.com/report/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ARI診断レポートは何を診断しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "公式サイトURLから、AIが御社を比較・推薦・問い合わせまでつなげるかを23項目で診断します。Agent Readiness Frameworkに基づき、認識・比較・推薦・行動のどこで落ちているかを数値化します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "料金はいくらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "¥29,800（税別）です。通常価格は ¥49,800です。プランは1つで、診断本体とPDF、調査レポート同梱です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "診断にかかる時間と受け取り方は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "約3分で診断完了し、PDFでダウンロードできます。1社1回です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "レポートには何が含まれますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "12セクション / 23項目の詳細レポート、4大AI（ChatGPT・Gemini・Claude・Perplexity）の認識分析、比較・推薦・問い合わせ導線の評価、改善優先順位とロードマップ、PDFダウンロード、ARI Research Report 2026の同梱です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "店舗やクリニックの継続改善はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "レポート結果をどこから着手すべきか迷う場合は、Local GEO の月額プラン（月額60,000円・税別）または無料相談を利用できます。"
+        }
+      }
+    ]
+  }
+  </script>
   <script src="/assets/ga4.js" async></script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -62,6 +133,7 @@
     #report-static-landing .report-static-cta { display: inline-block; margin: 12px 0; padding: 12px 20px; background: #0a0a0a; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; }
     #report-static-landing .report-static-cta--secondary { background: #fff; color: #0a0a0a; border: 1px solid rgba(0,0,0,.16); }
     #report-static-landing footer { margin-top: 32px; font-size: 12px; color: #8a93a6; }
+    #report-static-landing .report-faq h3 { font-size: 16px; margin: 18px 0 6px; color: #0a0a0a; }
     html[data-report-route="preview"] #report-static-landing { display: none !important; }
     .hero-h1 {
       font-size: clamp(36px, 5vw, 64px);
@@ -154,7 +226,21 @@
         </p>
       </section>
 
-      <footer>© 2026 合同会社コア・リテール（Coa Retail G.K.）</footer>
+      <section id="faq" class="report-faq">
+        <h2>よくある質問</h2>
+        <h3>ARI診断レポートは何を診断しますか？</h3>
+        <p>公式サイトURLから、AIが御社を比較・推薦・問い合わせまでつなげるかを23項目で診断します。Agent Readiness Frameworkに基づき、認識・比較・推薦・行動のどこで落ちているかを数値化します。</p>
+        <h3>料金はいくらですか？</h3>
+        <p>¥29,800（税別）です。通常価格は ¥49,800です。プランは1つで、診断本体とPDF、調査レポート同梱です。</p>
+        <h3>診断にかかる時間と受け取り方は？</h3>
+        <p>約3分で診断完了し、PDFでダウンロードできます。1社1回です。</p>
+        <h3>レポートには何が含まれますか？</h3>
+        <p>12セクション / 23項目の詳細レポート、4大AI（ChatGPT・Gemini・Claude・Perplexity）の認識分析、比較・推薦・問い合わせ導線の評価、改善優先順位とロードマップ、PDFダウンロード、ARI Research Report 2026の同梱です。</p>
+        <h3>店舗やクリニックの継続改善はありますか？</h3>
+        <p>レポート結果をどこから着手すべきか迷う場合は、Local GEO の月額プラン（月額60,000円・税別）または無料相談を利用できます。</p>
+      </section>
+
+      <footer>© 2026 合同会社コア・リテール（Coa Retail G.K.） · 更新日 2026-10-20</footer>
     </main>
   </div>
   <script type="module" src="/src/main.jsx"></script>

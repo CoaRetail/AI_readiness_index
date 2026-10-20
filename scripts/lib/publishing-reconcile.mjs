@@ -35,6 +35,7 @@ import {
   clearPipelineFailure,
 } from './publishing-failure-state.mjs';
 import { recoverAllPublishDayGaps, findGapScanWindow, listWeekdayGaps } from './publish-day-gap-recovery.mjs';
+import { refreshSitemapFile } from './sitemap-lastmod.mjs';
 
 export function bumpBufferTimesForArticle(bufferPost, now = new Date()) {
   if (!bufferPost?.channels) return false;
@@ -171,6 +172,7 @@ export async function reconcilePublishingPipeline({
     updated: false,
     activeSlug: null,
     gapRecovery: null,
+    freshnessSlugs: [],
   };
 
   let schedule = JSON.parse(fs.readFileSync(PATHS.schedule, 'utf8'));
@@ -214,6 +216,13 @@ export async function reconcilePublishingPipeline({
       }
     }
   }
+
+  const sitemapRefresh = refreshSitemapFile({ dryRun });
+  if (sitemapRefresh.changed && !dryRun) summary.updated = true;
+  summary.freshnessSlugs = [...new Set([
+    ...(summary.publish?.freshnessSlugs || []),
+    ...sitemapRefresh.freshnessSlugs,
+  ])];
 
   schedule = JSON.parse(fs.readFileSync(PATHS.schedule, 'utf8'));
   const queue = readJsonFile(PATHS.bufferQueue, { posts: [] });

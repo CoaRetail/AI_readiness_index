@@ -10,6 +10,12 @@ import { isArticlePublishedOnDisk, articleDestPath } from './publishing-state-ma
 import { isProtectedInternalLinkSlug } from './insights-related-links.mjs';
 import { buildPublishedCardHtml, buildPlannedCardHtml, dateParts } from './insights-index-cards.mjs';
 import { looksLikeEditorialMemo } from './insights-card-summary.mjs';
+import {
+  applyStaticSitemapLastmods,
+  freshnessSlugsFromSitemap,
+  insightLastmodFromArticle,
+  parseSitemapLastmods,
+} from './sitemap-lastmod.mjs';
 
 const SITEMAP_PATH = path.join(ROOT, 'sitemap.xml');
 const LLMS_PATH = path.join(ROOT, 'llms.txt');
@@ -82,7 +88,7 @@ export function replaceInsightsIndexCards(html, cardsBlock, { publishedCount, ha
 }
 
 function sitemapEntry(article) {
-  const { ymd } = dateParts(article.publishAt || article.publishedAt);
+  const ymd = insightLastmodFromArticle(article);
   return `  <url>
     <loc>https://readiness.coaretail.com/insights/${article.slug}/</loc>
     <lastmod>${ymd}</lastmod>
@@ -151,7 +157,7 @@ export function updateInsightsIndexFooterDate(html, ymd) {
 }
 
 /**
- * @returns {{ updated: boolean, published: string[], planned: string|null, warnings: string[] }}
+ * @returns {{ updated: boolean, published: string[], planned: string|null, warnings: string[], freshnessSlugs: string[] }}
  */
 export function syncInsightsPublicSurfaces({
   dryRun = false,
@@ -184,7 +190,10 @@ export function syncInsightsPublicSurfaces({
   }
 
   let sitemap = fs.readFileSync(SITEMAP_PATH, 'utf8');
+  const lastmodsBefore = parseSitemapLastmods(sitemap);
   sitemap = rebuildInsightsSitemapEntries(sitemap, published);
+  sitemap = applyStaticSitemapLastmods(sitemap).sitemap;
+  const freshnessSlugs = freshnessSlugsFromSitemap(lastmodsBefore, sitemap, published);
 
   let llms = fs.readFileSync(LLMS_PATH, 'utf8');
   llms = rebuildLlmsInsightEntries(llms, published);
@@ -200,6 +209,7 @@ export function syncInsightsPublicSurfaces({
     published: published.map((a) => a.slug),
     planned: planned?.slug || null,
     warnings,
+    freshnessSlugs,
   };
 }
 
