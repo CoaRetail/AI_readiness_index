@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T01:00:38.031Z",
+  "updatedAt": "2026-10-20T01:00:35.688Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "cloudflare-pay-per-use",
+    "slug": "ai-content-manual-factcheck",
     "stage": "buffer_queued",
-    "at": "2026-10-19T01:00:38.031Z"
+    "at": "2026-10-20T01:00:35.688Z"
   }
 }

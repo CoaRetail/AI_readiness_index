@@ -1044,13 +1044,13 @@
       "linkedinPublishAt": "2026-10-20T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-content-manual-factcheck/",
       "contentFile": "insights/_social/linkedin/posts/ai-content-manual-factcheck.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6ad6bd32cba41b014054e894",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-20T01:00:00.161Z",
-      "updatedAt": "2026-10-20T01:00:00.161Z",
+      "updatedAt": "2026-10-20T01:00:35.686Z",
       "series": "v2-stock"
     }
   ]

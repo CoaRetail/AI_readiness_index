@@ -2070,7 +2070,9 @@
       "heroReadyAt": "2026-10-19T00:05:11.258Z",
       "publishAttemptedAt": "2026-10-20T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-20T01:00:00.000Z"
+      "publishedAt": "2026-10-20T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-20T01:00:33.134Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "court-record-on-clicks",

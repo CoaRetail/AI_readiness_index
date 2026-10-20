@@ -1412,7 +1412,34 @@
       "publishAt": "2026-10-19T12:00:00+09:00",
       "dueAtUtc": "2026-10-19T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-20T01:00:00.000Z",
+      "slug": "ai-content-manual-factcheck",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad6bd32cba41b014054e894",
+      "publishAt": "2026-10-20T11:30:00+09:00",
+      "dueAtUtc": "2026-10-20T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-20T01:00:00.000Z",
+      "slug": "ai-content-manual-factcheck",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad6bd32cba41b014054e925",
+      "publishAt": "2026-10-20T11:45:00+09:00",
+      "dueAtUtc": "2026-10-20T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-20T01:00:00.000Z",
+      "slug": "ai-content-manual-factcheck",
+      "channel": "x",
+      "bufferUpdateId": "6ad6bd339d034d7aedcfe661",
+      "publishAt": "2026-10-20T12:00:00+09:00",
+      "dueAtUtc": "2026-10-20T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-19T01:00:38.028Z"
+  "updatedAt": "2026-10-20T01:00:35.680Z"
 }
