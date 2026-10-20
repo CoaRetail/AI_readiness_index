@@ -3,6 +3,7 @@
  * @see https://www.indexnow.org/documentation
  */
 import { assertIndexNowSubmissionSafe } from './indexnow-eligibility.mjs';
+import { loadCommittedIndexNowKey } from './indexnow-key.mjs';
 
 export const INDEXNOW_HOST = 'readiness.coaretail.com';
 export const INDEXNOW_BASE = `https://${INDEXNOW_HOST}`;
@@ -140,19 +141,37 @@ export function classifyIndexNowResponse(status) {
 }
 
 /**
+ * Hosted `{key}.txt` wins over a mismatched INDEXNOW_KEY so the submitted
+ * key is the one IndexNow can fetch.
+ * @param {{ key?: string, envKey?: string, root?: string }} options
+ */
+export function resolveIndexNowKey(options = {}) {
+  if (options.key) return { key: options.key, source: 'explicit' };
+  const envKey = options.envKey !== undefined ? options.envKey : process.env.INDEXNOW_KEY;
+  const committed = options.root ? loadCommittedIndexNowKey(options.root) : null;
+  if (committed) {
+    if (envKey && envKey !== committed) {
+      console.warn(`IndexNow: INDEXNOW_KEY ${maskIndexNowKey(envKey)} does not match hosted ${maskIndexNowKey(committed)}. Using the hosted key file.`);
+    }
+    return { key: committed, source: 'file' };
+  }
+  return { key: envKey, source: 'env' };
+}
+
+/**
  * @param {string[]} urls
- * @param {{ dryRun?: boolean, fetchImpl?: typeof fetch, key?: string, retryOn5xx?: boolean, enforceEligibility?: boolean, root?: string, now?: Date }} [options]
+ * @param {{ dryRun?: boolean, fetchImpl?: typeof fetch, key?: string, envKey?: string, retryOn5xx?: boolean, enforceEligibility?: boolean, root?: string, now?: Date }} [options]
  */
 export async function submitIndexNow(urls, options = {}) {
   const {
     dryRun = false,
     fetchImpl = globalThis.fetch,
-    key = process.env.INDEXNOW_KEY,
     retryOn5xx = true,
     enforceEligibility = false,
     root,
     now = new Date(),
   } = options;
+  const key = resolveIndexNowKey(options).key;
 
   const { valid, rejected } = normalizeIndexNowUrls(urls);
 

@@ -72,6 +72,10 @@ async function main() {
 
   if (summary.publish?.published?.length) {
     console.log('Published:', summary.publish.published.join(', '));
+    console.log(`PUBLISHED_SLUGS=${summary.publish.published.join(',')}`);
+  }
+  if (summary.freshnessSlugs?.length) {
+    console.log(`FRESHNESS_SLUGS=${summary.freshnessSlugs.join(',')}`);
   }
   if (summary.updated) console.log('UPDATED=1');
   else console.log('UPDATED=0');

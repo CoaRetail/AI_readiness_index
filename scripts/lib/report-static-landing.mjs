@@ -21,6 +21,10 @@ export const REPORT_STATIC_MARKERS = Object.freeze([
   '無料相談を予約する',
   'レポートを入手する',
   '改善優先順位',
+  'よくある質問',
+  'ARI診断レポートは何を診断しますか？',
+  '料金はいくらですか？',
+  '更新日 2026-10-20',
 ]);
 
 export const REPORT_STATIC_META = Object.freeze({

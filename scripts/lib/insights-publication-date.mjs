@@ -69,10 +69,13 @@ export function syncInsightPublicationDateToYmd(html, ymd) {
     `$1${ymd}$2`
   );
 
-  next = next.replace(
-    /("dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(")/,
-    `$1${ymd}$2`
-  );
+  const modified = next.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
+  if (!modified || modified[1] <= ymd) {
+    next = next.replace(
+      /("dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(")/,
+      `$1${ymd}$2`
+    );
+  }
 
   next = next.replace(
     /(<p class="article-meta">\s*)<time\b[\s\S]*?<\/time>/,
@@ -90,6 +93,29 @@ export function syncInsightPublicationDateToYmd(html, ymd) {
     ymd,
     dot,
   };
+}
+
+/**
+ * Record a freshness addendum by moving dateModified forward.
+ * Does not change datePublished or the article body.
+ * @param {string} html
+ * @param {string} ymd
+ */
+export function applyInsightFreshnessAddendum(html, ymd) {
+  if (!YMD_RE.test(ymd || '')) {
+    return { html, changed: false, reason: 'invalid_ymd' };
+  }
+  const published = html.match(/"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
+  if (!published) return { html, changed: false, reason: 'missing_datePublished' };
+  if (ymd < published[1]) return { html, changed: false, reason: 'before_publish' };
+  const modified = html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
+  if (!modified) return { html, changed: false, reason: 'missing_dateModified' };
+  if (modified[1] === ymd) return { html, changed: false, reason: 'unchanged', ymd };
+  const next = html.replace(
+    /("dateModified"\s*:\s*")\d{4}-\d{2}-\d{2}(")/,
+    `$1${ymd}$2`
+  );
+  return { html: next, changed: next !== html, ymd };
 }
 
 export function syncInsightPublicationDate(html, publishAt) {

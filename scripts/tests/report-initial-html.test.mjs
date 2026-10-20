@@ -47,6 +47,24 @@ test('P0-01 built report dist preserves static landing after Vite build', () => 
   assert.match(landing, /Decision Product/);
 });
 
+test('report static landing FAQ matches FAQPage JSON-LD and keeps Product', () => {
+  const html = read('report/index.html');
+  assert.match(html, /"@type": "Product"/);
+  assert.match(html, /"@type": "Offer"/);
+  assert.match(html, /"price": "29800"/);
+  assert.match(html, /"@type": "Organization"/);
+  assert.match(html, /合同会社コア・リテール/);
+  assert.match(html, /"dateModified": "2026-10-20"/);
+  const faq = html.match(/"@type": "FAQPage"[\s\S]*?<\/script>/);
+  assert.ok(faq, 'FAQPage JSON-LD missing');
+  const landing = extractStaticLanding(html);
+  const names = [...faq[0].matchAll(/"name": "([^"]+)"/g)].map((match) => match[1]);
+  const answers = [...faq[0].matchAll(/"text": "([^"]+)"/g)].map((match) => match[1]);
+  assert.ok(names.length >= 4);
+  for (const name of names) assert.ok(landing.includes(name), name);
+  for (const answer of answers) assert.ok(landing.includes(answer), answer);
+});
+
 test('P0-01 sitemap lists canonical /report/ URL', () => {
   const sitemap = read('sitemap.xml');
   assert.match(sitemap, new RegExp(`<loc>${REPORT_CANONICAL_URL}</loc>`));

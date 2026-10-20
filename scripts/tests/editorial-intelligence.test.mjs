@@ -28,6 +28,7 @@ import { blockIfAbis, containsAbisContent } from '../lib/editorial-intelligence/
 import { classifyCannibalization, buildInterpretation } from '../lib/editorial-intelligence/cannibalization.mjs';
 import { buildClaimMap, validateClaims, validateDraftText } from '../lib/editorial-intelligence/citation-validator.mjs';
 import { buildSeoPackage, generateArticleDraft } from '../lib/editorial-intelligence/draft-generator.mjs';
+import { validateQuestionShapedHeadings } from '../lib/question-headings.mjs';
 import { proposeScheduleChange, getNextAvailableSlot } from '../lib/editorial-intelligence/schedule-proposal.mjs';
 import { processPipeline, runIntelligencePipeline } from '../lib/editorial-intelligence/pipeline.mjs';
 import { loadQueue, upsertQueueEntry } from '../lib/editorial-intelligence/storage.mjs';
@@ -211,8 +212,10 @@ test('RMVU-05D T11 article draft created with frontmatter', () => {
   const draft = generateArticleDraft(ev, scoring, interpretation, cannibalization, seo);
   assert.match(draft, /^---\nevent_id:/);
   assert.match(draft, /status: READY_FOR_EDITORIAL_REVIEW/);
-  assert.match(draft, /## What Happened/);
+  assert.match(draft, /## 何が公表されたのか？/);
   assert.match(draft, /## Direct Answer|Direct Answer/);
+  const headings = validateQuestionShapedHeadings(draft);
+  assert.equal(headings.ok, true, JSON.stringify(headings.issues));
 });
 
 test('RMVU-05D T12 source claims mapped', () => {

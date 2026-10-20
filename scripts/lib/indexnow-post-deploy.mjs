@@ -1,7 +1,7 @@
 /**
  * Post-deploy IndexNow — production HTTP 200 gate before submission.
  */
-import { classifyIndexNowCandidate } from './indexnow-eligibility.mjs';
+import { classifyIndexNowCandidate, DEFAULT_ROOT } from './indexnow-eligibility.mjs';
 import { insightPublishUrl, submitIndexNow } from './indexnow-client.mjs';
 import { verifyArticleUrl } from './url-verify.mjs';
 import {
@@ -83,7 +83,7 @@ export async function submitPostDeployIndexNow(slugs, opts = {}) {
   const {
     dryRun = false,
     skipWait = false,
-    root,
+    root = DEFAULT_ROOT,
     now = new Date(),
     key,
     fetchImpl,

@@ -190,9 +190,21 @@ jobs:
         run: exit 1
 
       - name: Post-deploy IndexNow
-        if: steps.delivery.outputs.changed == 'true' && steps.publish.outputs.slug != ''
+        if: steps.publish.outputs.exit_code == '0'
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          DRY_RUN_INPUT: ${{ github.event.inputs.dry_run }}
         run: |
           set -euo pipefail
-          node scripts/submit-indexnow-post-deploy.mjs --slugs "${{ steps.publish.outputs.slug }}"
+          if [ "${DRY_RUN_INPUT:-false}" = "true" ]; then
+            echo "IndexNow: skipped dry run"
+            exit 0
+          fi
+          PUBLISHED="$(grep '^PUBLISHED_SLUGS=' /tmp/reconcile-publish.log | tail -1 | cut -d= -f2- || true)"
+          FRESHNESS="$(grep '^FRESHNESS_SLUGS=' /tmp/reconcile-publish.log | tail -1 | cut -d= -f2- || true)"
+          SLUGS="$(printf '%s,%s' "${PUBLISHED}" "${FRESHNESS}" | sed 's/^,//; s/,$//; s/,,*/,/g')"
+          if [ -z "${SLUGS}" ]; then
+            echo "IndexNow: no published or freshness URLs"
+            exit 0
+          fi
+          node scripts/submit-indexnow-post-deploy.mjs --slugs "${SLUGS}"

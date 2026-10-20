@@ -15,10 +15,12 @@ import {
   maskIndexNowKey,
   normalizeIndexNowUrls,
   publishedUrlsFromSlugs,
+  resolveIndexNowKey,
   submitIndexNow,
   validateIndexNowKey,
   validateIndexNowUrl,
 } from '../lib/indexnow-client.mjs';
+import { loadCommittedIndexNowKey } from '../lib/indexnow-key.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DUMMY_KEY = 'abcd1234-test-key-01';
@@ -153,7 +155,7 @@ test('T10 — Build without key skips key file (generator only)', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'indexnow-nk-'));
   const env = { ...process.env };
   delete env.INDEXNOW_KEY;
-  const res = spawnSync(process.execPath, ['scripts/generate-indexnow-key-file.mjs', '--out', tmp], {
+  const res = spawnSync(process.execPath, ['scripts/generate-indexnow-key-file.mjs', '--out', tmp, '--env-only'], {
     cwd: ROOT,
     env,
     encoding: 'utf8',
@@ -227,10 +229,11 @@ test('403 does not retry', async () => {
   assert.equal(result.status, 'key_verification_failed');
 });
 
-test('eligibility gate blocks future scheduled cloudflare-aeo', async () => {
-  const result = await submitIndexNow([insightPublishUrl('cloudflare-aeo')], {
+test('eligibility gate blocks a future scheduled article', async () => {
+  const result = await submitIndexNow([insightPublishUrl('court-record-on-clicks')], {
     key: DUMMY_KEY,
     enforceEligibility: true,
+    now: new Date('2026-10-20T12:00:00+09:00'),
     fetchImpl: () => {
       throw new Error('fetch should not run');
     },
@@ -251,7 +254,7 @@ test('eligibility gate blocks protected ABIS slugs', async () => {
 });
 
 test('eligibility gate blocks editorial_hold slugs', async () => {
-  const result = await submitIndexNow([insightPublishUrl('ari-vs-geo-seo')], {
+  const result = await submitIndexNow([insightPublishUrl('consent-data-design')], {
     key: DUMMY_KEY,
     enforceEligibility: true,
     fetchImpl: () => {
@@ -272,17 +275,21 @@ test('eligibility allows published insight with live HTML', async () => {
   assert.equal(result.submitted, 1);
 });
 
-test('full-site inventory excludes cloudflare-aeo and protected slugs', async () => {
+test('full-site inventory excludes future and protected slugs', async () => {
   const { collectIndexNowEligibleUrls, classifyIndexNowCandidate } = await import(
     '../lib/indexnow-eligibility.mjs'
   );
-  const inventory = collectIndexNowEligibleUrls({ root: ROOT, now: new Date() });
-  const cf = classifyIndexNowCandidate(insightPublishUrl('cloudflare-aeo'), { root: ROOT });
-  assert.equal(cf.eligible, false);
-  assert.equal(cf.reason, 'future_publishAt');
-  assert.ok(!inventory.eligible.some((u) => u.includes('cloudflare-aeo')));
+  const inventory = collectIndexNowEligibleUrls({ root: ROOT, now: new Date('2026-10-20T12:00:00+09:00') });
+  const future = classifyIndexNowCandidate(insightPublishUrl('court-record-on-clicks'), {
+    root: ROOT,
+    now: new Date('2026-10-20T12:00:00+09:00'),
+  });
+  assert.equal(future.eligible, false);
+  assert.equal(future.reason, 'future_publishAt');
+  assert.ok(!inventory.eligible.some((u) => u.includes('court-record-on-clicks')));
   assert.ok(!inventory.eligible.some((u) => u.includes('abis-intro')));
-  assert.ok(!inventory.eligible.some((u) => u.includes('three-pillars-ops')));
+  assert.ok(!inventory.eligible.some((u) => u.includes('consent-data-design')));
+  assert.ok(inventory.eligible.some((u) => u.includes('/insights/blind/')));
 });
 
 test('scheduled publisher defers IndexNow to post-deploy step', () => {
@@ -379,14 +386,15 @@ test('post-deploy IndexNow API failure leaves graceful publication path', async 
   assert.equal(result.submitted, 0);
 });
 
-test('post-deploy blocks future cloudflare-aeo before publication', async () => {
+test('post-deploy blocks a future article before publication', async () => {
   const { submitPostDeployIndexNow } = await import('../lib/indexnow-post-deploy.mjs');
-  const result = await submitPostDeployIndexNow(['cloudflare-aeo'], {
+  const result = await submitPostDeployIndexNow(['court-record-on-clicks'], {
     skipWait: true,
     key: DUMMY_KEY,
+    now: new Date('2026-10-20T12:00:00+09:00'),
     verifyFn: async () => ({
       ok: true,
-      url: insightPublishUrl('cloudflare-aeo'),
+      url: insightPublishUrl('court-record-on-clicks'),
       status: 200,
     }),
     fetchImpl: () => {
@@ -413,4 +421,31 @@ test('post-deploy blocks protected ABIS slugs', async () => {
   });
   assert.equal(result.status, 'blocked');
   assert.equal(result.blocked[0].reason, 'protected');
+});
+
+test('hosted key file is copied without INDEXNOW_KEY', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'indexnow-hosted-'));
+  const env = { ...process.env };
+  delete env.INDEXNOW_KEY;
+  const res = spawnSync(process.execPath, ['scripts/generate-indexnow-key-file.mjs', '--out', tmp], {
+    cwd: ROOT,
+    env,
+    encoding: 'utf8',
+  });
+  assert.equal(res.status, 0, res.stderr);
+  const key = loadCommittedIndexNowKey(ROOT);
+  assert.ok(key);
+  assert.equal(fs.readFileSync(path.join(tmp, `${key}.txt`), 'utf8').trim(), key);
+  fs.rmSync(tmp, { recursive: true, force: true });
+});
+
+test('hosted key overrides a mismatched INDEXNOW_KEY', () => {
+  const hosted = loadCommittedIndexNowKey(ROOT);
+  assert.ok(hosted);
+  const resolved = resolveIndexNowKey({
+    root: ROOT,
+    envKey: 'zzzzzzzz-not-hosted',
+  });
+  assert.equal(resolved.source, 'file');
+  assert.equal(resolved.key, hosted);
 });

@@ -75,3 +75,14 @@ test('publication date sync repairs corrupted article-meta time tags', () => {
   assert.equal(result.changed, true);
   assert.match(result.html, /<time datetime="2026-08-20">2026\.08\.20<\/time>/);
 });
+
+test('publication date sync keeps a later freshness dateModified', () => {
+  const html = `
+  <script type="application/ld+json">
+  {"datePublished":"2026-08-20","dateModified":"2026-10-02"}
+  </script>
+  `;
+  const result = syncInsightPublicationDateToYmd(html, '2026-08-20');
+  assert.match(result.html, /"datePublished": "2026-08-20"/);
+  assert.match(result.html, /"dateModified": "2026-10-02"/);
+});
