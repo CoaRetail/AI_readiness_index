@@ -5,9 +5,30 @@
 import { emitWithCanonicalAlias, purchaseDedupeKey, createDedupeStore } from '../../scripts/lib/measurement/canonical-emit.mjs';
 
 const REPORT_START_KEY = 'ari_report_start_sent';
+const REPORT_VIEW_ITEM_KEY = 'ari_report_view_item_sent';
 const CONVERSION_KEY = 'ari_conversion_log_v1';
 const PROOF_IMPRESSION_KEY = 'ari_report_proof_impression_v1';
 const purchaseDedupe = createDedupeStore(typeof localStorage !== 'undefined' ? localStorage : null);
+
+const REPORT_ECOMMERCE_VALUE = 29800;
+const REPORT_ECOMMERCE_ITEM = {
+  item_id: 'company_report_bundle',
+  item_name: 'ARI Company Report',
+  price: REPORT_ECOMMERCE_VALUE,
+};
+
+export function reportEcommerceParams(overrides = {}) {
+  const transactionId = overrides.transaction_id
+    || overrides.sessionId
+    || overrides.purchase_reference
+    || '';
+  return {
+    currency: overrides.currency || 'JPY',
+    value: overrides.value ?? REPORT_ECOMMERCE_VALUE,
+    ...(transactionId ? { transaction_id: transactionId } : {}),
+    items: overrides.items || [{ ...REPORT_ECOMMERCE_ITEM }],
+  };
+}
 
 function readAttributionContext() {
   let stored = {};
@@ -83,8 +104,7 @@ function recordConversion(conversionType, params = {}) {
   return record;
 }
 
-export function trackGaEvent(name, params = {}) {
-  if (typeof window.gtag !== 'function') return;
+function sanitizeGaParams(params = {}) {
   const safe = { ...params };
   delete safe.email;
   delete safe.company;
@@ -95,6 +115,27 @@ export function trackGaEvent(name, params = {}) {
   delete safe.lastTouch;
   delete safe.attribution;
   delete safe.referrer;
+  return safe;
+}
+
+/** Direct gtag (dual measurement IDs via ga4.js); optional beacon + event_callback for navigation. */
+function trackGaEventDirect(name, params = {}, { transportType, onComplete } = {}) {
+  if (typeof window.gtag !== 'function') {
+    if (onComplete) onComplete();
+    return;
+  }
+  const payload = sanitizeGaParams(params);
+  if (transportType) payload.transport_type = transportType;
+  if (onComplete) {
+    payload.event_callback = onComplete;
+    payload.event_timeout = 2000;
+  }
+  window.gtag('event', name, payload);
+}
+
+export function trackGaEvent(name, params = {}) {
+  if (typeof window.gtag !== 'function') return;
+  const safe = sanitizeGaParams(params);
   const bridge = typeof window.ariMeasurement?.emitWithAlias === 'function'
     ? (event, payload) => window.ariMeasurement.emitWithAlias(event, payload)
     : (event, payload) => emitWithCanonicalAlias((evt, p) => window.gtag('event', evt, { transport_type: 'beacon', ...p }), event, payload);
@@ -102,6 +143,17 @@ export function trackGaEvent(name, params = {}) {
 }
 
 /** Fires once per browser tab session when user starts diagnosis (landing → form). */
+/** GA4 recommended e-commerce — once per tab when /report/ SPA loads. */
+export function trackReportViewItemOnce() {
+  if (!oncePerSession(REPORT_VIEW_ITEM_KEY)) return;
+  trackGaEvent('view_item', {
+    source: 'ari_report',
+    page_path: window.location.pathname || '/report/',
+    ...eventAttribution(),
+    ...reportEcommerceParams(),
+  });
+}
+
 export function trackReportStartOnce() {
   try {
     if (sessionStorage.getItem(REPORT_START_KEY) === '1') return;
@@ -120,8 +172,14 @@ export function trackReportFormComplete() {
   trackGaEvent('report_form_complete', { source: 'ari_report' });
 }
 
-export function trackReportCheckoutStart(params = {}) {
-  trackGaEvent('report_checkout_start', { source: 'ari_report', ...eventAttribution(), ...params });
+export function trackReportCheckoutStart(params = {}, onComplete) {
+  const base = { source: 'ari_report', ...eventAttribution(), ...params };
+  trackGaEvent('report_checkout_start', base);
+  trackGaEventDirect(
+    'begin_checkout',
+    { ...base, ...reportEcommerceParams() },
+    { transportType: 'beacon', onComplete },
+  );
 }
 
 export function trackReportProofImpression(params = {}) {
@@ -139,7 +197,26 @@ export function trackPurchaseVerified(params = {}) {
   const reference = purchase_reference || params.sessionId || '';
   if (reference && !purchaseDedupe.once(purchaseDedupeKey(reference))) return;
   const context = readAttributionContext();
-  trackGaEvent('purchase_verified', { source: 'ari_report', verified: true, ...eventAttribution(context), ...analyticsParams, purchase_reference: reference });
+  const ecommerce = reportEcommerceParams({
+    ...analyticsParams,
+    transaction_id: analyticsParams.transaction_id,
+    sessionId: reference,
+    purchase_reference: reference,
+  });
+  const enriched = {
+    ...analyticsParams,
+    currency: analyticsParams.currency || ecommerce.currency,
+    value: analyticsParams.value ?? ecommerce.value,
+    transaction_id: analyticsParams.transaction_id || ecommerce.transaction_id,
+    items: analyticsParams.items || ecommerce.items,
+  };
+  trackGaEvent('purchase_verified', {
+    source: 'ari_report',
+    verified: true,
+    ...eventAttribution(context),
+    ...enriched,
+    purchase_reference: reference,
+  });
   if (params.verified === true && ['company_report_bundle', 'company_report_legacy', 'company_report'].includes(params.product_id)) {
     recordConversion('REPORT_PURCHASE', { ...conversionAttribution(context), externalReference: reference || params.product_id, segment: params.segment, partnerType: params.partnerType });
   }

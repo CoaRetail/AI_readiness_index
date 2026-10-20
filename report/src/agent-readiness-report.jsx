@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useContext } from "react";
 import VideoCarousel from "./VideoCarousel.jsx";
-import { trackReportStartOnce, trackReportProofImpression, trackLocalCtaClick } from "./analytics.js";
+import { trackReportStartOnce, trackReportViewItemOnce, trackReportProofImpression, trackLocalCtaClick } from "./analytics.js";
 import { readPreviewPrefillFromSession } from "./preview-prefill.js";
 import {
   scoreInterpretation,
@@ -2342,6 +2342,10 @@ export default function App() {
   const [formPrefill, setFormPrefill] = useState(null);
   const returnHandledRef = useRef(false);
 
+  useEffect(() => {
+    trackReportViewItemOnce();
+  }, []);
+
   // Preview funnel → form prefill（sessionStorage、query param は使わない）
   useEffect(() => {
     const prefill = readPreviewPrefillFromSession(
@@ -2463,12 +2467,14 @@ export default function App() {
   const handlePay = () => {
     try { localStorage.setItem(PENDING_FORM_KEY, JSON.stringify(formData)); } catch { /* noop */ }
     const checkout = resolveCheckoutUrl();
-    onReportCheckoutStart(checkout);
     if (!checkout.url) {
+      onReportCheckoutStart(checkout);
       alert("決済リンクが未設定です。Bundle Payment Link の設定が必要です（NEW_PAYMENT_LINK_REQUIRED）。");
       return;
     }
-    window.location.href = checkout.url;
+    onReportCheckoutStart(checkout, () => {
+      window.location.href = checkout.url;
+    });
   };
 
   const handleAnalysisComplete = (report) => {

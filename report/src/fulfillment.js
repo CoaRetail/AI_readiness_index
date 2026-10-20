@@ -182,11 +182,11 @@ export function onReportFormComplete() {
   trackReportFormComplete();
 }
 
-export function onReportCheckoutStart(checkout) {
+export function onReportCheckoutStart(checkout, onComplete) {
   trackReportCheckoutStart({
     checkout_source: checkout?.source || 'unknown',
     bundle_link_required: !!checkout?.bundleLinkRequired,
-  });
+  }, onComplete);
 }
 
 export function onReportResultView(purchaseState) {
