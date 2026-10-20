@@ -2027,7 +2027,7 @@
     {
       "slug": "ai-content-manual-factcheck",
       "publishAt": "2026-10-20T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AI生成は公開前に人手で確認する——main contentと、架空の著者",
       "cardSummary": "公開前の人手確認は、生成AI案内がcriticalと書いた範囲です。titleや代替テキストにも及びます。main contentと架空の著者は、別の案内にあります。",
       "llmsLabel": "公開前の人手確認",
@@ -2064,10 +2064,13 @@
       "scheduledPublishAt": "2026-10-20T10:00:00+09:00",
       "slotDate": "2026-10-20",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261020-DAILY-001",
       "activatedAt": "2026-10-05T23:30:00.000Z",
-      "heroReadyAt": "2026-10-19T00:05:11.258Z"
+      "heroReadyAt": "2026-10-19T00:05:11.258Z",
+      "publishAttemptedAt": "2026-10-20T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-20T01:00:00.000Z"
     },
     {
       "slug": "court-record-on-clicks",

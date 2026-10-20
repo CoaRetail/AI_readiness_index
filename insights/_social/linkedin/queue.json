@@ -1035,6 +1035,23 @@
       "createdAt": "2026-10-19T01:00:00.193Z",
       "updatedAt": "2026-10-19T01:00:38.030Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-ai-content-manual-factcheck-2026-10-20",
+      "slug": "ai-content-manual-factcheck",
+      "articlePublishAt": "2026-10-20T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-20T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-20T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/ai-content-manual-factcheck/",
+      "contentFile": "insights/_social/linkedin/posts/ai-content-manual-factcheck.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-20T01:00:00.161Z",
+      "updatedAt": "2026-10-20T01:00:00.161Z",
+      "series": "v2-stock"
     }
   ]
 }
