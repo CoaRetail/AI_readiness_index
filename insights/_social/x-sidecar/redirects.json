@@ -921,6 +921,30 @@
       "date": "2026-10-20",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261021c",
+      "destination": "https://readiness.coaretail.com/insights/geo-social-citation-authority/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261021_0800",
+      "article_slug": "geo-social-citation-authority",
+      "date": "2026-10-21",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261021d",
+      "destination": "https://readiness.coaretail.com/insights/cloudflare-ai-traffic-search-agent-training/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261021_1500",
+      "article_slug": "cloudflare-ai-traffic-search-agent-training",
+      "date": "2026-10-21",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261021e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261021_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-10-21",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
