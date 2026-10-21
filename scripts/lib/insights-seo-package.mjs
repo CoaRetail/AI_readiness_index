@@ -410,10 +410,19 @@ export function buildArticleHeadHtml({ slug, h1, metaDescription, datePublished 
     description: metaDescription,
     datePublished,
     dateModified: datePublished,
-    author: { '@type': 'Organization', name: '合同会社コア・リテール' },
+    author: { '@type': 'Organization', name: '合同会社コア・リテール', url: 'https://www.coaretail.com' },
     publisher: { '@type': 'Organization', name: '合同会社コア・リテール', url: 'https://www.coaretail.com' },
     mainEntityOfPage: canonical,
     inLanguage: 'ja',
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Agent Readiness', item: 'https://readiness.coaretail.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://readiness.coaretail.com/insights/' },
+      { '@type': 'ListItem', position: 3, name: h1, item: canonical },
+    ],
   };
 
   return `<meta charset="UTF-8">
@@ -424,6 +433,9 @@ export function buildArticleHeadHtml({ slug, h1, metaDescription, datePublished 
 ${buildSocialMetaTags(slug, h1, metaDescription)}
 <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
+</script>
+<script type="application/ld+json">
+${JSON.stringify(breadcrumbLd, null, 2)}
 </script>`;
 }
 
