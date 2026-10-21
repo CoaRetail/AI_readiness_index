@@ -2077,7 +2077,7 @@
     {
       "slug": "court-record-on-clicks",
       "publishAt": "2026-10-21T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "「クリックしない」は原告の書面にある——認定と却下を分ける",
       "cardSummary": "「ユーザーはクリックしない」と、Bing ChatのCTRは、原告の書面が引用している主張です。裁判所の認定ではありません。Penskeの却下は、合意がなかった、という別の判断です。",
       "llmsLabel": "主張と認定を分ける",
@@ -2114,10 +2114,13 @@
       "scheduledPublishAt": "2026-10-21T10:00:00+09:00",
       "slotDate": "2026-10-21",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261021-DAILY-001",
       "activatedAt": "2026-10-05T23:30:00.000Z",
-      "heroReadyAt": "2026-10-19T00:07:47.911Z"
+      "heroReadyAt": "2026-10-19T00:07:47.911Z",
+      "publishAttemptedAt": "2026-10-21T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-21T01:00:00.000Z"
     },
     {
       "slug": "ai-crawler-discovery-paths",
