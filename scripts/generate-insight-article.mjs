@@ -182,10 +182,21 @@ const headMetadata = seoPkg
   "description": ${JSON.stringify(description)},
   "datePublished": "${date}",
   "dateModified": "${date}",
-  "author": { "@type": "Organization", "name": "合同会社コア・リテール" },
+  "author": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
   "publisher": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
   "mainEntityOfPage": "https://readiness.coaretail.com/insights/${slug}/",
   "inLanguage": "ja"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Agent Readiness", "item": "https://readiness.coaretail.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://readiness.coaretail.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": ${JSON.stringify(displayTitle)}, "item": "https://readiness.coaretail.com/insights/${slug}/" }
+  ]
 }
 </script>`;
 
