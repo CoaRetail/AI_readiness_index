@@ -2120,7 +2120,9 @@
       "heroReadyAt": "2026-10-19T00:07:47.911Z",
       "publishAttemptedAt": "2026-10-21T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-21T01:00:00.000Z"
+      "publishedAt": "2026-10-21T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-21T01:00:33.821Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "ai-crawler-discovery-paths",

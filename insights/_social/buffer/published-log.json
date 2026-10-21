@@ -1439,7 +1439,34 @@
       "publishAt": "2026-10-20T12:00:00+09:00",
       "dueAtUtc": "2026-10-20T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-21T01:00:00.000Z",
+      "slug": "court-record-on-clicks",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad80eb3d894396f66bc3e1a",
+      "publishAt": "2026-10-21T11:30:00+09:00",
+      "dueAtUtc": "2026-10-21T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-21T01:00:00.000Z",
+      "slug": "court-record-on-clicks",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad80eb3aff466fe09f55566",
+      "publishAt": "2026-10-21T11:45:00+09:00",
+      "dueAtUtc": "2026-10-21T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-21T01:00:00.000Z",
+      "slug": "court-record-on-clicks",
+      "channel": "x",
+      "bufferUpdateId": "6ad80eb4db7d8198213b1db6",
+      "publishAt": "2026-10-21T12:00:00+09:00",
+      "dueAtUtc": "2026-10-21T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-20T01:00:35.680Z"
+  "updatedAt": "2026-10-21T01:00:37.245Z"
 }
