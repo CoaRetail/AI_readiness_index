@@ -2191,7 +2191,7 @@
       "freshnessReviewedAt": "2026-10-22T00:40:00.000Z",
       "eirId": "EIR-20261023-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.php.net/archive/2026.php",
@@ -2210,13 +2210,13 @@
           "secondary": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
         }
       },
-      "heroPendingAt": "2026-10-22T00:40:00.000Z",
       "scheduledPublishAt": "2026-10-23T10:00:00+09:00",
       "slotDate": "2026-10-23",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261023-DAILY-001",
-      "activatedAt": "2026-10-22T00:40:00.000Z"
+      "activatedAt": "2026-10-22T00:40:00.000Z",
+      "heroReadyAt": "2026-10-22T01:30:06.790Z"
     },
     {
       "slug": "barcelona-ai-features-on-seo",
