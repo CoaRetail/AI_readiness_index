@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/ga4.js" async></script>
+  <script src="/assets/analytics.js" defer></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること | Agent Readiness Insights</title>
+<meta name="description" content="10月21日、PHPは認証なしのRCE 2件、Node.jsは10件のCVEを修正しました。改ざんされたサイトはAI検索の出典としても危うくなります。確認項目をまとめました。">
+<link rel="canonical" href="https://readiness.coaretail.com/insights/security-patch-week-ai-trust/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること">
+<meta property="og:description" content="10月21日、PHPは認証なしのRCE 2件、Node.jsは10件のCVEを修正しました。改ざんされたサイトはAI検索の出典としても危うくなります。確認項目をまとめました。">
+<meta property="og:url" content="https://readiness.coaretail.com/insights/security-patch-week-ai-trust/">
+<meta property="og:site_name" content="Agent Readiness Research Hub">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://readiness.coaretail.com/assets/insights/security-patch-week-ai-trust/hero.webp">
+<meta name="twitter:image" content="https://readiness.coaretail.com/assets/insights/security-patch-week-ai-trust/hero.webp">
+
+<meta name="twitter:title" content="PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること">
+<meta name="twitter:description" content="10月21日、PHPは認証なしのRCE 2件、Node.jsは10件のCVEを修正しました。改ざんされたサイトはAI検索の出典としても危うくなります。確認項目をまとめました。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること",
+  "description": "10月21日、PHPは認証なしのRCE 2件、Node.jsは10件のCVEを修正しました。改ざんされたサイトはAI検索の出典としても危うくなります。確認項目をまとめました。",
+  "datePublished": "2026-10-23",
+  "dateModified": "2026-10-23",
+  "author": { "@type": "Organization", "name": "合同会社コア・リテール" },
+  "publisher": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
+  "mainEntityOfPage": "https://readiness.coaretail.com/insights/security-patch-week-ai-trust/",
+  "inLanguage": "ja"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/hub-animations.css">
+<link rel="stylesheet" href="../../assets/insights/hero.css">
+<style>
+:root {
+  --bg: #FFFFFF; --bg-elevated: #FAFAFA; --bg-card: #F4F4F5;
+  --border: rgba(0,0,0,0.08);
+  --text: #09090B; --text-secondary: #52525B; --text-muted: #71717A;
+  --cta: #09090B; --cta-text: #FFFFFF;
+  --radius: 12px; --max: 720px; --max-wide: 1120px; --nav-h: 64px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; }
+.article-container { max-width: var(--max); margin: 0 auto; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--text-muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta { background: var(--cta); color: var(--cta-text) !important; padding: 8px 14px; border-radius: 8px; font-size: 13px !important; font-weight: 500 !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.article-header { padding: calc(var(--nav-h) + 56px) 0 40px; }
+.breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.article-meta time { font-weight: 600; }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; background: var(--bg-card); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.25; margin-bottom: 20px; }
+.lead { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 40px; }
+.article-body h2 { font-size: 1.375rem; font-weight: 600; margin: 48px 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+.article-body p { margin-bottom: 1.25em; color: var(--text-secondary); }
+.article-body ul { margin: 0 0 1.25em 1.25em; color: var(--text-secondary); }
+.article-body li { margin-bottom: 0.5em; }
+.article-body strong { color: var(--text); font-weight: 600; }
+.article-body a { color: var(--text); }
+.article-body blockquote { border-left: 3px solid var(--text); padding: 12px 20px; margin: 24px 0; background: var(--bg-elevated); font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+.article-body blockquote strong { color: var(--text); }
+.article-body .closing-lines { margin-top: 1.5em; line-height: 2; }
+.article-cta { margin: 48px 0; padding: 28px; background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border); }
+.article-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.article-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn { display: inline-flex; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none; background: var(--cta); color: var(--cta-text); margin-right: 8px; margin-bottom: 8px; }
+.btn-navy { background: #0D1B3E; color: #FFFFFF; }
+.btn-navy:hover { background: #162040; color: #FFFFFF; }
+.article-cta .btn-navy,
+.article-cta .btn-navy:hover { color: #FFFFFF; }
+.article-body a.btn-navy,
+.article-body a.btn-navy:hover { color: #FFFFFF; }
+.sitewide-cta { margin: 48px 0 24px; padding: 24px 28px; background: #F4F4F5; border-radius: var(--radius); border: 1px solid var(--border); }
+.sitewide-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.sitewide-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.back-link { display: inline-block; margin: 40px 0 80px; font-size: 14px; color: var(--text-muted); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.related-insights { margin: 48px 0 0; }
+.related-insights h2 { font-size: 1.375rem; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.related-insights ul { margin: 0 0 0 1.25em; color: var(--text-secondary); }
+.related-insights li { margin-bottom: 0.5em; }
+.related-insights a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.research-footer { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+.footer-brand { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.footer-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+.footer-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+.footer-layers { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 24px; }
+.footer-layers a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.footer-copy { font-size: 13px; color: var(--text-muted); padding-top: 20px; border-top: 1px solid var(--border); }
+.footer-copy a { color: var(--text-muted); text-decoration: none; }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: var(--nav-h); left: 0; right: 0; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 20px 24px; gap: 16px; align-items: flex-start;
+  }
+  .nav-toggle { display: block; }
+  .nav { position: relative; }
+}
+</style>
+<link rel="stylesheet" href="/assets/sitewide-cta.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Agent Readiness <span>Research Hub</span></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/framework/">Framework</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/whitepaper/">Whitepaper</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/insights/" class="active">Insights</a></li>
+      <li><a href="/methodology.html">Methodology</a></li>
+      <li><a href="/report/" class="nav-cta">診断レポート</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <header class="article-header container">
+    <div class="article-container">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="/">Agent Readiness</a><span aria-hidden="true">/</span>
+        <a href="/insights/">Insights</a><span aria-hidden="true">/</span>
+        <span>セキュリティ更新</span>
+      </nav>
+      <p class="article-meta">
+        <time datetime="2026-10-23">2026.10.23</time>
+        <span class="article-tag">Column</span>
+      </p>
+      <h1>PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること</h1>
+      <p class="lead">10月21日、PHP・Node.jsが同じ日にセキュリティ更新を出しました。PHPの2件は、認証なしで遠隔からコードを実行されうる重大なものです。Python、Next.js、WordPress、Djangoも今月修正を出し、npmでは改ざん版の公開が続きました。AIに読まれるサイトとして、何を先に確かめるかをまとめます。</p>
+    </div>
+  </header>
+  <figure class="insight-hero"><img src="/assets/insights/security-patch-week-ai-trust/hero.webp" alt="security-patch-week-ai-trust のInsight Hero" width="1672" height="941" loading="eager"></figure>
+
+  <article class="article-body container" data-article-slug="security-patch-week-ai-trust" data-article-title="PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること" data-editorial-intent="NEWS">
+    <div class="article-container">
+      <div class="sitewide-cta" data-cta-profile="security-patch-week-ai-trust" data-editorial-intent="NEWS">
+        <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_security-patch-week-ai-trust_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/security-patch-week-ai-trust/" data-editorial-intent="NEWS">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_security-patch-week-ai-trust_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/security-patch-week-ai-trust/" data-editorial-intent="NEWS">Company Reportで詳しく調べる</a>
+      </div>
+      <h2>今週、まず更新すべきものは何か？</h2>
+      <p>PHPを動かしているサーバーです。PHPプロジェクトは2026年10月21日、PHP 8.5.12、8.4.27、8.3.36、8.2.35を出し、認証なしで遠隔からコードを実行されうる重大な脆弱性を2件直しました。CVE-2026-109618とCVE-2026-109619です。PHP-FPM、Apacheのmod_php、php-cgi、FrankenPHP、LiteSpeedが対象で、mod_phpがいちばん危ない、とphp.netは書いています。アプリのコードが動く前に攻撃が成立する実証がある、とも書いています。</p>
+      <p>GitHubの勧告（GHSA-w8hw-w9fx-j79w）では、CVE-2026-109618の深刻度はCVSS 4.0で9.2です。更新だけが完全な対策で、設定の回避策は完全ではない、と明記しています。もう一方のCVE-2026-109619（<a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a>）も、PHPプロジェクトの勧告ではCVSS 4.0で9.2です。NVDの公開ページは、2026年10月22日の確認では「CVE ID Not Found」でした。点数は、PHPプロジェクトのCVSS 4.0を使います。PHP 8.1以前は、PHPプロジェクトからの更新がありません。WordPressやLaravelのサイトは、多くがこの上で動いています。</p>
+      <h2>Node.jsとPythonでは、何が直ったか？</h2>
+      <p>Node.jsは同じ10月21日に、22.23.4、24.22.1、26.12.1のセキュリティリリースを出しました。公式ブログが挙げたCVEは10件で、最高の深刻度はHighです。10件のすべてが三つの系列にあるわけではありません。Brotliの展開処理の範囲外書き込み（CVE-2026-111497）と、dns.resolveがNUL文字で名前を切り詰める問題（CVE-2026-105482）は22.x、24.x、26.xです。TLS証明書のホスト名確認をすり抜けるうち、CVE-2026-106069は三系列、CVE-2026-105483は24.xと26.xです。ZIPヘッダのCVE-2026-106070と、権限モデルのワイルドカードのCVE-2026-106071は26.xです。サポートが終わった版は、常に影響を受けるとみなすよう公式ブログは書いています。</p>
+      <p>Pythonは10月1日に3.10.22から3.14.8までの5系列でセキュリティ修正を出しました。ssl.SSLContext.wrap_bio()がホスト名を確かめずに接続を終えうる問題（CVE-2026-19553）や、tarfileの展開フィルターの抜け（CVE-2026-19672ほか）です。3.10.22は3.10系の最後のリリースで、以後は修正が出ません。10月21日には3.15.1、3.14.9、3.13.17が、eMudhra/emSignの認証局の件に対応したpipとcertifiを同梱して出ています。</p>
+      <h2>フレームワークとパッケージでも、同じ時期に穴が出ているか？</h2>
+      <p>出ています。Next.jsは10月14日に16.4.1と15.5.28を出し、画像最適化APIでSVGを扱うときの、認証なしの遠隔コード実行（CVE-2026-96889、CVSS 4.0で9.5）などを直しました。勧告は、Next.jsがglibcベースのLinuxで動くときの話です。対象は10.0.0から15.5.27と、16.0.0から16.4.0です。WordPressは10月6日の7.1.3でセキュリティ修正7件と不具合修正4件、Djangoは同日に6.1.2、6.0.9、5.2.18で4件のCVEを直しています。</p>
+      <p>npmでは、正規の公開手順を乗っ取った改ざん版が続きました。10月8日のtensorlake 0.5.144は、インストール時にGitHubやnpmのトークン、クラウドの認証情報、AIツールとMCPの設定まで集め、自分を他のパッケージへ広げた、と開発元の勧告にあります。正規のワークフローから出たので、npmの来歴証明も正しく付いていました。10月5日の@subql/common 5.8.3も、GitHub ActionsのOIDCで公開された改ざん版だった、とGMO Flatt Securityが報告しています。</p>
+      <p>米国のCISAは10月20日、実際に悪用されている脆弱性の一覧に6件を加えました。そのうちの1件は、日本で使われているEGセキュアソリューションズのSiteGuard Server EditionのOSコマンド注入（CVE-2026-106931）です。開発元の告知では、統計機能が有効なときに影響し、初期値は有効です。対象はVer2.20以降で、Apache、Nginx、IISはVer8.00 Update5より前、FreeBSD上のApacheとNginxはVer7.00 Update6より前です。IISのVer3.10からVer4.00 Update4は対象外です。修正版は、それぞれVer8.00 Update5とVer7.00 Update6です。開発元の点数はCVSS 4.0で8.5、CVSS 3.0で7.8で、攻撃元はローカル、必要な権限は低です。認証なしの遠隔実行だとは書いていません。NVDの詳細は、2026年10月22日の確認では取得できませんでした。点数は開発元のCVSSを使います。</p>
+      <h2>サイトの安全は、AI検索に関係するか？</h2>
+      <p>関係する経路は、公式文書で確かめられる範囲に限られます。Googleは、AI OverviewsやAI Modeの補足リンクに出る条件を、Google検索にインデックスされ、スニペット付きで表示できることとしています。追加の技術要件はない、とも書いています。そして、Googleのスパムポリシーは、セキュリティの穴から許可なく置かれた内容を「ハッキングされたコンテンツ」として扱います。</p>
+      <p>ここから先は推論です。改ざんされて検索の扱いが落ちたページは、同じ仕組みに乗るAIの回答でも出典になりにくい、と考えるのが自然です。ただ、AI検索がサイトの安全性そのものを順位の要素にしている、と書いた一次資料は見つけていません。本稿もそうは書きません。</p>
+      <p>もう一つの経路は、中身のすり替えです。AIの回答は取得したページを引用します。改ざんで価格、連絡先、リンク先が書き換わったページが取得されれば、その内容がそのまま要約されうる、というのも推論です。llms.txtや構造化データも、サーバーが乗っ取られれば書き換えられるファイルの一つです。</p>
+      <h2>AIエージェント向けの入口では、何に気をつけるか？</h2>
+      <p>MCPサーバーやエージェント向けのAPIは、それ自体がNode.jsやPythonで動くことが多く、今週の更新の対象です。tensorlakeの件ではMCPの設定が盗む対象に入り、Angularの名前に似せたnpmパッケージの一つは、MCPの依存を攻撃者のパッケージに差し替えていた、とCorgeaが報告しています。エージェントの入口は、人の画面より監視が薄くなりがちです。</p>
+      <h2>サイトの担当者は、今日何を確かめればいいか？</h2>
+      <ul>
+        <li>サーバーのPHPが8.5.12、8.4.27、8.3.36、8.2.35以降か。更新後にPHPのワーカーを再起動したか。</li>
+        <li>Node.jsが22.23.4、24.22.1、26.12.1以降か。Next.jsの15系が15.5.28以降、16系が16.4.1以降か。16.0.0から16.4.0は、15.5.28では直りません。</li>
+        <li>Pythonがサポート中の系列か。3.10以前なら移行の予定があるか。Djangoが6.1.2、6.0.9、5.2.18以降か。</li>
+        <li>WordPressが7.1.3以降か。プラグインの更新が止まっていないか。</li>
+        <li>10月に入れたnpmパッケージに、上の改ざん版が含まれていないか。含まれていたら、トークンと鍵を作り直したか。</li>
+        <li>Search Consoleの「セキュリティの問題」に警告が出ていないか。</li>
+        <li>llms.txt、robots.txt、構造化データ、MCPやAPIの設定が、知らないうちに変わっていないか。</li>
+      </ul>
+      <p>ARIの診断で見ている、AIに読まれる準備は、正しい内容が正しい場所から出ていることが前提です。更新は、その前提を守る作業です。</p>
+      <blockquote>
+        <strong>出典：</strong> <a href="https://www.php.net/archive/2026.php">php.net 2026年10月21日のセキュリティ勧告</a>／<a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w">GHSA-w8hw-w9fx-j79w</a>／<a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a>（いずれもCVSS 4.0で9.2）／<a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases">Node.js 2026年10月21日 Security Releases</a>／<a href="https://blog.python.org/2026/10/python-31022-31117/">Python Insider 10月1日</a>／<a href="https://blog.python.org/2026/10/python-3151-3149-31317/">Python Insider 10月21日</a>／<a href="https://nextjs.org/blog/nextjs-security-update-october-14-2026">Next.js 10月14日</a>／<a href="https://wordpress.org/news/2026/10/wordpress-7-1-3-maintenance-and-security-release/">WordPress 7.1.3</a>／<a href="https://www.djangoproject.com/weblog/2026/oct/06/security-releases/">Django 10月6日</a>／<a href="https://github.com/tensorlakeai/tensorlake/security/advisories/GHSA-8g63-53c9-65j2">tensorlake GHSA-8g63-53c9-65j2</a>／<a href="https://flatt.tech/research/posts/subql-common-npm-supply-chain-attack/">GMO Flatt Security（@subql/common）</a>／<a href="https://corgea.com/research/angular-npm-typosquats-web-archive-proxy-october-2026">Corgea（Angularの偽パッケージ）</a>／<a href="https://www.cisa.gov/news-events/alerts/2026/10/20/cisa-adds-six-known-exploited-vulnerabilities-catalog">CISA KEV 10月20日</a>／<a href="https://www.eg-secure.co.jp/siteguard/news/alert-202610-1">EGセキュアソリューションズのSiteGuard告知</a>／<a href="https://jvn.jp/jp/JVN88474777/">JVN#88474777</a>／<a href="https://developers.google.com/search/docs/appearance/ai-features">Google AI Features and Your Website</a>／<a href="https://developers.google.com/search/docs/essentials/spam-policies">Googleスパムポリシー（Hacked content）</a>
+      </blockquote>
+<h2>次のリソース</h2>
+        <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
+
+      <section class="related-insights">
+        <h2>関連Insights</h2>
+        <ul>
+        <li>
+          <a href="/insights/chatgpt-retrieval-citation-practice/">ChatGPTの引用と取得——第三者分析から読み取れる実務示唆</a>
+        </li>
+        <li>
+          <a href="/insights/schema-not-ai-citation-cheat-code/">SchemaはAI引用のチートコードではない——構造化の役割と限界</a>
+        </li>
+        </ul>
+      </section>
+
+      <div class="article-cta">
+        <h2>関連リソース</h2>
+        <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
+        <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
+        <a href="/research/" class="btn btn-secondary" data-ga-insight-cta="research">Research Hub</a>
+        <a href="/report/" class="btn btn-secondary" data-ga-insight-cta="report">ARI診断</a>
+      </div>
+
+      <a href="/insights/" class="back-link">← Insights 一覧に戻る</a>
+    </div>
+  </article>
+</main>
+
+<footer class="research-footer">
+  <div class="container">
+    <p class="footer-brand">Agent Readiness Research Hub</p>
+    <p class="footer-org">Insights · Coa Retail</p>
+    <p class="footer-meta">Version 1.0 · Last Updated 2026-10-23</p>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">トップ</a>
+      <a href="/framework/">Framework</a>
+      <a href="/research/">Research</a>
+      <a href="/whitepaper/">Whitepaper</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/news/">News</a>
+      <a href="/insights/">Insights</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/dental.html">Benchmarks</a>
+      <a href="/report/">診断レポート</a>
+      <a href="https://www.coaretail.com" target="_blank" rel="noopener">Coa Retail</a>
+    </nav>
+    <nav class="footer-layers" aria-label="Research">
+      <a href="/research/#principles">Principles</a>
+      <a href="/research/#updates">Updates</a>
+      <a href="/research/#citation">Citation Policy</a>
+      <a href="/research/#faq">FAQ</a>
+    </nav>
+    <p class="footer-copy">© 2026 <a href="https://www.coaretail.com/" target="_blank" rel="noopener">合同会社コア・リテール</a></p>
+  </div>
+</footer>
+<script src="/assets/sitewide-cta-tracking.js" defer></script>
+</body>
+</html>
