@@ -133,6 +133,7 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'shopify-agentic-holiday-legibility': ['shopify-ai-vs-organic-structured-catalog', 'citation-vs-action', 'openai-product-discovery-agentic-commerce'],
   'business-panel-ai-overview-study': ['branded-queries-ai-overviews', 'entity-consistency', 'reviews'],
   'chatgpt-ads-measurement-so-far': ['uk-cma-choice-screens-three-shelves', 'openai-product-discovery-agentic-commerce', 'court-record-on-clicks'],
+  'security-patch-week-ai-trust': ['chatgpt-retrieval-citation-practice', 'schema-not-ai-citation-cheat-code'],
 };
 
 
