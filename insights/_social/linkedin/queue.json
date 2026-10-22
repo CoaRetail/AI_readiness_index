@@ -1078,13 +1078,13 @@
       "linkedinPublishAt": "2026-10-22T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-crawler-discovery-paths/",
       "contentFile": "insights/_social/linkedin/posts/ai-crawler-discovery-paths.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6ad96032282deeeeb2c1bda3",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-22T01:00:00.277Z",
-      "updatedAt": "2026-10-22T01:00:00.277Z",
+      "updatedAt": "2026-10-22T01:00:35.499Z",
       "series": "v2-stock"
     }
   ]

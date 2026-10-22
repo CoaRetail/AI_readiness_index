@@ -1466,7 +1466,34 @@
       "publishAt": "2026-10-21T12:00:00+09:00",
       "dueAtUtc": "2026-10-21T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad96032282deeeeb2c1bda3",
+      "publishAt": "2026-10-22T11:30:00+09:00",
+      "dueAtUtc": "2026-10-22T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad960321093844846d53d06",
+      "publishAt": "2026-10-22T11:45:00+09:00",
+      "dueAtUtc": "2026-10-22T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "x",
+      "bufferUpdateId": "6ad96033b086d40f5728d797",
+      "publishAt": "2026-10-22T12:00:00+09:00",
+      "dueAtUtc": "2026-10-22T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-21T01:00:37.245Z"
+  "updatedAt": "2026-10-22T01:00:35.497Z"
 }

@@ -2170,7 +2170,9 @@
       "heroReadyAt": "2026-10-19T06:07:14.631Z",
       "publishAttemptedAt": "2026-10-22T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-22T01:00:00.000Z"
+      "publishedAt": "2026-10-22T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-22T01:00:33.576Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "barcelona-ai-features-on-seo",
