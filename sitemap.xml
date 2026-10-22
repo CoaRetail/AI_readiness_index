@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://readiness.coaretail.com/insights/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -592,6 +592,13 @@
   <url>
     <loc>https://readiness.coaretail.com/insights/court-record-on-clicks/</loc>
     <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://readiness.coaretail.com/insights/ai-crawler-discovery-paths/</loc>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -2127,7 +2127,7 @@
     {
       "slug": "ai-crawler-discovery-paths",
       "publishAt": "2026-10-22T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AIクローラーに送信窓口はない——sitemap.xmlとRSS、llms.txtは優先しない",
       "cardSummary": "AIの学習クローラーには、サイトマップを送る窓口が通常ありません。標準名のsitemap.xmlかRSSです。llms.txtは優先しない、という発言です。Web Search APIは、別の検索の入口です。",
       "llmsLabel": "見つけられる名前",
@@ -2164,10 +2164,13 @@
       "scheduledPublishAt": "2026-10-22T10:00:00+09:00",
       "slotDate": "2026-10-22",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261022-DAILY-001",
       "activatedAt": "2026-10-05T23:30:00.000Z",
-      "heroReadyAt": "2026-10-19T06:07:14.631Z"
+      "heroReadyAt": "2026-10-19T06:07:14.631Z",
+      "publishAttemptedAt": "2026-10-22T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-22T01:00:00.000Z"
     },
     {
       "slug": "barcelona-ai-features-on-seo",

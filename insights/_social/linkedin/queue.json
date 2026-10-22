@@ -1069,6 +1069,23 @@
       "createdAt": "2026-10-21T01:00:00.268Z",
       "updatedAt": "2026-10-21T01:00:37.247Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-ai-crawler-discovery-paths-2026-10-22",
+      "slug": "ai-crawler-discovery-paths",
+      "articlePublishAt": "2026-10-22T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-22T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-22T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/ai-crawler-discovery-paths/",
+      "contentFile": "insights/_social/linkedin/posts/ai-crawler-discovery-paths.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-22T01:00:00.277Z",
+      "updatedAt": "2026-10-22T01:00:00.277Z",
+      "series": "v2-stock"
     }
   ]
 }

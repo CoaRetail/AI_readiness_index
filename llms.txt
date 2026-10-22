@@ -97,6 +97,7 @@
 - [利用への申し出](https://readiness.coaretail.com/insights/cloudflare-pay-per-use/): Insights Column（2026-10-19）
 - [公開前の人手確認](https://readiness.coaretail.com/insights/ai-content-manual-factcheck/): Insights Column（2026-10-20）
 - [主張と認定を分ける](https://readiness.coaretail.com/insights/court-record-on-clicks/): Insights Column（2026-10-21）
+- [見つけられる名前](https://readiness.coaretail.com/insights/ai-crawler-discovery-paths/): Insights Column（2026-10-22）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断
