@@ -969,6 +969,30 @@
       "date": "2026-10-22",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261023c",
+      "destination": "https://readiness.coaretail.com/insights/execution-readiness/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261023_0800",
+      "article_slug": "execution-readiness",
+      "date": "2026-10-23",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261023d",
+      "destination": "https://readiness.coaretail.com/insights/readiness-baseline/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261023_1500",
+      "article_slug": "readiness-baseline",
+      "date": "2026-10-23",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261023e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261023_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-10-23",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
