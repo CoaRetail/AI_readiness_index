@@ -1095,13 +1095,13 @@
       "linkedinPublishAt": "2026-10-23T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/security-patch-week-ai-trust/",
       "contentFile": "insights/_social/linkedin/posts/security-patch-week-ai-trust.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6adab1b3d447d56a646d178d",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-23T01:00:00.523Z",
-      "updatedAt": "2026-10-23T01:00:00.523Z",
+      "updatedAt": "2026-10-23T01:00:37.894Z",
       "series": "current-event"
     }
   ]

@@ -1493,7 +1493,34 @@
       "publishAt": "2026-10-22T12:00:00+09:00",
       "dueAtUtc": "2026-10-22T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "linkedin",
+      "bufferUpdateId": "6adab1b3d447d56a646d178d",
+      "publishAt": "2026-10-23T11:30:00+09:00",
+      "dueAtUtc": "2026-10-23T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "facebook",
+      "bufferUpdateId": "6adab1b49ef33e7811ae9740",
+      "publishAt": "2026-10-23T11:45:00+09:00",
+      "dueAtUtc": "2026-10-23T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "x",
+      "bufferUpdateId": "6adab1b58d2197cb2a0b14d6",
+      "publishAt": "2026-10-23T12:00:00+09:00",
+      "dueAtUtc": "2026-10-23T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-22T01:00:35.497Z"
+  "updatedAt": "2026-10-23T01:00:37.892Z"
 }

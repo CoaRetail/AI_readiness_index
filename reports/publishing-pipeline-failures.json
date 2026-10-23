@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T01:00:35.500Z",
+  "updatedAt": "2026-10-23T01:00:37.895Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "ai-crawler-discovery-paths",
+    "slug": "security-patch-week-ai-trust",
     "stage": "buffer_queued",
-    "at": "2026-10-22T01:00:35.500Z"
+    "at": "2026-10-23T01:00:37.895Z"
   }
 }
