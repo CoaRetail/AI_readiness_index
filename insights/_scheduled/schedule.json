@@ -2177,7 +2177,7 @@
     {
       "slug": "security-patch-week-ai-trust",
       "publishAt": "2026-10-23T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること",
       "cardSummary": "10月21日、PHPは認証なしのRCEを2件、Node.jsは10件のCVEを直しました。改ざんは検索のスパム対象です。AI検索が安全性で順位を付ける、とは書きません。",
       "llmsLabel": "更新を先に確かめる",
@@ -2213,10 +2213,13 @@
       "scheduledPublishAt": "2026-10-23T10:00:00+09:00",
       "slotDate": "2026-10-23",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261023-DAILY-001",
       "activatedAt": "2026-10-22T00:40:00.000Z",
-      "heroReadyAt": "2026-10-22T01:30:06.790Z"
+      "heroReadyAt": "2026-10-22T01:30:06.790Z",
+      "publishAttemptedAt": "2026-10-23T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-23T01:00:00.000Z"
     },
     {
       "slug": "barcelona-ai-features-on-seo",

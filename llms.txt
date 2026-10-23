@@ -98,6 +98,7 @@
 - [公開前の人手確認](https://readiness.coaretail.com/insights/ai-content-manual-factcheck/): Insights Column（2026-10-20）
 - [主張と認定を分ける](https://readiness.coaretail.com/insights/court-record-on-clicks/): Insights Column（2026-10-21）
 - [見つけられる名前](https://readiness.coaretail.com/insights/ai-crawler-discovery-paths/): Insights Column（2026-10-22）
+- [更新を先に確かめる](https://readiness.coaretail.com/insights/security-patch-week-ai-trust/): Insights Column（2026-10-23）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

@@ -167,27 +167,28 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
 
   <article class="article-body container" data-article-slug="security-patch-week-ai-trust" data-article-title="PHP・Node.jsの重大更新が重なった週、AIに読まれるサイトが先にやること" data-editorial-intent="NEWS">
     <div class="article-container">
+
       <div class="sitewide-cta" data-cta-profile="security-patch-week-ai-trust" data-editorial-intent="NEWS">
         <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_security-patch-week-ai-trust_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/security-patch-week-ai-trust/" data-editorial-intent="NEWS">自社サイトを無料で確認する</a>
 <a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_security-patch-week-ai-trust_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/security-patch-week-ai-trust/" data-editorial-intent="NEWS">Company Reportで詳しく調べる</a>
       </div>
-      <h2>今週、まず更新すべきものは何か？</h2>
+<h2>今週、まず更新すべきものは何か？</h2>
       <p>PHPを動かしているサーバーです。PHPプロジェクトは2026年10月21日、PHP 8.5.12、8.4.27、8.3.36、8.2.35を出し、認証なしで遠隔からコードを実行されうる重大な脆弱性を2件直しました。CVE-2026-109618とCVE-2026-109619です。PHP-FPM、Apacheのmod_php、php-cgi、FrankenPHP、LiteSpeedが対象で、mod_phpがいちばん危ない、とphp.netは書いています。アプリのコードが動く前に攻撃が成立する実証がある、とも書いています。</p>
       <p>GitHubの勧告（GHSA-w8hw-w9fx-j79w）では、CVE-2026-109618の深刻度はCVSS 4.0で9.2です。更新だけが完全な対策で、設定の回避策は完全ではない、と明記しています。もう一方のCVE-2026-109619（<a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a>）も、PHPプロジェクトの勧告ではCVSS 4.0で9.2です。NVDの公開ページは、2026年10月22日の確認では「CVE ID Not Found」でした。点数は、PHPプロジェクトのCVSS 4.0を使います。PHP 8.1以前は、PHPプロジェクトからの更新がありません。WordPressやLaravelのサイトは、多くがこの上で動いています。</p>
-      <h2>Node.jsとPythonでは、何が直ったか？</h2>
+<h2>Node.jsとPythonでは、何が直ったか？</h2>
       <p>Node.jsは同じ10月21日に、22.23.4、24.22.1、26.12.1のセキュリティリリースを出しました。公式ブログが挙げたCVEは10件で、最高の深刻度はHighです。10件のすべてが三つの系列にあるわけではありません。Brotliの展開処理の範囲外書き込み（CVE-2026-111497）と、dns.resolveがNUL文字で名前を切り詰める問題（CVE-2026-105482）は22.x、24.x、26.xです。TLS証明書のホスト名確認をすり抜けるうち、CVE-2026-106069は三系列、CVE-2026-105483は24.xと26.xです。ZIPヘッダのCVE-2026-106070と、権限モデルのワイルドカードのCVE-2026-106071は26.xです。サポートが終わった版は、常に影響を受けるとみなすよう公式ブログは書いています。</p>
       <p>Pythonは10月1日に3.10.22から3.14.8までの5系列でセキュリティ修正を出しました。ssl.SSLContext.wrap_bio()がホスト名を確かめずに接続を終えうる問題（CVE-2026-19553）や、tarfileの展開フィルターの抜け（CVE-2026-19672ほか）です。3.10.22は3.10系の最後のリリースで、以後は修正が出ません。10月21日には3.15.1、3.14.9、3.13.17が、eMudhra/emSignの認証局の件に対応したpipとcertifiを同梱して出ています。</p>
-      <h2>フレームワークとパッケージでも、同じ時期に穴が出ているか？</h2>
+<h2>フレームワークとパッケージでも、同じ時期に穴が出ているか？</h2>
       <p>出ています。Next.jsは10月14日に16.4.1と15.5.28を出し、画像最適化APIでSVGを扱うときの、認証なしの遠隔コード実行（CVE-2026-96889、CVSS 4.0で9.5）などを直しました。勧告は、Next.jsがglibcベースのLinuxで動くときの話です。対象は10.0.0から15.5.27と、16.0.0から16.4.0です。WordPressは10月6日の7.1.3でセキュリティ修正7件と不具合修正4件、Djangoは同日に6.1.2、6.0.9、5.2.18で4件のCVEを直しています。</p>
       <p>npmでは、正規の公開手順を乗っ取った改ざん版が続きました。10月8日のtensorlake 0.5.144は、インストール時にGitHubやnpmのトークン、クラウドの認証情報、AIツールとMCPの設定まで集め、自分を他のパッケージへ広げた、と開発元の勧告にあります。正規のワークフローから出たので、npmの来歴証明も正しく付いていました。10月5日の@subql/common 5.8.3も、GitHub ActionsのOIDCで公開された改ざん版だった、とGMO Flatt Securityが報告しています。</p>
       <p>米国のCISAは10月20日、実際に悪用されている脆弱性の一覧に6件を加えました。そのうちの1件は、日本で使われているEGセキュアソリューションズのSiteGuard Server EditionのOSコマンド注入（CVE-2026-106931）です。開発元の告知では、統計機能が有効なときに影響し、初期値は有効です。対象はVer2.20以降で、Apache、Nginx、IISはVer8.00 Update5より前、FreeBSD上のApacheとNginxはVer7.00 Update6より前です。IISのVer3.10からVer4.00 Update4は対象外です。修正版は、それぞれVer8.00 Update5とVer7.00 Update6です。開発元の点数はCVSS 4.0で8.5、CVSS 3.0で7.8で、攻撃元はローカル、必要な権限は低です。認証なしの遠隔実行だとは書いていません。NVDの詳細は、2026年10月22日の確認では取得できませんでした。点数は開発元のCVSSを使います。</p>
-      <h2>サイトの安全は、AI検索に関係するか？</h2>
+<h2>サイトの安全は、AI検索に関係するか？</h2>
       <p>関係する経路は、公式文書で確かめられる範囲に限られます。Googleは、AI OverviewsやAI Modeの補足リンクに出る条件を、Google検索にインデックスされ、スニペット付きで表示できることとしています。追加の技術要件はない、とも書いています。そして、Googleのスパムポリシーは、セキュリティの穴から許可なく置かれた内容を「ハッキングされたコンテンツ」として扱います。</p>
       <p>ここから先は推論です。改ざんされて検索の扱いが落ちたページは、同じ仕組みに乗るAIの回答でも出典になりにくい、と考えるのが自然です。ただ、AI検索がサイトの安全性そのものを順位の要素にしている、と書いた一次資料は見つけていません。本稿もそうは書きません。</p>
       <p>もう一つの経路は、中身のすり替えです。AIの回答は取得したページを引用します。改ざんで価格、連絡先、リンク先が書き換わったページが取得されれば、その内容がそのまま要約されうる、というのも推論です。llms.txtや構造化データも、サーバーが乗っ取られれば書き換えられるファイルの一つです。</p>
-      <h2>AIエージェント向けの入口では、何に気をつけるか？</h2>
+<h2>AIエージェント向けの入口では、何に気をつけるか？</h2>
       <p>MCPサーバーやエージェント向けのAPIは、それ自体がNode.jsやPythonで動くことが多く、今週の更新の対象です。tensorlakeの件ではMCPの設定が盗む対象に入り、Angularの名前に似せたnpmパッケージの一つは、MCPの依存を攻撃者のパッケージに差し替えていた、とCorgeaが報告しています。エージェントの入口は、人の画面より監視が薄くなりがちです。</p>
-      <h2>サイトの担当者は、今日何を確かめればいいか？</h2>
+<h2>サイトの担当者は、今日何を確かめればいいか？</h2>
       <ul>
         <li>サーバーのPHPが8.5.12、8.4.27、8.3.36、8.2.35以降か。更新後にPHPのワーカーを再起動したか。</li>
         <li>Node.jsが22.23.4、24.22.1、26.12.1以降か。Next.jsの15系が15.5.28以降、16系が16.4.1以降か。16.0.0から16.4.0は、15.5.28では直りません。</li>
@@ -204,7 +205,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
 <h2>次のリソース</h2>
         <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
 
-      <section class="related-insights">
+<section class="related-insights">
         <h2>関連Insights</h2>
         <ul>
         <li>
@@ -215,8 +216,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
         </li>
         </ul>
       </section>
-
-      <div class="article-cta">
+<div class="article-cta">
         <h2>関連リソース</h2>
         <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
         <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>

@@ -1086,6 +1086,23 @@
       "createdAt": "2026-10-22T01:00:00.277Z",
       "updatedAt": "2026-10-22T01:00:35.499Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-security-patch-week-ai-trust-2026-10-23",
+      "slug": "security-patch-week-ai-trust",
+      "articlePublishAt": "2026-10-23T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-23T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-23T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/security-patch-week-ai-trust/",
+      "contentFile": "insights/_social/linkedin/posts/security-patch-week-ai-trust.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-23T01:00:00.523Z",
+      "updatedAt": "2026-10-23T01:00:00.523Z",
+      "series": "current-event"
     }
   ]
 }
