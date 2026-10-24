@@ -1017,6 +1017,30 @@
       "date": "2026-10-24",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261025c",
+      "destination": "https://readiness.coaretail.com/insights/agent-handoff/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261025_0800",
+      "article_slug": "agent-handoff",
+      "date": "2026-10-25",
+      "slot": "08:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261025d",
+      "destination": "https://readiness.coaretail.com/insights/policy-clarity/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261025_1500",
+      "article_slug": "policy-clarity",
+      "date": "2026-10-25",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261025e",
+      "destination": "https://readiness.coaretail.com/insights/trust/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261025_1800",
+      "article_slug": "trust",
+      "date": "2026-10-25",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
