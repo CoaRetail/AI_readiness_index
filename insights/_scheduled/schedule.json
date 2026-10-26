@@ -2424,7 +2424,7 @@
       "freshnessReviewedAt": "2026-10-07T00:30:00.000Z",
       "eirId": "EIR-20261030-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.steadydemand.com/ai-overview-mobile-fused-study/",
@@ -2444,13 +2444,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-07T00:30:00.000Z",
       "scheduledPublishAt": "2026-10-30T10:00:00+09:00",
       "slotDate": "2026-10-30",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261030-DAILY-001",
-      "activatedAt": "2026-10-07T00:30:00.000Z"
+      "activatedAt": "2026-10-07T00:30:00.000Z",
+      "heroReadyAt": "2026-10-26T23:03:43.930Z"
     },
     {
       "slug": "chatgpt-ads-measurement-so-far",
