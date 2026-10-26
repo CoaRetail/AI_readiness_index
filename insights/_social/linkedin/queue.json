@@ -1103,6 +1103,23 @@
       "createdAt": "2026-10-23T01:00:00.523Z",
       "updatedAt": "2026-10-23T01:00:37.894Z",
       "series": "current-event"
+    },
+    {
+      "id": "ARI-LI-CE-barcelona-ai-features-on-seo-2026-10-26",
+      "slug": "barcelona-ai-features-on-seo",
+      "articlePublishAt": "2026-10-26T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-26T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-26T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/barcelona-ai-features-on-seo/",
+      "contentFile": "insights/_social/linkedin/posts/barcelona-ai-features-on-seo.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-26T01:00:00.294Z",
+      "updatedAt": "2026-10-26T01:00:00.294Z",
+      "series": "v2-stock"
     }
   ]
 }

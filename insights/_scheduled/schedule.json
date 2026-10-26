@@ -2226,7 +2226,7 @@
     {
       "slug": "barcelona-ai-features-on-seo",
       "publishAt": "2026-10-26T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "バルセロナでは、Google上のAIはSEOの上にある——fan-outはSearch Consoleに出ない",
       "cardSummary": "バルセロナのまとめは、Googleの公開原稿ではありません。AI機能は同じSEOの上にあり、fan-outはSearch Consoleに出ない、とあります。時刻の幅は、スライドの転記です。",
       "llmsLabel": "AI機能はSEOの上",
@@ -2263,10 +2263,13 @@
       "scheduledPublishAt": "2026-10-26T10:00:00+09:00",
       "slotDate": "2026-10-26",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261026-DAILY-001",
       "activatedAt": "2026-10-05T23:30:00.000Z",
-      "heroReadyAt": "2026-10-20T06:08:20.518Z"
+      "heroReadyAt": "2026-10-20T06:08:20.518Z",
+      "publishAttemptedAt": "2026-10-26T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-26T01:00:00.000Z"
     },
     {
       "slug": "preferred-source-counts-and-ai-include",
