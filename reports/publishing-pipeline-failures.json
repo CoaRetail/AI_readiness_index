@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-23T01:00:37.895Z",
+  "updatedAt": "2026-10-26T01:00:38.512Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "security-patch-week-ai-trust",
+    "slug": "barcelona-ai-features-on-seo",
     "stage": "buffer_queued",
-    "at": "2026-10-23T01:00:37.895Z"
+    "at": "2026-10-26T01:00:38.512Z"
   }
 }

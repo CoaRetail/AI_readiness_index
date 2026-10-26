@@ -1520,7 +1520,34 @@
       "publishAt": "2026-10-23T12:00:00+09:00",
       "dueAtUtc": "2026-10-23T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "linkedin",
+      "bufferUpdateId": "6adea635e4be8a4d86d6d446",
+      "publishAt": "2026-10-26T11:30:00+09:00",
+      "dueAtUtc": "2026-10-26T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "facebook",
+      "bufferUpdateId": "6adea635bd33ce99c39e160c",
+      "publishAt": "2026-10-26T11:45:00+09:00",
+      "dueAtUtc": "2026-10-26T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "x",
+      "bufferUpdateId": "6adea6360b5343d070ff38b3",
+      "publishAt": "2026-10-26T12:00:00+09:00",
+      "dueAtUtc": "2026-10-26T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-23T01:00:37.892Z"
+  "updatedAt": "2026-10-26T01:00:38.509Z"
 }
