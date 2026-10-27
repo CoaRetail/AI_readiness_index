@@ -2319,7 +2319,9 @@
       "heroReadyAt": "2026-10-22T00:19:44.919Z",
       "publishAttemptedAt": "2026-10-27T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-27T01:00:00.000Z"
+      "publishedAt": "2026-10-27T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-27T01:00:33.708Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "ai-best-for-product-labels",
