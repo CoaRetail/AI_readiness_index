@@ -1081,6 +1081,22 @@
       "date": "2026-10-27",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261028d",
+      "destination": "https://readiness.coaretail.com/insights/hiring-readiness/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261028_1500",
+      "article_slug": "hiring-readiness",
+      "date": "2026-10-28",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261028e",
+      "destination": "https://readiness.coaretail.com/insights/schema-not-ai-citation-cheat-code/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261028_1800",
+      "article_slug": "schema-not-ai-citation-cheat-code",
+      "date": "2026-10-28",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
