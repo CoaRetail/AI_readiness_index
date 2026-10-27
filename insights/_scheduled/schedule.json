@@ -2276,7 +2276,7 @@
     {
       "slug": "preferred-source-counts-and-ai-include",
       "publishAt": "2026-10-27T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "preferred sourceの件数はメールにある——「preferred」には「含める」が要る",
       "cardSummary": "件数は10月5日時点のデータで、メールにあります。画面のレポートは、受け取った人たちが見つけていません。AIの「preferred」には、設定が「含める」である必要があります。",
       "llmsLabel": "件数と「含める」",
@@ -2313,10 +2313,13 @@
       "scheduledPublishAt": "2026-10-27T10:00:00+09:00",
       "slotDate": "2026-10-27",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261027-DAILY-001",
       "activatedAt": "2026-10-07T00:30:00.000Z",
-      "heroReadyAt": "2026-10-22T00:19:44.919Z"
+      "heroReadyAt": "2026-10-22T00:19:44.919Z",
+      "publishAttemptedAt": "2026-10-27T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-27T01:00:00.000Z"
     },
     {
       "slug": "ai-best-for-product-labels",
