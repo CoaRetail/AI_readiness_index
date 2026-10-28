@@ -2479,7 +2479,7 @@
       "freshnessReviewedAt": "2026-10-19T02:00:00.000Z",
       "eirId": "EIR-20261102-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.seroundtable.com/openai-visual-chatgpt-ad-format-42229.html",
@@ -2499,13 +2499,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-07T00:30:00.000Z",
       "scheduledPublishAt": "2026-11-02T10:00:00+09:00",
       "slotDate": "2026-11-02",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261102-DAILY-001",
-      "activatedAt": "2026-10-07T00:30:00.000Z"
+      "activatedAt": "2026-10-07T00:30:00.000Z",
+      "heroReadyAt": "2026-10-28T01:27:59.882Z"
     },
     {
       "slug": "chatgpt-as-direct",
