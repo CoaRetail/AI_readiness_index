@@ -1574,7 +1574,34 @@
       "publishAt": "2026-10-27T12:00:00+09:00",
       "dueAtUtc": "2026-10-27T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae14933ed0a3f2cb414db4f",
+      "publishAt": "2026-10-28T11:30:00+09:00",
+      "dueAtUtc": "2026-10-28T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae14934f6d6782c599fc227",
+      "publishAt": "2026-10-28T11:45:00+09:00",
+      "dueAtUtc": "2026-10-28T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "x",
+      "bufferUpdateId": "6ae14934b24fed5fb49363f4",
+      "publishAt": "2026-10-28T12:00:00+09:00",
+      "dueAtUtc": "2026-10-28T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-27T01:00:36.124Z"
+  "updatedAt": "2026-10-28T01:00:36.927Z"
 }

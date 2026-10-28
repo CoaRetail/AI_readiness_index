@@ -2369,7 +2369,9 @@
       "heroReadyAt": "2026-10-23T01:11:19.225Z",
       "publishAttemptedAt": "2026-10-28T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-10-28T01:00:00.000Z"
+      "publishedAt": "2026-10-28T01:00:00.000Z",
+      "productionVerifiedAt": "2026-10-28T01:00:34.122Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "shopify-agentic-holiday-legibility",

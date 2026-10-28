@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T01:00:36.127Z",
+  "updatedAt": "2026-10-28T01:00:36.930Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "preferred-source-counts-and-ai-include",
+    "slug": "ai-best-for-product-labels",
     "stage": "buffer_queued",
-    "at": "2026-10-27T01:00:36.127Z"
+    "at": "2026-10-28T01:00:36.930Z"
   }
 }
