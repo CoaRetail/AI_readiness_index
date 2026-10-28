@@ -2326,7 +2326,7 @@
     {
       "slug": "ai-best-for-product-labels",
       "publishAt": "2026-10-28T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "「〜に最適」は試験のラベル——選定基準は書かれていない",
       "cardSummary": "ChatGPTの商品結果に「best all-rounder」などのラベルが観測されています。OpenAIの発表はありません。Bingの「Recommended by」と特徴ラベルも、第三者の観測です。",
       "llmsLabel": "最適ラベルは試験",
@@ -2363,10 +2363,13 @@
       "scheduledPublishAt": "2026-10-28T10:00:00+09:00",
       "slotDate": "2026-10-28",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261028-DAILY-001",
       "activatedAt": "2026-10-07T00:30:00.000Z",
-      "heroReadyAt": "2026-10-23T01:11:19.225Z"
+      "heroReadyAt": "2026-10-23T01:11:19.225Z",
+      "publishAttemptedAt": "2026-10-28T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-28T01:00:00.000Z"
     },
     {
       "slug": "shopify-agentic-holiday-legibility",

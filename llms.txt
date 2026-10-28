@@ -101,6 +101,7 @@
 - [更新を先に確かめる](https://readiness.coaretail.com/insights/security-patch-week-ai-trust/): Insights Column（2026-10-23）
 - [AI機能はSEOの上](https://readiness.coaretail.com/insights/barcelona-ai-features-on-seo/): Insights Column（2026-10-26）
 - [件数と「含める」](https://readiness.coaretail.com/insights/preferred-source-counts-and-ai-include/): Insights Column（2026-10-27）
+- [最適ラベルは試験](https://readiness.coaretail.com/insights/ai-best-for-product-labels/): Insights Column（2026-10-28）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断
