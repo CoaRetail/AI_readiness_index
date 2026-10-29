@@ -1601,7 +1601,34 @@
       "publishAt": "2026-10-28T12:00:00+09:00",
       "dueAtUtc": "2026-10-28T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae29ab47a72c9efac0bfdd5",
+      "publishAt": "2026-10-29T11:30:00+09:00",
+      "dueAtUtc": "2026-10-29T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae29ab57d94db46db28bd58",
+      "publishAt": "2026-10-29T11:45:00+09:00",
+      "dueAtUtc": "2026-10-29T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "x",
+      "bufferUpdateId": "6ae29ab57d94db46db28bdc7",
+      "publishAt": "2026-10-29T12:00:00+09:00",
+      "dueAtUtc": "2026-10-29T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-28T01:00:36.927Z"
+  "updatedAt": "2026-10-29T01:00:37.885Z"
 }

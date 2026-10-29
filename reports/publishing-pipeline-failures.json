@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-28T01:00:36.930Z",
+  "updatedAt": "2026-10-29T01:00:37.889Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "ai-best-for-product-labels",
+    "slug": "shopify-agentic-holiday-legibility",
     "stage": "buffer_queued",
-    "at": "2026-10-28T01:00:36.930Z"
+    "at": "2026-10-29T01:00:37.889Z"
   }
 }
