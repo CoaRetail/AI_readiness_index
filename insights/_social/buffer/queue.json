@@ -3317,6 +3317,54 @@
       "series": "v2-stock"
     },
     {
+      "slug": "shopify-agentic-holiday-legibility",
+      "articleUrl": "https://readiness.coaretail.com/insights/shopify-agentic-holiday-legibility/",
+      "status": "scheduled",
+      "articlePublishAt": "2026-10-29T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-29T10:30:00+09:00",
+      "channels": {
+        "linkedin": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
+          "contentFile": "insights/_social/linkedin/posts/shopify-agentic-holiday-legibility.md",
+          "publishAt": "2026-10-29T11:30:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-29T01:00:00.261Z"
+        },
+        "facebook": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
+          "contentFile": "insights/_social/facebook/posts/shopify-agentic-holiday-legibility.md",
+          "publishAt": "2026-10-29T11:45:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-29T01:00:00.261Z"
+        },
+        "x": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
+          "contentFile": "insights/_social/x/posts/shopify-agentic-holiday-legibility.md",
+          "publishAt": "2026-10-29T12:00:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-29T01:00:00.261Z"
+        }
+      },
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-29T01:00:00.260Z",
+      "updatedAt": "2026-10-29T01:00:00.260Z",
+      "series": "v2-stock"
+    },
+    {
       "slug": "ai-agent-marketing-shift",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-agent-marketing-shift/",
       "status": "buffer_queued",

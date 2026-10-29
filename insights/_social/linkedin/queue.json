@@ -1154,6 +1154,23 @@
       "createdAt": "2026-10-28T01:00:00.265Z",
       "updatedAt": "2026-10-28T01:00:36.929Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-shopify-agentic-holiday-legibility-2026-10-29",
+      "slug": "shopify-agentic-holiday-legibility",
+      "articlePublishAt": "2026-10-29T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-29T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-29T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/shopify-agentic-holiday-legibility/",
+      "contentFile": "insights/_social/linkedin/posts/shopify-agentic-holiday-legibility.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-29T01:00:00.260Z",
+      "updatedAt": "2026-10-29T01:00:00.260Z",
+      "series": "v2-stock"
     }
   ]
 }

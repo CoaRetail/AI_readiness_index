@@ -2376,7 +2376,7 @@
     {
       "slug": "shopify-agentic-holiday-legibility",
       "publishAt": "2026-10-29T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "見つけられても選ばれるとは限らない——Shopifyが書く「読める店」",
       "cardSummary": "Shopifyは、買い物で一度はAIを使う人が65%で、購入を任せる人は約3分の1だと書いています。数値は同社の調査です。試されるのは、何を誰に売り、信頼できるかです。",
       "llmsLabel": "読める店の条件",
@@ -2412,10 +2412,13 @@
       "scheduledPublishAt": "2026-10-29T10:00:00+09:00",
       "slotDate": "2026-10-29",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261029-DAILY-001",
       "activatedAt": "2026-10-07T00:30:00.000Z",
-      "heroReadyAt": "2026-10-25T23:48:58.941Z"
+      "heroReadyAt": "2026-10-25T23:48:58.941Z",
+      "publishAttemptedAt": "2026-10-29T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-29T01:00:00.000Z"
     },
     {
       "slug": "business-panel-ai-overview-study",
