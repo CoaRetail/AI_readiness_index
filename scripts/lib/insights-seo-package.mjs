@@ -574,19 +574,34 @@ export function validateInsightSeo(html, slug, { scheduled = false } = {}) {
   const h1 = decodeHtmlEntities(html.match(/<h1>([^<]+)<\/h1>/)?.[1] ?? '');
   if (expectedH1 && h1 !== expectedH1) errors.push(`${slug}: h1 mismatch`);
 
-  const jsonMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)<\/script>/);
-  if (!jsonMatch) {
+  const jsonBlocks = [...html.matchAll(/<script type="application\/ld\+json">\s*([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+  if (!jsonBlocks.length) {
     errors.push(`${slug}: missing JSON-LD`);
   } else {
-    try {
-      const ld = JSON.parse(jsonMatch[1]);
-      if (ld['@type'] !== 'BlogPosting') errors.push(`${slug}: JSON-LD not BlogPosting`);
-      if (expectedH1 && ld.headline !== expectedH1) errors.push(`${slug}: headline≠h1`);
-      if (expectedMeta && ld.description !== expectedMeta) errors.push(`${slug}: json description≠meta`);
-      if (ld.mainEntityOfPage !== expectedCanon) errors.push(`${slug}: mainEntityOfPage mismatch`);
-    } catch (e) {
-      errors.push(`${slug}: invalid JSON-LD — ${e.message}`);
+    let blogPosting = null;
+    let breadcrumbList = null;
+    for (const raw of jsonBlocks) {
+      try {
+        const ld = JSON.parse(raw);
+        if (ld['@type'] === 'BlogPosting') blogPosting = ld;
+        if (ld['@type'] === 'BreadcrumbList') breadcrumbList = ld;
+      } catch (e) {
+        errors.push(`${slug}: invalid JSON-LD — ${e.message}`);
+      }
     }
+    if (!blogPosting) {
+      errors.push(`${slug}: JSON-LD not BlogPosting`);
+    } else {
+      if (expectedH1 && blogPosting.headline !== expectedH1) errors.push(`${slug}: headline≠h1`);
+      if (expectedMeta && blogPosting.description !== expectedMeta) {
+        errors.push(`${slug}: json description≠meta`);
+      }
+      if (blogPosting.mainEntityOfPage !== expectedCanon) errors.push(`${slug}: mainEntityOfPage mismatch`);
+      if (blogPosting.author?.url !== 'https://www.coaretail.com') {
+        errors.push(`${slug}: author.url missing or wrong`);
+      }
+    }
+    if (!breadcrumbList) errors.push(`${slug}: missing BreadcrumbList JSON-LD`);
   }
 
   if (!html.includes('/framework/')) errors.push(`${slug}: framework link`);
