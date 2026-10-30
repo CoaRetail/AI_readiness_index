@@ -1180,13 +1180,13 @@
       "linkedinPublishAt": "2026-10-30T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/business-panel-ai-overview-study/",
       "contentFile": "insights/_social/linkedin/posts/business-panel-ai-overview-study.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6ae3ec34a83a7fb63c883c3b",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-10-30T01:00:00.265Z",
-      "updatedAt": "2026-10-30T01:00:00.265Z",
+      "updatedAt": "2026-10-30T01:00:37.688Z",
       "series": "v2-stock"
     }
   ]

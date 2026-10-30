@@ -1628,7 +1628,34 @@
       "publishAt": "2026-10-29T12:00:00+09:00",
       "dueAtUtc": "2026-10-29T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae3ec34a83a7fb63c883c3b",
+      "publishAt": "2026-10-30T11:30:00+09:00",
+      "dueAtUtc": "2026-10-30T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae3ec34ba1ca51fd3e9e48e",
+      "publishAt": "2026-10-30T11:45:00+09:00",
+      "dueAtUtc": "2026-10-30T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "x",
+      "bufferUpdateId": "6ae3ec3556e01b97637bd39d",
+      "publishAt": "2026-10-30T12:00:00+09:00",
+      "dueAtUtc": "2026-10-30T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-29T01:00:37.885Z"
+  "updatedAt": "2026-10-30T01:00:37.686Z"
 }
