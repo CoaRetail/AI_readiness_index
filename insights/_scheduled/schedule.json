@@ -2534,7 +2534,7 @@
       "freshnessReviewedAt": "2026-10-19T02:00:00.000Z",
       "eirId": "EIR-20261104-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.linkedin.com/posts/cedrichuesler_relieved-it-was-a-bug-chatgpt-is-tagging-activity-7516558431894376448-7aEs",
@@ -2554,13 +2554,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-15T00:30:00.000Z",
       "scheduledPublishAt": "2026-11-04T10:00:00+09:00",
       "slotDate": "2026-11-04",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261104-DAILY-001",
-      "activatedAt": "2026-10-15T00:30:00.000Z"
+      "activatedAt": "2026-10-15T00:30:00.000Z",
+      "heroReadyAt": "2026-10-30T01:12:36.919Z"
     },
     {
       "slug": "chatgpt-primary-cites",
