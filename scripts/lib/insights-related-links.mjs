@@ -133,6 +133,12 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'shopify-agentic-holiday-legibility': ['shopify-ai-vs-organic-structured-catalog', 'citation-vs-action', 'openai-product-discovery-agentic-commerce'],
   'business-panel-ai-overview-study': ['branded-queries-ai-overviews', 'entity-consistency', 'reviews'],
   'chatgpt-ads-measurement-so-far': ['uk-cma-choice-screens-three-shelves', 'openai-product-discovery-agentic-commerce', 'court-record-on-clicks'],
+  'security-patch-week-ai-trust': ['chatgpt-retrieval-citation-practice', 'schema-not-ai-citation-cheat-code'],
+  'answers-without-opening-sources': ['cited-or-remembered', 'fabricated-citation-watch', 'chatgpt-retrieval-citation-practice'],
+  'within-domain-citation-features': ['schema-not-ai-citation-cheat-code', 'schema', 'answers-without-opening-sources'],
+  'deepseek-authority-tiers': ['chatgpt-retrieval-citation-practice', 'files', 'within-domain-citation-features'],
+  'ai-referral-volume-and-conversion': ['chatgpt-as-direct', 'gsc-ai-impressions-how-to-read', 'mentioned-is-not-recommended'],
+  'how-many-runs-before-ai-visibility': ['mentioned-is-not-recommended', 'ai-referral-volume-and-conversion', 'cited-or-remembered'],
 };
 
 

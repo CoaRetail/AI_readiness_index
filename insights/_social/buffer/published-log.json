@@ -1466,7 +1466,196 @@
       "publishAt": "2026-10-21T12:00:00+09:00",
       "dueAtUtc": "2026-10-21T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ad96032282deeeeb2c1bda3",
+      "publishAt": "2026-10-22T11:30:00+09:00",
+      "dueAtUtc": "2026-10-22T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "facebook",
+      "bufferUpdateId": "6ad960321093844846d53d06",
+      "publishAt": "2026-10-22T11:45:00+09:00",
+      "dueAtUtc": "2026-10-22T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-22T01:00:00.000Z",
+      "slug": "ai-crawler-discovery-paths",
+      "channel": "x",
+      "bufferUpdateId": "6ad96033b086d40f5728d797",
+      "publishAt": "2026-10-22T12:00:00+09:00",
+      "dueAtUtc": "2026-10-22T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "linkedin",
+      "bufferUpdateId": "6adab1b3d447d56a646d178d",
+      "publishAt": "2026-10-23T11:30:00+09:00",
+      "dueAtUtc": "2026-10-23T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "facebook",
+      "bufferUpdateId": "6adab1b49ef33e7811ae9740",
+      "publishAt": "2026-10-23T11:45:00+09:00",
+      "dueAtUtc": "2026-10-23T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-23T01:00:00.000Z",
+      "slug": "security-patch-week-ai-trust",
+      "channel": "x",
+      "bufferUpdateId": "6adab1b58d2197cb2a0b14d6",
+      "publishAt": "2026-10-23T12:00:00+09:00",
+      "dueAtUtc": "2026-10-23T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "linkedin",
+      "bufferUpdateId": "6adea635e4be8a4d86d6d446",
+      "publishAt": "2026-10-26T11:30:00+09:00",
+      "dueAtUtc": "2026-10-26T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "facebook",
+      "bufferUpdateId": "6adea635bd33ce99c39e160c",
+      "publishAt": "2026-10-26T11:45:00+09:00",
+      "dueAtUtc": "2026-10-26T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-26T01:00:00.000Z",
+      "slug": "barcelona-ai-features-on-seo",
+      "channel": "x",
+      "bufferUpdateId": "6adea6360b5343d070ff38b3",
+      "publishAt": "2026-10-26T12:00:00+09:00",
+      "dueAtUtc": "2026-10-26T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-27T01:00:00.000Z",
+      "slug": "preferred-source-counts-and-ai-include",
+      "channel": "linkedin",
+      "bufferUpdateId": "6adff7b2f266a5f7e107f33b",
+      "publishAt": "2026-10-27T11:30:00+09:00",
+      "dueAtUtc": "2026-10-27T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-27T01:00:00.000Z",
+      "slug": "preferred-source-counts-and-ai-include",
+      "channel": "facebook",
+      "bufferUpdateId": "6adff7b34a3f2ecb1bb0631d",
+      "publishAt": "2026-10-27T11:45:00+09:00",
+      "dueAtUtc": "2026-10-27T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-27T01:00:00.000Z",
+      "slug": "preferred-source-counts-and-ai-include",
+      "channel": "x",
+      "bufferUpdateId": "6adff7b4588892178143c296",
+      "publishAt": "2026-10-27T12:00:00+09:00",
+      "dueAtUtc": "2026-10-27T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae14933ed0a3f2cb414db4f",
+      "publishAt": "2026-10-28T11:30:00+09:00",
+      "dueAtUtc": "2026-10-28T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae14934f6d6782c599fc227",
+      "publishAt": "2026-10-28T11:45:00+09:00",
+      "dueAtUtc": "2026-10-28T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-28T01:00:00.000Z",
+      "slug": "ai-best-for-product-labels",
+      "channel": "x",
+      "bufferUpdateId": "6ae14934b24fed5fb49363f4",
+      "publishAt": "2026-10-28T12:00:00+09:00",
+      "dueAtUtc": "2026-10-28T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae29ab47a72c9efac0bfdd5",
+      "publishAt": "2026-10-29T11:30:00+09:00",
+      "dueAtUtc": "2026-10-29T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae29ab57d94db46db28bd58",
+      "publishAt": "2026-10-29T11:45:00+09:00",
+      "dueAtUtc": "2026-10-29T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-29T01:00:00.000Z",
+      "slug": "shopify-agentic-holiday-legibility",
+      "channel": "x",
+      "bufferUpdateId": "6ae29ab57d94db46db28bdc7",
+      "publishAt": "2026-10-29T12:00:00+09:00",
+      "dueAtUtc": "2026-10-29T03:00:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae3ec34a83a7fb63c883c3b",
+      "publishAt": "2026-10-30T11:30:00+09:00",
+      "dueAtUtc": "2026-10-30T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae3ec34ba1ca51fd3e9e48e",
+      "publishAt": "2026-10-30T11:45:00+09:00",
+      "dueAtUtc": "2026-10-30T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-10-30T01:00:00.000Z",
+      "slug": "business-panel-ai-overview-study",
+      "channel": "x",
+      "bufferUpdateId": "6ae3ec3556e01b97637bd39d",
+      "publishAt": "2026-10-30T12:00:00+09:00",
+      "dueAtUtc": "2026-10-30T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-21T01:00:37.245Z"
+  "updatedAt": "2026-10-30T01:00:37.686Z"
 }

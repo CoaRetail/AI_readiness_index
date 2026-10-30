@@ -327,11 +327,14 @@ test('recoverPublishDayGap does not re-date an already reserved future slot', ()
 
 test('2026-10-16 reconcile keeps the Culture Day reservations on their reserved days', () => {
   const reserved = {
-    'chatgpt-as-direct': '2026-11-02',
-    'chatgpt-primary-cites': '2026-11-04',
-    'bing-topics-portfolio': '2026-11-05',
-    'gpt6-intelligent-ui': '2026-11-06',
-    'chatgpt-seller-rank': '2026-11-09',
+    'security-patch-week-ai-trust': '2026-10-23',
+    'barcelona-ai-features-on-seo': '2026-10-26',
+    'chatgpt-as-direct': '2026-11-04',
+    'chatgpt-primary-cites': '2026-11-05',
+    'bing-topics-portfolio': '2026-11-06',
+    'gpt6-intelligent-ui': '2026-11-09',
+    'chatgpt-seller-rank': '2026-11-10',
+    'mentioned-is-not-recommended': '2026-11-17',
   };
   const schedule = JSON.parse(fs.readFileSync(SCHEDULE_PATH, 'utf8'));
   const bySlug = Object.fromEntries(schedule.articles.map((article) => [article.slug, article]));
