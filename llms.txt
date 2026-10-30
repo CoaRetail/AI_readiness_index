@@ -103,6 +103,7 @@
 - [件数と「含める」](https://readiness.coaretail.com/insights/preferred-source-counts-and-ai-include/): Insights Column（2026-10-27）
 - [最適ラベルは試験](https://readiness.coaretail.com/insights/ai-best-for-product-labels/): Insights Column（2026-10-28）
 - [読める店の条件](https://readiness.coaretail.com/insights/shopify-agentic-holiday-legibility/): Insights Column（2026-10-29）
+- [パネルは一日の記録](https://readiness.coaretail.com/insights/business-panel-ai-overview-study/): Insights Column（2026-10-30）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

@@ -3365,6 +3365,54 @@
       "series": "v2-stock"
     },
     {
+      "slug": "business-panel-ai-overview-study",
+      "articleUrl": "https://readiness.coaretail.com/insights/business-panel-ai-overview-study/",
+      "status": "scheduled",
+      "articlePublishAt": "2026-10-30T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-30T10:30:00+09:00",
+      "channels": {
+        "linkedin": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
+          "contentFile": "insights/_social/linkedin/posts/business-panel-ai-overview-study.md",
+          "publishAt": "2026-10-30T11:30:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-30T01:00:00.266Z"
+        },
+        "facebook": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
+          "contentFile": "insights/_social/facebook/posts/business-panel-ai-overview-study.md",
+          "publishAt": "2026-10-30T11:45:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-30T01:00:00.266Z"
+        },
+        "x": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
+          "contentFile": "insights/_social/x/posts/business-panel-ai-overview-study.md",
+          "publishAt": "2026-10-30T12:00:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-10-30T01:00:00.266Z"
+        }
+      },
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-30T01:00:00.265Z",
+      "updatedAt": "2026-10-30T01:00:00.265Z",
+      "series": "v2-stock"
+    },
+    {
       "slug": "ai-agent-marketing-shift",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-agent-marketing-shift/",
       "status": "buffer_queued",

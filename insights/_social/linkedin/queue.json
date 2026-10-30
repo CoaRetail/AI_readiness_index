@@ -1171,6 +1171,23 @@
       "createdAt": "2026-10-29T01:00:00.260Z",
       "updatedAt": "2026-10-29T01:00:37.887Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-business-panel-ai-overview-study-2026-10-30",
+      "slug": "business-panel-ai-overview-study",
+      "articlePublishAt": "2026-10-30T10:00:00+09:00",
+      "bufferTransferAt": "2026-10-30T10:30:00+09:00",
+      "linkedinPublishAt": "2026-10-30T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/business-panel-ai-overview-study/",
+      "contentFile": "insights/_social/linkedin/posts/business-panel-ai-overview-study.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-10-30T01:00:00.265Z",
+      "updatedAt": "2026-10-30T01:00:00.265Z",
+      "series": "v2-stock"
     }
   ]
 }

@@ -2425,7 +2425,7 @@
     {
       "slug": "business-panel-ai-overview-study",
       "publishAt": "2026-10-30T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "店名の検索にAIの説明が載る——100社は一日の記録",
       "cardSummary": "Ben Fisher氏の100社では、店名だけのモバイル検索の26%にAI Overviewが出ました。融合は氏の呼び方です。Mencoroのスペイン調査では、自社ドメインは引用の4.8%です。",
       "llmsLabel": "パネルは一日の記録",
@@ -2462,10 +2462,13 @@
       "scheduledPublishAt": "2026-10-30T10:00:00+09:00",
       "slotDate": "2026-10-30",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261030-DAILY-001",
       "activatedAt": "2026-10-07T00:30:00.000Z",
-      "heroReadyAt": "2026-10-26T23:03:43.930Z"
+      "heroReadyAt": "2026-10-26T23:03:43.930Z",
+      "publishAttemptedAt": "2026-10-30T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-10-30T01:00:00.000Z"
     },
     {
       "slug": "chatgpt-ads-measurement-so-far",
