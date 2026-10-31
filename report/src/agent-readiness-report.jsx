@@ -628,6 +628,56 @@ function CtaLink({ href, variant = "ink", external = false, onClick, children })
   );
 }
 
+const LANDING_EVIDENCE_ITEMS = [
+  {
+    headline: "AI概要ありの検索では、結果リンクのクリック率が半分以下",
+    body: "Pew Research Centerは、米国成人900名の2025年3月のGoogle検索ブラウジングデータ（68,879件）を分析。AI概要が表示された訪問では従来の検索結果リンクのクリックは8%、表示されなかった訪問では15%でした。",
+    sourceLabel: "Pew Research Center（2025年7月）",
+    sourceUrl: "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/",
+  },
+  {
+    headline: "AI概要が出るクエリでは、1位のCTRが約58%低下（モデル比較）",
+    body: "AhrefsはKeywords Explorerから30万キーワード（AI Overviewあり15万・情報系コントロール15万）を選び、Google Search ConsoleのデスクトップCTRを2023年12月と2025年12月で比較。コントロール群の下落を補正したうえで、1位のCTRは約58%低いと推計しています。",
+    sourceLabel: "Ahrefs Blog（2026年2月）",
+    sourceUrl: "https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/",
+  },
+  {
+    headline: "大規模UGCも、Google検索からの送客減を公表",
+    body: "Reddit CEO Steve Huffmanは2026年Q3決算説明で、10月のGoogle検索からの送客が「週平均100万件超」減ったと述べ、AI Modeが送客を生まない構造変化の一因として言及しました（報道による要約）。",
+    sourceLabel: "The Verge（2026年10月29日）",
+    sourceUrl: "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
+  },
+];
+
+function LandingEvidenceBlock() {
+  return (
+    <section className="lp-evidence" id="market-evidence" aria-labelledby="market-evidence-heading">
+      <div className="lp-evidence__inner">
+        <div className="lp-evidence__eyebrow">External Research</div>
+        <h2 id="market-evidence-heading">検索からサイトへの導線は、公開調査でも変化が報告されています</h2>
+        <p className="lp-evidence__lead">
+          環境の変化は第三者データでも確認できます。一方で、御社がAIの比較・推薦の候補に入れるかはサイトごとに異なります。
+          だからこそ、御社の数字で準備度を測り、どこを整えるべきかを判断する材料が必要です。
+        </p>
+        <ol className="lp-evidence__list">
+          {LANDING_EVIDENCE_ITEMS.map((item) => (
+            <li key={item.sourceUrl} className="lp-evidence__item">
+              <h3>{item.headline}</h3>
+              <p>{item.body}</p>
+              <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="lp-evidence__source">
+                出典: {item.sourceLabel}
+              </a>
+            </li>
+          ))}
+        </ol>
+        <p className="lp-evidence__note">
+          数値は米国またはグローバルの調査で、日本市場での同等のデータは確認できていません。
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function LandingPage({ onStart }) {
   const [legal, setLegal] = useState(null);
   const proofRef = useRef(null);
@@ -783,6 +833,8 @@ function LandingPage({ onStart }) {
       </section>
 
       <VideoCarousel />
+
+      <LandingEvidenceBlock />
 
       <section ref={proofRef} className="lp-proof" id="proof">
         <Reveal>
