@@ -139,6 +139,11 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'deepseek-authority-tiers': ['chatgpt-retrieval-citation-practice', 'files', 'within-domain-citation-features'],
   'ai-referral-volume-and-conversion': ['chatgpt-as-direct', 'gsc-ai-impressions-how-to-read', 'mentioned-is-not-recommended'],
   'how-many-runs-before-ai-visibility': ['mentioned-is-not-recommended', 'ai-referral-volume-and-conversion', 'cited-or-remembered'],
+  'shopping-agents-fail-before-payment': ['chatgpt-seller-rank', 'openai-product-discovery-agentic-commerce', 'execution-readiness'],
+  'cloudflare-openai-chatgpt-index': ['cloudflare-aeo', 'ai-crawler-discovery-paths', 'files'],
+  'ai-mode-global-ads-product-links': ['chatgpt-ads-measurement-so-far', 'ai-referral-volume-and-conversion', 'court-record-on-clicks'],
+  'merchant-ucp-agentic-performance-api': ['chatgpt-ads-measurement-so-far', 'ai-referral-volume-and-conversion', 'pay'],
+  'industry-ai-citation-source-mix': ['within-domain-citation-features', 'mentioned-is-not-recommended', 'how-many-runs-before-ai-visibility'],
 };
 
 
