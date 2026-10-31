@@ -76,7 +76,7 @@
 - [MCPとビジネスAPIの接点](https://readiness.coaretail.com/insights/mcp-business-api/): Insights Column（2026-09-02）
 - [複数エージェントが比較するとき](https://readiness.coaretail.com/insights/multi-agent-compare/): Insights Column（2026-09-03）
 - [マーケが担う情報設計の再定義](https://readiness.coaretail.com/insights/marketing-info-design/): Insights Column（2026-09-04）
-- [生成AI検索52.3%。「第二の検索プラットフォーム」で企業が測るべきもの](https://readiness.coaretail.com/insights/ai-search-52-percent/): Insights Column（2026-09-07）
+- [生成AI検索52.3%。「第二の検索プラットフォーム」で企業が測るべきもの](https://readiness.coaretail.com/insights/ai-search-52-percent/): Insights Column（2026-09-07）。CA GEOラボ調査：利用率52.3%・検索エンジン86.9%併存
 - [経営が見るべきReadiness指標](https://readiness.coaretail.com/insights/exec-readiness-kpi/): Insights Column（2026-09-08）
 - [ChatGPTの商品探索と事業者の確認項目](https://readiness.coaretail.com/insights/openai-product-discovery-agentic-commerce/): Insights Column（2026-09-09）
 - [コンテンツ運用のAI前提化](https://readiness.coaretail.com/insights/content-ops-ai/): Insights Column（2026-09-10）

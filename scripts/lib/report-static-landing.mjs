@@ -8,7 +8,7 @@ export const REPORT_CANONICAL_URL = 'https://readiness.coaretail.com/report/';
 export const REPORT_STATIC_MARKERS = Object.freeze([
   'Decision Product',
   'Personalized Decision Report',
-  '集客の入口が、検索からAIに移っています',
+  '集客の入口の一つとして、AI経由の比較・推薦が増えつつあります',
   '¥29,800',
   '税別',
   '23項目',
