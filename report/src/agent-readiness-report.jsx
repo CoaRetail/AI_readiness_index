@@ -115,7 +115,7 @@ const DUMMY_REPORT = {
     },
     {
       title: "Google Business Profileの定期更新",
-      description: "営業時間・写真・投稿を月次で更新し、AI引用元としての鮮度を維持します。地域検索・業界キーワードでの推薦率改善に直結します。",
+      description: "営業時間・写真・投稿を月次で更新し、AI引用元としての鮮度を維持します。地域検索・業界キーワードでの推薦の前提条件の一つを整える取り組みです。",
     },
     {
       title: "料金・サービス情報の構造化",
@@ -466,10 +466,10 @@ function RoadmapItem({ item, index, cardStyle }) {
       </div>
       <div style={{ textAlign: "right" }}>
         <div style={{ fontSize: 20, fontWeight: 900, color: "#16A34A", letterSpacing: "-0.5px" }}>{item.impact}pt</div>
-        <div style={{ fontSize: 11, color: "#9B9B9B" }}>改善幅</div>
+        <div style={{ fontSize: 11, color: "#9B9B9B" }}>試算改善幅（非保証）</div>
       </div>
       <div style={{ textAlign: "right", minWidth: 60 }}>
-        <div style={{ fontSize: 11, color: "#9B9B9B", marginBottom: 2 }}>ROI</div>
+        <div style={{ fontSize: 11, color: "#9B9B9B", marginBottom: 2 }}>試算ROI（非保証）</div>
         <div style={{ fontSize: 13 }}>{item.roi}</div>
       </div>
       <div style={{ minWidth: 60 }}>
@@ -704,7 +704,7 @@ function LandingPage({ onStart }) {
     return () => observer.disconnect();
   }, []);
   const faqs = [
-    { q: "広告やSEOは続けています。それでも必要ですか？", a: "必要です。広告とSEOは人が検索したあとに効きます。いま増えているのは、検索せずAIに聞く行動です。レポートは、その経路で御社が比較・推薦・問い合わせまで届くかを確認します。" },
+    { q: "広告やSEOは続けています。それでも必要ですか？", a: "必要です。広告とSEOは人が検索したあとに効きます。国内調査（例：サイバーエージェントGEOラボ）では、生成AI検索の利用増と検索エンジン併用が報告されています。レポートは、AI経由の比較・推薦・問い合わせで御社が届くかを確認します。" },
     { q: "何が分かるレポートですか？", a: "ChatGPT・Gemini・Claude・Perplexityが御社をどう認識しているか、比較候補に入るか、推薦理由を作れるか、予約や問い合わせまでつながるかを23項目で評価し、直す順番を示します。" },
     { q: "業種は限定されますか？", a: "限定しません。小売、飲食、美容、不動産、教育、医療、宿泊など、集客導線があるサービス全般が対象です。会社名、公式サイトURL、業種があれば診断できます。" },
     { q: "どのくらいで結果が届きますか？", a: "入力から約3分で診断レポートが生成されます。結果ページからPDFをダウンロードできます。" },
@@ -731,7 +731,7 @@ function LandingPage({ onStart }) {
           <div className="lp-hero__visual">
             <img
               src={HERO_IMAGE}
-              alt="AI検索結果の比較：ARI対策前は競合のみ表示、対策後は御社が第1推薦になる例"
+              alt="AI検索結果の比較：ARI対策前は競合のみ表示、対策後は御社が第1推薦になりうる条件付きの代表例（架空）"
               width={960}
               height={540}
               loading="eager"
@@ -740,9 +740,9 @@ function LandingPage({ onStart }) {
           </div>
           <div className="lp-hero__content">
             <p className="lp-hero__kicker">Decision Product — Personalized Decision Report</p>
-            <h1 id="start">集客の入口が、検索からAIに移っています</h1>
+            <h1 id="start">集客の入口の一つとして、AI経由の比較・推薦が増えつつあります</h1>
             <p className="lp-hero__sub">
-              広告費を足しても伸びないとき、原因はクリエイティブではなく、AIが御社を候補に上げていないことです。公式サイトURLから、推薦されない理由と直す順をレポートにします。
+              広告費を足しても伸びないとき、クリエイティブ以外の要因——AIの比較候補に入れない可能性——も考えられます。検索エンジン利用は併存する調査もあります。公式サイトURLから、候補に入りにくい要因と直す順の目安をレポートにします。
             </p>
             <div className="lp-hero__cta-row">
               <CtaBtn onClick={onStart}>レポートを入手する</CtaBtn>
@@ -751,7 +751,7 @@ function LandingPage({ onStart }) {
                 <span className="lp-hero__price-was">通常 ¥49,800</span>
               </p>
             </div>
-            <p className="lp-hero__meta">約3分で診断完了 ・ PDFダウンロード ・ 1社1回</p>
+            <p className="lp-hero__meta">診断所要時間 約3分 ・ PDFダウンロード ・ 1社1回</p>
           </div>
         </section>
       </div>
@@ -761,8 +761,8 @@ function LandingPage({ onStart }) {
         <Reveal delay={0.08}>
           <div className="lp-stats" style={{ marginTop: 36 }}>
             <div className="lp-stats__item">
-              <div className="lp-stats__n">最大5.5倍</div>
-              <div className="lp-stats__l">業種間AI推薦率格差</div>
+              <div className="lp-stats__n">約5.5倍</div>
+              <div className="lp-stats__l">業種間AI推薦率格差（<a href="/whitepaper/2026/research/" style={{ color: "inherit" }}>AI Search Visibility Survey 2026</a>：5業種・231件・Claude）</div>
             </div>
             <div className="lp-stats__rule" />
             <div className="lp-stats__item">
@@ -772,7 +772,7 @@ function LandingPage({ onStart }) {
             <div className="lp-stats__rule" />
             <div className="lp-stats__item">
               <div className="lp-stats__n">約3分</div>
-              <div className="lp-stats__l">レポート生成時間</div>
+              <div className="lp-stats__l">診断所要時間（成果・短縮効果ではありません）</div>
             </div>
           </div>
         </Reveal>
@@ -781,7 +781,7 @@ function LandingPage({ onStart }) {
       <section className="lp-section" id="problem">
         <h2>集客が止まっている会社で、いま起きていること</h2>
         <p className="lp-section__lead">
-          見込み客は「どこがよいか」を人に聞かなくなっています。AIに聞いて、比較して、そのまま予約や問い合わせに進みます。そこに載っていない会社は、広告を増やしても候補に入りません。
+          一部の層では「どこがよいか」を人に聞く前にAIに聞き、比較して予約や問い合わせに進むケースが報告されています。比較候補に載っていない会社は、広告を増やしても候補に入りにくい場合があります。
         </p>
         <div className="lp-pains">
           <article>
@@ -817,7 +817,7 @@ function LandingPage({ onStart }) {
         <div className="lp-stack">
           <div className="lp-stack__hero">
             <h3>直す順番が分かる</h3>
-            <p>23項目のスコアから、影響の大きい改善を上から並べます。全部直す必要はありません。先に効く3つが分かります。</p>
+            <p>23項目のスコアから、影響の大きい改善を上から並べます。全部直す必要はありません。優先度の高い3項目の候補が分かります（効果は保証しません）。</p>
           </div>
           <div className="lp-stack__side">
             <div className="lp-stack__cell">
@@ -1904,7 +1904,7 @@ function ReportPage({ report, form, reportMode = "demo", purchaseState = null })
       ? report.improvementProposals
       : (report.roadmap || []).slice(0, 5).map((item) => ({
           title: item.action,
-          description: `${companyName}において「${item.action}」は改善幅${item.impact}・ROI ${item.roi}と試算されています。優先度${item.priority}の施策として、AI推薦率の向上に寄与します。`,
+          description: `${companyName}において「${item.action}」は、解析時点の試算で改善幅${item.impact}・ROI ${item.roi}が示されています（保証ではありません）。優先度${item.priority}の施策として、優先検討の目安です。`,
         })));
 
   const priorityTop3 = improvementProposals.slice(0, 3).map((item, i) =>
