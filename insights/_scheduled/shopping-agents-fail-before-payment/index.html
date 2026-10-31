@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/ga4.js" async></script>
+  <script src="/assets/analytics.js" defer></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>article｜Agent Readiness Insights</title>
+<meta name="description" content="General MachinesのCartTrace-100kでは、失敗の37.5%が商品情報の読み取り、28.9%が条件の聞き返しです。チェックアウトと決済は各1%未満。Forterの加盟店ネットワークでは、店の通常チェックアウト経由が10月12日週に70%でした。研究データとベンダーデータです。">
+<link rel="canonical" href="https://readiness.coaretail.com/insights/shopping-agents-fail-before-payment/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "article",
+  "description": "General MachinesのCartTrace-100kでは、失敗の37.5%が商品情報の読み取り、28.9%が条件の聞き返しです。チェックアウトと決済は各1%未満。Forterの加盟店ネットワークでは、店の通常チェックアウト経由が10月12日週に70%でした。研究データとベンダーデータです。",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
+  "publisher": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
+  "mainEntityOfPage": "https://readiness.coaretail.com/insights/shopping-agents-fail-before-payment/",
+  "inLanguage": "ja"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Agent Readiness", "item": "https://readiness.coaretail.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://readiness.coaretail.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "article", "item": "https://readiness.coaretail.com/insights/shopping-agents-fail-before-payment/" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/hub-animations.css">
+<style>
+:root {
+  --bg: #FFFFFF; --bg-elevated: #FAFAFA; --bg-card: #F4F4F5;
+  --border: rgba(0,0,0,0.08);
+  --text: #09090B; --text-secondary: #52525B; --text-muted: #71717A;
+  --cta: #09090B; --cta-text: #FFFFFF;
+  --radius: 12px; --max: 720px; --max-wide: 1120px; --nav-h: 64px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; }
+.article-container { max-width: var(--max); margin: 0 auto; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--text-muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta { background: var(--cta); color: var(--cta-text) !important; padding: 8px 14px; border-radius: 8px; font-size: 13px !important; font-weight: 500 !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.article-header { padding: calc(var(--nav-h) + 56px) 0 40px; }
+.breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.article-meta time { font-weight: 600; }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; background: var(--bg-card); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.25; margin-bottom: 20px; }
+.lead { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 40px; }
+.article-body h2 { font-size: 1.375rem; font-weight: 600; margin: 48px 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+.article-body p { margin-bottom: 1.25em; color: var(--text-secondary); }
+.article-body ul { margin: 0 0 1.25em 1.25em; color: var(--text-secondary); }
+.article-body li { margin-bottom: 0.5em; }
+.article-body strong { color: var(--text); font-weight: 600; }
+.article-body a { color: var(--text); }
+.article-body blockquote { border-left: 3px solid var(--text); padding: 12px 20px; margin: 24px 0; background: var(--bg-elevated); font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+.article-body blockquote strong { color: var(--text); }
+.article-body .closing-lines { margin-top: 1.5em; line-height: 2; }
+.article-cta { margin: 48px 0; padding: 28px; background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border); }
+.article-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.article-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn { display: inline-flex; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none; background: var(--cta); color: var(--cta-text); margin-right: 8px; margin-bottom: 8px; }
+.btn-navy { background: #0D1B3E; color: #FFFFFF; }
+.btn-navy:hover { background: #162040; color: #FFFFFF; }
+.article-cta .btn-navy,
+.article-cta .btn-navy:hover { color: #FFFFFF; }
+.article-body a.btn-navy,
+.article-body a.btn-navy:hover { color: #FFFFFF; }
+.sitewide-cta { margin: 48px 0 24px; padding: 24px 28px; background: #F4F4F5; border-radius: var(--radius); border: 1px solid var(--border); }
+.sitewide-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.sitewide-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.back-link { display: inline-block; margin: 40px 0 80px; font-size: 14px; color: var(--text-muted); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.related-insights { margin: 48px 0 0; }
+.related-insights h2 { font-size: 1.375rem; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.related-insights ul { margin: 0 0 0 1.25em; color: var(--text-secondary); }
+.related-insights li { margin-bottom: 0.5em; }
+.related-insights a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.research-footer { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+.footer-brand { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.footer-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+.footer-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+.footer-layers { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 24px; }
+.footer-layers a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.footer-copy { font-size: 13px; color: var(--text-muted); padding-top: 20px; border-top: 1px solid var(--border); }
+.footer-copy a { color: var(--text-muted); text-decoration: none; }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: var(--nav-h); left: 0; right: 0; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 20px 24px; gap: 16px; align-items: flex-start;
+  }
+  .nav-toggle { display: block; }
+  .nav { position: relative; }
+}
+</style>
+<link rel="stylesheet" href="/assets/sitewide-cta.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Agent Readiness <span>Research Hub</span></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/framework/">Framework</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/whitepaper/">Whitepaper</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/insights/" class="active">Insights</a></li>
+      <li><a href="/methodology.html">Methodology</a></li>
+      <li><a href="/report/" class="nav-cta">診断レポート</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <header class="article-header container">
+    <div class="article-container">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="/">Agent Readiness</a><span aria-hidden="true">/</span>
+        <a href="/insights/">Insights</a><span aria-hidden="true">/</span>
+        <span>決済前の失敗</span>
+      </nav>
+      <p class="article-meta">
+        <time datetime="2026-10-31">2026.10.31</time>
+        <span class="article-tag">Column</span>
+      </p>
+      <h1>article</h1>
+      <p class="lead">General MachinesのCartTrace-100kでは、失敗の37.5%が商品情報の読み取り、28.9%が条件の聞き返しです。チェックアウトと決済は各1%未満。Forterの加盟店ネットワークでは、店の通常チェックアウト経由が10月12日週に70%でした。研究データとベンダーデータです。</p>
+    </div>
+  </header>
+
+  <article class="article-body container" data-article-slug="shopping-agents-fail-before-payment" data-article-title="article" data-editorial-intent="EVIDENCE">
+    <div class="article-container">
+      <h2>買い物エージェントは、どこで失敗するか？</h2>
+      <p>決済の前です。General Machinesは2026年10月28日、CartTrace-100kの研究ノートで、101,416件の買い物ジャーニーのうち、オープンウェイトのエージェントが成功したのは68.7%だと書いています。失敗の多くは、商品情報を読む段階（37.5%）と、買い手の条件を聞き返す段階（28.9%）にあります。カート作成、チェックアウト、決済は、それぞれ1%未満です。シミュレーション上の店と買い手プログラムです。実店舗の決済そのものを測った数字ではありません。</p>
+      <p>買い手が承認した課金が完了しなかったのは、41,969件の承認のうち12件です。一度承認されれば決済はほぼ通る、というのは、このデータセットの性質です。商品ページを開かずにカートに入れる習慣は、成功ジャーニーでも36.2%、失敗でも40.6%と、研究ノートは近いと書いています。読み取り失敗が、必ずしもページを開かないことだけでは説明されません。</p>
+      <h2>聞き返しは、いつ効くか？</h2>
+      <p>隠れた条件が2つあるとき、エージェントが質問したジャーニーは62.0%成功し、聞かなかったジャーニーは21.2%です。隠れ条件が0のとき、聞くことと成功率の差は小さく、研究ノートは「頻度より狙い」と書いています。満たせる商品があるのに断る「諦め」は、満たせるタスクの7.9%にのぼります。これもサンドボックス上の1エージェントの結果です。</p>
+      <h2>店の通常チェックアウト経由の注文は、どれくらい増えたか？</h2>
+      <p>Forterは2026年10月23日付近のブログで、2026年7月23日から10月20日まで、自社の加盟店ネットワークで検出したエージェント注文について書いています。画面をスクレイピングして店の通常チェックアウトを動かすエージェントが、エージェント注文の占める割合は、7月下旬は1%、10月12日の週は70%だと書いています。Commerce Protocol経由と、ブラウザ型を分けて数えています。全世界のEC全体のシェアではありません。Forterのネットワーク観測です。</p>
+      <p>Museの検出開始は9月21日、その週のエージェント注文は前月比229%増、と同ブログは書いています。エージェント注文があった店のうち、Museが買った店は74%、ChatGPT Agentは45%、と書いています。プロトコルだけより広い店に届く、という説明はForterの読みです。自社サイトの読みやすさやチェックアウトの通過性は、プロトコル以前の前提として別の話です。</p>
+      <h2>店側で先に測るべきは何か？</h2>
+      <p>CartTrace-100kの研究ノートは、店ができることとして、カテゴリと質問の型ごとに、どこでジャーニーが止まるかを測ること、検索結果にサイズ・在庫・互換性・配送などの決定情報を置くこと、在庫切れの代替を示すこと、を観察として書いています。因果の検証済みレシピではありません。General Machinesはスタンドイン店と1モデルです。Forterの70%も、検出定義と加盟店構成に依存します。決済前の37.5%と28.9%は、商品情報と聞き返しの整備が先、という順序の示唆に留めます。</p>
+      <blockquote>
+        <strong>出典：</strong> <a href="https://generalmachines.ai/research/carttrace-100k/">General Machines CartTrace-100k 2026-10-28</a>（101,416ジャーニー。読み取り37.5%、聞き返し28.9%、カート・チェックアウト・決済は各1%未満。成功68.7%。シミュレーション）／<a href="https://www.forter.com/blog/ai-agent-order-data/">Forter AI Agent Order Data</a>（2026-07-23〜10-20、加盟店ネットワーク。通常チェックアウト経由のエージェント注文は10月12日週70%、7月下旬1%。Muse検出9月21日。全世界のECシェアではない）
+      </blockquote>
+
+      <div class="sitewide-cta" data-cta-profile="shopping-agents-fail-before-payment" data-editorial-intent="EVIDENCE">
+        <h2>次のリソース</h2>
+        <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
+<a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_shopping-agents-fail-before-payment_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/shopping-agents-fail-before-payment/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_shopping-agents-fail-before-payment_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/shopping-agents-fail-before-payment/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
+      </div>
+
+            <section class="related-insights">
+        <h2>関連Insights</h2>
+        <ul>
+        <li>
+          <a href="/insights/chatgpt-seller-rank/">選ばれる商品と売り手は別——ChatGPTの買い物</a>
+        </li>
+        <li>
+          <a href="/insights/openai-product-discovery-agentic-commerce/">ChatGPTの商品探索が変える、AIに比較される情報の整え方</a>
+        </li>
+        <li>
+          <a href="/insights/execution-readiness/">AIエージェントが予約・購入できるサイトの条件とは？</a>
+        </li>
+        </ul>
+      </section>
+
+      <div class="article-cta">
+        <h2>関連リソース</h2>
+        <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
+        <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
+        <a href="/research/" class="btn btn-secondary" data-ga-insight-cta="research">Research Hub</a>
+        <a href="/report/" class="btn btn-secondary" data-ga-insight-cta="report">ARI診断</a>
+      </div>
+
+      <a href="/insights/" class="back-link">← Insights 一覧に戻る</a>
+    </div>
+  </article>
+</main>
+
+<footer class="research-footer">
+  <div class="container">
+    <p class="footer-brand">Agent Readiness Research Hub</p>
+    <p class="footer-org">Insights · Coa Retail</p>
+    <p class="footer-meta">Version 1.0 · Last Updated 2026-10-31</p>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">トップ</a>
+      <a href="/framework/">Framework</a>
+      <a href="/research/">Research</a>
+      <a href="/whitepaper/">Whitepaper</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/news/">News</a>
+      <a href="/insights/">Insights</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/dental.html">Benchmarks</a>
+      <a href="/report/">診断レポート</a>
+      <a href="https://www.coaretail.com" target="_blank" rel="noopener">Coa Retail</a>
+    </nav>
+    <nav class="footer-layers" aria-label="Research">
+      <a href="/research/#principles">Principles</a>
+      <a href="/research/#updates">Updates</a>
+      <a href="/research/#citation">Citation Policy</a>
+      <a href="/research/#faq">FAQ</a>
+    </nav>
+    <p class="footer-copy">© 2026 <a href="https://www.coaretail.com/" target="_blank" rel="noopener">合同会社コア・リテール</a></p>
+  </div>
+</footer>
+<script src="/assets/sitewide-cta-tracking.js" defer></script>
+</body>
+</html>
