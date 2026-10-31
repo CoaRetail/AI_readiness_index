@@ -147,3 +147,13 @@ test('RMVU-04E resolveBundlePaymentLink accepts VITE_ alias', () => {
     BUNDLE_TEST_URL,
   );
 });
+
+test('RMVU-04E T13 checkout redirect works without gtag (timeout fallback)', () => {
+  const analyticsSrc = fs.readFileSync(path.join(ROOT, 'report/src/analytics.js'), 'utf8');
+  const jsxSrc = reportSrc();
+  assert.match(analyticsSrc, /export function scheduleNavigationOnce/);
+  assert.match(analyticsSrc, /REPORT_CHECKOUT_NAV_FALLBACK_MS\s*=\s*900/);
+  assert.match(analyticsSrc, /setTimeout\(run,\s*fallbackMs\)/);
+  assert.match(analyticsSrc, /if \(typeof window\.gtag !== 'function'\)[\s\S]*if \(onComplete\) onComplete\(\)/);
+  assert.match(jsxSrc, /scheduleNavigationOnce\(\(\)\s*=>\s*\{[\s\S]*window\.location\.href\s*=\s*checkout\.url/);
+});
