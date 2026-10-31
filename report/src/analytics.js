@@ -118,6 +118,25 @@ function sanitizeGaParams(params = {}) {
   return safe;
 }
 
+/** Fallback when gtag is blocked but still defined — must stay within 800–1000ms. */
+export const REPORT_CHECKOUT_NAV_FALLBACK_MS = 900;
+
+/** Run onNavigate once; event_callback and fallback timer race (ad-blocker safe). */
+export function scheduleNavigationOnce(onNavigate, fallbackMs = REPORT_CHECKOUT_NAV_FALLBACK_MS) {
+  if (typeof onNavigate !== 'function') return () => {};
+  let done = false;
+  const run = () => {
+    if (done) return;
+    done = true;
+    onNavigate();
+  };
+  const timer = setTimeout(run, fallbackMs);
+  return () => {
+    clearTimeout(timer);
+    run();
+  };
+}
+
 /** Direct gtag (dual measurement IDs via ga4.js); optional beacon + event_callback for navigation. */
 function trackGaEventDirect(name, params = {}, { transportType, onComplete } = {}) {
   if (typeof window.gtag !== 'function') {

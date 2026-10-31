@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useContext } from "react";
 import VideoCarousel from "./VideoCarousel.jsx";
-import { trackReportStartOnce, trackReportViewItemOnce, trackReportProofImpression, trackLocalCtaClick } from "./analytics.js";
+import { trackReportStartOnce, trackReportViewItemOnce, trackReportProofImpression, trackLocalCtaClick, scheduleNavigationOnce } from "./analytics.js";
 import { readPreviewPrefillFromSession } from "./preview-prefill.js";
 import {
   scoreInterpretation,
@@ -2472,9 +2472,9 @@ export default function App() {
       alert("決済リンクが未設定です。Bundle Payment Link の設定が必要です（NEW_PAYMENT_LINK_REQUIRED）。");
       return;
     }
-    onReportCheckoutStart(checkout, () => {
+    onReportCheckoutStart(checkout, scheduleNavigationOnce(() => {
       window.location.href = checkout.url;
-    });
+    }));
   };
 
   const handleAnalysisComplete = (report) => {
