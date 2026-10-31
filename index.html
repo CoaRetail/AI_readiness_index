@@ -131,8 +131,8 @@ h3 { font-size: 1.125rem; margin-bottom: 8px; }
 }
 .nav-logo { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; white-space: nowrap; }
 .nav-logo span { color: var(--text-muted); font-weight: 400; }
-.nav-links { display: flex; align-items: center; gap: 22px; list-style: none; flex-wrap: wrap; justify-content: flex-end; }
-.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+.nav-links { display: flex; align-items: center; gap: 16px; list-style: none; flex-wrap: nowrap; justify-content: flex-end; }
+.nav-links a { white-space: nowrap; font-size: 13.5px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
 .nav-links a:hover { color: var(--text); }
 .nav-cta {
   background: var(--cta); color: var(--cta-text) !important;
@@ -391,7 +391,7 @@ h3 { font-size: 1.125rem; margin-bottom: 8px; }
 
 /* Reveal — see assets/hub-animations.css */
 
-@media (max-width: 1100px) {
+@media (max-width: 1240px) {
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; position: absolute;
