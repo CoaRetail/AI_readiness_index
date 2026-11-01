@@ -1,0 +1,8 @@
+GoogleとOpenAIは2026年10月30日、robots.txtの共通シグナルで複数事業者へのAI学習選好を一度に伝える方針を示しました。Googleは2027年初め対応を目指し、Google-Extendedを明示しない学習拒否はGoogle-Extended拒否と同等に読む予定、とSearch Centralにあります。
+
+IETFドラフトはUser-Agent `__usage_ai-training` で学習利用の可否をパス単位で書く案です。ドラフトはInternet-Draftで、クロール指令ではなく利用選好と明記しています。OpenAIも既存のクローラー別ルールは残る、と書いています。
+
+学習を断っても検索・引用用ボットは別設定です。Bing対応はMicrosoft一次確認が取れていないため本文では触れていません。Muck Rack 10月版のClaude-SearchBot分析はCloudflareで本文取得できず数値は未検証です。
+
+https://readiness.coaretail.com/insights/usage-ai-training-robots-token/
+#AgentReadiness #robots.txt #AI学習
