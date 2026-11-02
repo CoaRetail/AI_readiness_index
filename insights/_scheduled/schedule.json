@@ -3421,11 +3421,11 @@
       "publishAt": "2026-12-03T10:00:00+09:00",
       "status": "scheduled",
       "title": "学習拒否は一括で書ける——検索用クローラーは別の話",
-      "cardSummary": "GoogleとOpenAIはrobots.txtの共通AI学習シグナルを予告。IETF案__usage_ai-trainingは学習選好向けで、Google-Extendedや検索ボットは別。Googleは2027年初め対応目標。",
+      "cardSummary": "Google・OpenAI・Bingがrobots.txtの共通AI Trainingシグナルを予告。BingはGroundingをページ別に分離。IETF案__usage_ai-trainingは学習選好向けで検索ボットは別。",
       "llmsLabel": "学習トークン",
       "series": "v2-stock",
       "seoTitle": "学習拒否は一括で書ける——検索用クローラーは別の話",
-      "metaDescription": "GoogleとOpenAIがrobots.txtの共通AI学習トークンを予告。IETF案の__usage_ai-trainingは学習選好向けで、Google-Extendedや検索ボットは別管理。2027年初め対応目標。",
+      "metaDescription": "Google・OpenAI・Bingがrobots.txtの共通AI Trainingトークンを予告。BingはGroundingをページ別に分離。IETF案__usage_ai-trainingは学習選好向けで検索ボットは別管理。",
       "searchIntentClass": "B",
       "primarySearchIntent": "AI 学習 robots.txt Google-Extended",
       "editorialIntent": "NEWS",
@@ -3437,7 +3437,7 @@
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
-        "verifiedAt": "2026-11-02T02:00:00.000Z",
+        "verifiedAt": "2026-11-03T02:00:00.000Z",
         "verification": {
           "verified": true,
           "status": "SOURCE_VERIFIED",
@@ -3448,7 +3448,8 @@
           "numbersVerified": true,
           "sourceAuthority": "primary",
           "sourceFreshness": "2026-10-30",
-          "note": "Google Search Central 30 Oct 2026 John Mueller. Shared AI training control robots.txt token. Google-Extended mapping when unspecified. OpenAI 30 Oct same signal. IETF draft __usage_ai-training Internet-Draft. Bing support not verified. Muck Rack Oct blog blocked by Cloudflare fetch."
+          "note": "Google Search Central 30 Oct 2026 John Mueller. Shared AI training robots.txt. OpenAI 30 Oct same signal. Bing Search Blog 30 Oct 2026 Krishna Madhavan. __usage_ai-training robots.txt and page override. Separate page-level AI Grounding Allow Disallow DisallowExtended. Effective crawl 2027-02-01. NoArchive NoCache not read after 2027-03-01. Reduced AI visibility if grounding disallowed. IETF draft-00 Internet-Draft. Anthropic implementation unconfirmed. Muck Rack Oct blog blocked Cloudflare fetch.",
+          "secondary": "https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/"
         }
       },
       "phase3Stock": true,
