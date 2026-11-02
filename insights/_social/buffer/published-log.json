@@ -1655,7 +1655,34 @@
       "publishAt": "2026-10-30T12:00:00+09:00",
       "dueAtUtc": "2026-10-30T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-02T01:00:00.000Z",
+      "slug": "chatgpt-ads-measurement-so-far",
+      "channel": "linkedin",
+      "bufferUpdateId": "6ae7e0b2902c3fb1dec891b4",
+      "publishAt": "2026-11-02T11:30:00+09:00",
+      "dueAtUtc": "2026-11-02T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-02T01:00:00.000Z",
+      "slug": "chatgpt-ads-measurement-so-far",
+      "channel": "facebook",
+      "bufferUpdateId": "6ae7e0b2902c3fb1dec891e8",
+      "publishAt": "2026-11-02T11:45:00+09:00",
+      "dueAtUtc": "2026-11-02T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-02T01:00:00.000Z",
+      "slug": "chatgpt-ads-measurement-so-far",
+      "channel": "x",
+      "bufferUpdateId": "6ae7e0b32da2578c18905295",
+      "publishAt": "2026-11-02T12:00:00+09:00",
+      "dueAtUtc": "2026-11-02T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-10-30T01:00:37.686Z"
+  "updatedAt": "2026-11-02T01:00:35.641Z"
 }

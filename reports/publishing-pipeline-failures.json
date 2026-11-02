@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T01:00:37.689Z",
+  "updatedAt": "2026-11-02T01:00:35.644Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "business-panel-ai-overview-study",
+    "slug": "chatgpt-ads-measurement-so-far",
     "stage": "buffer_queued",
-    "at": "2026-10-30T01:00:37.689Z"
+    "at": "2026-11-02T01:00:35.644Z"
   }
 }
