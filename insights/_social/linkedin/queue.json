@@ -1188,6 +1188,23 @@
       "createdAt": "2026-10-30T01:00:00.265Z",
       "updatedAt": "2026-10-30T01:00:37.688Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-chatgpt-ads-measurement-so-far-2026-11-02",
+      "slug": "chatgpt-ads-measurement-so-far",
+      "articlePublishAt": "2026-11-02T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-02T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-02T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-ads-measurement-so-far/",
+      "contentFile": "insights/_social/linkedin/posts/chatgpt-ads-measurement-so-far.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-02T01:00:00.254Z",
+      "updatedAt": "2026-11-02T01:00:00.254Z",
+      "series": "v2-stock"
     }
   ]
 }

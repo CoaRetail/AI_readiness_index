@@ -2475,7 +2475,7 @@
     {
       "slug": "chatgpt-ads-measurement-so-far",
       "publishAt": "2026-11-02T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "ChatGPT広告の計測は、道具が先に増えた——成果の数字は検証済みではない",
       "cardSummary": "画像生成中のビジュアル広告は、米国で10月後半に試す、と2026年10月5日の告知では書いていました。計測の連携先は増えています。参照リンクのタグ欠落はバグで、10月15日から修正された、とAdobeのCedric Huesler氏が書いています。確認は又聞きです。",
       "llmsLabel": "計測は検証前",
@@ -2512,10 +2512,13 @@
       "scheduledPublishAt": "2026-11-02T10:00:00+09:00",
       "slotDate": "2026-11-02",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261102-DAILY-001",
       "activatedAt": "2026-10-07T00:30:00.000Z",
-      "heroReadyAt": "2026-10-28T01:27:59.882Z"
+      "heroReadyAt": "2026-10-28T01:27:59.882Z",
+      "publishAttemptedAt": "2026-11-02T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-02T01:00:00.000Z"
     },
     {
       "slug": "chatgpt-as-direct",
