@@ -2629,7 +2629,7 @@
       "freshnessReviewedAt": "2026-10-15T00:30:00.000Z",
       "eirId": "EIR-20261106-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/",
@@ -2649,13 +2649,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-15T00:30:00.000Z",
       "scheduledPublishAt": "2026-11-06T10:00:00+09:00",
       "slotDate": "2026-11-06",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261106-DAILY-001",
-      "activatedAt": "2026-10-15T00:30:00.000Z"
+      "activatedAt": "2026-10-15T00:30:00.000Z",
+      "heroReadyAt": "2026-11-03T06:06:14.181Z"
     },
     {
       "slug": "gpt6-intelligent-ui",
