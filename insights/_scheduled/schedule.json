@@ -2525,7 +2525,7 @@
     {
       "slug": "chatgpt-as-direct",
       "publishAt": "2026-11-04T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "ChatGPTのタグ外れはバグだった——10月8日から15日は注記し、UTMで数える",
       "cardSummary": "utm_source=chatgpt.com の欠落は既知のバグだった、とAdobeのCedric Huesler氏が書いています。確認は又聞きです。10月8日から15日は注記し、ChatGPTはUTMで数えます。",
       "llmsLabel": "UTMで数える",
@@ -2562,10 +2562,13 @@
       "scheduledPublishAt": "2026-11-04T10:00:00+09:00",
       "slotDate": "2026-11-04",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261104-DAILY-001",
       "activatedAt": "2026-10-15T00:30:00.000Z",
-      "heroReadyAt": "2026-10-30T01:12:36.919Z"
+      "heroReadyAt": "2026-10-30T01:12:36.919Z",
+      "publishAttemptedAt": "2026-11-04T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-04T01:00:00.000Z"
     },
     {
       "slug": "chatgpt-primary-cites",

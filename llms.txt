@@ -117,6 +117,7 @@
 - [読める店の条件](https://readiness.coaretail.com/insights/shopify-agentic-holiday-legibility/): Insights Column（2026-10-29）
 - [パネルは一日の記録](https://readiness.coaretail.com/insights/business-panel-ai-overview-study/): Insights Column（2026-10-30）
 - [計測は検証前](https://readiness.coaretail.com/insights/chatgpt-ads-measurement-so-far/): Insights Column（2026-11-02）
+- [UTMで数える](https://readiness.coaretail.com/insights/chatgpt-as-direct/): Insights Column（2026-11-04）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

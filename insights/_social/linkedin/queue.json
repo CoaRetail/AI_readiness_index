@@ -1205,6 +1205,23 @@
       "createdAt": "2026-11-02T01:00:00.254Z",
       "updatedAt": "2026-11-02T01:00:35.643Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-chatgpt-as-direct-2026-11-04",
+      "slug": "chatgpt-as-direct",
+      "articlePublishAt": "2026-11-04T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-04T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-04T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-as-direct/",
+      "contentFile": "insights/_social/linkedin/posts/chatgpt-as-direct.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-04T01:00:00.319Z",
+      "updatedAt": "2026-11-04T01:00:00.319Z",
+      "series": "v2-stock"
     }
   ]
 }
