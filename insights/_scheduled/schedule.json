@@ -2575,7 +2575,7 @@
     {
       "slug": "chatgpt-primary-cites",
       "publishAt": "2026-11-05T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "要約より一次情報——ChatGPTの引用が寄っている先",
       "cardSummary": "米国の引用では、PubMedが64位から4位へ上がり、WebMDが18位から79位へ下がりました。Ahrefsの読みであり、OpenAIの方針発表ではありません。",
       "llmsLabel": "一次情報への引用",
@@ -2612,10 +2612,13 @@
       "scheduledPublishAt": "2026-11-05T10:00:00+09:00",
       "slotDate": "2026-11-05",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261105-DAILY-001",
       "activatedAt": "2026-10-15T00:30:00.000Z",
-      "heroReadyAt": "2026-11-03T00:01:05.585Z"
+      "heroReadyAt": "2026-11-03T00:01:05.585Z",
+      "publishAttemptedAt": "2026-11-05T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-05T01:00:00.000Z"
     },
     {
       "slug": "bing-topics-portfolio",

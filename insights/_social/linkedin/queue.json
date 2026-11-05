@@ -1222,6 +1222,23 @@
       "createdAt": "2026-11-04T01:00:00.319Z",
       "updatedAt": "2026-11-04T01:00:37.493Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-chatgpt-primary-cites-2026-11-05",
+      "slug": "chatgpt-primary-cites",
+      "articlePublishAt": "2026-11-05T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-05T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-05T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-primary-cites/",
+      "contentFile": "insights/_social/linkedin/posts/chatgpt-primary-cites.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-05T01:00:00.218Z",
+      "updatedAt": "2026-11-05T01:00:00.218Z",
+      "series": "v2-stock"
     }
   ]
 }
