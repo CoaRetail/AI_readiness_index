@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/ga4.js" async></script>
+  <script src="/assets/analytics.js" defer></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>同じ質問でも都市で引用が変わる｜｜GEO監測は地点を固定する｜—GEO監測は地点を固定する</title>
+<meta name="description" content="arXiv 2610.24081。300問・ChatGPT gpt-5.4-miniとGemini。宣言位置とネットワーク位置で引用と推薦店が変わる。2026年10月API計測の査読前論文。">
+<link rel="canonical" href="https://readiness.coaretail.com/insights/geo-location-changes-cited-sources/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "同じ質問でも都市で引用が変わる——GEO監測は地点を固定する",
+  "description": "arXiv 2610.24081。300問・ChatGPT gpt-5.4-miniとGemini。宣言位置とネットワーク位置で引用と推薦店が変わる。2026年10月API計測の査読前論文。",
+  "datePublished": "2026-12-07",
+  "dateModified": "2026-12-07",
+  "author": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
+  "publisher": { "@type": "Organization", "name": "合同会社コア・リテール", "url": "https://www.coaretail.com" },
+  "mainEntityOfPage": "https://readiness.coaretail.com/insights/geo-location-changes-cited-sources/",
+  "inLanguage": "ja"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Agent Readiness", "item": "https://readiness.coaretail.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://readiness.coaretail.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "同じ質問でも都市で引用が変わる——GEO監測は地点を固定する", "item": "https://readiness.coaretail.com/insights/geo-location-changes-cited-sources/" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/hub-animations.css">
+<style>
+:root {
+  --bg: #FFFFFF; --bg-elevated: #FAFAFA; --bg-card: #F4F4F5;
+  --border: rgba(0,0,0,0.08);
+  --text: #09090B; --text-secondary: #52525B; --text-muted: #71717A;
+  --cta: #09090B; --cta-text: #FFFFFF;
+  --radius: 12px; --max: 720px; --max-wide: 1120px; --nav-h: 64px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+.container { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; }
+.article-container { max-width: var(--max); margin: 0 auto; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: var(--max-wide); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
+.nav-logo span { color: var(--text-muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta { background: var(--cta); color: var(--cta-text) !important; padding: 8px 14px; border-radius: 8px; font-size: 13px !important; font-weight: 500 !important; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.article-header { padding: calc(var(--nav-h) + 56px) 0 40px; }
+.breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.article-meta time { font-weight: 600; }
+.article-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; background: var(--bg-card); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.25; margin-bottom: 20px; }
+.lead { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 40px; }
+.article-body h2 { font-size: 1.375rem; font-weight: 600; margin: 48px 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+.article-body p { margin-bottom: 1.25em; color: var(--text-secondary); }
+.article-body ul { margin: 0 0 1.25em 1.25em; color: var(--text-secondary); }
+.article-body li { margin-bottom: 0.5em; }
+.article-body strong { color: var(--text); font-weight: 600; }
+.article-body a { color: var(--text); }
+.article-body blockquote { border-left: 3px solid var(--text); padding: 12px 20px; margin: 24px 0; background: var(--bg-elevated); font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+.article-body blockquote strong { color: var(--text); }
+.article-body .closing-lines { margin-top: 1.5em; line-height: 2; }
+.article-cta { margin: 48px 0; padding: 28px; background: var(--bg-elevated); border-radius: var(--radius); border: 1px solid var(--border); }
+.article-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.article-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn { display: inline-flex; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none; background: var(--cta); color: var(--cta-text); margin-right: 8px; margin-bottom: 8px; }
+.btn-navy { background: #0D1B3E; color: #FFFFFF; }
+.btn-navy:hover { background: #162040; color: #FFFFFF; }
+.article-cta .btn-navy,
+.article-cta .btn-navy:hover { color: #FFFFFF; }
+.article-body a.btn-navy,
+.article-body a.btn-navy:hover { color: #FFFFFF; }
+.sitewide-cta { margin: 48px 0 24px; padding: 24px 28px; background: #F4F4F5; border-radius: var(--radius); border: 1px solid var(--border); }
+.sitewide-cta h2 { font-size: 1.125rem; margin-bottom: 8px; color: var(--text); }
+.sitewide-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.back-link { display: inline-block; margin: 40px 0 80px; font-size: 14px; color: var(--text-muted); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.related-insights { margin: 48px 0 0; }
+.related-insights h2 { font-size: 1.375rem; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--text); }
+.related-insights ul { margin: 0 0 0 1.25em; color: var(--text-secondary); }
+.related-insights li { margin-bottom: 0.5em; }
+.related-insights a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.research-footer { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+.footer-brand { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.footer-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+.footer-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+.footer-layers { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 24px; }
+.footer-layers a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.footer-copy { font-size: 13px; color: var(--text-muted); padding-top: 20px; border-top: 1px solid var(--border); }
+.footer-copy a { color: var(--text-muted); text-decoration: none; }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: var(--nav-h); left: 0; right: 0; background: var(--bg);
+    border-bottom: 1px solid var(--border); padding: 20px 24px; gap: 16px; align-items: flex-start;
+  }
+  .nav-toggle { display: block; }
+  .nav { position: relative; }
+}
+</style>
+<link rel="stylesheet" href="/assets/sitewide-cta.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Agent Readiness <span>Research Hub</span></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/framework/">Framework</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/whitepaper/">Whitepaper</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/insights/" class="active">Insights</a></li>
+      <li><a href="/methodology.html">Methodology</a></li>
+      <li><a href="/report/" class="nav-cta">診断レポート</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <header class="article-header container">
+    <div class="article-container">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="/">Agent Readiness</a><span aria-hidden="true">/</span>
+        <a href="/insights/">Insights</a><span aria-hidden="true">/</span>
+        <span>地点と引用</span>
+      </nav>
+      <p class="article-meta">
+        <time datetime="2026-12-07">2026.12.07</time>
+        <span class="article-tag">Column</span>
+      </p>
+      <h1>同じ質問でも都市で引用が変わる——GEO監測は地点を固定する</h1>
+      <p class="lead">arXiv:2610.24081は300問の監査で、ChatGPTは宣言都市、Geminiはネットワーク国に従い引用ドメインが変わると報告しています。1地点だけのGEO監測ではローカル推薦の大半を取りこぼしうる、と2026年10月の査読前論文です。</p>
+    </div>
+  </header>
+
+  <article class="article-body container" data-article-slug="geo-location-changes-cited-sources" data-article-title="同じ質問でも都市で引用が変わる——GEO監測は地点を固定する" data-editorial-intent="EVIDENCE">
+    <div class="article-container">
+
+
+
+      
+      
+      
+      
+      
+
+      <div class="sitewide-cta" data-cta-profile="geo-location-changes-cited-sources" data-editorial-intent="EVIDENCE">
+        <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_geo-location-changes-cited-sources_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/geo-location-changes-cited-sources/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_geo-location-changes-cited-sources_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/geo-location-changes-cited-sources/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
+      </div>
+<h2>同じ質問でも、都市が違うと引用ドメインは変わるか？</h2>
+      <p>変わります。Mahe Chen氏とNick Koudas氏（トロント大学）は、査読前の論文 arXiv:2610.24081「Location, Location, Generation」（2026年10月）で、生成検索エンジンが引用するソースがユーザーの位置情報に依存すると報告しています。300問（「近くの配管工」型100、地域依存100、非地域100）を、ChatGPT（gpt-5.4-mini、Responses APIのweb search）に19の宣言都市それぞれで2回ずつ送り、計24,000回答を得た実験E1を中心に述べています。近くを探す問いでは、米国内の2都市間で引用ドメインのJaccard差分（localization index）が0.14、国をまたぐと0.28、と論文は書いています。非地域問いでは宣言位置による差は0.00〜0.03で、ノイズ内、と書いています。</p>
+<h2>ChatGPTとGeminiは、位置をどこから読むか？</h2>
+      <p>チャネルが違います。ChatGPTはアプリが宣言する近似位置（都市粒度）に従い、ネットワーク出口は無視する、と論文はE1とE2で書いています。Gemini（gemini-3.1-flash-lite、Google Search grounding）は宣言座標を無視し、ネットワークの国に従う、と書いています。米国東海岸と西海岸のVPN出口間ではGeminiのlocalization indexは0.00（95%CI −0.03〜0.04）、国をまたぐと近くを探す問いで0.43、と書いています。非地域問いでもGeminiは国間で0.23の差があり、ChatGPTはネットワーク位置で差が出ない、と書いています。API上の小モデルと消費者アプリが同一とは限らない、という限界を論文は明記しています。</p>
+<h2>推薦される店名・ブランドも、地点で変わるか？</h2>
+      <p>変わります。論文は、回答が推薦する事業者名を言語モデルで抽出し、手作業で36件中29件が完全正しいと書いています。ChatGPTで近くを探す問いでは、同一都市で2回の推薦名の重なりは23%、別都市では4%、とTable 3の説明です。15米都市のうち1都市だけを監測すると、全都市で推薦された事業者の9%しか捕捉できず、5都市で36%、10都市で69%、とFigure 3の説明です。GEO監測を1地点から行うと、ローカル可視性を過小評価しうる、という含意です。</p>
+<h2>300問・31,200回答という規模は、何を意味するか？</h2>
+      <p>E1は24,000回答（300問×19位置×2回、うち強制検索版も含む設計）。E2はChatGPTとGeminiを6ネットワーク位置から計7,200回答、と方法論にあります。合計31,200回答、と要約にあります。英語の商用トピック10分野で、著者が作成した質問です。2026年10月時点のエンジン挙動のスナップショットであり、順位や売上への因果は主張していません。VPN出口はデータセンターIPで、居住系回線ではGeminiの粒度が異なる可能性がある、と限界に書いています。</p>
+<h2>GEO監測の設計は、何を固定すべきか？</h2>
+      <p>宣言位置とネットワーク位置の両方です。論文は、ChatGPT向け監測は宣言都市を、Gemini向けは国ごとのネットワーク出口を固定すべきだと書いています。ChatGPTでは距離がlocalizationを弱めないため、近隣都市の代理測定は使えない、と書いています。Geminiでは国単位なら1出口で足りるが、多国籍ブランドは国ごとに測る必要がある、と書いています。エンジン間比較や時系列比較も、位置を固定しないとソースと推薦名の大部分が入れ替わる、と結論に書いています。論文は質問・コード・回答を公開すると書いています。</p>
+      <blockquote>
+        <strong>出典：</strong> <a href="https://arxiv.org/abs/2610.24081">arXiv:2610.24081</a>（Chen &amp; Koudas、2026年10月、査読前。300問、ChatGPT gpt-5.4-mini、Gemini gemini-3.1-flash-lite。31,200回答。宣言位置 vs ネットワーク位置）
+      </blockquote>
+<h2>次のリソース</h2>
+        <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
+
+<section class="related-insights">
+        <h2>関連Insights</h2>
+        <ul>
+        <li>
+          <a href="/insights/how-many-runs-before-ai-visibility/">AIでの見え方は、何問・何回測れば信じられるか</a>
+        </li>
+        <li>
+          <a href="/insights/industry-ai-citation-source-mix/">article</a>
+        </li>
+        <li>
+          <a href="/insights/within-domain-citation-features/">同じサイトの中で、引用されるページは何が違うか</a>
+        </li>
+        </ul>
+      </section>
+<div class="article-cta">
+        <h2>関連リソース</h2>
+        <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
+        <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
+        <a href="/research/" class="btn btn-secondary" data-ga-insight-cta="research">Research Hub</a>
+        <a href="/report/" class="btn btn-secondary" data-ga-insight-cta="report">ARI診断</a>
+      </div>
+
+      <a href="/insights/" class="back-link">← Insights 一覧に戻る</a>
+    </div>
+  </article>
+</main>
+
+<footer class="research-footer">
+  <div class="container">
+    <p class="footer-brand">Agent Readiness Research Hub</p>
+    <p class="footer-org">Insights · Coa Retail</p>
+    <p class="footer-meta">Version 1.0 · Last Updated 2026-12-07</p>
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">トップ</a>
+      <a href="/framework/">Framework</a>
+      <a href="/research/">Research</a>
+      <a href="/whitepaper/">Whitepaper</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/news/">News</a>
+      <a href="/insights/">Insights</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/dental.html">Benchmarks</a>
+      <a href="/report/">診断レポート</a>
+      <a href="https://www.coaretail.com" target="_blank" rel="noopener">Coa Retail</a>
+    </nav>
+    <nav class="footer-layers" aria-label="Research">
+      <a href="/research/#principles">Principles</a>
+      <a href="/research/#updates">Updates</a>
+      <a href="/research/#citation">Citation Policy</a>
+      <a href="/research/#faq">FAQ</a>
+    </nav>
+    <p class="footer-copy">© 2026 <a href="https://www.coaretail.com/" target="_blank" rel="noopener">合同会社コア・リテール</a></p>
+  </div>
+</footer>
+<script src="/assets/sitewide-cta-tracking.js" defer></script>
+</body>
+</html>
