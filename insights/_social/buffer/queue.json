@@ -3511,7 +3511,7 @@
     {
       "slug": "chatgpt-primary-cites",
       "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-primary-cites/",
-      "status": "scheduled",
+      "status": "buffer_queued",
       "articlePublishAt": "2026-11-05T10:00:00+09:00",
       "bufferTransferAt": "2026-11-05T10:30:00+09:00",
       "channels": {
@@ -3519,41 +3519,41 @@
           "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
           "contentFile": "insights/_social/linkedin/posts/chatgpt-primary-cites.md",
           "publishAt": "2026-11-05T11:30:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6aebd534f283c8dd45aefe68",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-05T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-05T01:00:00.218Z"
+          "updatedAt": "2026-11-05T01:00:00.000Z"
         },
         "facebook": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
           "contentFile": "insights/_social/facebook/posts/chatgpt-primary-cites.md",
           "publishAt": "2026-11-05T11:45:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6aebd535e95790cd46ab5c30",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-05T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-05T01:00:00.218Z"
+          "updatedAt": "2026-11-05T01:00:00.000Z"
         },
         "x": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
           "contentFile": "insights/_social/x/posts/chatgpt-primary-cites.md",
           "publishAt": "2026-11-05T12:00:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6aebd536bc551efdea34cd14",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-05T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-05T01:00:00.218Z"
+          "updatedAt": "2026-11-05T01:00:00.000Z"
         }
       },
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-05T01:00:00.218Z",
-      "updatedAt": "2026-11-05T01:00:00.218Z",
+      "updatedAt": "2026-11-05T01:00:00.000Z",
       "series": "v2-stock"
     },
     {

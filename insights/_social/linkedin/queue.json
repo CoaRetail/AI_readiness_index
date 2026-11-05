@@ -1231,13 +1231,13 @@
       "linkedinPublishAt": "2026-11-05T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-primary-cites/",
       "contentFile": "insights/_social/linkedin/posts/chatgpt-primary-cites.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6aebd534f283c8dd45aefe68",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-05T01:00:00.218Z",
-      "updatedAt": "2026-11-05T01:00:00.218Z",
+      "updatedAt": "2026-11-05T01:00:38.650Z",
       "series": "v2-stock"
     }
   ]

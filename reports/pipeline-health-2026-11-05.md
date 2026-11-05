@@ -9,13 +9,17 @@ slug: chatgpt-primary-cites
 ## WEB
 scheduled: 10:00
 published: true
-productionVerified: false
+productionVerified: true
 
 ## BUFFER
-linkedin: scheduled
-facebook: scheduled
-x: scheduled
+linkedin: queued
+facebook: queued
+x: queued
 
 ## PIPELINE
-status: RECOVERING
-publish: chatgpt-primary-cites
+status: COMPLETE
+verify: ok (2 attempts)
+buffer actions:
+- linkedin: queued
+- facebook: queued
+- x: queued
