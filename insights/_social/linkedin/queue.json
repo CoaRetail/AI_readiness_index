@@ -1248,13 +1248,13 @@
       "linkedinPublishAt": "2026-11-06T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/bing-topics-portfolio/",
       "contentFile": "insights/_social/linkedin/posts/bing-topics-portfolio.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6aed26b4c1e74b84e5ba1318",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-06T01:00:01.093Z",
-      "updatedAt": "2026-11-06T01:00:01.093Z",
+      "updatedAt": "2026-11-06T01:00:38.601Z",
       "series": "v2-stock"
     }
   ]

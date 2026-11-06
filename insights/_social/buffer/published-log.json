@@ -1736,7 +1736,34 @@
       "publishAt": "2026-11-05T12:00:00+09:00",
       "dueAtUtc": "2026-11-05T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-06T01:00:00.000Z",
+      "slug": "bing-topics-portfolio",
+      "channel": "linkedin",
+      "bufferUpdateId": "6aed26b4c1e74b84e5ba1318",
+      "publishAt": "2026-11-06T11:30:00+09:00",
+      "dueAtUtc": "2026-11-06T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-06T01:00:00.000Z",
+      "slug": "bing-topics-portfolio",
+      "channel": "facebook",
+      "bufferUpdateId": "6aed26b5c1e74b84e5ba137e",
+      "publishAt": "2026-11-06T11:45:00+09:00",
+      "dueAtUtc": "2026-11-06T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-06T01:00:00.000Z",
+      "slug": "bing-topics-portfolio",
+      "channel": "x",
+      "bufferUpdateId": "6aed26b607f945cca93154c6",
+      "publishAt": "2026-11-06T12:00:00+09:00",
+      "dueAtUtc": "2026-11-06T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-05T01:00:38.647Z"
+  "updatedAt": "2026-11-06T01:00:38.599Z"
 }

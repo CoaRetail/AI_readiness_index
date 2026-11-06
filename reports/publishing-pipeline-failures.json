@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T01:00:38.655Z",
+  "updatedAt": "2026-11-06T01:00:38.602Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "chatgpt-primary-cites",
+    "slug": "bing-topics-portfolio",
     "stage": "buffer_queued",
-    "at": "2026-11-05T01:00:38.655Z"
+    "at": "2026-11-06T01:00:38.602Z"
   }
 }
