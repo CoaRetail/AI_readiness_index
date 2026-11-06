@@ -2625,7 +2625,7 @@
     {
       "slug": "bing-topics-portfolio",
       "publishAt": "2026-11-06T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "引用されていない質問が見える——BingのTopics Portfolio",
       "cardSummary": "グラウンディングの質問を話題に束ね、自サイトが出ていない質問を幅で示します。分類はAIで、件数は方向の目安です。小さいサイトには出ないことがあります。",
       "llmsLabel": "話題ごとの引用ギャップ",
@@ -2662,10 +2662,13 @@
       "scheduledPublishAt": "2026-11-06T10:00:00+09:00",
       "slotDate": "2026-11-06",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261106-DAILY-001",
       "activatedAt": "2026-10-15T00:30:00.000Z",
-      "heroReadyAt": "2026-11-03T06:06:14.181Z"
+      "heroReadyAt": "2026-11-03T06:06:14.181Z",
+      "publishAttemptedAt": "2026-11-06T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-06T01:00:00.000Z"
     },
     {
       "slug": "gpt6-intelligent-ui",

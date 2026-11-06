@@ -1239,6 +1239,23 @@
       "createdAt": "2026-11-05T01:00:00.218Z",
       "updatedAt": "2026-11-05T01:00:38.650Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-bing-topics-portfolio-2026-11-06",
+      "slug": "bing-topics-portfolio",
+      "articlePublishAt": "2026-11-06T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-06T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-06T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/bing-topics-portfolio/",
+      "contentFile": "insights/_social/linkedin/posts/bing-topics-portfolio.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-06T01:00:01.093Z",
+      "updatedAt": "2026-11-06T01:00:01.093Z",
+      "series": "v2-stock"
     }
   ]
 }
