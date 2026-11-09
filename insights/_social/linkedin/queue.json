@@ -1256,6 +1256,23 @@
       "createdAt": "2026-11-06T01:00:01.093Z",
       "updatedAt": "2026-11-06T01:00:38.601Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-gpt6-intelligent-ui-2026-11-09",
+      "slug": "gpt6-intelligent-ui",
+      "articlePublishAt": "2026-11-09T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-09T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-09T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/gpt6-intelligent-ui/",
+      "contentFile": "insights/_social/linkedin/posts/gpt6-intelligent-ui.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-09T01:00:00.368Z",
+      "updatedAt": "2026-11-09T01:00:00.368Z",
+      "series": "v2-stock"
     }
   ]
 }

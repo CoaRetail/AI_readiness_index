@@ -2675,7 +2675,7 @@
     {
       "slug": "gpt6-intelligent-ui",
       "publishAt": "2026-11-09T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "答えが使える画面になる——GPT-6のIntelligent UI",
       "cardSummary": "回答は文字だけでなく、図やボタンやフォームを混ぜられます。ウェブ検索の速さはOpenAIの内部評価です。設定で視覚要素は減らせますが、文字だけには戻りません。",
       "llmsLabel": "使える画面と出典",
@@ -2712,10 +2712,13 @@
       "scheduledPublishAt": "2026-11-09T10:00:00+09:00",
       "slotDate": "2026-11-09",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261109-DAILY-001",
       "activatedAt": "2026-10-15T00:30:00.000Z",
-      "heroReadyAt": "2026-11-06T06:10:05.679Z"
+      "heroReadyAt": "2026-11-06T06:10:05.679Z",
+      "publishAttemptedAt": "2026-11-09T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-09T01:00:00.000Z"
     },
     {
       "slug": "chatgpt-seller-rank",
