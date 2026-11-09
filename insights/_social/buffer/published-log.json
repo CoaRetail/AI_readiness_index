@@ -1763,7 +1763,34 @@
       "publishAt": "2026-11-06T12:00:00+09:00",
       "dueAtUtc": "2026-11-06T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-09T01:00:00.000Z",
+      "slug": "gpt6-intelligent-ui",
+      "channel": "linkedin",
+      "bufferUpdateId": "6af11b33229bf05dafe57a48",
+      "publishAt": "2026-11-09T11:30:00+09:00",
+      "dueAtUtc": "2026-11-09T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-09T01:00:00.000Z",
+      "slug": "gpt6-intelligent-ui",
+      "channel": "facebook",
+      "bufferUpdateId": "6af11b35004e4879a7eeb02f",
+      "publishAt": "2026-11-09T11:45:00+09:00",
+      "dueAtUtc": "2026-11-09T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-09T01:00:00.000Z",
+      "slug": "gpt6-intelligent-ui",
+      "channel": "x",
+      "bufferUpdateId": "6af11b35229bf05dafe57bf1",
+      "publishAt": "2026-11-09T12:00:00+09:00",
+      "dueAtUtc": "2026-11-09T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-06T01:00:38.599Z"
+  "updatedAt": "2026-11-09T01:00:38.061Z"
 }

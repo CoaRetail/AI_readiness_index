@@ -3607,7 +3607,7 @@
     {
       "slug": "gpt6-intelligent-ui",
       "articleUrl": "https://readiness.coaretail.com/insights/gpt6-intelligent-ui/",
-      "status": "scheduled",
+      "status": "buffer_queued",
       "articlePublishAt": "2026-11-09T10:00:00+09:00",
       "bufferTransferAt": "2026-11-09T10:30:00+09:00",
       "channels": {
@@ -3615,41 +3615,41 @@
           "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
           "contentFile": "insights/_social/linkedin/posts/gpt6-intelligent-ui.md",
           "publishAt": "2026-11-09T11:30:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af11b33229bf05dafe57a48",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-09T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-09T01:00:00.369Z"
+          "updatedAt": "2026-11-09T01:00:00.000Z"
         },
         "facebook": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
           "contentFile": "insights/_social/facebook/posts/gpt6-intelligent-ui.md",
           "publishAt": "2026-11-09T11:45:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af11b35004e4879a7eeb02f",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-09T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-09T01:00:00.369Z"
+          "updatedAt": "2026-11-09T01:00:00.000Z"
         },
         "x": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
           "contentFile": "insights/_social/x/posts/gpt6-intelligent-ui.md",
           "publishAt": "2026-11-09T12:00:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af11b35229bf05dafe57bf1",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-09T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-09T01:00:00.369Z"
+          "updatedAt": "2026-11-09T01:00:00.000Z"
         }
       },
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-09T01:00:00.368Z",
-      "updatedAt": "2026-11-09T01:00:00.368Z",
+      "updatedAt": "2026-11-09T01:00:00.000Z",
       "series": "v2-stock"
     },
     {
