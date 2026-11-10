@@ -2879,7 +2879,7 @@
       "freshnessReviewedAt": "2026-10-21T02:00:00.000Z",
       "eirId": "EIR-20261113-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://arxiv.org/abs/2610.11932",
@@ -2899,13 +2899,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-21T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-13T10:00:00+09:00",
       "slotDate": "2026-11-13",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261113-DAILY-001",
-      "activatedAt": "2026-10-21T02:00:00.000Z"
+      "activatedAt": "2026-10-21T02:00:00.000Z",
+      "heroReadyAt": "2026-11-10T06:06:52.021Z"
     },
     {
       "slug": "anthropic-source-origin-policy",
