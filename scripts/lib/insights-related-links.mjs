@@ -144,6 +144,11 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'ai-mode-global-ads-product-links': ['chatgpt-ads-measurement-so-far', 'ai-referral-volume-and-conversion', 'court-record-on-clicks'],
   'merchant-ucp-agentic-performance-api': ['chatgpt-ads-measurement-so-far', 'ai-referral-volume-and-conversion', 'pay'],
   'industry-ai-citation-source-mix': ['within-domain-citation-features', 'mentioned-is-not-recommended', 'how-many-runs-before-ai-visibility'],
+  'usage-ai-training-robots-token': ['files', 'cloudflare-ai-traffic-search-agent-training', 'chatgpt-retrieval-citation-practice'],
+  'mckinsey-shopping-ai-chat-vs-retailer': ['ai-search-52-percent', 'openai-product-discovery-agentic-commerce', 'recommendation-logic'],
+  'geo-location-changes-cited-sources': ['how-many-runs-before-ai-visibility', 'industry-ai-citation-source-mix', 'within-domain-citation-features'],
+  'perplexity-computer-chrome-extension': ['agent-experience', 'html-observation-check-limits', 'openai-product-discovery-agentic-commerce'],
+  'predicting-answer-engine-cite-share': ['within-domain-citation-features', 'how-many-runs-before-ai-visibility', 'schema-not-ai-citation-cheat-code'],
 };
 
 
