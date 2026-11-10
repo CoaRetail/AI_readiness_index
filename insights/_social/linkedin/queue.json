@@ -1282,13 +1282,13 @@
       "linkedinPublishAt": "2026-11-10T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-seller-rank/",
       "contentFile": "insights/_social/linkedin/posts/chatgpt-seller-rank.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6af26cb205af22d726f92a1e",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-10T01:00:00.242Z",
-      "updatedAt": "2026-11-10T01:00:00.242Z",
+      "updatedAt": "2026-11-10T01:00:36.285Z",
       "series": "v2-stock"
     }
   ]

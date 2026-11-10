@@ -1790,7 +1790,34 @@
       "publishAt": "2026-11-09T12:00:00+09:00",
       "dueAtUtc": "2026-11-09T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-10T01:00:00.000Z",
+      "slug": "chatgpt-seller-rank",
+      "channel": "linkedin",
+      "bufferUpdateId": "6af26cb205af22d726f92a1e",
+      "publishAt": "2026-11-10T11:30:00+09:00",
+      "dueAtUtc": "2026-11-10T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T01:00:00.000Z",
+      "slug": "chatgpt-seller-rank",
+      "channel": "facebook",
+      "bufferUpdateId": "6af26cb3223aa16048dd55da",
+      "publishAt": "2026-11-10T11:45:00+09:00",
+      "dueAtUtc": "2026-11-10T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T01:00:00.000Z",
+      "slug": "chatgpt-seller-rank",
+      "channel": "x",
+      "bufferUpdateId": "6af26cb426f9e6aeead5c487",
+      "publishAt": "2026-11-10T12:00:00+09:00",
+      "dueAtUtc": "2026-11-10T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-09T01:00:38.061Z"
+  "updatedAt": "2026-11-10T01:00:36.284Z"
 }
