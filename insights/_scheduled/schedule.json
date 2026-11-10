@@ -2725,7 +2725,7 @@
     {
       "slug": "chatgpt-seller-rank",
       "publishAt": "2026-11-10T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "選ばれる商品と売り手は別——ChatGPTの買い物",
       "cardSummary": "商品の選定と、同じ商品の売り手の並びは別の段階です。Wislrの4日間では店のボタンの56%が量販店、自社店は約5%でした。店の選び方はOpenAIが書いていません。",
       "llmsLabel": "商品と売り手は別",
@@ -2762,10 +2762,13 @@
       "scheduledPublishAt": "2026-11-10T10:00:00+09:00",
       "slotDate": "2026-11-10",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261110-DAILY-001",
       "activatedAt": "2026-10-15T00:30:00.000Z",
-      "heroReadyAt": "2026-11-09T00:07:24.754Z"
+      "heroReadyAt": "2026-11-09T00:07:24.754Z",
+      "publishAttemptedAt": "2026-11-10T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-10T01:00:00.000Z"
     },
     {
       "slug": "cited-or-remembered",

@@ -1273,6 +1273,23 @@
       "createdAt": "2026-11-09T01:00:00.368Z",
       "updatedAt": "2026-11-09T01:00:38.063Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-chatgpt-seller-rank-2026-11-10",
+      "slug": "chatgpt-seller-rank",
+      "articlePublishAt": "2026-11-10T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-10T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-10T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/chatgpt-seller-rank/",
+      "contentFile": "insights/_social/linkedin/posts/chatgpt-seller-rank.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-10T01:00:00.242Z",
+      "updatedAt": "2026-11-10T01:00:00.242Z",
+      "series": "v2-stock"
     }
   ]
 }
