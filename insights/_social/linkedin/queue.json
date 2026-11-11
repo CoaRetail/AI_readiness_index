@@ -1307,6 +1307,23 @@
       "createdAt": "2026-11-11T01:00:01.102Z",
       "updatedAt": "2026-11-11T01:00:38.260Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-BREAK-openai-businesses-chatgpt",
+      "slug": "openai-businesses-chatgpt",
+      "articlePublishAt": "2026-11-12T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-12T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-12T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/openai-businesses-chatgpt/",
+      "contentFile": "insights/_social/linkedin/posts/openai-businesses-chatgpt.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-11T02:25:15.070Z",
+      "updatedAt": "2026-11-11T02:25:15.070Z",
+      "series": "current-event"
     }
   ]
 }

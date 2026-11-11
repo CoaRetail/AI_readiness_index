@@ -1,0 +1,6 @@
+OpenAIは2026年11月10日、ChatGPT上で事業者を請求するBusiness Hubをベータ公開したと書いています。同文の週12億人という数字はOpenAI自身の言い方です。Persona本人確認の承認後に、事業情報の公開変更、インサイト閲覧、商品フィード接続ができます。請求だけでは認証バッジは付かず、Persona承認後に青いチェックが付く、とヘルプセンターは書いています。
+
+インサイトは過去28日間の集計で、言及・サイトへのクリック・発見トピックを示します。オンライン事業では、言及はChatGPTがWebサイトを参照したときだけ数え、ブランド名だけでは数えません。個別のプロンプトや会話は事業者に渡しません。請求がChatGPTの推薦を増やす保証はなく、広告も独立した回答に影響しない、とFAQにあります。Business Agentは米国の対象EC・オンラインサービスに限られ、購入や予約の完了はできません。
+
+https://readiness.coaretail.com/insights/openai-businesses-chatgpt/
+#AgentReadiness #ChatGPT
