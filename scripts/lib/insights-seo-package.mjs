@@ -362,6 +362,14 @@ export const SCHEDULED_SEO_PACKAGES = {
     lead: 'Labrador等の内部名称はOpenAI未確認だ。Peec.ai等の第三者分析は参考資料——取得パイプラインの切替と冒頭可視テキストの設計を、断定ではなく検証可能なチェックに落とす視点を本記事で整理する。',
     breadcrumb: 'ChatGPT引用分析',
   },
+  'openai-businesses-chatgpt': {
+    intent: 'B',
+    primarySearchIntent: 'ChatGPT 事業者 登録 Business Hub',
+    h1: 'ChatGPTで自社を登録すると、何が変わるか',
+    meta: 'OpenAIは2026年11月10日、ChatGPT上の事業者登録とBusiness Hubをベータ公開した。登録は情報更新と28日間の集計インサイト用で、推薦の保証はない。Business Agentは米国のEC・オンラインサービスに限定。',
+    lead: 'OpenAIは2026年11月10日、Business Hubから自社を登録できる「Businesses in ChatGPT」をベータで始めたと書いています。登録は情報の更新と集計インサイト用であり、ChatGPTの独立した推薦を増やす保証は一次情報にありません。Business Agentは米国の対象EC・オンラインサービスに限られます。',
+    breadcrumb: 'ChatGPT事業者登録',
+  },
 };
 
 /**

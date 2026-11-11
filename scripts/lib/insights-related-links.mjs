@@ -149,6 +149,7 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'geo-location-changes-cited-sources': ['how-many-runs-before-ai-visibility', 'industry-ai-citation-source-mix', 'within-domain-citation-features'],
   'perplexity-computer-chrome-extension': ['agent-experience', 'html-observation-check-limits', 'openai-product-discovery-agentic-commerce'],
   'predicting-answer-engine-cite-share': ['within-domain-citation-features', 'how-many-runs-before-ai-visibility', 'schema-not-ai-citation-cheat-code'],
+  'openai-businesses-chatgpt': ['mentioned-is-not-recommended', 'shopping-agents-fail-before-payment', 'cloudflare-openai-chatgpt-index'],
 };
 
 
