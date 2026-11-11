@@ -2775,7 +2775,7 @@
     {
       "slug": "cited-or-remembered",
       "publishAt": "2026-11-11T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "ページは検索されて引用され、名前は記憶でも出る",
       "cardSummary": "ページは取得されたあとに引用されます。ChatGPTのサイト内では、取得がばらつきの32%を説明し、ページの特徴は2.8%でした。査読前で、名前は記憶からも出ます。",
       "llmsLabel": "取得と記憶",
@@ -2812,10 +2812,13 @@
       "scheduledPublishAt": "2026-11-11T10:00:00+09:00",
       "slotDate": "2026-11-11",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261111-DAILY-001",
       "activatedAt": "2026-10-21T02:00:00.000Z",
-      "heroReadyAt": "2026-11-09T00:09:10.864Z"
+      "heroReadyAt": "2026-11-09T00:09:10.864Z",
+      "publishAttemptedAt": "2026-11-11T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-11T01:00:00.000Z"
     },
     {
       "slug": "google-official-link-slot",

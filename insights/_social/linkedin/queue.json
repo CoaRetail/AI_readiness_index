@@ -1290,6 +1290,23 @@
       "createdAt": "2026-11-10T01:00:00.242Z",
       "updatedAt": "2026-11-10T01:00:36.285Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-cited-or-remembered-2026-11-11",
+      "slug": "cited-or-remembered",
+      "articlePublishAt": "2026-11-11T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-11T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-11T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/cited-or-remembered/",
+      "contentFile": "insights/_social/linkedin/posts/cited-or-remembered.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-11T01:00:01.102Z",
+      "updatedAt": "2026-11-11T01:00:01.102Z",
+      "series": "v2-stock"
     }
   ]
 }
