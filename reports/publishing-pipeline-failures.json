@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T01:00:36.286Z",
+  "updatedAt": "2026-11-11T01:00:38.262Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "chatgpt-seller-rank",
+    "slug": "cited-or-remembered",
     "stage": "buffer_queued",
-    "at": "2026-11-10T01:00:36.286Z"
+    "at": "2026-11-11T01:00:38.262Z"
   }
 }

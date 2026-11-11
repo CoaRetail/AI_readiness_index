@@ -1817,7 +1817,34 @@
       "publishAt": "2026-11-10T12:00:00+09:00",
       "dueAtUtc": "2026-11-10T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-11T01:00:00.000Z",
+      "slug": "cited-or-remembered",
+      "channel": "linkedin",
+      "bufferUpdateId": "6af3be340b5acab5862669eb",
+      "publishAt": "2026-11-11T11:30:00+09:00",
+      "dueAtUtc": "2026-11-11T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-11T01:00:00.000Z",
+      "slug": "cited-or-remembered",
+      "channel": "facebook",
+      "bufferUpdateId": "6af3be356a689e197d1579d8",
+      "publishAt": "2026-11-11T11:45:00+09:00",
+      "dueAtUtc": "2026-11-11T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-11T01:00:00.000Z",
+      "slug": "cited-or-remembered",
+      "channel": "x",
+      "bufferUpdateId": "6af3be365e53322cd570eb13",
+      "publishAt": "2026-11-11T12:00:00+09:00",
+      "dueAtUtc": "2026-11-11T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-10T01:00:36.284Z"
+  "updatedAt": "2026-11-11T01:00:38.258Z"
 }

@@ -1299,13 +1299,13 @@
       "linkedinPublishAt": "2026-11-11T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/cited-or-remembered/",
       "contentFile": "insights/_social/linkedin/posts/cited-or-remembered.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6af3be340b5acab5862669eb",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-11T01:00:01.102Z",
-      "updatedAt": "2026-11-11T01:00:01.102Z",
+      "updatedAt": "2026-11-11T01:00:38.260Z",
       "series": "v2-stock"
     }
   ]
