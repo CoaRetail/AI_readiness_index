@@ -2746,8 +2746,8 @@
     },
     {
       "slug": "openai-businesses-chatgpt",
-      "status": "scheduled",
-      "publicationState": "SCHEDULED",
+      "status": "published",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261112-DAILY-001",
       "slotDate": "2026-11-12",
       "slotType": "DAILY_PRIMARY",
@@ -2788,7 +2788,10 @@
           "secondary": "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt"
         }
       },
-      "heroReadyAt": "2026-11-11T02:30:40.277Z"
+      "heroReadyAt": "2026-11-11T02:30:40.277Z",
+      "publishAttemptedAt": "2026-11-12T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-12T01:00:00.000Z"
     },
     {
       "slug": "google-official-link-slot",

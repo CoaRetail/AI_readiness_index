@@ -123,6 +123,7 @@
 - [使える画面と出典](https://readiness.coaretail.com/insights/gpt6-intelligent-ui/): Insights Column（2026-11-09）
 - [商品と売り手は別](https://readiness.coaretail.com/insights/chatgpt-seller-rank/): Insights Column（2026-11-10）
 - [取得と記憶](https://readiness.coaretail.com/insights/cited-or-remembered/): Insights Column（2026-11-11）
+- [ChatGPTで自社を登録すると、何が変わるか](https://readiness.coaretail.com/insights/openai-businesses-chatgpt/): Insights Column（2026-11-12）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断
