@@ -1316,13 +1316,13 @@
       "linkedinPublishAt": "2026-11-12T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/openai-businesses-chatgpt/",
       "contentFile": "insights/_social/linkedin/posts/openai-businesses-chatgpt.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6af50fb4cb4c7286fd047398",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-11T02:25:15.070Z",
-      "updatedAt": "2026-11-11T02:25:15.070Z",
+      "updatedAt": "2026-11-12T01:00:37.531Z",
       "series": "current-event"
     }
   ]

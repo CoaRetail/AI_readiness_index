@@ -1844,7 +1844,34 @@
       "publishAt": "2026-11-11T12:00:00+09:00",
       "dueAtUtc": "2026-11-11T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-12T01:00:00.000Z",
+      "slug": "openai-businesses-chatgpt",
+      "channel": "linkedin",
+      "bufferUpdateId": "6af50fb4cb4c7286fd047398",
+      "publishAt": "2026-11-12T11:30:00+09:00",
+      "dueAtUtc": "2026-11-12T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-12T01:00:00.000Z",
+      "slug": "openai-businesses-chatgpt",
+      "channel": "facebook",
+      "bufferUpdateId": "6af50fb43d8c751bfd05cc27",
+      "publishAt": "2026-11-12T11:45:00+09:00",
+      "dueAtUtc": "2026-11-12T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-12T01:00:00.000Z",
+      "slug": "openai-businesses-chatgpt",
+      "channel": "x",
+      "bufferUpdateId": "6af50fb5bc9f3773a1af74de",
+      "publishAt": "2026-11-12T12:00:00+09:00",
+      "dueAtUtc": "2026-11-12T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-11T01:00:38.258Z"
+  "updatedAt": "2026-11-12T01:00:37.528Z"
 }

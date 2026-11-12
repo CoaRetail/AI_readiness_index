@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-11T01:00:38.262Z",
+  "updatedAt": "2026-11-12T01:00:37.532Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "cited-or-remembered",
+    "slug": "openai-businesses-chatgpt",
     "stage": "buffer_queued",
-    "at": "2026-11-11T01:00:38.262Z"
+    "at": "2026-11-12T01:00:37.532Z"
   }
 }
