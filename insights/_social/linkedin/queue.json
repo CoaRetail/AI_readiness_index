@@ -1324,6 +1324,23 @@
       "createdAt": "2026-11-11T02:25:15.070Z",
       "updatedAt": "2026-11-12T01:00:37.531Z",
       "series": "current-event"
+    },
+    {
+      "id": "ARI-LI-CE-google-official-link-slot-2026-11-13",
+      "slug": "google-official-link-slot",
+      "articlePublishAt": "2026-11-13T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-13T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-13T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/google-official-link-slot/",
+      "contentFile": "insights/_social/linkedin/posts/google-official-link-slot.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-13T01:00:00.295Z",
+      "updatedAt": "2026-11-13T01:00:00.295Z",
+      "series": "v2-stock"
     }
   ]
 }
