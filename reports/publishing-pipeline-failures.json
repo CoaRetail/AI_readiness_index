@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-12T01:00:37.532Z",
+  "updatedAt": "2026-11-13T01:00:37.024Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "openai-businesses-chatgpt",
+    "slug": "google-official-link-slot",
     "stage": "buffer_queued",
-    "at": "2026-11-12T01:00:37.532Z"
+    "at": "2026-11-13T01:00:37.024Z"
   }
 }

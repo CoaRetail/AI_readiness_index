@@ -1871,7 +1871,34 @@
       "publishAt": "2026-11-12T12:00:00+09:00",
       "dueAtUtc": "2026-11-12T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-13T01:00:00.000Z",
+      "slug": "google-official-link-slot",
+      "channel": "linkedin",
+      "bufferUpdateId": "6af661335ec1c9d5be4f091f",
+      "publishAt": "2026-11-13T11:30:00+09:00",
+      "dueAtUtc": "2026-11-13T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-13T01:00:00.000Z",
+      "slug": "google-official-link-slot",
+      "channel": "facebook",
+      "bufferUpdateId": "6af66134fb90ccefdd0e01dd",
+      "publishAt": "2026-11-13T11:45:00+09:00",
+      "dueAtUtc": "2026-11-13T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-13T01:00:00.000Z",
+      "slug": "google-official-link-slot",
+      "channel": "x",
+      "bufferUpdateId": "6af661345ec1c9d5be4f099a",
+      "publishAt": "2026-11-13T12:00:00+09:00",
+      "dueAtUtc": "2026-11-13T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-12T01:00:37.528Z"
+  "updatedAt": "2026-11-13T01:00:37.021Z"
 }

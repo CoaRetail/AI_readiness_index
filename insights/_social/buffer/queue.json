@@ -3799,7 +3799,7 @@
     {
       "slug": "google-official-link-slot",
       "articleUrl": "https://readiness.coaretail.com/insights/google-official-link-slot/",
-      "status": "scheduled",
+      "status": "buffer_queued",
       "articlePublishAt": "2026-11-13T10:00:00+09:00",
       "bufferTransferAt": "2026-11-13T10:30:00+09:00",
       "channels": {
@@ -3807,41 +3807,41 @@
           "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
           "contentFile": "insights/_social/linkedin/posts/google-official-link-slot.md",
           "publishAt": "2026-11-13T11:30:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af661335ec1c9d5be4f091f",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-13T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-13T01:00:00.296Z"
+          "updatedAt": "2026-11-13T01:00:00.000Z"
         },
         "facebook": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
           "contentFile": "insights/_social/facebook/posts/google-official-link-slot.md",
           "publishAt": "2026-11-13T11:45:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af66134fb90ccefdd0e01dd",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-13T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-13T01:00:00.296Z"
+          "updatedAt": "2026-11-13T01:00:00.000Z"
         },
         "x": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
           "contentFile": "insights/_social/x/posts/google-official-link-slot.md",
           "publishAt": "2026-11-13T12:00:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6af661345ec1c9d5be4f099a",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-13T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-13T01:00:00.296Z"
+          "updatedAt": "2026-11-13T01:00:00.000Z"
         }
       },
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-13T01:00:00.295Z",
-      "updatedAt": "2026-11-13T01:00:00.295Z",
+      "updatedAt": "2026-11-13T01:00:00.000Z",
       "series": "v2-stock"
     },
     {

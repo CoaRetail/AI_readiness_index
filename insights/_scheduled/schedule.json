@@ -2841,7 +2841,9 @@
       "heroReadyAt": "2026-11-09T06:09:23.539Z",
       "publishAttemptedAt": "2026-11-13T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-11-13T01:00:00.000Z"
+      "publishedAt": "2026-11-13T01:00:00.000Z",
+      "productionVerifiedAt": "2026-11-13T01:00:34.317Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "fabricated-citation-watch",
