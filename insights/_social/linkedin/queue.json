@@ -1350,13 +1350,13 @@
       "linkedinPublishAt": "2026-11-16T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/fabricated-citation-watch/",
       "contentFile": "insights/_social/linkedin/posts/fabricated-citation-watch.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6afa55b260a910801c5c5323",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-16T01:00:00.301Z",
-      "updatedAt": "2026-11-16T01:00:00.301Z",
+      "updatedAt": "2026-11-16T01:00:35.181Z",
       "series": "v2-stock"
     }
   ]

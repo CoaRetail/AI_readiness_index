@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-13T01:00:37.024Z",
+  "updatedAt": "2026-11-16T01:00:35.183Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "google-official-link-slot",
+    "slug": "fabricated-citation-watch",
     "stage": "buffer_queued",
-    "at": "2026-11-13T01:00:37.024Z"
+    "at": "2026-11-16T01:00:35.183Z"
   }
 }
