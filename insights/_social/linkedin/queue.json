@@ -1341,6 +1341,23 @@
       "createdAt": "2026-11-13T01:00:00.295Z",
       "updatedAt": "2026-11-13T01:00:37.023Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-fabricated-citation-watch-2026-11-16",
+      "slug": "fabricated-citation-watch",
+      "articlePublishAt": "2026-11-16T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-16T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-16T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/fabricated-citation-watch/",
+      "contentFile": "insights/_social/linkedin/posts/fabricated-citation-watch.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-16T01:00:00.301Z",
+      "updatedAt": "2026-11-16T01:00:00.301Z",
+      "series": "v2-stock"
     }
   ]
 }

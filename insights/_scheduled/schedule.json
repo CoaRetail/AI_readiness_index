@@ -2848,7 +2848,7 @@
     {
       "slug": "fabricated-citation-watch",
       "publishAt": "2026-11-16T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "作り話は1週間で引用された——他人が書く場所を見る",
       "cardSummary": "復旦大学のプレプリントでは、10のAI検索のうち8つが7日以内に実在しない概念を引用しました。査読前です。見るのは、他人が書く場所です。",
       "llmsLabel": "作り話の引用",
@@ -2885,10 +2885,13 @@
       "scheduledPublishAt": "2026-11-16T10:00:00+09:00",
       "slotDate": "2026-11-16",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261116-DAILY-001",
       "activatedAt": "2026-10-21T02:00:00.000Z",
-      "heroReadyAt": "2026-11-10T06:06:52.021Z"
+      "heroReadyAt": "2026-11-10T06:06:52.021Z",
+      "publishAttemptedAt": "2026-11-16T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-16T01:00:00.000Z"
     },
     {
       "slug": "anthropic-source-origin-policy",
