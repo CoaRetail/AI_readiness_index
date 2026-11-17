@@ -1367,13 +1367,13 @@
       "linkedinPublishAt": "2026-11-17T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/anthropic-source-origin-policy/",
       "contentFile": "insights/_social/linkedin/posts/anthropic-source-origin-policy.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6afba731f83aaca8f39cba6a",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-17T01:00:00.250Z",
-      "updatedAt": "2026-11-17T01:00:00.250Z",
+      "updatedAt": "2026-11-17T01:00:35.759Z",
       "series": "v2-stock"
     }
   ]

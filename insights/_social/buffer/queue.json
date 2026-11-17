@@ -3895,7 +3895,7 @@
     {
       "slug": "anthropic-source-origin-policy",
       "articleUrl": "https://readiness.coaretail.com/insights/anthropic-source-origin-policy/",
-      "status": "scheduled",
+      "status": "buffer_queued",
       "articlePublishAt": "2026-11-17T10:00:00+09:00",
       "bufferTransferAt": "2026-11-17T10:30:00+09:00",
       "channels": {
@@ -3903,41 +3903,41 @@
           "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
           "contentFile": "insights/_social/linkedin/posts/anthropic-source-origin-policy.md",
           "publishAt": "2026-11-17T11:30:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6afba731f83aaca8f39cba6a",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-17T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-17T01:00:00.251Z"
+          "updatedAt": "2026-11-17T01:00:00.000Z"
         },
         "facebook": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
           "contentFile": "insights/_social/facebook/posts/anthropic-source-origin-policy.md",
           "publishAt": "2026-11-17T11:45:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6afba7323e42cd001e416f42",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-17T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-17T01:00:00.251Z"
+          "updatedAt": "2026-11-17T01:00:00.000Z"
         },
         "x": {
           "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
           "contentFile": "insights/_social/x/posts/anthropic-source-origin-policy.md",
           "publishAt": "2026-11-17T12:00:00+09:00",
-          "status": "scheduled",
-          "bufferUpdateId": null,
-          "attempts": 0,
-          "lastAttemptAt": null,
+          "status": "buffer_queued",
+          "bufferUpdateId": "6afba733797935b975d10873",
+          "attempts": 1,
+          "lastAttemptAt": "2026-11-17T01:00:00.000Z",
           "lastError": null,
-          "updatedAt": "2026-11-17T01:00:00.251Z"
+          "updatedAt": "2026-11-17T01:00:00.000Z"
         }
       },
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-17T01:00:00.250Z",
-      "updatedAt": "2026-11-17T01:00:00.250Z",
+      "updatedAt": "2026-11-17T01:00:00.000Z",
       "series": "v2-stock"
     },
     {

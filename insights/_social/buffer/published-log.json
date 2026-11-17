@@ -1925,7 +1925,34 @@
       "publishAt": "2026-11-16T12:00:00+09:00",
       "dueAtUtc": "2026-11-16T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-17T01:00:00.000Z",
+      "slug": "anthropic-source-origin-policy",
+      "channel": "linkedin",
+      "bufferUpdateId": "6afba731f83aaca8f39cba6a",
+      "publishAt": "2026-11-17T11:30:00+09:00",
+      "dueAtUtc": "2026-11-17T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-17T01:00:00.000Z",
+      "slug": "anthropic-source-origin-policy",
+      "channel": "facebook",
+      "bufferUpdateId": "6afba7323e42cd001e416f42",
+      "publishAt": "2026-11-17T11:45:00+09:00",
+      "dueAtUtc": "2026-11-17T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-17T01:00:00.000Z",
+      "slug": "anthropic-source-origin-policy",
+      "channel": "x",
+      "bufferUpdateId": "6afba733797935b975d10873",
+      "publishAt": "2026-11-17T12:00:00+09:00",
+      "dueAtUtc": "2026-11-17T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-16T01:00:35.179Z"
+  "updatedAt": "2026-11-17T01:00:35.757Z"
 }
