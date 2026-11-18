@@ -2991,7 +2991,9 @@
       "heroReadyAt": "2026-11-16T00:06:43.773Z",
       "publishAttemptedAt": "2026-11-18T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-11-18T01:00:00.000Z"
+      "publishedAt": "2026-11-18T01:00:00.000Z",
+      "productionVerifiedAt": "2026-11-18T01:00:33.693Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "answers-without-opening-sources",

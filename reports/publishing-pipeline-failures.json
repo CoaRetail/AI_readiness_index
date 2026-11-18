@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T01:00:35.760Z",
+  "updatedAt": "2026-11-18T01:00:35.476Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -22,8 +22,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "anthropic-source-origin-policy",
+    "slug": "mentioned-is-not-recommended",
     "stage": "buffer_queued",
-    "at": "2026-11-17T01:00:35.760Z"
+    "at": "2026-11-18T01:00:35.476Z"
   }
 }

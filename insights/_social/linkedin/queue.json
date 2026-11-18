@@ -1384,13 +1384,13 @@
       "linkedinPublishAt": "2026-11-18T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/mentioned-is-not-recommended/",
       "contentFile": "insights/_social/linkedin/posts/mentioned-is-not-recommended.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6afcf8b2bb12698d1588d97f",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-18T01:00:00.238Z",
-      "updatedAt": "2026-11-18T01:00:00.238Z",
+      "updatedAt": "2026-11-18T01:00:35.475Z",
       "series": "v2-stock"
     }
   ]
