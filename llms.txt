@@ -127,6 +127,7 @@
 - [公式の入口枠](https://readiness.coaretail.com/insights/google-official-link-slot/): Insights Column（2026-11-13）
 - [作り話の引用](https://readiness.coaretail.com/insights/fabricated-citation-watch/): Insights Column（2026-11-16）
 - [出どころを偽らない](https://readiness.coaretail.com/insights/anthropic-source-origin-policy/): Insights Column（2026-11-17）
+- [言及と推薦](https://readiness.coaretail.com/insights/mentioned-is-not-recommended/): Insights Column（2026-11-18）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断

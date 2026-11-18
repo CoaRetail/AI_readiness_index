@@ -1375,6 +1375,23 @@
       "createdAt": "2026-11-17T01:00:00.250Z",
       "updatedAt": "2026-11-17T01:00:35.759Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-mentioned-is-not-recommended-2026-11-18",
+      "slug": "mentioned-is-not-recommended",
+      "articlePublishAt": "2026-11-18T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-18T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-18T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/mentioned-is-not-recommended/",
+      "contentFile": "insights/_social/linkedin/posts/mentioned-is-not-recommended.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-18T01:00:00.238Z",
+      "updatedAt": "2026-11-18T01:00:00.238Z",
+      "series": "v2-stock"
     }
   ]
 }

@@ -3941,6 +3941,54 @@
       "series": "v2-stock"
     },
     {
+      "slug": "mentioned-is-not-recommended",
+      "articleUrl": "https://readiness.coaretail.com/insights/mentioned-is-not-recommended/",
+      "status": "scheduled",
+      "articlePublishAt": "2026-11-18T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-18T10:30:00+09:00",
+      "channels": {
+        "linkedin": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_LINKEDIN",
+          "contentFile": "insights/_social/linkedin/posts/mentioned-is-not-recommended.md",
+          "publishAt": "2026-11-18T11:30:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-11-18T01:00:00.239Z"
+        },
+        "facebook": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_FACEBOOK",
+          "contentFile": "insights/_social/facebook/posts/mentioned-is-not-recommended.md",
+          "publishAt": "2026-11-18T11:45:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-11-18T01:00:00.239Z"
+        },
+        "x": {
+          "channelIdEnv": "BUFFER_CHANNEL_ID_TWITTER",
+          "contentFile": "insights/_social/x/posts/mentioned-is-not-recommended.md",
+          "publishAt": "2026-11-18T12:00:00+09:00",
+          "status": "scheduled",
+          "bufferUpdateId": null,
+          "attempts": 0,
+          "lastAttemptAt": null,
+          "lastError": null,
+          "updatedAt": "2026-11-18T01:00:00.239Z"
+        }
+      },
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-18T01:00:00.238Z",
+      "updatedAt": "2026-11-18T01:00:00.238Z",
+      "series": "v2-stock"
+    },
+    {
       "slug": "ai-search-52-percent",
       "articleUrl": "https://readiness.coaretail.com/insights/ai-search-52-percent/",
       "status": "buffer_queued",

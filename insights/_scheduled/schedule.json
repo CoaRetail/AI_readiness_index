@@ -2948,7 +2948,7 @@
     {
       "slug": "mentioned-is-not-recommended",
       "publishAt": "2026-11-18T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "名前は出ても選ばれない——言及と推薦は別の数字か",
       "cardSummary": "3RDの顧客データでは、言及率の中央値が19.8%、推薦率の中央値が0.2%です。北欧寄りの観測で、1回の前後では効果を判断できません。",
       "llmsLabel": "言及と推薦",
@@ -2985,10 +2985,13 @@
       "scheduledPublishAt": "2026-11-18T10:00:00+09:00",
       "slotDate": "2026-11-18",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261118-DAILY-001",
       "activatedAt": "2026-10-21T02:00:00.000Z",
-      "heroReadyAt": "2026-11-16T00:06:43.773Z"
+      "heroReadyAt": "2026-11-16T00:06:43.773Z",
+      "publishAttemptedAt": "2026-11-18T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-18T01:00:00.000Z"
     },
     {
       "slug": "answers-without-opening-sources",
