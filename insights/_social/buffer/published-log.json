@@ -1979,7 +1979,34 @@
       "publishAt": "2026-11-18T12:00:00+09:00",
       "dueAtUtc": "2026-11-18T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-19T01:37:11.151Z",
+      "slug": "answers-without-opening-sources",
+      "channel": "linkedin",
+      "bufferUpdateId": "6afe52e746636f319e7b4882",
+      "publishAt": "2026-11-19T11:30:00+09:00",
+      "dueAtUtc": "2026-11-19T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-19T01:37:11.151Z",
+      "slug": "answers-without-opening-sources",
+      "channel": "facebook",
+      "bufferUpdateId": "6afe52e7749099bdc7ff6905",
+      "publishAt": "2026-11-19T11:45:00+09:00",
+      "dueAtUtc": "2026-11-19T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-19T01:37:11.151Z",
+      "slug": "answers-without-opening-sources",
+      "channel": "x",
+      "bufferUpdateId": "6afe52e83802f5b9fc5b1d1b",
+      "publishAt": "2026-11-19T12:00:00+09:00",
+      "dueAtUtc": "2026-11-19T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-18T01:00:35.473Z"
+  "updatedAt": "2026-11-19T01:37:44.706Z"
 }

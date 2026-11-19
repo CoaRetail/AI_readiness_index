@@ -1401,13 +1401,13 @@
       "linkedinPublishAt": "2026-11-19T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/answers-without-opening-sources/",
       "contentFile": "insights/_social/linkedin/posts/answers-without-opening-sources.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6afe52e746636f319e7b4882",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-19T01:37:08.594Z",
-      "updatedAt": "2026-11-19T01:37:08.594Z",
+      "updatedAt": "2026-11-19T01:37:44.709Z",
       "series": "v2-stock"
     }
   ]
