@@ -149,6 +149,11 @@ export const RELATED_INSIGHTS_OVERRIDES = {
   'geo-location-changes-cited-sources': ['how-many-runs-before-ai-visibility', 'industry-ai-citation-source-mix', 'within-domain-citation-features'],
   'perplexity-computer-chrome-extension': ['agent-experience', 'html-observation-check-limits', 'openai-product-discovery-agentic-commerce'],
   'predicting-answer-engine-cite-share': ['within-domain-citation-features', 'how-many-runs-before-ai-visibility', 'schema-not-ai-citation-cheat-code'],
+  'search-referrals-fall-ai-visits-still-small': ['ai-referral-volume-and-conversion', 'gsc-ai-impressions-how-to-read', 'court-record-on-clicks'],
+  'ai-mode-restaurant-booking-japan': ['vendor-selection', 'booking', 'ai-mode-information-monitoring'],
+  'popular-brands-third-party-citations': ['mentioned-is-not-recommended', 'industry-ai-citation-source-mix', 'within-domain-citation-features'],
+  'ai-citations-change-daily-and-seasonally': ['how-many-runs-before-ai-visibility', 'predicting-answer-engine-cite-share', 'chatgpt-primary-cites'],
+  'ai-impact-invisible-web-analytics': ['gsc-ai-impressions-how-to-read', 'gemini-utm-and-st-source', 'ai-referral-volume-and-conversion'],
   'openai-businesses-chatgpt': ['mentioned-is-not-recommended', 'shopping-agents-fail-before-payment', 'cloudflare-openai-chatgpt-index'],
 };
 
