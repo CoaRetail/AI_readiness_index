@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-18T01:00:35.476Z",
+  "updatedAt": "2026-11-19T01:00:00.441Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -19,6 +19,15 @@
       "retryable": true,
       "attemptCount": 1,
       "lastSuccessStage": "published_verified"
+    },
+    " answers-without-opening-sources assets/insights/answers-without-opening-sources/hero.webp is missing. Not publishing web-only. Slot remains scheduled at 2026-11-19T10": {
+      "slug": " answers-without-opening-sources assets/insights/answers-without-opening-sources/hero.webp is missing. Not publishing web-only. Slot remains scheduled at 2026-11-19T10",
+      "stage": "publish",
+      "attemptedAt": "2026-11-19T01:00:00.441Z",
+      "failureReason": "HERO_PENDING_HOLD: answers-without-opening-sources assets/insights/answers-without-opening-sources/hero.webp is missing. Not publishing web-only. Slot remains scheduled at 2026-11-19T10:00:00+09:00.",
+      "retryable": true,
+      "attemptCount": 1,
+      "lastSuccessStage": null
     }
   },
   "lastSuccess": {
