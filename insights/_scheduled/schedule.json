@@ -3012,7 +3012,7 @@
       "freshnessReviewedAt": "2026-10-28T02:00:00.000Z",
       "eirId": "EIR-20261119-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://arxiv.org/abs/2610.21731",
@@ -3032,7 +3032,6 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-28T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-19T10:00:00+09:00",
       "slotDate": "2026-11-19",
       "slotType": "DAILY_PRIMARY",
@@ -3041,7 +3040,8 @@
       "activatedAt": "2026-10-28T02:00:00.000Z",
       "publishAttemptedAt": "2026-11-19T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "lastPublishFailure": "HERO_PENDING"
+      "lastPublishFailure": "HERO_PENDING",
+      "heroReadyAt": "2026-11-19T01:07:17.087Z"
     },
     {
       "slug": "within-domain-citation-features",
@@ -3060,7 +3060,7 @@
       "freshnessReviewedAt": "2026-10-28T02:00:00.000Z",
       "eirId": "EIR-20261120-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.sistrix.com/blog/citation-worthiness-study/",
@@ -3080,13 +3080,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-28T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-20T10:00:00+09:00",
       "slotDate": "2026-11-20",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261120-DAILY-001",
-      "activatedAt": "2026-10-28T02:00:00.000Z"
+      "activatedAt": "2026-10-28T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:08:34.432Z"
     },
     {
       "slug": "deepseek-authority-tiers",
@@ -3105,7 +3105,7 @@
       "freshnessReviewedAt": "2026-10-28T02:00:00.000Z",
       "eirId": "EIR-20261124-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://api-docs.deepseek.com/guides/search/",
@@ -3125,13 +3125,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-28T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-24T10:00:00+09:00",
       "slotDate": "2026-11-24",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261124-DAILY-001",
-      "activatedAt": "2026-10-28T02:00:00.000Z"
+      "activatedAt": "2026-10-28T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:11:27.389Z"
     },
     {
       "slug": "ai-referral-volume-and-conversion",
@@ -3150,7 +3150,7 @@
       "freshnessReviewedAt": "2026-10-28T02:00:00.000Z",
       "eirId": "EIR-20261125-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.mariehaynes.com/geo-is-a-distraction/",
@@ -3170,13 +3170,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-28T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-25T10:00:00+09:00",
       "slotDate": "2026-11-25",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261125-DAILY-001",
-      "activatedAt": "2026-10-28T02:00:00.000Z"
+      "activatedAt": "2026-10-28T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:12:46.019Z"
     },
     {
       "slug": "how-many-runs-before-ai-visibility",
@@ -3195,7 +3195,7 @@
       "freshnessReviewedAt": "2026-10-28T02:00:00.000Z",
       "eirId": "EIR-20261126-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://prtimes.jp/main/html/rd/p/000000013.000151041.html",
@@ -3215,13 +3215,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-28T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-26T10:00:00+09:00",
       "slotDate": "2026-11-26",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261126-DAILY-001",
-      "activatedAt": "2026-10-28T02:00:00.000Z"
+      "activatedAt": "2026-10-28T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:14:14.887Z"
     },
     {
       "slug": "shopping-agents-fail-before-payment",
@@ -3240,7 +3240,7 @@
       "freshnessReviewedAt": "2026-10-31T02:00:00.000Z",
       "eirId": "EIR-20261127-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://generalmachines.ai/research/carttrace-100k/",
@@ -3260,13 +3260,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-31T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-27T10:00:00+09:00",
       "slotDate": "2026-11-27",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261127-DAILY-001",
-      "activatedAt": "2026-10-31T02:00:00.000Z"
+      "activatedAt": "2026-10-31T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:15:34.472Z"
     },
     {
       "slug": "cloudflare-openai-chatgpt-index",
@@ -3285,7 +3285,7 @@
       "freshnessReviewedAt": "2026-10-31T02:00:00.000Z",
       "eirId": "EIR-20261130-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
@@ -3305,13 +3305,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-31T02:00:00.000Z",
       "scheduledPublishAt": "2026-11-30T10:00:00+09:00",
       "slotDate": "2026-11-30",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261130-DAILY-001",
-      "activatedAt": "2026-10-31T02:00:00.000Z"
+      "activatedAt": "2026-10-31T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:16:54.213Z"
     },
     {
       "slug": "ai-mode-global-ads-product-links",
@@ -3330,7 +3330,7 @@
       "freshnessReviewedAt": "2026-10-31T02:00:00.000Z",
       "eirId": "EIR-20261201-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://blog.google/products/ads-commerce/ads-in-ai-mode-global/",
@@ -3350,13 +3350,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-31T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-01T10:00:00+09:00",
       "slotDate": "2026-12-01",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261201-DAILY-001",
-      "activatedAt": "2026-10-31T02:00:00.000Z"
+      "activatedAt": "2026-10-31T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:18:14.434Z"
     },
     {
       "slug": "merchant-ucp-agentic-performance-api",
@@ -3375,7 +3375,7 @@
       "freshnessReviewedAt": "2026-10-31T02:00:00.000Z",
       "eirId": "EIR-20261202-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://developers.google.com/merchant/api/guides/reports/ucp-performance-reports",
@@ -3394,13 +3394,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-31T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-02T10:00:00+09:00",
       "slotDate": "2026-12-02",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261202-DAILY-001",
-      "activatedAt": "2026-10-31T02:00:00.000Z"
+      "activatedAt": "2026-10-31T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:19:33.413Z"
     },
     {
       "slug": "industry-ai-citation-source-mix",
@@ -3419,7 +3419,7 @@
       "freshnessReviewedAt": "2026-10-31T02:00:00.000Z",
       "eirId": "EIR-20261203-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://prtimes.jp/main/html/rd/p/000000213.000137731.html",
@@ -3439,13 +3439,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-10-31T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-03T10:00:00+09:00",
       "slotDate": "2026-12-03",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261203-DAILY-001",
-      "activatedAt": "2026-10-31T02:00:00.000Z"
+      "activatedAt": "2026-10-31T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:20:45.139Z"
     },
     {
       "slug": "usage-ai-training-robots-token",
@@ -3464,7 +3464,7 @@
       "freshnessReviewedAt": "2026-11-02T02:00:00.000Z",
       "eirId": "EIR-20261204-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
@@ -3484,13 +3484,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-11-02T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-04T10:00:00+09:00",
       "slotDate": "2026-12-04",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261204-DAILY-001",
-      "activatedAt": "2026-11-02T02:00:00.000Z"
+      "activatedAt": "2026-11-02T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:24:42.757Z"
     },
     {
       "slug": "mckinsey-shopping-ai-chat-vs-retailer",
@@ -3509,7 +3509,7 @@
       "freshnessReviewedAt": "2026-11-02T02:00:00.000Z",
       "eirId": "EIR-20261207-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/who-wins-when-ai-does-the-shopping-new-evidence-on-agentic-commerce",
@@ -3528,13 +3528,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-11-02T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-07T10:00:00+09:00",
       "slotDate": "2026-12-07",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261207-DAILY-001",
-      "activatedAt": "2026-11-02T02:00:00.000Z"
+      "activatedAt": "2026-11-02T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:25:56.826Z"
     },
     {
       "slug": "geo-location-changes-cited-sources",
@@ -3553,7 +3553,7 @@
       "freshnessReviewedAt": "2026-11-02T02:00:00.000Z",
       "eirId": "EIR-20261208-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://arxiv.org/abs/2610.24081",
@@ -3572,13 +3572,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-11-02T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-08T10:00:00+09:00",
       "slotDate": "2026-12-08",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261208-DAILY-001",
-      "activatedAt": "2026-11-02T02:00:00.000Z"
+      "activatedAt": "2026-11-02T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:27:24.106Z"
     },
     {
       "slug": "perplexity-computer-chrome-extension",
@@ -3597,7 +3597,7 @@
       "freshnessReviewedAt": "2026-11-02T02:00:00.000Z",
       "eirId": "EIR-20261209-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://chromewebstore.google.com/detail/perplexity/pninphncmkphpjgfffammoenglghcjii",
@@ -3616,13 +3616,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-11-02T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-09T10:00:00+09:00",
       "slotDate": "2026-12-09",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261209-DAILY-001",
-      "activatedAt": "2026-11-02T02:00:00.000Z"
+      "activatedAt": "2026-11-02T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:28:35.293Z"
     },
     {
       "slug": "predicting-answer-engine-cite-share",
@@ -3641,7 +3641,7 @@
       "freshnessReviewedAt": "2026-11-02T02:00:00.000Z",
       "eirId": "EIR-20261210-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://arxiv.org/abs/2610.38090",
@@ -3660,13 +3660,13 @@
         }
       },
       "phase3Stock": true,
-      "heroPendingAt": "2026-11-02T02:00:00.000Z",
       "scheduledPublishAt": "2026-12-10T10:00:00+09:00",
       "slotDate": "2026-12-10",
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261210-DAILY-001",
-      "activatedAt": "2026-11-02T02:00:00.000Z"
+      "activatedAt": "2026-11-02T02:00:00.000Z",
+      "heroReadyAt": "2026-11-19T01:29:48.307Z"
     },
     {
       "slug": "abis-ari-bridge",
