@@ -193,29 +193,34 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
 
   <article class="article-body container" data-article-slug="answers-without-opening-sources" data-article-title="出典を開かずに答える——古い抜粋が、古い答えの出典になる" data-editorial-intent="EVIDENCE">
     <div class="article-container">
-      <h2>AIは、出典のページを開かずに答えるか？</h2>
+
+      
+      
+      
+      
+
+      <div class="sitewide-cta" data-cta-profile="answers-without-opening-sources" data-editorial-intent="EVIDENCE">
+        <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_answers-without-opening-sources_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/answers-without-opening-sources/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_answers-without-opening-sources_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/answers-without-opening-sources/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
+      </div>
+<h2>AIは、出典のページを開かずに答えるか？</h2>
       <p>出典を開かずに答えることがあります。Owen Walters氏、Lihu Chen氏、Francesca Toni氏は、インペリアル・カレッジ・ロンドン計算学部の所属で、2026年10月15日に査読前のプレプリントをarXivへ出しました。Walters氏の作業は、在籍中のものです。訓練データの締め切りより後に値が変わった225件の事実を、FDAの表示、金融、スポーツ、人物、SECの届出、化学の6領域から取っています。共通の締め切りは2026年2月16日です。</p>
       <p>配備された検索では、GPT-5.6 Lunaが、検索を有効にした1,747回のすべてで検索し、少なくとも1ページを開いたのは46.4%です。論文は、残る53.6%を、ページを開かず抜粋だけで答えた回としています。同じ10件の検索結果を渡した凍結の実験では、抜粋だけの割合はモデルによって2.6%から76.0%まで開きます。ここでの問いは、結果が返ったあとにページが開かれるかです。名前が記憶から出るかは、別の記事です。<a href="/insights/cited-or-remembered/">ページは検索されて引用され、名前は記憶でも出る</a></p>
-      <h2>抜粋だけの答えは、古い答えが多いか？</h2>
+<h2>抜粋だけの答えは、古い答えが多いか？</h2>
       <p>凍結した検索の7構成をまとめると、多いです。抜粋だけの回では古い答えが6.4%（87/1,366）、開いたページを引用した回では1.3%（8/632）です。出典のページが答えの値と食い違う引用は、抜粋だけが6.4%（62/962）、開いたページを引用した回が2.3%（29/1,258）です。この4つの割合は、Lunaだけのものではありません。スポーツでは、オープンなモデルに限ると、抜粋だけの答えが古いのが20.2%、開いたページを引用した答えは2.1%です。</p>
       <p>配備されたLunaの、検索ありの素のオープン質問での正確さは93.5%です。表の抜粋・不忠実な引用の列は、すべての質問の型をまとめた割合で、正確さの列とは母数が違います。配備されたLunaの、採点した答えに占める不忠実な引用は2.6%です。足しません。</p>
-      <h2>自社の古いページは、古い答えの出典になるか？</h2>
+<h2>自社の古いページは、古い答えの出典になるか？</h2>
       <p>割合としては数えていません。論文の図1に、1件の痕跡があります。プロンプトの日付は2026年8月8日で、Alex Chriss氏がPayPalのCEOだという主張が正確かを聞いています。検索は1回、結果は18件、開いたページは0です。モデルは正確だと答え、paypal.comを出典にしています。正解は、Enrique Lores氏が2026年3月1日にPayPalのCEOになった、です。論文は、5か月遅れた主張を、会社自身のサイトにある古い記事へ帰属させている、と書いています。自社ページの何割がそうなるかは、書いていません。</p>
-      <h2>ページを渡しても、古い答えは消えるか？</h2>
+<h2>ページを渡しても、古い答えは消えるか？</h2>
       <p>減りますが、消えません。スポーツの主張で、検索結果からページを探させると、gemma-4-31bは50件中14件、gpt-oss-20bは47件中11件、古い主張を認めました。同じWikipediaのページをプロンプトへ入れると、50件中0件と50件中1件です。gemma-4-31bの14件の失敗は、いずれもページを開いていません。qwen3-8bは49件中16件から8件へ減っただけでした。論文は、取り出した値は内部では上がっても、最後の層で古い値が残ることがある、と書いています。層の読み取りはスポーツの移籍に限り、活性化を入れ替える因果の検証ではありません。</p>
       <p>プロプライエタリはLunaの1モデルです。回答行を固定した採点で、自由な文章とは振る舞いが違う、とも書いています。査読前です。古いページを直せば顧客の成果がどれだけ変わるかは、この論文の範囲外です。</p>
       <blockquote>
         <strong>出典：</strong> <a href="https://arxiv.org/abs/2610.21731">arXiv:2610.21731</a>（Owen Walters氏、Lihu Chen氏、Francesca Toni氏。インペリアル・カレッジ・ロンドン計算学部。2026-10-15投稿、v1、査読前。Walters氏の作業は在籍中。締め切り後に変わった225件。共通の締め切りは2026-02-16。配備されたLunaは検索ありの1,747回すべてで検索し、ページを開いたのは46.4%、抜粋だけは53.6%。素のオープン質問の正確さは93.5%。不忠実な引用2.6%は全質問型のまとめ。凍結の7構成では抜粋だけが古い答え6.4%（87/1,366）、開いて引用した回は1.3%（8/632）。不忠実な引用は6.4%（62/962）と2.3%（29/1,258）。スポーツのオープンモデルでは20.2%と2.1%。図1はPayPalの1件で、開いたページは0。ページをプロンプトへ入れるとgemma-4-31bは14/50から0/50、gpt-oss-20bは11/47から1/50、qwen3-8bは16/49から8/49）
       </blockquote>
-
-      <div class="sitewide-cta" data-cta-profile="answers-without-opening-sources" data-editorial-intent="EVIDENCE">
-        <h2>次のリソース</h2>
+<h2>次のリソース</h2>
         <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
-<a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_answers-without-opening-sources_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/answers-without-opening-sources/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
-<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_answers-without-opening-sources_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/answers-without-opening-sources/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
-      </div>
 
-            <section class="related-insights">
+<section class="related-insights">
         <h2>関連Insights</h2>
         <ul>
         <li>
@@ -229,8 +234,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
         </li>
         </ul>
       </section>
-
-      <div class="article-cta">
+<div class="article-cta">
         <h2>関連リソース</h2>
         <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
         <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>

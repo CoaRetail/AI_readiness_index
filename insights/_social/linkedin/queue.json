@@ -1392,6 +1392,23 @@
       "createdAt": "2026-11-18T01:00:00.238Z",
       "updatedAt": "2026-11-18T01:00:35.475Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-answers-without-opening-sources-2026-11-19",
+      "slug": "answers-without-opening-sources",
+      "articlePublishAt": "2026-11-19T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-19T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-19T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/answers-without-opening-sources/",
+      "contentFile": "insights/_social/linkedin/posts/answers-without-opening-sources.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-19T01:37:08.594Z",
+      "updatedAt": "2026-11-19T01:37:08.594Z",
+      "series": "v2-stock"
     }
   ]
 }

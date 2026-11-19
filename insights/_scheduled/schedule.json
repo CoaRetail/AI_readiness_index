@@ -2998,7 +2998,7 @@
     {
       "slug": "answers-without-opening-sources",
       "publishAt": "2026-11-19T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "出典を開かずに答える——古い抜粋が、古い答えの出典になる",
       "cardSummary": "インペリアル・カレッジ・ロンドンの査読前論文では、検索つきのモデルが出典のページを開かず、抜粋だけで答えることがあります。抜粋だけの回は、古い答えと、出典と食い違う引用が、ページを開いて引用した回より多くなっていました。",
       "llmsLabel": "抜粋だけで答える",
@@ -3035,13 +3035,13 @@
       "scheduledPublishAt": "2026-11-19T10:00:00+09:00",
       "slotDate": "2026-11-19",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261119-DAILY-001",
       "activatedAt": "2026-10-28T02:00:00.000Z",
-      "publishAttemptedAt": "2026-11-19T01:00:00.000Z",
-      "publishAttemptCount": 1,
-      "lastPublishFailure": "HERO_PENDING",
-      "heroReadyAt": "2026-11-19T01:07:17.087Z"
+      "publishAttemptedAt": "2026-11-19T01:37:08.503Z",
+      "publishAttemptCount": 2,
+      "heroReadyAt": "2026-11-19T01:07:17.087Z",
+      "publishedAt": "2026-11-19T01:37:08.503Z"
     },
     {
       "slug": "within-domain-citation-features",
