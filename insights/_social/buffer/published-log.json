@@ -2006,7 +2006,34 @@
       "publishAt": "2026-11-19T12:00:00+09:00",
       "dueAtUtc": "2026-11-19T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-20T01:00:00.000Z",
+      "slug": "within-domain-citation-features",
+      "channel": "linkedin",
+      "bufferUpdateId": "6aff9bb34c1afd05dede5444",
+      "publishAt": "2026-11-20T11:30:00+09:00",
+      "dueAtUtc": "2026-11-20T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-20T01:00:00.000Z",
+      "slug": "within-domain-citation-features",
+      "channel": "facebook",
+      "bufferUpdateId": "6aff9bb30f5eda1a57ad4fdc",
+      "publishAt": "2026-11-20T11:45:00+09:00",
+      "dueAtUtc": "2026-11-20T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-20T01:00:00.000Z",
+      "slug": "within-domain-citation-features",
+      "channel": "x",
+      "bufferUpdateId": "6aff9bb50f5eda1a57ad511c",
+      "publishAt": "2026-11-20T12:00:00+09:00",
+      "dueAtUtc": "2026-11-20T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-19T01:37:44.706Z"
+  "updatedAt": "2026-11-20T01:00:37.301Z"
 }

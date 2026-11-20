@@ -1418,13 +1418,13 @@
       "linkedinPublishAt": "2026-11-20T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/within-domain-citation-features/",
       "contentFile": "insights/_social/linkedin/posts/within-domain-citation-features.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6aff9bb34c1afd05dede5444",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-20T01:00:00.615Z",
-      "updatedAt": "2026-11-20T01:00:00.615Z",
+      "updatedAt": "2026-11-20T01:00:37.302Z",
       "series": "v2-stock"
     }
   ]
