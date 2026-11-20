@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://readiness.coaretail.com/insights/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -732,6 +732,13 @@
   <url>
     <loc>https://readiness.coaretail.com/insights/answers-without-opening-sources/</loc>
     <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://readiness.coaretail.com/insights/within-domain-citation-features/</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

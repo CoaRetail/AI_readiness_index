@@ -3048,7 +3048,7 @@
     {
       "slug": "within-domain-citation-features",
       "publishAt": "2026-11-20T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "同じサイトの中で、引用されるページは何が違うか",
       "cardSummary": "SISTRIXの自社調査では、同じドメインの中で、目次があるページは1.7倍、Article schemaは1.6倍、FAQPage schemaは1.5倍の引用と結びついていました。相関であり、原因ではありません。対象はドイツ語圏の2026年第2四半期です。",
       "llmsLabel": "同一サイトの引用",
@@ -3085,10 +3085,13 @@
       "scheduledPublishAt": "2026-11-20T10:00:00+09:00",
       "slotDate": "2026-11-20",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261120-DAILY-001",
       "activatedAt": "2026-10-28T02:00:00.000Z",
-      "heroReadyAt": "2026-11-19T01:08:34.432Z"
+      "heroReadyAt": "2026-11-19T01:08:34.432Z",
+      "publishAttemptedAt": "2026-11-20T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-20T01:00:00.000Z"
     },
     {
       "slug": "deepseek-authority-tiers",

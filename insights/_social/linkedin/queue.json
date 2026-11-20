@@ -1409,6 +1409,23 @@
       "createdAt": "2026-11-19T01:37:08.594Z",
       "updatedAt": "2026-11-19T01:37:44.709Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-within-domain-citation-features-2026-11-20",
+      "slug": "within-domain-citation-features",
+      "articlePublishAt": "2026-11-20T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-20T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-20T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/within-domain-citation-features/",
+      "contentFile": "insights/_social/linkedin/posts/within-domain-citation-features.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-20T01:00:00.615Z",
+      "updatedAt": "2026-11-20T01:00:00.615Z",
+      "series": "v2-stock"
     }
   ]
 }

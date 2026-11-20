@@ -193,30 +193,35 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
 
   <article class="article-body container" data-article-slug="within-domain-citation-features" data-article-title="同じサイトの中で、引用されるページは何が違うか" data-editorial-intent="EVIDENCE">
     <div class="article-container">
-      <h2>同じドメインのページ同士で、何が引用と結びついているか？</h2>
+
+      
+      
+      
+      
+
+      <div class="sitewide-cta" data-cta-profile="within-domain-citation-features" data-editorial-intent="EVIDENCE">
+        <a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_within-domain-citation-features_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/within-domain-citation-features/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
+<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_within-domain-citation-features_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/within-domain-citation-features/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
+      </div>
+<h2>同じドメインのページ同士で、何が引用と結びついているか？</h2>
       <p>目次、Article schema、FAQPage schemaです。SISTRIXのJohannes Beus氏とJulia Weissbach氏は2026年10月22日、同社のAI Indexを使った自社調査を出しています。2026年第2四半期に、ドイツ語圏でChatGPT、GoogleのAI Mode、AIによる概要のいずれかに引用された48,527ページを、同じドメインの引用されていないページと1対1で比べました。対象は17,380ドメイン、96,418 URL、43の特徴です。3つの面は、それぞれ約16,000ページです。</p>
       <p>目次がありジャンプできるページは1.7倍、Article schemaは1.6倍、FAQPage schemaは1.5倍の引用と結びついていました。SISTRIXは、これはオッズ比で、引用率が約1.4%のとき頻度の比にほぼ等しい、と書いています。条件付きロジスティック回帰で、同じドメインの対を比べ、43特徴の多重比較はBenjamini-Hochberg法で補正しています。見出しが5つ以上も1.6倍ですが、長い文章は見出しが増えやすいので、長さと切り離して読まない、とも書いています。FAQは、形だけの質問ではなく実際の質問が前提です。</p>
-      <h2>schemaの型は、どれも同じように結びついているか？</h2>
+<h2>schemaの型は、どれも同じように結びついているか？</h2>
       <p>同じではありません。Breadcrumb、HowTo、QAPageは1.0倍で、差は測れていません。Product schemaは0.8倍、AIによる概要に限ると0.5倍です。Recipe schemaは0.1倍です。SISTRIXは、schemaを奇跡の手段として扱わない、と書いています。目次を持つページは14%だけで、効果の大きい特徴を多く併せ持つ引用ページは10%です。多くを併せ持つページは、ほとんど持たないページの2.1倍の引用と結びついていました。これも相関です。</p>
       <p>小さい標本では符号がひっくり返りました。833 URLではFAQ schemaが引用ページで23%少なく、4,600 URLでは31%多く、96,418 URLでは19%多かった、と書いています。約5,000 URL未満の調査は方向が安定しない、という同社の経験則です。政府サイトや百科事典などの部分集団は、これより少ないURLなので、同じく慎重に読む、とも書いています。</p>
-      <h2>公開済みの「Schemaはチートコードではない」と矛盾するか？</h2>
+<h2>公開済みの「Schemaはチートコードではない」と矛盾するか？</h2>
       <p>矛盾しません。見ている問いが違います。公開済みの記事は、schemaを入れれば引用される、という決定論を退け、相関を原因にしない、と書いています。<a href="/insights/schema-not-ai-citation-cheat-code/">SchemaはAI引用のチートコードではない——構造化の役割と限界</a> SISTRIXが比べたのは、すでに同じドメインにある2ページのどちらが引用されたかです。ドメインの強さは、対にすることで外しています。Article schemaとFAQPage schemaは、その対の中で引用と並んでいました。他の型は並んでいないか、少なく並んでいました。</p>
       <p>SISTRIX自身が、原因は証明していない、と書いています。schemaを入れたから1.6倍引用される、という手順には読めません。本文と食い違うマークアップを勧めてもいません。読めるのは、ドイツ語圏の2026年第2四半期という一断面で、同じサイトの中のページどうしを比べると、目次と特定の型のschemaが引用された側に多かった、までです。</p>
-      <h2>どのAIの、いつの数字か？</h2>
+<h2>どのAIの、いつの数字か？</h2>
       <p>ChatGPT、AI Mode、AIによる概要だけです。Perplexity、Claude、Geminiのチャットは入っていません。地域はドイツ語圏、期間は2026年第2四半期の一断面です。続報は予定だと書いています。llms.txtはドメイン単位のファイルなので、ページの対ではなくドメインどうしを比べ、引用URLの11.7%がllms.txtのあるドメインからで、全ドメインでは14.0%だった、と書いています。害は示せていないが、優先ではない、という整理です。ドメインの他の違いが混ざります。</p>
       <p>分類はGemini 3.5 Flashで、Gemini 3.1 Proとの一致は84%、100ページを人手でも見ています。引用ページの48.7%は助言や手順、38.7%はブランドのサイトです。タイトルに2025年か2026年があるページは2.7倍ですが、これは後から足した分析で、年を書き換えるだけで足りるかはデータから分からない、とSISTRIXが書いています。確認された結果としては扱いません。ツール会社の自社調査で、自社のAI Indexの画面へ誘導しています。</p>
       <blockquote>
         <strong>出典：</strong> <a href="https://www.sistrix.com/blog/citation-worthiness-study/">SISTRIX Citation Worthiness</a>（Johannes Beus氏、Julia Weissbach氏、SISTRIX Content Team。2026-10-22。ツール会社の自社調査。ドイツ語圏、2026年第2四半期。引用48,527ページを同じドメインの非引用ページと対にし、17,380ドメイン、96,418 URL。ChatGPT、AI Mode、AIによる概要が各約16,000。目次1.7倍、Article schema 1.6倍、FAQPage schema 1.5倍。オッズ比で、引用率約1.4%では頻度比にほぼ等しい。Breadcrumb、HowTo、QAPageは1.0、Productは0.8、AIによる概要のProductは0.5、Recipeは0.1。相関であり原因ではない、とSISTRIXが書いている。Perplexity、Claude、Geminiのチャットは対象外。llms.txtはドメイン比較で、引用URLの11.7%に対し全ドメインは14.0%）
       </blockquote>
-
-      <div class="sitewide-cta" data-cta-profile="within-domain-citation-features" data-editorial-intent="EVIDENCE">
-        <h2>次のリソース</h2>
+<h2>次のリソース</h2>
         <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
-<a href="/#company-check" class="btn btn-navy" data-funnel-cta data-cta-id="insight_within-domain-citation-features_check_1" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/within-domain-citation-features/" data-editorial-intent="EVIDENCE">自社サイトを無料で確認する</a>
-<a href="/report/" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_within-domain-citation-features_report_2" data-cta-type="REPORT" data-placement="end" data-source-page="/insights/within-domain-citation-features/" data-editorial-intent="EVIDENCE">Company Reportで詳しく調べる</a>
-      </div>
 
-            <section class="related-insights">
+<section class="related-insights">
         <h2>関連Insights</h2>
         <ul>
         <li>
@@ -230,8 +235,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
         </li>
         </ul>
       </section>
-
-      <div class="article-cta">
+<div class="article-cta">
         <h2>関連リソース</h2>
         <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
         <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
