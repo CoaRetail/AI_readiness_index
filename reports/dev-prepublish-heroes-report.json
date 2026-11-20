@@ -1,78 +1,28 @@
 {
-  "generatedAt": "2026-11-19T01:29:48.322Z",
+  "generatedAt": "2026-11-20T01:31:48.107Z",
   "results": [
     {
-      "slug": "answers-without-opening-sources",
+      "slug": "search-referrals-fall-ai-visits-still-small",
       "status": "ok",
       "attempts": 3
     },
     {
-      "slug": "within-domain-citation-features",
+      "slug": "ai-mode-restaurant-booking-japan",
       "status": "ok",
       "attempts": 3
     },
     {
-      "slug": "deepseek-authority-tiers",
+      "slug": "popular-brands-third-party-citations",
       "status": "ok",
       "attempts": 3
     },
     {
-      "slug": "ai-referral-volume-and-conversion",
+      "slug": "ai-citations-change-daily-and-seasonally",
       "status": "ok",
       "attempts": 3
     },
     {
-      "slug": "how-many-runs-before-ai-visibility",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "shopping-agents-fail-before-payment",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "cloudflare-openai-chatgpt-index",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "ai-mode-global-ads-product-links",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "merchant-ucp-agentic-performance-api",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "industry-ai-citation-source-mix",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "usage-ai-training-robots-token",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "mckinsey-shopping-ai-chat-vs-retailer",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "geo-location-changes-cited-sources",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "perplexity-computer-chrome-extension",
-      "status": "ok",
-      "attempts": 3
-    },
-    {
-      "slug": "predicting-answer-engine-cite-share",
+      "slug": "ai-impact-invisible-web-analytics",
       "status": "ok",
       "attempts": 3
     }

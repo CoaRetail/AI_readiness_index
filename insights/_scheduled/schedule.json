@@ -3692,7 +3692,7 @@
       "freshnessReviewedAt": "2026-11-20T02:00:00.000Z",
       "eirId": "EIR-20261211-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://diib.com/start/insights/chatgpt-traffic-vs-search-visits/",
@@ -3716,7 +3716,8 @@
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261211-DAILY-001",
-      "activatedAt": "2026-11-20T02:00:00.000Z"
+      "activatedAt": "2026-11-20T02:00:00.000Z",
+      "heroReadyAt": "2026-11-20T01:26:52.577Z"
     },
     {
       "slug": "ai-mode-restaurant-booking-japan",
@@ -3735,7 +3736,7 @@
       "freshnessReviewedAt": "2026-11-20T02:00:00.000Z",
       "eirId": "EIR-20261214-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://blog.google/intl/ja-jp/products/explore-get-answers/search_aim_restaurant_booking/",
@@ -3759,7 +3760,8 @@
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261214-DAILY-001",
-      "activatedAt": "2026-11-20T02:00:00.000Z"
+      "activatedAt": "2026-11-20T02:00:00.000Z",
+      "heroReadyAt": "2026-11-20T01:27:57.978Z"
     },
     {
       "slug": "popular-brands-third-party-citations",
@@ -3778,7 +3780,7 @@
       "freshnessReviewedAt": "2026-11-20T02:00:00.000Z",
       "eirId": "EIR-20261215-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://arxiv.org/abs/2611.07614",
@@ -3802,7 +3804,8 @@
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261215-DAILY-001",
-      "activatedAt": "2026-11-20T02:00:00.000Z"
+      "activatedAt": "2026-11-20T02:00:00.000Z",
+      "heroReadyAt": "2026-11-20T01:29:01.733Z"
     },
     {
       "slug": "ai-citations-change-daily-and-seasonally",
@@ -3821,7 +3824,7 @@
       "freshnessReviewedAt": "2026-11-20T02:00:00.000Z",
       "eirId": "EIR-20261216-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://ahrefs.com/blog/how-stable-are-ai-citations/",
@@ -3845,7 +3848,8 @@
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261216-DAILY-001",
-      "activatedAt": "2026-11-20T02:00:00.000Z"
+      "activatedAt": "2026-11-20T02:00:00.000Z",
+      "heroReadyAt": "2026-11-20T01:30:23.986Z"
     },
     {
       "slug": "ai-impact-invisible-web-analytics",
@@ -3864,7 +3868,7 @@
       "freshnessReviewedAt": "2026-11-20T02:00:00.000Z",
       "eirId": "EIR-20261217-001",
       "holdReady": false,
-      "packageReadiness": "HERO_PENDING",
+      "packageReadiness": "PACKAGE_READY",
       "sourceMetadata": {
         "type": "primary_source",
         "url": "https://developers.google.com/search/docs/monitor-debug/identify-google-search-traffic",
@@ -3888,7 +3892,8 @@
       "slotType": "DAILY_PRIMARY",
       "publicationState": "SCHEDULED",
       "publicationId": "PUB-20261217-DAILY-001",
-      "activatedAt": "2026-11-20T02:00:00.000Z"
+      "activatedAt": "2026-11-20T02:00:00.000Z",
+      "heroReadyAt": "2026-11-20T01:31:48.085Z"
     },
     {
       "slug": "abis-ari-bridge",
