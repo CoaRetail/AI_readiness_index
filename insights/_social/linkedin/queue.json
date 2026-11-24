@@ -1435,13 +1435,13 @@
       "linkedinPublishAt": "2026-11-24T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/deepseek-authority-tiers/",
       "contentFile": "insights/_social/linkedin/posts/deepseek-authority-tiers.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6b04e1b26734c08a269d259b",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-24T01:00:00.230Z",
-      "updatedAt": "2026-11-24T01:00:00.230Z",
+      "updatedAt": "2026-11-24T01:00:36.487Z",
       "series": "v2-stock"
     }
   ]

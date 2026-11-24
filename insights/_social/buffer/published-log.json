@@ -2033,7 +2033,34 @@
       "publishAt": "2026-11-20T12:00:00+09:00",
       "dueAtUtc": "2026-11-20T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-24T01:00:00.000Z",
+      "slug": "deepseek-authority-tiers",
+      "channel": "linkedin",
+      "bufferUpdateId": "6b04e1b26734c08a269d259b",
+      "publishAt": "2026-11-24T11:30:00+09:00",
+      "dueAtUtc": "2026-11-24T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-24T01:00:00.000Z",
+      "slug": "deepseek-authority-tiers",
+      "channel": "facebook",
+      "bufferUpdateId": "6b04e1b39a4bd32ca3e0d6d6",
+      "publishAt": "2026-11-24T11:45:00+09:00",
+      "dueAtUtc": "2026-11-24T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-24T01:00:00.000Z",
+      "slug": "deepseek-authority-tiers",
+      "channel": "x",
+      "bufferUpdateId": "6b04e1b4db52b449cf126707",
+      "publishAt": "2026-11-24T12:00:00+09:00",
+      "dueAtUtc": "2026-11-24T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-20T01:00:37.301Z"
+  "updatedAt": "2026-11-24T01:00:36.485Z"
 }
