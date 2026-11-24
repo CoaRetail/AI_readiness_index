@@ -3098,7 +3098,7 @@
     {
       "slug": "deepseek-authority-tiers",
       "publishAt": "2026-11-24T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "DeepSeekの検索APIは、ページに権威の段階を付ける",
       "cardSummary": "DeepSeekは2026年10月17日、検索APIが各ページに権威の段階を付けると文書化しました。0から4で、-1は不明、3以上を高い権威としています。不正なSEO、GEOの操作、低品質な自動生成を除く、と書いています。除く基準は公開していません。",
       "llmsLabel": "権威の段階",
@@ -3135,10 +3135,13 @@
       "scheduledPublishAt": "2026-11-24T10:00:00+09:00",
       "slotDate": "2026-11-24",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261124-DAILY-001",
       "activatedAt": "2026-10-28T02:00:00.000Z",
-      "heroReadyAt": "2026-11-19T01:11:27.389Z"
+      "heroReadyAt": "2026-11-19T01:11:27.389Z",
+      "publishAttemptedAt": "2026-11-24T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-24T01:00:00.000Z"
     },
     {
       "slug": "ai-referral-volume-and-conversion",

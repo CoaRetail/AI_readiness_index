@@ -193,30 +193,35 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
 
   <article class="article-body container" data-article-slug="deepseek-authority-tiers" data-article-title="DeepSeekの検索APIは、ページに権威の段階を付ける" data-editorial-intent="NEWS">
     <div class="article-container">
-      <h2>権威の段階は、何を表すと書かれているか？</h2>
+
+      
+      
+      
+      
+
+      <div class="sitewide-cta" data-cta-profile="deepseek-authority-tiers" data-editorial-intent="NEWS">
+        <a href="/whitepaper/2026/free/" class="btn btn-navy" data-funnel-cta data-cta-id="insight_deepseek-authority-tiers_learn_1" data-cta-type="LEARN" data-placement="end" data-source-page="/insights/deepseek-authority-tiers/" data-editorial-intent="NEWS">無料ガイドを見る</a>
+<a href="/#company-check" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_deepseek-authority-tiers_check_2" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/deepseek-authority-tiers/" data-editorial-intent="NEWS">自社サイトを無料で確認する</a>
+      </div>
+<h2>権威の段階は、何を表すと書かれているか？</h2>
       <p>ページに付く0から4の整数です。DeepSeekは2026年10月17日の更新履歴で、自社の検索をAPIとして開いた、と書いています。検索と取得のガイドでは、各結果の `authority` を、ページの権威の段階としている。0から4で、-1は不明、3以上は高い権威の情報源だ、と書いています。どう計算してその整数になるかは、書いていません。</p>
       <p>同じガイドは、`site:` で結果をそのサイトに限れる、と書いています。自社のホストを指定して、返ったURLに付いている整数を読むことは、文書の範囲です。その整数がホスト単位で固定か、ページごとに変わるかは、文書が決めていません。返った数が自社の評価そのものだ、とも書いていません。</p>
-      <h2>並びの点数と、権威の段階は同じか？</h2>
+<h2>並びの点数と、権威の段階は同じか？</h2>
       <p>同じではありません。`rerank_score` は0から3で、関連、権威、新しさを合わせた点数です。1.5以上を高品質な結果とする、とガイドは書いています。クエリが変われば、この点数は動き得ます。`authority` は、ページの段階として別の欄です。並びの点数が高いことと、段階が3以上であることは、文書の上では別です。</p>
       <p>検索は1回あたり最大50件です。件数は返す数だけで、段階の定義ではありません。取得のAPIは、1つのURLの本文をMarkdownで返します。そこには権威の段階の欄がありません。段階を読むなら、検索の結果の側です。</p>
-      <h2>除く基準は、公開されているか？</h2>
+<h2>除く基準は、公開されているか？</h2>
       <p>公開していません。2026年10月17日の更新履歴は、SEOの不正、GEOの操作、低品質な自動生成を、厳格な検出で除き、利用者とLLMに権威があり信頼できる情報を出す、と書いています。検出が何を見て、何を落とし、段階のどれに対応するかは、更新履歴にも検索のガイドにもありません。除かれたURLの一覧もありません。</p>
       <p>したがって、段階が低い、または結果に出ないことを、特定の書き方の違反だとは読めません。段階はDeepSeekが付けたラベルで、理由の説明ではありません。</p>
-      <h2>段階が付くことは、答えに引用されることと同じか？</h2>
+<h2>段階が付くことは、答えに引用されることと同じか？</h2>
       <p>同じではありません。検索APIが返すのは、クエリに対するページの一覧です。そのページが、DeepSeekの回答の出典として見えるかは、ガイドが測っていません。取得に成功することも、引用でもありません。取得は、相手サイトの可用性とそのサイトの方針に従う、と書いています。</p>
       <p>1日に数億件の検索を処理し、数千億ページを索引する、という更新履歴の規模は、検索エンジンの自己申告です。第三者の再現ではありません。自社の段階を見てページを直した時間が、顧客の成果に等しい、とも文書は書いていません。</p>
       <blockquote>
         <strong>出典：</strong> <a href="https://api-docs.deepseek.com/updates/">DeepSeek API Docs 更新履歴 2026-10-17</a>（自社検索の公開。SEOの不正、GEOの操作、低品質な自動生成を厳格な検出で除く、と書いている。検出の基準は非公開）／<a href="https://api-docs.deepseek.com/guides/search/">Search &amp; Fetch</a>（`authority` はページの権威の段階。0から4、-1は不明、3以上は高い権威。`rerank_score` は0から3で、関連・権威・新しさの合成。1.5以上が高品質。`site:` が使える。取得の応答に段階の欄はない。料金のドル表記と人民元表記は一致を確認していないため、本文では使わない）
       </blockquote>
-
-      <div class="sitewide-cta" data-cta-profile="deepseek-authority-tiers" data-editorial-intent="NEWS">
-        <h2>次のリソース</h2>
+<h2>次のリソース</h2>
         <p>Research Hubの知見を、自社の理解・比較・推薦・行動準備へつなげます。</p>
-<a href="/whitepaper/2026/free/" class="btn btn-navy" data-funnel-cta data-cta-id="insight_deepseek-authority-tiers_learn_1" data-cta-type="LEARN" data-placement="end" data-source-page="/insights/deepseek-authority-tiers/" data-editorial-intent="NEWS">無料ガイドを見る</a>
-<a href="/#company-check" class="btn btn-secondary" data-funnel-cta data-cta-id="insight_deepseek-authority-tiers_check_2" data-cta-type="CHECK" data-placement="end" data-source-page="/insights/deepseek-authority-tiers/" data-editorial-intent="NEWS">自社サイトを無料で確認する</a>
-      </div>
 
-            <section class="related-insights">
+<section class="related-insights">
         <h2>関連Insights</h2>
         <ul>
         <li>
@@ -230,8 +235,7 @@ h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: 
         </li>
         </ul>
       </section>
-
-      <div class="article-cta">
+<div class="article-cta">
         <h2>関連リソース</h2>
         <p>Agent Readiness Framework は、AIが企業を理解・比較・推薦・実行するまでの状態を評価する基準です。個別技術を点ではなく仕組みとしてつなぐ視点を Research Hub で公開しています。</p>
         <a href="/framework/" class="btn btn-navy" data-ga-insight-cta="framework">Framework</a>
