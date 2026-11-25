@@ -3148,7 +3148,7 @@
     {
       "slug": "ai-referral-volume-and-conversion",
       "publishAt": "2026-11-25T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AI経由の訪問は少なく、転換は高い——0.62%と13.8%をどう読むか",
       "cardSummary": "Marie Haynes氏のGA4では、ChatGPTのセッションはGoogleオーガニックの量の0.62%で、転換率は13.8%と3.02%でした。量と率は別の質問です。別の集計では倍率はもっと小さく、この数字だけで最適化の要否は決まりません。",
       "llmsLabel": "量と転換",
@@ -3185,10 +3185,13 @@
       "scheduledPublishAt": "2026-11-25T10:00:00+09:00",
       "slotDate": "2026-11-25",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261125-DAILY-001",
       "activatedAt": "2026-10-28T02:00:00.000Z",
-      "heroReadyAt": "2026-11-19T01:12:46.019Z"
+      "heroReadyAt": "2026-11-19T01:12:46.019Z",
+      "publishAttemptedAt": "2026-11-25T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-25T01:00:00.000Z"
     },
     {
       "slug": "how-many-runs-before-ai-visibility",

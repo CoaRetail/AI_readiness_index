@@ -1443,6 +1443,23 @@
       "createdAt": "2026-11-24T01:00:00.230Z",
       "updatedAt": "2026-11-24T01:00:36.487Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-ai-referral-volume-and-conversion-2026-11-25",
+      "slug": "ai-referral-volume-and-conversion",
+      "articlePublishAt": "2026-11-25T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-25T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-25T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/ai-referral-volume-and-conversion/",
+      "contentFile": "insights/_social/linkedin/posts/ai-referral-volume-and-conversion.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-25T01:00:00.220Z",
+      "updatedAt": "2026-11-25T01:00:00.220Z",
+      "series": "v2-stock"
     }
   ]
 }
