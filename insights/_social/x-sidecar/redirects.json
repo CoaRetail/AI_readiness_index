@@ -1537,6 +1537,22 @@
       "date": "2026-11-24",
       "slot": "18:00",
       "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261125d",
+      "destination": "https://readiness.coaretail.com/insights/schema-not-ai-citation-cheat-code/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261125_1500",
+      "article_slug": "schema-not-ai-citation-cheat-code",
+      "date": "2026-11-25",
+      "slot": "15:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
+    },
+    {
+      "short_id": "x261125e",
+      "destination": "https://readiness.coaretail.com/insights/gsc-ai-impressions-how-to-read/?utm_source=x&utm_medium=organic&utm_campaign=ari_x_traffic&utm_content=261125_1800",
+      "article_slug": "gsc-ai-impressions-how-to-read",
+      "date": "2026-11-25",
+      "slot": "18:00",
+      "ownership": "ari_x_traffic_sidecar_v1"
     }
   ]
 }
