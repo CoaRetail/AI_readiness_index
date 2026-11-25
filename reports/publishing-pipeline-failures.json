@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-24T01:00:36.488Z",
+  "updatedAt": "2026-11-25T01:00:39.655Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -31,8 +31,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "deepseek-authority-tiers",
+    "slug": "ai-referral-volume-and-conversion",
     "stage": "buffer_queued",
-    "at": "2026-11-24T01:00:36.488Z"
+    "at": "2026-11-25T01:00:39.655Z"
   }
 }

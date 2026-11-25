@@ -2060,7 +2060,34 @@
       "publishAt": "2026-11-24T12:00:00+09:00",
       "dueAtUtc": "2026-11-24T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-25T01:00:00.000Z",
+      "slug": "ai-referral-volume-and-conversion",
+      "channel": "linkedin",
+      "bufferUpdateId": "6b063335f0b405190acaa894",
+      "publishAt": "2026-11-25T11:30:00+09:00",
+      "dueAtUtc": "2026-11-25T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-25T01:00:00.000Z",
+      "slug": "ai-referral-volume-and-conversion",
+      "channel": "facebook",
+      "bufferUpdateId": "6b063336f0b405190acaa95a",
+      "publishAt": "2026-11-25T11:45:00+09:00",
+      "dueAtUtc": "2026-11-25T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-25T01:00:00.000Z",
+      "slug": "ai-referral-volume-and-conversion",
+      "channel": "x",
+      "bufferUpdateId": "6b063337615ec212af76ee37",
+      "publishAt": "2026-11-25T12:00:00+09:00",
+      "dueAtUtc": "2026-11-25T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-24T01:00:36.485Z"
+  "updatedAt": "2026-11-25T01:00:39.651Z"
 }
