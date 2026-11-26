@@ -2087,7 +2087,34 @@
       "publishAt": "2026-11-25T12:00:00+09:00",
       "dueAtUtc": "2026-11-25T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-26T01:00:00.000Z",
+      "slug": "how-many-runs-before-ai-visibility",
+      "channel": "linkedin",
+      "bufferUpdateId": "6b0784b3b8e2338b85798f37",
+      "publishAt": "2026-11-26T11:30:00+09:00",
+      "dueAtUtc": "2026-11-26T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-26T01:00:00.000Z",
+      "slug": "how-many-runs-before-ai-visibility",
+      "channel": "facebook",
+      "bufferUpdateId": "6b0784b3a791bea1b23f5102",
+      "publishAt": "2026-11-26T11:45:00+09:00",
+      "dueAtUtc": "2026-11-26T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-26T01:00:00.000Z",
+      "slug": "how-many-runs-before-ai-visibility",
+      "channel": "x",
+      "bufferUpdateId": "6b0784b4b96dd8d35177f6a9",
+      "publishAt": "2026-11-26T12:00:00+09:00",
+      "dueAtUtc": "2026-11-26T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-25T01:00:39.651Z"
+  "updatedAt": "2026-11-26T01:00:36.464Z"
 }

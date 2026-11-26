@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T01:00:39.655Z",
+  "updatedAt": "2026-11-26T01:00:36.467Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -31,8 +31,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "ai-referral-volume-and-conversion",
+    "slug": "how-many-runs-before-ai-visibility",
     "stage": "buffer_queued",
-    "at": "2026-11-25T01:00:39.655Z"
+    "at": "2026-11-26T01:00:36.467Z"
   }
 }

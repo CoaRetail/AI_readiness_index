@@ -3241,7 +3241,9 @@
       "heroReadyAt": "2026-11-19T01:14:14.887Z",
       "publishAttemptedAt": "2026-11-26T01:00:00.000Z",
       "publishAttemptCount": 1,
-      "publishedAt": "2026-11-26T01:00:00.000Z"
+      "publishedAt": "2026-11-26T01:00:00.000Z",
+      "productionVerifiedAt": "2026-11-26T01:00:33.867Z",
+      "verificationAttemptCount": 2
     },
     {
       "slug": "shopping-agents-fail-before-payment",
