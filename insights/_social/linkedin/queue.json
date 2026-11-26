@@ -1460,6 +1460,23 @@
       "createdAt": "2026-11-25T01:00:00.220Z",
       "updatedAt": "2026-11-25T01:00:39.654Z",
       "series": "v2-stock"
+    },
+    {
+      "id": "ARI-LI-CE-how-many-runs-before-ai-visibility-2026-11-26",
+      "slug": "how-many-runs-before-ai-visibility",
+      "articlePublishAt": "2026-11-26T10:00:00+09:00",
+      "bufferTransferAt": "2026-11-26T10:30:00+09:00",
+      "linkedinPublishAt": "2026-11-26T11:30:00+09:00",
+      "articleUrl": "https://readiness.coaretail.com/insights/how-many-runs-before-ai-visibility/",
+      "contentFile": "insights/_social/linkedin/posts/how-many-runs-before-ai-visibility.md",
+      "status": "scheduled",
+      "bufferUpdateId": null,
+      "attempts": 0,
+      "lastAttemptAt": null,
+      "lastError": null,
+      "createdAt": "2026-11-26T01:00:00.499Z",
+      "updatedAt": "2026-11-26T01:00:00.499Z",
+      "series": "v2-stock"
     }
   ]
 }

@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://readiness.coaretail.com/insights/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -753,6 +753,13 @@
   <url>
     <loc>https://readiness.coaretail.com/insights/ai-referral-volume-and-conversion/</loc>
     <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://readiness.coaretail.com/insights/how-many-runs-before-ai-visibility/</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

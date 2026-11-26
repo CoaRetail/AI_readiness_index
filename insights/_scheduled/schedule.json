@@ -3198,7 +3198,7 @@
     {
       "slug": "how-many-runs-before-ai-visibility",
       "publishAt": "2026-11-26T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "AIでの見え方は、何問・何回測れば信じられるか",
       "cardSummary": "フェアテックの自社計測では、同じ質問の翌日の言及は86〜91%揃い、月単位の目安はAI2つ以上、50問以上、週1回です。グラッドキューブの自社計測では、毎回名前が出た質問は3.0%で、1回は平均26.2ポイントずれました。ツール会社のデータです。",
       "llmsLabel": "計測の回数",
@@ -3235,10 +3235,13 @@
       "scheduledPublishAt": "2026-11-26T10:00:00+09:00",
       "slotDate": "2026-11-26",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261126-DAILY-001",
       "activatedAt": "2026-10-28T02:00:00.000Z",
-      "heroReadyAt": "2026-11-19T01:14:14.887Z"
+      "heroReadyAt": "2026-11-19T01:14:14.887Z",
+      "publishAttemptedAt": "2026-11-26T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-26T01:00:00.000Z"
     },
     {
       "slug": "shopping-agents-fail-before-payment",

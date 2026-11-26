@@ -132,6 +132,7 @@
 - [同一サイトの引用](https://readiness.coaretail.com/insights/within-domain-citation-features/): Insights Column（2026-11-20）
 - [権威の段階](https://readiness.coaretail.com/insights/deepseek-authority-tiers/): Insights Column（2026-11-24）
 - [量と転換](https://readiness.coaretail.com/insights/ai-referral-volume-and-conversion/): Insights Column（2026-11-25）
+- [計測の回数](https://readiness.coaretail.com/insights/how-many-runs-before-ai-visibility/): Insights Column（2026-11-26）
 
 - [Methodology](https://readiness.coaretail.com/methodology.html): 評価手法
 - [ARI Diagnosis](https://readiness.coaretail.com/report/): 約3分診断
