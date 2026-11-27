@@ -3248,7 +3248,7 @@
     {
       "slug": "shopping-agents-fail-before-payment",
       "publishAt": "2026-11-27T10:00:00+09:00",
-      "status": "scheduled",
+      "status": "published",
       "title": "買い物エージェントは、決済の前でつまずく——読み取り37.5%、聞き返し28.9%",
       "cardSummary": "General MachinesのCartTrace-100kでは、失敗の37.5%が商品情報の読み取り、28.9%が条件の聞き返しです。チェックアウトと決済は各1%未満。Forterの加盟店ネットワークでは、店の通常チェックアウト経由が10月12日週に70%でした。研究データとベンダーデータです。",
       "llmsLabel": "エージェント決済前",
@@ -3285,10 +3285,13 @@
       "scheduledPublishAt": "2026-11-27T10:00:00+09:00",
       "slotDate": "2026-11-27",
       "slotType": "DAILY_PRIMARY",
-      "publicationState": "SCHEDULED",
+      "publicationState": "PUBLISHED",
       "publicationId": "PUB-20261127-DAILY-001",
       "activatedAt": "2026-10-31T02:00:00.000Z",
-      "heroReadyAt": "2026-11-19T01:15:34.472Z"
+      "heroReadyAt": "2026-11-19T01:15:34.472Z",
+      "publishAttemptedAt": "2026-11-27T01:00:00.000Z",
+      "publishAttemptCount": 1,
+      "publishedAt": "2026-11-27T01:00:00.000Z"
     },
     {
       "slug": "cloudflare-openai-chatgpt-index",
