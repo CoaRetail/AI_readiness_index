@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-26T01:00:36.467Z",
+  "updatedAt": "2026-11-27T01:00:36.935Z",
   "failures": {
     "search-departure-ai": {
       "slug": "search-departure-ai",
@@ -31,8 +31,8 @@
     }
   },
   "lastSuccess": {
-    "slug": "how-many-runs-before-ai-visibility",
+    "slug": "shopping-agents-fail-before-payment",
     "stage": "buffer_queued",
-    "at": "2026-11-26T01:00:36.467Z"
+    "at": "2026-11-27T01:00:36.935Z"
   }
 }

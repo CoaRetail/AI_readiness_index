@@ -9,13 +9,17 @@ slug: shopping-agents-fail-before-payment
 ## WEB
 scheduled: 10:00
 published: true
-productionVerified: false
+productionVerified: true
 
 ## BUFFER
-linkedin: scheduled
-facebook: scheduled
-x: scheduled
+linkedin: queued
+facebook: queued
+x: queued
 
 ## PIPELINE
-status: RECOVERING
-publish: shopping-agents-fail-before-payment
+status: COMPLETE
+verify: ok (2 attempts)
+buffer actions:
+- linkedin: queued
+- facebook: queued
+- x: queued

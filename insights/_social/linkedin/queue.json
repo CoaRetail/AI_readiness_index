@@ -1486,13 +1486,13 @@
       "linkedinPublishAt": "2026-11-27T11:30:00+09:00",
       "articleUrl": "https://readiness.coaretail.com/insights/shopping-agents-fail-before-payment/",
       "contentFile": "insights/_social/linkedin/posts/shopping-agents-fail-before-payment.md",
-      "status": "scheduled",
-      "bufferUpdateId": null,
+      "status": "buffer_queued",
+      "bufferUpdateId": "6b08d633548b6e180d4a49d2",
       "attempts": 0,
       "lastAttemptAt": null,
       "lastError": null,
       "createdAt": "2026-11-27T01:00:00.529Z",
-      "updatedAt": "2026-11-27T01:00:00.529Z",
+      "updatedAt": "2026-11-27T01:00:36.933Z",
       "series": "v2-stock"
     }
   ]

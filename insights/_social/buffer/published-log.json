@@ -2114,7 +2114,34 @@
       "publishAt": "2026-11-26T12:00:00+09:00",
       "dueAtUtc": "2026-11-26T03:00:00.000Z",
       "dryRun": false
+    },
+    {
+      "at": "2026-11-27T01:00:00.000Z",
+      "slug": "shopping-agents-fail-before-payment",
+      "channel": "linkedin",
+      "bufferUpdateId": "6b08d633548b6e180d4a49d2",
+      "publishAt": "2026-11-27T11:30:00+09:00",
+      "dueAtUtc": "2026-11-27T02:30:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-27T01:00:00.000Z",
+      "slug": "shopping-agents-fail-before-payment",
+      "channel": "facebook",
+      "bufferUpdateId": "6b08d633548b6e180d4a4a69",
+      "publishAt": "2026-11-27T11:45:00+09:00",
+      "dueAtUtc": "2026-11-27T02:45:00.000Z",
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-27T01:00:00.000Z",
+      "slug": "shopping-agents-fail-before-payment",
+      "channel": "x",
+      "bufferUpdateId": "6b08d63470e2a88e2ce4af16",
+      "publishAt": "2026-11-27T12:00:00+09:00",
+      "dueAtUtc": "2026-11-27T03:00:00.000Z",
+      "dryRun": false
     }
   ],
-  "updatedAt": "2026-11-26T01:00:36.464Z"
+  "updatedAt": "2026-11-27T01:00:36.931Z"
 }
